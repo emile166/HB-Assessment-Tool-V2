@@ -24,6 +24,31 @@ function Questionnaire({ questionnaire, onBack }) {
   const [cystIndication, setCystIndication] = useState('');
   const [additionalDetails, setAdditionalDetails] = useState('');
   const [injuryDescription, setInjuryDescription] = useState('');
+  const [debugMode, setDebugMode] = useState(false);
+  const [debugCode, setDebugCode] = useState('');
+
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      setDebugCode(prev => {
+        const newCode = prev + e.key;
+        // Only keep last 8 characters to prevent string from growing too long
+        const trimmedCode = newCode.slice(-8);
+        
+        // Check if code matches
+        if (trimmedCode === 'hb-debug') {
+          setDebugMode(true);
+        }
+        
+        return trimmedCode;
+      });
+    };
+
+    window.addEventListener('keydown', handleKeyPress);
+    
+    return () => {
+      window.removeEventListener('keydown', handleKeyPress);
+    };
+  }, []);
 
   const handleAnswer = (questionIndex, answer) => {
     const newResponses = {
@@ -232,39 +257,39 @@ const handleSubmit = (finalResponses = responses) => {
     } else if (D3 >= D4 + 3) {
       resultsSummary = `🥳 Success! You've completed the assessment.`;
     } else if (CystScore >= D3 - 2 && CystScore < D3 && /[ACIHL]/.test(B3)) {
-      resultsSummary = `🙌 Good work! Move on to differential assessment 1.`;
+      resultsSummary = `🙌 Good work! Move on to Differential Assessment 1.`;
     } else if (D3 > D4 && /[ACIHL]/.test(B3) && (D4 > D16 ? /[ACIHL]/.test(sortedResults.slice(1, sortedResults.findIndex(([_, score]) => score <= D4 - 1) + 1).map(([code]) => code).join('')) : true)) {
-      resultsSummary = `🙌 Good work! Move on to differential assessment 1.`;
+      resultsSummary = `🙌 Good work! Move on to Differential Assessment 1.`;
     } else if (D3 > D4 && /[FGN]/.test(B3) && (D4 > D16 ? /[FGN]/.test(sortedResults.slice(1, sortedResults.findIndex(([_, score]) => score <= D4 - 1) + 1).map(([code]) => code).join('')) : true)) {
-      resultsSummary = `🙌 Good work! Move on to differential assessment 2.`;
+      resultsSummary = `🙌 Good work! Move on to Differential Assessment 2.`;
     } else if (D3 > D4 && /[BDE]/.test(B3) && (D4 > D16 ? /[BDE]{2}/.test(sortedResults.slice(1, sortedResults.findIndex(([_, score]) => score <= D4 - 1) + 1).map(([code]) => code).join('')) : true)) {
-      resultsSummary = `🤙 Good work! Move on to differential assessments 3 & 4.`;
+      resultsSummary = `🤙 Good work! Move on to Differential Assessments 3 & 4.`;
     } else if (D3 > D4 && /[BD]/.test(B3) && (D4 > D16 ? /[BD]/.test(sortedResults.slice(1, sortedResults.findIndex(([_, score]) => score <= D4 - 1) + 1).map(([code]) => code).join('')) : true)) {
-      resultsSummary = `🙌 Good work! Move on to differential assessment 3.`;
+      resultsSummary = `🙌 Good work! Move on to Differential Assessment 3.`;
     } else if (D3 > D4 && /[DE]/.test(B3) && (D4 > D16 ? /[DE]/.test(sortedResults.slice(1, sortedResults.findIndex(([_, score]) => score <= D4 - 1) + 1).map(([code]) => code).join('')) : true)) {
-      resultsSummary = `🙌 Good work! Move on to differential assessment 4.`;
+      resultsSummary = `🙌 Good work! Move on to Differential Assessment 4.`;
     } else if (D3 === D4 && /[ACIHL]/.test(B3) && (D4 > D16 ? /[ACIHL]/.test(sortedResults.slice(1, sortedResults.findIndex(([_, score]) => score <= D4 - 1) + 1).map(([code]) => code).join('')) : true) && !/[^ACIHL]/.test(sortedResults.slice(1, sortedResults.findIndex(([_, score]) => score <= D4 - 1) + 1).map(([code]) => code).join(''))) {
-      resultsSummary = `🙌 Good work! Move on to differential assessment 1.`;
+      resultsSummary = `🙌 Good work! Move on to Differential Assessment 1.`;
     } else if (D3 === D4 && /[FGN]/.test(B3) && (D4 > D16 ? /[FGN]/.test(sortedResults.slice(1, sortedResults.findIndex(([_, score]) => score <= D4 - 1) + 1).map(([code]) => code).join('')) : true) && !/[^FGN]/.test(sortedResults.slice(1, sortedResults.findIndex(([_, score]) => score <= D4 - 1) + 1).map(([code]) => code).join(''))) {
-      resultsSummary = `🙌 Good work! Move on to differential assessment 2.`;
+      resultsSummary = `🙌 Good work! Move on to Differential Assessment 2.`;
     } else if (D3 === D4 && /[BDE]/.test(B3) && (D4 > D16 ? /[BDE]{2}/.test(sortedResults.slice(1, sortedResults.findIndex(([_, score]) => score <= D4 - 1) + 1).map(([code]) => code).join('')) : true) && !/[^BDE]/.test(sortedResults.slice(1, sortedResults.findIndex(([_, score]) => score <= D4 - 1) + 1).map(([code]) => code).join(''))) {
-      resultsSummary = `🤙 Good work! Move on to differential assessment 3 & 4.`;
+      resultsSummary = `🤙 Good work! Move on to Differential Assessment 3 & 4.`;
     } else if (D3 === D4 && /[BD]/.test(B3) && (D4 > D16 ? /[BD]/.test(sortedResults.slice(1, sortedResults.findIndex(([_, score]) => score <= D4 - 1) + 1).map(([code]) => code).join('')) : true) && !/[^BD]/.test(sortedResults.slice(1, sortedResults.findIndex(([_, score]) => score <= D4 - 1) + 1).map(([code]) => code).join(''))) {
-      resultsSummary = `🙌 Good work! Move on to differential assessment 3.`;
+      resultsSummary = `🙌 Good work! Move on to Differential Assessment 3.`;
     } else if (D3 === D4 && /[DE]/.test(B3) && (D4 > D16 ? /[DE]/.test(sortedResults.slice(1, sortedResults.findIndex(([_, score]) => score <= D4 - 1) + 1).map(([code]) => code).join('')) : true) && !/[^DE]/.test(sortedResults.slice(1, sortedResults.findIndex(([_, score]) => score <= D4 - 1) + 1).map(([code]) => code).join(''))) {
-      resultsSummary = `🙌 Good work! Move on to differential assessment 4.`;
+      resultsSummary = `🙌 Good work! Move on to Differential Assessment 4.`;
     } else if (D3 === D4 + 2 && /[GDFNEABK]/.test(B3)) {
       resultsSummary = `🎉 Success! Move on to severity assessment.`;
     } else if (D3 === D4 + 2) {
       resultsSummary = `🥳 Success! You've completed the assessment.`;
     } else if (NerveIssueScore === D3 && /[^ACIL]/.test(B3) && /[^ACIL]/.test(sortedResults[1][0]) && D3 >= D5 + 2) {
-      resultsSummary = `💪 Success! Move on to nerve tests in differential assessment 1.`;
+      resultsSummary = `💪 Success! Move on to nerve tests in Differential Assessment 1.`;
     } else if (NerveIssueScore < D3 && NerveIssueScore >= D3 - 1 && D3 > D4 && /[^ACIL]/.test(B3) && D3 >= D5 + 2) {
-      resultsSummary = `💪 Success! Move on to nerve tests in differential assessment 1.`;
+      resultsSummary = `💪 Success! Move on to nerve tests in Differential Assessment 1.`;
     } else if (D3 >= D5 + 1 && D4 > D5 && /[AB]/.test(B3) && /[AB]/.test(sortedResults[1][0])) {
       resultsSummary = `🎉 Success! Move on to severity assessment.`;
     } else if (D3 <= D4 + 1) {
-      resultsSummary = `🤔 Something's wrong here. If you've performed all tests properly, there must be confounding factors. Email us your results.`;
+      resultsSummary = `🤔 Something's wrong here.`;
     } else {
       resultsSummary = `🙃 Sorry, there seems to be an error.`;
     }
@@ -272,7 +297,7 @@ const handleSubmit = (finalResponses = responses) => {
     let displayedResult;
     if (/💪/.test(resultsSummary) || /🎉/.test(resultsSummary) || /🥳/.test(resultsSummary)) {
         displayedResult = firstInjuryName;
-    } else if (/🤙/.test(resultsSummary) || /1/.test(resultsSummary) || /2/.test(resultsSummary) || /3/.test(resultsSummary) || /4/.test(resultsSummary)) {
+    } else if (/🤙/.test(resultsSummary) || /🙌/.test(resultsSummary)) {
         displayedResult = "More information needed";
     } else if (/🤔/.test(resultsSummary)) {
         displayedResult = "Data unclear";
@@ -333,6 +358,8 @@ const handleSubmit = (finalResponses = responses) => {
     
     if (/💪/.test(resultsSummary)) {
       additionalDetails = "Great job completing the primary assessment! Based on your results, you should now move on to the nerve tests (questions 9A and 9B) in Differential Assessment 1.";
+    } else if (/🤙/.test(resultsSummary)) {
+      additionalDetails = "Great job completing the primary assessment! Based on your results, you should now complete Differential Assessment 3 as well as Differential Assessment 4.";
     } else if (/1/.test(resultsSummary)) {
       additionalDetails = "Great job completing the primary assessment! Based on your results, you should now move on to Differential Assessment 1.";
     } else if (/2/.test(resultsSummary)) {
@@ -341,18 +368,16 @@ const handleSubmit = (finalResponses = responses) => {
       additionalDetails = "Great job completing the primary assessment! Based on your results, you should now move on to Differential Assessment 3.";
     } else if (/4/.test(resultsSummary)) {
       additionalDetails = "Great job completing the primary assessment! Based on your results, you should now move on to Differential Assessment 4.";
-    } else if (/🤙/.test(resultsSummary)) {
-      additionalDetails = "Great job completing the primary assessment! Based on your results, you should now complete Differential Assessment 3 as well as Differential Assessment 4.";
     } else if (/🎉/.test(resultsSummary)) {
-      additionalDetails = "Great job! You have completed the primary assessment. (You do not need to complete a differential assessment.)";
+      additionalDetails = "Great job! You have completed the primary assessment. (You do not need to complete a differential assessment, but may need to complete a severity assessment if indicated above.)";
     } else if (/🥳/.test(resultsSummary)) {
       additionalDetails = "Great job! You have completed the primary assessment. (You do not need to complete a differential assessment or severity assessment.)";
     } else if (/🤔/.test(resultsSummary)) {
-      additionalDetails = "Your answers indicate too many possibilities to calculate a result. This is typically a sign that some of the tests were not performed properly or that there may be too many confounding factors (such as multiple concurrent injuries). Please retake the primary assessment and try to be more specific with your answers. If you continue to receive this result, this assessment may not be suitable for you. If you'd like assistance from Dr. Jason Hooper, PT, DPT, OCS, SCS, you can schedule an in-person or online consultation at www.hoopersbeta.com/private-sessions.";
+      additionalDetails = "Your answers indicate too many possibilities to calculate a result. This is typically a sign that some of the tests were not performed properly or that there may be too many confounding factors (such as multiple concurrent injuries). Please retake the primary assessment and try to be more specific with your answers. If you continue to receive this result, this assessment may not be suitable for you.\n\nIf you'd like assistance, enter the code 'hb-debug' into the text box at the bottom of the page and then email us a screenshot of your full results report (including results summary, answer log, and scores) to pt@hoopersbeta.com. Or if you prefer you can schedule an in-person or online consultation with Dr. Jason Hooper, PT, DPT, OCS, SCS at www.hoopersbeta.com/private-sessions.";
     } else if (/😔/.test(resultsSummary)) {
       additionalDetails = "If you're seeing this, you may have been sent to this assessment by mistake; it not designed to handle the possibility of growth plate fractures.";
     } else if (/🙃/.test(resultsSummary)) {
-      additionalDetails = "This is strange. Something has gone wrong with your questionnaire or you've encountered a bug. Please refresh the page and try again. If you continue to receive this result, please email info@hoopersbeta.com and we will be happy to assist you. We apologize for the inconvenience.";
+      additionalDetails = "This is strange. Something has gone wrong in your questionnaire or you've encountered a bug. Please refresh the page and try again. If you continue to receive this result, enter the code 'hb-debug' into the text box at the bottom of the page and then email us a screenshot of your full results report (including results summary, answer log, and scores) to pt@hoopersbeta.com so we can assist you. We apologize for the inconvenience.";
     }
 
     const getInjuryDescription = (displayedResult) => {
@@ -430,26 +455,49 @@ const handleSubmit = (finalResponses = responses) => {
     return (
       <Card className="w-full max-w-3xl mx-auto">
         <CardHeader>
-          <CardTitle className="text-2xl font-bold text-primary">Assessment Results</CardTitle>
+        <div className="mb-8 bg-secondary/50 rounded-lg p-4 text-center">
+        <h1 className="text-2xl font-bold mb-2">Hooper's Beta Injury Assessment Tool</h1>
+        <p className="mb-2 text-gray-500">Finger, Hand, and Forearm Injuries</p>
+        <p className="text-gray-500 text-sm">By using this tool, you agree to our <a 
+          href="https://hoopersbeta.com/terms-and-conditions"
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="underline"
+          >
+          terms and conditions.
+        </a>
+        </p>
+          <Button asChild className="mt-6 bg-secondary-foreground hover:bg-secondary-foreground/80 w-fit mx-auto">
+            <a 
+            href="https://hoopersbeta.com/recoveryblueprint" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            Get my affordable injury-specific recovery program.
+          </a>
+        </Button>
+       </div>
         </CardHeader>
+
         <CardContent>
+        <CardTitle className="text-2xl font-bold mb-4 text-center">Assessment Results</CardTitle>
           {/* Main Results Section */}
-          <div className="space-y-6">
+          <div className="space-y-6 bg-secondary/50 rounded-lg p-6">
             {/* Primary Result */}
-            <div className="bg-secondary/50 rounded-lg p-6">
+            <div className="bg-white rounded-lg p-6">
               <h2 className="text-xl font-semibold mb-2">Your responses suggest:</h2>
-              <p className="text-2xl font-bold text-primary mb-6">{displayedResult}</p>
-              <p className="text-lg mb-6">{resultsSummary}</p>
+              <p className="text-2xl font-bold text-primary mb-2">{displayedResult}</p>
+              <p className="text-lg mb-8">{resultsSummary}</p>
               <p className="text-sm text-red-500 uppercase">{DISCLAIMER_TEXT}</p>
             </div>
 
             {/* Risk Indicators */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="bg-muted/30 rounded-lg p-4">
+              <div className="bg-white/50 rounded-lg p-4">
                 <h3 className="text-sm font-semibold text-muted-foreground mb-1">Nerve Issue Possibility</h3>
                 <p className="text-lg font-medium">{nerveIssuePossibility}</p>
               </div>
-              <div className="bg-muted/30 rounded-lg p-4">
+              <div className="bg-white/50 rounded-lg p-4">
                 <h3 className="text-sm font-semibold text-muted-foreground mb-1">Cyst Indication</h3>
                 <p className="text-lg font-medium">{cystIndication}</p>
               </div>
@@ -457,7 +505,7 @@ const handleSubmit = (finalResponses = responses) => {
 
             {/* Injury Details Card */}
             {(additionalDetails || injuryDescription) && (
-                <div className="bg-secondary/30 rounded-lg p-6 space-y-6">
+                <div className="bg-white/50 rounded-lg p-6 space-y-6">
                     {additionalDetails && (
                         <div>
                             <h2 className="text-lg font-semibold mb-2">Additional Details</h2>
@@ -473,28 +521,11 @@ const handleSubmit = (finalResponses = responses) => {
                 </div>
             )}
 
-            {/* Debug Sections */}
-            <Card className="mt-6">
-              <CardHeader>
-                <CardTitle className="text-sm">Current Scores (For Debugging)</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-2 gap-2 text-sm">
-                  {Object.entries(calculateScoresForAnswers(responses))
-                    .sort((a, b) => b[1] - a[1])
-                    .map(([injury, score]) => (
-                      <div key={injury} className="flex justify-between">
-                        <span>{injuryMapping[questionnaire.name][injury] || injury}:</span>
-                        <span>{score}</span>
-                      </div>
-                    ))}
-                </div>
-              </CardContent>
-            </Card>
-
+            {/* Answer Log */}
             <Card className="mt-6">
           <CardHeader>
-            <CardTitle className="text-sm">User Responses (For Debugging)</CardTitle>
+            <CardTitle className="text-sm">Answer Log</CardTitle>
+            <p className="text-sm text-gray-500">We do not store any information related to this tool. If you refresh this page, your answers will be lost. <a href="https://hoopersbeta.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="underline">View our privacy policy.</a></p>
           </CardHeader>
           <CardContent>
             <div className="space-y-2 text-sm">
@@ -521,8 +552,44 @@ const handleSubmit = (finalResponses = responses) => {
           </CardContent>
         </Card>
 
-            <Button onClick={onBack} className="mt-4 w-full md:w-auto">Back to Dashboard</Button>
+        {/* Debug Code Input */}
+        <div className="mt-6">
+          <input
+            type="text"
+            placeholder="Debug code"
+            className="w-full p-2 border rounded"
+            onChange={(e) => {
+              if (e.target.value === 'hb-debug') {
+                setDebugMode(true);
+              }
+            }}
+          />
+        </div>
+
+          {/* Debug Sections */}
+          {debugMode && (
+              <Card className="mt-6">
+                <CardHeader>
+                  <CardTitle className="text-sm">Current Scores (For Debugging)</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-2 gap-2 text-sm">
+                    {Object.entries(calculateScoresForAnswers(responses))
+                      .sort((a, b) => b[1] - a[1])
+                      .map(([injury, score]) => (
+                        <div key={injury} className="flex justify-between">
+                          <span>{injuryMapping[questionnaire.name][injury] || injury}:</span>
+                          <span>{score}</span>
+                        </div>
+                      ))}
+                  </div>
+                </CardContent>
+              </Card>
+            )}
+
           </div>
+
+          <Button onClick={onBack} className="mt-4 w-full md:w-auto">Back to Dashboard</Button>
         </CardContent>
       </Card>
     );
@@ -537,13 +604,22 @@ const handleSubmit = (finalResponses = responses) => {
        <div className="mb-4 bg-secondary/50 rounded-lg p-4 text-center">
         <h1 className="text-2xl font-bold mb-2">Hooper's Beta Injury Assessment Tool</h1>
         <p className="mb-2 text-gray-500">Finger, Hand, and Forearm Injuries</p>
-        <Button asChild className="mt-2 bg-secondary-foreground hover:bg-secondary-foreground/80">
-          <a 
+        <p className="text-gray-500 text-sm">By using this tool, you agree to our <a 
+          href="https://hoopersbeta.com/terms-and-conditions"
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="underline"
+          >
+          terms and conditions.
+        </a>
+        </p>
+          <Button asChild className="mt-6 bg-secondary-foreground hover:bg-secondary-foreground/80 w-fit mx-auto">
+            <a 
             href="https://hoopersbeta.com/recoveryblueprint" 
             target="_blank" 
             rel="noopener noreferrer"
           >
-            For injury-specific recovery programs, click here.
+            Get my affordable injury-specific recovery program.
           </a>
         </Button>
        </div>
@@ -565,7 +641,8 @@ const handleSubmit = (finalResponses = responses) => {
                 <VideoEmbed videoId={PRIMARY_VIDEO_IDS[`Q${currentQuestionIndex + 1}`]} />
                 )}
                 {PRIMARY_PHOTO_URLS[`Q${currentQuestionIndex + 1}`] && (
-                <ImageViewer imageUrls={PRIMARY_PHOTO_URLS[`Q${currentQuestionIndex + 1}`]} />
+                    console.log(`Photos for Q${currentQuestionIndex + 1}:`, PRIMARY_PHOTO_URLS[`Q${currentQuestionIndex + 1}`]),
+                    <ImageViewer imageUrls={PRIMARY_PHOTO_URLS[`Q${currentQuestionIndex + 1}`]} />
                 )}
             </div>
             <div className="mt-5">
