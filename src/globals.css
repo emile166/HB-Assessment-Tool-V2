@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  #root {
+    --hb-background: 0 0% 100%;
+    --hb-foreground: 0 0% 0%;
+    --hb-card: 0 0% 100%;
+    --hb-card-foreground: 0 0% 0%;
+    --hb-popover: 0 0% 100%;
+    --hb-popover-foreground: 0 0% 0%;
+    --hb-primary: 165 61% 62%;
+    --hb-primary-foreground: 0 0% 100%;
+    --hb-secondary: 206 100% 95%;
+    --hb-secondary-foreground: 206 66% 25%;
+    --hb-muted: 206 100% 95%;
+    --hb-muted-foreground: 206 66% 25%;
+    --hb-accent: 165 61% 62%;
+    --hb-accent-foreground: 206 66% 25%;
+    --hb-destructive: 0 84.2% 60.2%;
+    --hb-destructive-foreground: 0 0% 100%;
+    --hb-border: 206 100% 95%;
+    --hb-input: 206 100% 95%;
+    --hb-ring: 165 61% 62%;
+    --hb-radius: 0.5rem;
+  }
+
+  #root.dark {
+    --hb-background: 206 66% 25%;
+    --hb-foreground: 0 0% 100%;
+    --hb-card: 206 66% 25%;
+    --hb-card-foreground: 0 0% 100%;
+    --hb-popover: 206 66% 25%;
+    --hb-popover-foreground: 0 0% 100%;
+    --hb-primary: 165 61% 62%;
+    --hb-primary-foreground: 206 66% 25%;
+    --hb-secondary: 206 100% 95%;
+    --hb-secondary-foreground: 206 66% 25%;
+    --hb-muted: 206 100% 95%;
+    --hb-muted-foreground: 165 61% 62%;
+    --hb-accent: 165 61% 62%;
+    --hb-accent-foreground: 0 0% 100%;
+    --hb-destructive: 0 62.8% 30.6%;
+    --hb-destructive-foreground: 0 0% 100%;
+    --hb-border: 206 100% 95%;
+    --hb-input: 206 100% 95%;
+    --hb-ring: 165 61% 62%;
+  }
+} 
