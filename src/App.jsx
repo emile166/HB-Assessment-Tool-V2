@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card";
 import { Button } from "./components/ui/button";
 import Layout from './components/Layout/Layout';
@@ -10,6 +10,10 @@ import AppHeader from './components/AppHeader/AppHeader';
 function App() {
   const [acceptedTerms, setAcceptedTerms] = useState(false);
   const { questionnaires, selectedQuestionnaire, setSelectedQuestionnaire, error } = useQuestionnaire();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [selectedQuestionnaire]);
 
   const handleStart = () => {
     if (!acceptedTerms) {

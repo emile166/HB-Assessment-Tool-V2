@@ -51,6 +51,14 @@ function Questionnaire({ questionnaire, onBack }) {
     };
   }, []);
 
+  useEffect(() => {
+    if (showResults || currentQuestionIndex > 0) {
+      window.scrollTo({
+        top: 0,
+      });
+    }
+  }, [showResults, currentQuestionIndex]);
+
   const handleAnswer = (questionIndex, answer) => {
     const newResponses = {
       ...responses,
@@ -459,7 +467,7 @@ const handleSubmit = (finalResponses = responses) => {
           <AppHeader />
         </CardHeader>
         <CardContent>
-        <CardTitle className="text-2xl font-bold mb-4 text-center">Assessment Results</CardTitle>
+        <CardTitle className="text-2xl font-bold mb-4 text-center">Primary Assessment Results</CardTitle>
           {/* Main Results Section */}
           <div className="space-y-6 bg-secondary/50 rounded-lg p-6">
             {/* Primary Result */}
