@@ -136,7 +136,7 @@ function Questionnaire({ questionnaire, onBack }) {
     if (answer1 !== 'Traumatic' && answer1 !== 'Chronic' && answer3Responses) {
       const validAnswers = ['1', '2', '3', '7', '9', '11'];
       const hasValidAnswer = Array.isArray(answer3Responses) &&
-        answer3Responses.some(ans => validAnswers.includes(ans.text));
+        answer3Responses.some((ans, idx) => validAnswers.includes(String(idx + 1)));
       if (!hasValidAnswer) {
         totalScores['I'] = (totalScores['I'] || 0) - 1; // Subtract from Cyst score
       }
@@ -146,7 +146,7 @@ function Questionnaire({ questionnaire, onBack }) {
     if (answer1 !== 'Traumatic' && answer1 !== 'Non-traumatic acute' && answer4Responses) {
       const validAnswers = ['1', '6'];
       const hasValidAnswer = Array.isArray(answer4Responses) &&
-        answer4Responses.some(ans => validAnswers.includes(ans.text));
+        answer4Responses.some((ans, idx) => validAnswers.includes(String(idx + 1)));
       if (!hasValidAnswer) {
         totalScores['I'] = (totalScores['I'] || 0) - 1; // Subtract from Cyst score
       }
@@ -156,7 +156,7 @@ function Questionnaire({ questionnaire, onBack }) {
     if (answer9Responses) {
       const penaltyAnswers = ['1', '2', '3', '4', '5', '6'];
       const hasPenaltyAnswer = Array.isArray(answer9Responses) &&
-        answer9Responses.some(ans => penaltyAnswers.includes(ans.text));
+        answer9Responses.some((ans, idx) => penaltyAnswers.includes(String(idx + 1)));
       if (hasPenaltyAnswer) {
         totalScores['H'] = (totalScores['H'] || 0) - 1; // Subtract from Nerve Issues score
       }
@@ -181,7 +181,7 @@ function Questionnaire({ questionnaire, onBack }) {
       case 5: // Question 6
         if (answer1 === 'Non-traumatic acute' || answer1 === 'Chronic') return true;
         if (answer5) {
-          const selectedAnswers = Array.isArray(answer5) ? answer5.map(a => a.text) : [];
+          const selectedAnswers = Array.isArray(answer5) ? answer5.map((a, idx) => String(idx + 1)) : [];
           const skipAnswers = ['8', '9', '10', '11', '12'];
           const hasOnlySkipAnswers = selectedAnswers.every(ans => skipAnswers.includes(ans));
           return hasOnlySkipAnswers;
@@ -192,7 +192,7 @@ function Questionnaire({ questionnaire, onBack }) {
       case 7: // Question 8
         if (answer1 === 'Traumatic') return true;
         if (answer5) {
-          const selectedAnswers = Array.isArray(answer5) ? answer5.map(a => a.text) : [];
+          const selectedAnswers = Array.isArray(answer5) ? answer5.map((a, idx) => String(idx + 1)) : [];
           const skipAnswers = ['4', '8', '9', '10', '11'];
           const hasOnlySkipAnswers = selectedAnswers.every(ans => skipAnswers.includes(ans));
           return hasOnlySkipAnswers;
@@ -206,7 +206,7 @@ function Questionnaire({ questionnaire, onBack }) {
         return answer11 === 'Yes' || answer12 === 'Yes';
       case 14: // Question 15
         if (answer5) {
-          const selectedAnswers = Array.isArray(answer5) ? answer5.map(a => a.text) : [];
+          const selectedAnswers = Array.isArray(answer5) ? answer5.map((a, idx) => String(idx + 1)) : [];
           return selectedAnswers.length === 1 && (selectedAnswers[0] === '9' || selectedAnswers[0] === '10');
         }
         return false;
