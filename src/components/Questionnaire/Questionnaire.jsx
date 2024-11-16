@@ -10,6 +10,7 @@ import VideoEmbed from '../VideoEmbed/VideoEmbed';
 import { PRIMARY_VIDEO_IDS } from '../../constants/primary-questionnaire-videos';
 import { PRIMARY_PHOTO_URLS } from '../../constants/primary-questionnaire-photos';
 import ImageViewer from '../ImageViewer/ImageViewer';
+import AppHeader from '../AppHeader/AppHeader';
 
 function Questionnaire({ questionnaire, onBack }) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -455,30 +456,8 @@ const handleSubmit = (finalResponses = responses) => {
     return (
       <Card className="w-full max-w-3xl mx-auto">
         <CardHeader>
-        <div className="mb-8 bg-secondary/50 rounded-lg p-4 text-center">
-        <h1 className="text-2xl font-bold mb-2">Hooper's Beta Injury Assessment Tool</h1>
-        <p className="mb-2 text-gray-500">Finger, Hand, and Forearm Injuries</p>
-        <p className="text-gray-500 text-sm">By using this tool, you agree to our <a 
-          href="https://hoopersbeta.com/terms-and-conditions"
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="underline"
-          >
-          terms and conditions.
-        </a>
-        </p>
-          <Button asChild className="mt-6 bg-secondary-foreground hover:bg-secondary-foreground/80 w-fit mx-auto">
-            <a 
-            href="https://hoopersbeta.com/recoveryblueprint" 
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
-            Get my affordable injury-specific recovery program.
-          </a>
-        </Button>
-       </div>
+          <AppHeader />
         </CardHeader>
-
         <CardContent>
         <CardTitle className="text-2xl font-bold mb-4 text-center">Assessment Results</CardTitle>
           {/* Main Results Section */}
@@ -601,28 +580,7 @@ const handleSubmit = (finalResponses = responses) => {
   return (
     <Card className="w-full max-w-3xl mx-auto">
       <CardHeader>
-       <div className="mb-4 bg-secondary/50 rounded-lg p-4 text-center">
-        <h1 className="text-2xl font-bold mb-2">Hooper's Beta Injury Assessment Tool</h1>
-        <p className="mb-2 text-gray-500">Finger, Hand, and Forearm Injuries</p>
-        <p className="text-gray-500 text-sm">By using this tool, you agree to our <a 
-          href="https://hoopersbeta.com/terms-and-conditions"
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="underline"
-          >
-          terms and conditions.
-        </a>
-        </p>
-          <Button asChild className="mt-6 bg-secondary-foreground hover:bg-secondary-foreground/80 w-fit mx-auto">
-            <a 
-            href="https://hoopersbeta.com/recoveryblueprint" 
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
-            Get my affordable injury-specific recovery program.
-          </a>
-        </Button>
-       </div>
+        <AppHeader />
         <CardTitle className="text-2xl pt-8">{questionnaire.name}</CardTitle>
       </CardHeader>
       <CardContent>
