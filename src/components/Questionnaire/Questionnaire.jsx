@@ -731,24 +731,6 @@ function Questionnaire({ questionnaire, onBack }) {
               </div>
             )}
 
-            <Card className="mt-6">
-              <CardHeader>
-                <CardTitle className="text-sm">Current Scores (For Debugging)</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-2 gap-2 text-sm">
-                  {Object.entries(calculateScoresForAnswers(responses))
-                    .sort((a, b) => b[1] - a[1])
-                    .map(([injury, score]) => (
-                      <div key={injury} className="flex justify-between">
-                        <span>{injuryMapping[questionnaire.name][injury] || injury}:</span>
-                        <span>{score}</span>
-                      </div>
-                    ))}
-                </div>
-              </CardContent>
-            </Card>
-
             <div className="flex justify-between mt-6">
               {currentQuestionIndex > 0 && (
                 <Button
@@ -793,6 +775,23 @@ function Questionnaire({ questionnaire, onBack }) {
                 </Button>
               )}
             </div>
+            <Card className="mt-6">
+              <CardHeader>
+                <CardTitle className="text-sm">Current Scores (For Debugging)</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-2 gap-2 text-sm">
+                  {Object.entries(calculateScoresForAnswers(responses))
+                    .sort((a, b) => b[1] - a[1])
+                    .map(([injury, score]) => (
+                      <div key={injury} className="flex justify-between">
+                        <span>{injuryMapping[questionnaire.name][injury] || injury}:</span>
+                        <span>{score}</span>
+                      </div>
+                    ))}
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </CardContent>
