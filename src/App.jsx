@@ -41,8 +41,10 @@ function App() {
           onBack={() => setSelectedQuestionnaire(null)}
         />
       ) : (
-        <Card className="bg-secondary/50 rounded-lg p-6">
-          <AppHeader />
+        <Card className="rounded-lg">
+          <CardHeader>
+            <AppHeader />
+          </CardHeader>
           <CardContent>
             <Terms 
               accepted={acceptedTerms}

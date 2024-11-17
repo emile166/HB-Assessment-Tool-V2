@@ -5,7 +5,7 @@ import { TERMS_TEXT } from '../../constants/terms';
 
 function Terms({ accepted, onAcceptChange }) {
   return (
-    <Card className="mt-6 rounded-lg p-6">
+    <Card className="mt-2 rounded-lg p-6">
       <CardHeader>
         <CardTitle className="text-xl font-bold text-red-500">
           READ BEFORE PROCEEDING

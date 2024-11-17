@@ -521,7 +521,7 @@ function Questionnaire({ questionnaire, onBack }) {
 
   if (showResults) {
     return (
-      <Card className="w-full max-w-3xl mx-auto">
+      <Card className="w-full max-w-3xl mx-auto p-4">
         <CardHeader>
           <AppHeader />
         </CardHeader>
@@ -645,10 +645,10 @@ function Questionnaire({ questionnaire, onBack }) {
   const progress = ((currentQuestionIndex + 1) / 15) * 100;
 
   return (
-    <Card className="w-full max-w-3xl mx-auto">
+    <Card className="w-full max-w-3xl mx-auto p-4">
       <CardHeader>
         <AppHeader />
-        <CardTitle className="text-2xl pt-8">{questionnaire.name}</CardTitle>
+        <CardTitle className="text-2xl pt-6">{questionnaire.name}</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="space-y-8">

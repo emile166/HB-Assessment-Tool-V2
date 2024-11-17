@@ -4,7 +4,7 @@ import { Button } from "../ui/button";
 
 function AppHeader() {
   return (
-    <div className="mb-4 bg-secondary/50 rounded-lg p-4 text-center">
+    <div className="mb-4 bg-secondary rounded-lg p-4 text-center">
       <h1 className="text-2xl font-bold mb-2">Hooper's Beta Injury Assessment Tool</h1>
       <p className="mb-2 text-gray-500">Finger, Hand, and Forearm Injuries</p>
       <p className="text-gray-500 text-sm">By using this tool, you agree to our <a 
@@ -21,8 +21,9 @@ function AppHeader() {
           href="https://hoopersbeta.com/recoveryblueprint" 
           target="_blank" 
           rel="noopener noreferrer"
+          className="text-sm"
         >
-          Get my affordable injury-specific recovery program.
+          Get an affordable injury-specific recovery program
         </a>
       </Button>
     </div>
