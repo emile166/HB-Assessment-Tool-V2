@@ -14,10 +14,10 @@ function AppHeader() {
           rel="noopener noreferrer"
           className="text-sm"
         >
-          Get an affordable injury-specific recovery program
+          Get My Affordable Injury Recovery Program
         </a>
       </Button>
-      <p className="text-gray-500 text-sm">By using this tool, you agree to our <a 
+      <p className="text-gray-500 text-xs">By using this tool, you agree to our <a 
         href="https://hoopersbeta.com/terms-and-conditions"
         target="_blank" 
         rel="noopener noreferrer"

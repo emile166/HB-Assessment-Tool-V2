@@ -527,25 +527,25 @@ function Questionnaire({ questionnaire, onBack }) {
         </CardHeader>
         <CardContent>
           <CardTitle className="text-2xl font-bold mb-2 text-center">Primary Assessment Results</CardTitle>
-          <p className="text-sm text-gray-500 text-center mb-4 max-w-md mx-auto">We do not store any information related to this tool. If you leave this page, your answers will be lost. <a href="https://hoopersbeta.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="underline">View our privacy policy.</a></p>
+          <p className="text-xs text-gray-500 text-center mb-4">We do not store any information related to this tool. If you leave this page, your answers will be lost. <a href="https://hoopersbeta.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="underline">View our privacy policy.</a></p>
           
           {/* Main Results Section */}
           <div className="space-y-6 bg-secondary/50 rounded-lg p-6">
             {/* Primary Result */}
             <div className="bg-white rounded-lg p-6">
-              <h2 className="text-xl mb-2 text-center">Your responses suggest:</h2>
-              <p className="text-2xl font-bold text-primary mb-2 text-center">{displayedResult}</p>
-              <p className="text-lg font-semibold mb-8 text-center">{resultsSummary}</p>
+              <h2 className="text-lg mb-2 text-center">Your responses suggest:</h2>
+              <p className="text-2xl font-bold bg-primary/50 text-black mb-10 text-center rounded-sm">{displayedResult}</p>
+              <p className="text-xl mb-10 text-center">{resultsSummary} See additional details below.</p>
               <p className="text-sm text-gray-500 uppercase">{DISCLAIMER_TEXT}</p>
             </div>
 
             {/* Risk Indicators */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pr-8 pl-8 pt-2">
-              <div className="rounded-lg">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+              <div className="border rounded-lg pr-8 pl-8 pt-4 pb-4">
                 <h3 className="text-sm font-semibold text-muted-foreground mb-1">Nerve Issue Possibility</h3>
                 <p className="text-lg font-medium">{nerveIssuePossibility}</p>
               </div>
-              <div className="rounded-lg">
+              <div className="border rounded-lg pr-8 pl-8 pt-4 pb-4">
                 <h3 className="text-sm font-semibold text-muted-foreground mb-1">Cyst Indication</h3>
                 <p className="text-lg font-medium">{cystIndication}</p>
               </div>
