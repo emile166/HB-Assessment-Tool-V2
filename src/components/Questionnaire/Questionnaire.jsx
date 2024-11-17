@@ -525,29 +525,29 @@ function Questionnaire({ questionnaire, onBack }) {
         <CardHeader>
           <AppHeader />
         </CardHeader>
-        <CardContent className="bg-gray-50 rounded-lg ml-6 mr-6">
-          <CardTitle className="text-2xl font-bold mb-2 pt-6 text-center">Primary Assessment Results</CardTitle>
-          <p className="text-xs text-gray-500 text-center mb-8">We do not store any information related to this tool. If you leave this page, your answers will be lost. <a href="https://hoopersbeta.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="underline">View our privacy policy.</a></p>
-          
+        <CardContent className="bg-gray-50 rounded-lg ml-6 mr-6 mb-6">
+          <CardTitle className="text-xl mb-2 pt-6 text-center">Primary Assessment Results</CardTitle>
+          <p className="text-xs text-gray-500 text-center mb-4">We do not store any information related to this tool. If you leave this page, your answers will be lost. <a href="https://hoopersbeta.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="underline">View our privacy policy.</a></p>
+          <p className="text-xs text-red-500 text-center uppercase mb-8">{DISCLAIMER_TEXT}</p>
+
           {/* Main Results Section */}
           <div className="space-y-6">
             {/* Primary Result */}
             <div className="bg-white rounded-lg p-6">
-              <h2 className="text-lg mb-2 text-center">Your responses suggest:</h2>
-              <p className="text-2xl font-bold bg-primary/50 text-black mb-8 text-center rounded-sm">{displayedResult}</p>
-              <p className="text-lg mb-12 text-center">{resultsSummary} See additional details below.</p>
-              <p className="text-sm text-gray-500 uppercase">{DISCLAIMER_TEXT}</p>
+              <h2 className="text-md mb-2 text-center">Your responses suggest:</h2>
+              <p className="text-xl font-bold bg-secondary text-black mb-8 text-center rounded-sm">{displayedResult}</p>
+              <p className="text-lg mb-2 text-center">{resultsSummary} See additional details below.</p>
             </div>
 
             {/* Risk Indicators */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
               <div className="border rounded-lg pr-8 pl-8 pt-4 pb-4">
                 <h3 className="text-sm font-semibold text-muted-foreground mb-1">Nerve Issue Possibility</h3>
-                <p className="text-lg font-medium">{nerveIssuePossibility}</p>
+                <p className="text-md font-medium">{nerveIssuePossibility}</p>
               </div>
               <div className="border rounded-lg pr-8 pl-8 pt-4 pb-4">
                 <h3 className="text-sm font-semibold text-muted-foreground mb-1">Cyst Indication</h3>
-                <p className="text-lg font-medium">{cystIndication}</p>
+                <p className="text-md font-medium">{cystIndication}</p>
               </div>
             </div>
 
@@ -556,8 +556,8 @@ function Questionnaire({ questionnaire, onBack }) {
               <div className="rounded-lg pr-8 pl-8 mb-4 mt-2">
                 {additionalDetails && (
                   <div>
-                    <h2 className="text-lg font-semibold mb-2">Additional Details</h2>
-                    <p className="text-lg">{additionalDetails}</p>
+                    <h2 className="text-md font-semibold mb-2">Additional Details</h2>
+                    <p className="text-md">{additionalDetails}</p>
                   </div>
                 )}
 
@@ -635,9 +635,8 @@ function Questionnaire({ questionnaire, onBack }) {
             )}
 
           </div>
-
-          <Button onClick={onBack} className="mt-4 w-full md:w-auto">Back to Dashboard</Button>
         </CardContent>
+        <Button onClick={onBack} className="m-6 w-full md:w-auto">Back to Dashboard</Button>
       </Card>
     );
   }
