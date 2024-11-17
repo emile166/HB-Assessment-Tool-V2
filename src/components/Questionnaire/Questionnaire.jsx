@@ -521,21 +521,21 @@ function Questionnaire({ questionnaire, onBack }) {
 
   if (showResults) {
     return (
-      <Card className="w-full max-w-3xl mx-auto p-4">
+      <Card className="w-full max-w-3xl mx-auto">
         <CardHeader>
           <AppHeader />
         </CardHeader>
-        <CardContent>
-          <CardTitle className="text-2xl font-bold mb-2 text-center">Primary Assessment Results</CardTitle>
-          <p className="text-xs text-gray-500 text-center mb-4">We do not store any information related to this tool. If you leave this page, your answers will be lost. <a href="https://hoopersbeta.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="underline">View our privacy policy.</a></p>
+        <CardContent className="bg-gray-50 rounded-lg ml-6 mr-6">
+          <CardTitle className="text-2xl font-bold mb-2 pt-6 text-center">Primary Assessment Results</CardTitle>
+          <p className="text-xs text-gray-500 text-center mb-8">We do not store any information related to this tool. If you leave this page, your answers will be lost. <a href="https://hoopersbeta.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="underline">View our privacy policy.</a></p>
           
           {/* Main Results Section */}
-          <div className="space-y-6 bg-secondary/50 rounded-lg p-6">
+          <div className="space-y-6">
             {/* Primary Result */}
             <div className="bg-white rounded-lg p-6">
               <h2 className="text-lg mb-2 text-center">Your responses suggest:</h2>
-              <p className="text-2xl font-bold bg-primary/50 text-black mb-10 text-center rounded-sm">{displayedResult}</p>
-              <p className="text-xl mb-10 text-center">{resultsSummary} See additional details below.</p>
+              <p className="text-2xl font-bold bg-primary/50 text-black mb-8 text-center rounded-sm">{displayedResult}</p>
+              <p className="text-lg mb-12 text-center">{resultsSummary} See additional details below.</p>
               <p className="text-sm text-gray-500 uppercase">{DISCLAIMER_TEXT}</p>
             </div>
 
@@ -570,7 +570,7 @@ function Questionnaire({ questionnaire, onBack }) {
             )}
 
             {/* Answer Log */}
-            <Card className="mt-6">
+            <Card>
               <CardHeader>
                 <CardTitle className="text-sm">Answer Log</CardTitle>
               </CardHeader>
