@@ -232,8 +232,6 @@ function PrimaryQuestionnaire({ questionnaire, onBack }) {
     console.log("handleSubmit called");
     console.log("InjuryMapping:", injuryMapping);
 
-    // Simulate calculation time
-    setTimeout(() => {
       // Calculate scores
       const scores = calculateScoresForAnswers(finalResponses);
       
@@ -508,22 +506,23 @@ function PrimaryQuestionnaire({ questionnaire, onBack }) {
         }
       };
 
-      // Update all states at once
-      Promise.all([
-        setResults(scores),
-        setShowResults(true),
-        setDisplayedResult(displayedResult),
-        setResultsSummary(resultsSummary),
-        setNerveIssuePossibility(nerveIssuePossibility),
-        setCystIndication(cystIndication),
-        setAdditionalDetails(additionalDetails),
-        setInjuryDescription(getInjuryDescription(displayedResult))
-      ]).then(() => {
-        setIsCalculating(false);
-        console.log("All states updated");
-      });
-    }, 3000); // 3 second delay
-  };
+  // Wait for loading animation to complete
+  setTimeout(() => {
+    Promise.all([
+      setResults(scores),
+      setShowResults(true),
+      setDisplayedResult(displayedResult),
+      setResultsSummary(resultsSummary),
+      setNerveIssuePossibility(nerveIssuePossibility),
+      setCystIndication(cystIndication),
+      setAdditionalDetails(additionalDetails),
+      setInjuryDescription(getInjuryDescription(displayedResult))
+    ]).then(() => {
+      setIsCalculating(false);
+      console.log("All states updated");
+    });
+  }, 3000); // Match this with the time it takes for progress to reach 100%
+};
 
   // Skip to next non-skipped question
   while (skippedQuestions.has(currentQuestionIndex) && currentQuestionIndex < questionnaire.questions.length) {
