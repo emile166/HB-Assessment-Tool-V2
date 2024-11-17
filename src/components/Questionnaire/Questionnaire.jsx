@@ -526,24 +526,26 @@ function Questionnaire({ questionnaire, onBack }) {
           <AppHeader />
         </CardHeader>
         <CardContent>
-          <CardTitle className="text-2xl font-bold mb-4 text-center">Primary Assessment Results</CardTitle>
+          <CardTitle className="text-2xl font-bold mb-2 text-center">Primary Assessment Results</CardTitle>
+          <p className="text-sm text-gray-500 text-center mb-4 max-w-md mx-auto">We do not store any information related to this tool. If you leave this page, your answers will be lost. <a href="https://hoopersbeta.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="underline">View our privacy policy.</a></p>
+          
           {/* Main Results Section */}
           <div className="space-y-6 bg-secondary/50 rounded-lg p-6">
             {/* Primary Result */}
             <div className="bg-white rounded-lg p-6">
-              <h2 className="text-xl font-semibold mb-2">Your responses suggest:</h2>
-              <p className="text-2xl font-bold text-primary mb-2">{displayedResult}</p>
-              <p className="text-lg mb-8">{resultsSummary}</p>
-              <p className="text-sm text-red-500 uppercase">{DISCLAIMER_TEXT}</p>
+              <h2 className="text-xl mb-2 text-center">Your responses suggest:</h2>
+              <p className="text-2xl font-bold text-primary mb-2 text-center">{displayedResult}</p>
+              <p className="text-lg font-semibold mb-8 text-center">{resultsSummary}</p>
+              <p className="text-sm text-gray-500 uppercase">{DISCLAIMER_TEXT}</p>
             </div>
 
             {/* Risk Indicators */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="bg-white/50 rounded-lg p-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pr-8 pl-8 pt-2">
+              <div className="rounded-lg">
                 <h3 className="text-sm font-semibold text-muted-foreground mb-1">Nerve Issue Possibility</h3>
                 <p className="text-lg font-medium">{nerveIssuePossibility}</p>
               </div>
-              <div className="bg-white/50 rounded-lg p-4">
+              <div className="rounded-lg">
                 <h3 className="text-sm font-semibold text-muted-foreground mb-1">Cyst Indication</h3>
                 <p className="text-lg font-medium">{cystIndication}</p>
               </div>
@@ -551,7 +553,7 @@ function Questionnaire({ questionnaire, onBack }) {
 
             {/* Injury Details Card */}
             {(additionalDetails || injuryDescription) && (
-              <div className="bg-white/50 rounded-lg p-6 space-y-6">
+              <div className="rounded-lg pr-8 pl-8 mb-4 mt-2">
                 {additionalDetails && (
                   <div>
                     <h2 className="text-lg font-semibold mb-2">Additional Details</h2>
@@ -571,7 +573,6 @@ function Questionnaire({ questionnaire, onBack }) {
             <Card className="mt-6">
               <CardHeader>
                 <CardTitle className="text-sm">Answer Log</CardTitle>
-                <p className="text-sm text-gray-500">We do not store any information related to this tool. If you refresh this page, your answers will be lost. <a href="https://hoopersbeta.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="underline">View our privacy policy.</a></p>
               </CardHeader>
               <CardContent>
                 <div className="space-y-2 text-sm">
