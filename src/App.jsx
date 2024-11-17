@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card";
 import { Button } from "./components/ui/button";
 import Layout from './components/Layout/Layout';
 import Terms from './components/Terms/Terms';
-import Questionnaire from './components/Questionnaire/Questionnaire';
+import PrimaryQuestionnaire from './components/Questionnaire/PrimaryQuestionnaire';
 import { useQuestionnaire } from './hooks/useQuestionnaire';
 import AppHeader from './components/AppHeader/AppHeader';
 
@@ -36,7 +36,7 @@ function App() {
   return (
     <Layout>
       {selectedQuestionnaire ? (
-        <Questionnaire
+        <PrimaryQuestionnaire
           questionnaire={selectedQuestionnaire}
           onBack={() => setSelectedQuestionnaire(null)}
         />

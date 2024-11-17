@@ -12,7 +12,7 @@ import { PRIMARY_PHOTO_URLS } from '../../constants/primary-questionnaire-photos
 import ImageViewer from '../ImageViewer/ImageViewer';
 import AppHeader from '../AppHeader/AppHeader';
 
-function Questionnaire({ questionnaire, onBack }) {
+function PrimaryQuestionnaire({ questionnaire, onBack }) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [responses, setResponses] = useState({});
   const [showResults, setShowResults] = useState(false);
@@ -533,7 +533,7 @@ function Questionnaire({ questionnaire, onBack }) {
           {/* Main Results Section */}
           <div className="space-y-6">
             {/* Primary Result */}
-            <div className="bg-white rounded-lg p-6">
+            <div className="bg-white border rounded-lg p-6">
               <h2 className="text-md mb-2 text-center">Your responses suggest:</h2>
               <p className="text-xl font-bold bg-secondary text-black mb-8 text-center rounded-sm">{displayedResult}</p>
               <p className="text-lg mb-2 text-center">{resultsSummary} See additional details below.</p>
@@ -799,4 +799,4 @@ function Questionnaire({ questionnaire, onBack }) {
   );
 }
 
-export default Questionnaire;
+export default PrimaryQuestionnaire;
