@@ -41,7 +41,7 @@ function App() {
           onBack={() => setSelectedQuestionnaire(null)}
         />
       ) : (
-        <Card className="rounded-lg">
+        <Card className="max-w-3xl mx-auto p-4 rounded-lg">
           <CardHeader>
             <AppHeader />
           </CardHeader>
