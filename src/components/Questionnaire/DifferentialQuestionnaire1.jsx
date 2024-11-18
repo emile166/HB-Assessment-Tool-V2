@@ -46,7 +46,8 @@ function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
 
     // Initialize all injury scores to 0
     Object.keys(injuryMapping[questionnaire.name]).forEach(injuryCode => {
-      totalScores[injuryCode] = 0;
+      // Start with primary results scores if they exist
+      totalScores[injuryCode] = (primaryResults?.results?.[injuryCode] || 0);
     });
 
     questionnaire.questions.forEach((q, idx) => {

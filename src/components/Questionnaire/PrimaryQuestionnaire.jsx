@@ -476,7 +476,6 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
       ]).then(() => {
         setIsCalculating(false);
         console.log("All states updated");
-        onComplete?.({ results: scores, responses: finalResponses });
       });
     }, 3000); // Match this with the time it takes for progress to reach 100%
   };
@@ -607,7 +606,15 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
           </div>
         </CardContent>
         <p className="text-xs text-gray-500 text-center mb-4">We do not store any information related to this tool. If you leave this page, your answers will be lost. <a href="https://hoopersbeta.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="underline">View our privacy policy.</a></p>
-        <Button onClick={onBack} className="m-6 w-full md:w-auto">Back to Dashboard</Button>
+        <Button 
+          onClick={() => {
+            onComplete({ results, responses }, 'primary');
+            onBack();
+          }} 
+          className="m-6 w-full md:w-auto"
+        >
+          Back to Dashboard
+        </Button>
       </Card>
     );
   }
