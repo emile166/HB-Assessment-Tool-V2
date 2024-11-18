@@ -1,13 +1,15 @@
 import { useState } from 'react';
 import { parseCSV } from '../utils/csvParser';
 import { PRIMARY_QUESTIONNAIRE_DATA } from '../constants/primary_questionnaire_data';
-console.log('Raw questionnaire data:', PRIMARY_QUESTIONNAIRE_DATA);
+import { DIFFERENTIAL_ASSESSMENT_1_DATA } from '../constants/differential-1-data';
 
 export function useQuestionnaire() {
   const [questionnaires, setQuestionnaires] = useState(() => {
-    const parsed = parseCSV(PRIMARY_QUESTIONNAIRE_DATA);
-    console.log('Parsed questionnaires:', parsed);
-    return parsed;
+    const primaryQuestionnaire = parseCSV(PRIMARY_QUESTIONNAIRE_DATA);
+    const differentialQuestionnaire = parseCSV(DIFFERENTIAL_ASSESSMENT_1_DATA);
+    const allQuestionnaires = [...primaryQuestionnaire, ...differentialQuestionnaire];
+    console.log('Parsed questionnaires:', allQuestionnaires);
+    return allQuestionnaires;
   });
   const [selectedQuestionnaire, setSelectedQuestionnaire] = useState(null);
   const [error, setError] = useState(null);

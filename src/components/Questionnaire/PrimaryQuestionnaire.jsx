@@ -14,7 +14,7 @@ import AppHeader from '../AppHeader/AppHeader';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import { INJURY_DESCRIPTIONS } from '../../constants/injury-descriptions';
 
-function PrimaryQuestionnaire({ questionnaire, onBack }) {
+function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [responses, setResponses] = useState({});
   const [showResults, setShowResults] = useState(false);
@@ -476,6 +476,7 @@ function PrimaryQuestionnaire({ questionnaire, onBack }) {
       ]).then(() => {
         setIsCalculating(false);
         console.log("All states updated");
+        onComplete?.({ results: scores, responses: finalResponses });
       });
     }, 3000); // Match this with the time it takes for progress to reach 100%
   };

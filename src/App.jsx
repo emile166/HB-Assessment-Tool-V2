@@ -4,62 +4,76 @@ import { Button } from "./components/ui/button";
 import Layout from './components/Layout/Layout';
 import Terms from './components/Terms/Terms';
 import PrimaryQuestionnaire from './components/Questionnaire/PrimaryQuestionnaire';
+import DifferentialQuestionnaire1 from './components/Questionnaire/DifferentialQuestionnaire1';
 import { useQuestionnaire } from './hooks/useQuestionnaire';
 import AppHeader from './components/AppHeader/AppHeader';
 
 function App() {
   const [acceptedTerms, setAcceptedTerms] = useState(false);
-  const { questionnaires, selectedQuestionnaire, setSelectedQuestionnaire, error } = useQuestionnaire();
+  const [selectedQuestionnaire, setSelectedQuestionnaire] = useState(null);
+  const [primaryResults, setPrimaryResults] = useState(null);
+  const { questionnaires, error } = useQuestionnaire();
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [selectedQuestionnaire]);
-
-  const handleStart = () => {
-    if (!acceptedTerms) {
-      alert('You must accept the terms and conditions to proceed.');
-      return;
+  const handleQuestionnaireComplete = (results, type) => {
+    if (type === 'primary') {
+      setPrimaryResults(results);
     }
-
-    if (questionnaires.length === 0) {
-      alert('No questionnaires available.');
-      return;
-    }
-
-    setSelectedQuestionnaire(questionnaires[0]);
+    setSelectedQuestionnaire(null);
   };
 
   if (error) {
-    return <div className={styles.error}>{error}</div>;
+    return <div className="error">{error}</div>;
+  }
+
+  if (selectedQuestionnaire) {
+    if (selectedQuestionnaire.name === 'Primary Assessment') {
+      return (
+        <PrimaryQuestionnaire
+          questionnaire={selectedQuestionnaire}
+          onBack={() => setSelectedQuestionnaire(null)}
+          onComplete={(results) => handleQuestionnaireComplete(results, 'primary')}
+        />
+      );
+    } else if (selectedQuestionnaire.name === 'Differential Assessment 1') {
+      return (
+        <DifferentialQuestionnaire1
+          questionnaire={selectedQuestionnaire}
+          onBack={() => setSelectedQuestionnaire(null)}
+          primaryResults={primaryResults}
+        />
+      );
+    }
   }
 
   return (
     <Layout>
-      {selectedQuestionnaire ? (
-        <PrimaryQuestionnaire
-          questionnaire={selectedQuestionnaire}
-          onBack={() => setSelectedQuestionnaire(null)}
-        />
-      ) : (
-        <Card className="max-w-3xl mx-auto p-4 rounded-lg">
-          <CardHeader>
-            <AppHeader />
-          </CardHeader>
-          <CardContent>
-            <Terms 
-              accepted={acceptedTerms}
-              onAcceptChange={setAcceptedTerms}
-            />
+      <Card className="max-w-3xl mx-auto p-4 rounded-lg">
+        <CardHeader>
+          <AppHeader />
+        </CardHeader>
+        <CardContent>
+          <Terms 
+            accepted={acceptedTerms}
+            onAcceptChange={setAcceptedTerms}
+          />
+          <div className="space-y-4 mt-6">
             <Button
-              onClick={handleStart}
+              onClick={() => setSelectedQuestionnaire(questionnaires[0])}
               disabled={!acceptedTerms}
-              className="mt-6"
+              className="w-full"
             >
-              Start Assessment
+              Start Primary Assessment
             </Button>
-          </CardContent>
-        </Card>
-      )}
+            <Button
+              onClick={() => setSelectedQuestionnaire(questionnaires[1])}
+              disabled={!acceptedTerms}
+              className="w-full"
+            >
+              Start Differential Assessment 1
+            </Button>
+          </div>
+        </CardContent>
+      </Card>
     </Layout>
   );
 }
