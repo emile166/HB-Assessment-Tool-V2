@@ -264,10 +264,10 @@ function PrimaryQuestionnaire({ questionnaire, onBack }) {
       "Second injury score": sortedResults[1]?.[1]
     });
 
-    // Get all scores equal to D4
+    // Get all scores equal to D4 and D4-1
     const acceptableScoresArray = sortedResults
       .slice(1)  // Start from second result
-      .filter(([_, score]) => score >= D4 - 1);  // Only keep scores equal to D4 and D4 - 1
+      .filter(([_, score]) => score >= D4 - 1);  // Only keep scores equal to D4 and D4-1
     const acceptableScoresString = acceptableScoresArray.map(([code]) => code).join('');
 
     console.log("Acceptable scores array:", acceptableScoresArray);
