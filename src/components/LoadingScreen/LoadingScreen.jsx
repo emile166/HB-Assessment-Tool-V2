@@ -30,7 +30,7 @@ function LoadingScreen({ title = "Calculating Results", message = "Analyzing res
       <CardContent className="bg-gray-50 rounded-lg ml-6 mr-6 mb-6">
         <div className="min-h-[400px] flex flex-col items-center justify-center space-y-6">
           <div className="text-center space-y-4">
-            <h2 className="text-2xl font-semibold">{title}</h2>
+            <h2 className="text-lg font-semibold">{title}</h2>
             <p className="text-gray-500">{message}</p>
           </div>
           <div className="w-64 space-y-2">
