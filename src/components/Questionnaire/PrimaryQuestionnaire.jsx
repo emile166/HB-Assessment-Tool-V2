@@ -707,6 +707,20 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
               )}
             </div>
 
+            {/* Debug Code Input */}
+            <div className="mt-6">
+              <input
+                type="text"
+                placeholder="Debug code"
+                className="w-full p-2 border rounded"
+                onChange={(e) => {
+                  if (e.target.value === 'hb-debug') {
+                    setDebugMode(true);
+                  }
+                }}
+              />
+            </div>
+
             {debugMode && (
               <Card className="mt-6">
                 <CardHeader>
