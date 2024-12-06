@@ -14,7 +14,12 @@ import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import { INJURY_DESCRIPTIONS } from '../../constants/injury-descriptions';
 
 function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const getQuestionIndex = (questionId) => {
+    return questionnaire.questions.findIndex(q => q.id === questionId);
+  };
+
+  const firstQuestionId = questionnaire.questions[0].id;
+  const [currentQuestionId, setCurrentQuestionId] = useState(firstQuestionId);
   const [responses, setResponses] = useState({});
   const [showResults, setShowResults] = useState(false);
   const [resultMessage, setResultMessage] = useState('');
@@ -54,35 +59,55 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
   }, []);
 
   useEffect(() => {
-    if (showResults || currentQuestionIndex > 0) {
+    if (showResults || currentQuestionId !== firstQuestionId) {
       window.scrollTo({
         top: 0,
       });
     }
-  }, [showResults, currentQuestionIndex]);
+  }, [showResults, currentQuestionId, firstQuestionId]);
 
-  const handleAnswer = (questionIndex, answer) => {
+  const handleAnswer = (questionId, answer) => {
     const newResponses = {
       ...responses,
-      [questionIndex]: answer,
+      [questionId]: answer,
     };
     setResponses(newResponses);
+
+    // Calculate skipped questions after updating responses
+    const newSkippedQuestions = new Set();
+    questionnaire.questions.forEach(question => {
+      if (shouldSkipQuestion(question.id, newResponses)) {
+        newSkippedQuestions.add(question.id);
+      }
+    });
+    setSkippedQuestions(newSkippedQuestions);
   };
 
-  const getNextQuestionIndex = (currentIndex) => {
+  const getNextQuestionId = (currentId) => {
+    const currentIndex = getQuestionIndex(currentId);
     let nextIndex = currentIndex + 1;
-    while (nextIndex < questionnaire.questions.length && skippedQuestions.has(nextIndex)) {
+    
+    while (nextIndex < questionnaire.questions.length) {
+      const nextQuestion = questionnaire.questions[nextIndex];
+      if (!skippedQuestions.has(nextQuestion.id)) {
+        return nextQuestion.id;
+      }
       nextIndex++;
     }
-    return nextIndex;
+    return null;
   };
 
-  const getPreviousQuestionIndex = (currentIndex) => {
+  const getPreviousQuestionId = (currentId) => {
+    const currentIndex = getQuestionIndex(currentId);
     let prevIndex = currentIndex - 1;
-    while (prevIndex >= 0 && skippedQuestions.has(prevIndex)) {
+    while (prevIndex >= 0) {
+      const prevQuestion = questionnaire.questions[prevIndex];
+      if (!skippedQuestions.has(prevQuestion.id)) {
+        return prevQuestion.id;
+      }
       prevIndex--;
     }
-    return prevIndex;
+    return null;
   };
 
   const calculateScoresForAnswers = (currentResponses) => {
@@ -95,9 +120,9 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
 
     // Calculate base scores from answers
     questionnaire.questions.forEach((q, idx) => {
-      if (skippedQuestions.has(idx)) return;
+      if (skippedQuestions.has(q.id)) return;
 
-      const answer = currentResponses[idx];
+      const answer = currentResponses[q.id];
       if (answer) {
         if (Array.isArray(answer)) {
           answer.forEach(a => {
@@ -111,52 +136,56 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
           }
         }
       }
-    });
 
-    // Apply conditions that modify scores
-    questionnaire.questions.forEach((q, idx) => {
-      if (!q.conditions) return;
-
-      q.conditions.forEach(condition => {
-        if (condition.action === 'modifyscore') {
-          const matchesCondition = evaluateCondition(condition.if, currentResponses, idx);
-          if (matchesCondition) {
-            const scores = Array.isArray(condition.parameters.scores) 
-              ? condition.parameters.scores 
-              : [condition.parameters.scores];
-            
-            scores.forEach(score => {
-              totalScores[score] = (totalScores[score] || 0) + condition.parameters.points;
-            });
+      // Apply score modifications from conditions
+      if (q.conditions) {
+        q.conditions.forEach(condition => {
+          if (condition.action === 'modifyscore') {
+            const matchesCondition = evaluateCondition(condition.if, currentResponses, q.id);
+            if (matchesCondition) {
+              const scores = Array.isArray(condition.parameters.scores) 
+                ? condition.parameters.scores 
+                : [condition.parameters.scores];
+              
+              scores.forEach(score => {
+                totalScores[score] = (totalScores[score] || 0) + condition.parameters.points;
+              });
+            }
           }
-        }
-      });
+        });
+      }
     });
 
     return totalScores;
   };
 
-  const evaluateCondition = (condition, currentResponses, questionIndex) => {
+  const evaluateCondition = (condition, currentResponses, questionId) => {
     if (!condition) return true;
 
     // If condition specifies a specific question ID
     if (condition.questionId) {
-      const targetQuestionIndex = questionnaire.questions.findIndex(q => q.id === condition.questionId);
-      const answer = currentResponses[targetQuestionIndex];
+      const answer = currentResponses[condition.questionId];
       if (!answer) return false;
 
       const selectedAnswerIds = Array.isArray(answer) 
         ? answer.map(a => a.id)
         : [answer.id];
 
-      return condition.match === 'any'
-        ? condition.selectedAnswers.some(id => selectedAnswerIds.includes(id))
-        : condition.selectedAnswers.every(id => selectedAnswerIds.includes(id));
+      switch (condition.match) {
+        case 'any':
+          return condition.selectedAnswers.some(id => selectedAnswerIds.includes(id));
+        case 'none':
+          return !condition.selectedAnswers.some(id => selectedAnswerIds.includes(id));
+        case 'only':
+          return selectedAnswerIds.every(id => condition.selectedAnswers.includes(id));
+        default:
+          return false;
+      }
     }
 
     // If condition is about the current question's answers
     if (condition.selectedAnswers) {
-      const answer = currentResponses[questionIndex];
+      const answer = currentResponses[questionId];
       if (!answer) return false;
 
       const selectedAnswerIds = Array.isArray(answer)
@@ -166,13 +195,11 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
       switch (condition.match) {
         case 'any':
           return condition.selectedAnswers.some(id => selectedAnswerIds.includes(id));
-        case 'all':
-          return condition.selectedAnswers.every(id => selectedAnswerIds.includes(id));
         case 'none':
           return !condition.selectedAnswers.some(id => selectedAnswerIds.includes(id));
         case 'only':
-          return condition.selectedAnswers.length === selectedAnswerIds.length &&
-                 condition.selectedAnswers.every(id => selectedAnswerIds.includes(id));
+          return selectedAnswerIds.every(id => condition.selectedAnswers.includes(id)) &&
+                 condition.selectedAnswers.some(id => selectedAnswerIds.includes(id));
         default:
           return false;
       }
@@ -181,21 +208,33 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
     return true;
   };
 
-  const shouldSkipQuestion = (questionIndex) => {
-    const currentQuestion = questionnaire.questions[questionIndex];
+  const shouldSkipQuestion = (questionId, currentResponses = responses) => {
+    const currentQuestion = questionnaire.questions.find(q => q.id === questionId);
     if (!currentQuestion.conditions) return false;
+
+    console.log(`Checking skip conditions for question ${questionId}:`, {
+      conditions: currentQuestion.conditions,
+      responses: currentResponses
+    });
 
     return currentQuestion.conditions.some(condition => {
       if (condition.action !== 'skip') return false;
-      return evaluateCondition(condition.if, responses, questionIndex);
+      const shouldSkip = evaluateCondition(condition.if, currentResponses, questionId);
+      
+      console.log(`Condition evaluation result:`, {
+        condition,
+        shouldSkip
+      });
+      
+      return shouldSkip;
     });
   };
 
   useEffect(() => {
     const newSkippedQuestions = new Set();
     for (let i = 0; i < questionnaire.questions.length; i++) {
-      if (shouldSkipQuestion(i)) {
-        newSkippedQuestions.add(i);
+      if (shouldSkipQuestion(questionnaire.questions[i].id, responses)) {
+        newSkippedQuestions.add(questionnaire.questions[i].id);
       }
     }
     setSkippedQuestions(newSkippedQuestions);
@@ -454,8 +493,11 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
   };
 
   // Skip to next non-skipped question
-  while (skippedQuestions.has(currentQuestionIndex) && currentQuestionIndex < questionnaire.questions.length) {
-    setCurrentQuestionIndex(currentQuestionIndex + 1);
+  const lastQuestionId = questionnaire.questions[questionnaire.questions.length - 1].id;
+  while (skippedQuestions.has(currentQuestionId) && currentQuestionId !== lastQuestionId) {
+    const nextId = getNextQuestionId(currentQuestionId);
+    if (!nextId) break;
+    setCurrentQuestionId(nextId);
   }
 
   if (isCalculating) {
@@ -518,13 +560,13 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
               </CardHeader>
               <CardContent>
                 <div className="space-y-2 text-sm">
-                  {questionnaire.questions.map((question, index) => {
-                    const response = responses[index];
-                    if (!response || skippedQuestions.has(index)) return null;
+                  {questionnaire.questions.map((question) => {
+                    const response = responses[question.id];
+                    if (!response || skippedQuestions.has(question.id)) return null;
 
                     return (
-                      <div key={index} className="border-b pb-2">
-                        <div className="font-medium">Q{index + 1}: {question.question}</div>
+                      <div key={question.id} className="border-b pb-2">
+                        <div className="font-medium">Q{getQuestionIndex(question.id) + 1}: {question.question}</div>
                         <div className="pl-4">
                           {Array.isArray(response) ? (
                             response.map((ans, i) => (
@@ -592,8 +634,8 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
     );
   }
 
-  const currentQuestion = questionnaire.questions[currentQuestionIndex];
-  const progress = ((currentQuestionIndex + 1) / questionnaire.questions.length) * 100;
+  const currentQuestion = questionnaire.questions.find(q => q.id === currentQuestionId);
+  const progress = ((getQuestionIndex(currentQuestionId) + 1) / questionnaire.questions.length) * 100;
 
   return (
     <Card className="w-full max-w-3xl mx-auto p-4">
@@ -605,7 +647,7 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
         <div className="space-y-8">
           <div className="space-y-2">
             <div className="flex justify-between text-sm text-gray-500">
-              <span>Question {currentQuestionIndex + 1}/{questionnaire.questions.length}</span>
+              <span>Question {getQuestionIndex(currentQuestionId) + 1}/{questionnaire.questions.length}</span>
               <span>(some questions may be skipped automatically)</span>
             </div>
             <Progress value={progress} className="w-full" />
@@ -631,9 +673,9 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
               <RadioGroup
                 onValueChange={(value) => {
                   const selectedAnswer = currentQuestion.answers.find(ans => ans.id === value);
-                  handleAnswer(currentQuestionIndex, selectedAnswer);
+                  handleAnswer(currentQuestionId, selectedAnswer);
                 }}
-                value={responses[currentQuestionIndex]?.id}
+                value={responses[currentQuestionId]?.id}
                 className="space-y-2 mt-5"
               >
                 {currentQuestion.answers.map((ans) => (
@@ -656,14 +698,14 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
                   <div key={ans.id} className="flex items-center space-x-3">
                     <Checkbox
                       id={ans.id}
-                      checked={(responses[currentQuestionIndex] || []).some(a => a.id === ans.id)}
+                      checked={(responses[currentQuestionId] || []).some(a => a.id === ans.id)}
                       onCheckedChange={(checked) => {
-                        const prev = responses[currentQuestionIndex] || [];
+                        const prev = responses[currentQuestionId] || [];
                         if (checked) {
-                          handleAnswer(currentQuestionIndex, [...prev, ans]);
+                          handleAnswer(currentQuestionId, [...prev, ans]);
                         } else {
                           handleAnswer(
-                            currentQuestionIndex,
+                            currentQuestionId,
                             prev.filter(a => a.id !== ans.id)
                           );
                         }
@@ -681,25 +723,28 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
             )}
 
             <div className="flex justify-between mt-6">
-              {currentQuestionIndex > 0 && (
+              {getQuestionIndex(currentQuestionId) > 0 && (
                 <Button
                   variant="outline"
-                  onClick={() => setCurrentQuestionIndex(getPreviousQuestionIndex(currentQuestionIndex))}
+                  onClick={() => setCurrentQuestionId(getPreviousQuestionId(currentQuestionId))}
                 >
                   Previous
                 </Button>
               )}
-              {currentQuestionIndex < questionnaire.questions.length - 1 ? (
+              {getQuestionIndex(currentQuestionId) < questionnaire.questions.length - 1 ? (
                 <Button
-                  onClick={() => setCurrentQuestionIndex(getNextQuestionIndex(currentQuestionIndex))}
-                  disabled={!responses[currentQuestionIndex]}
+                  onClick={() => {
+                    const nextId = getNextQuestionId(currentQuestionId);
+                    setCurrentQuestionId(nextId);
+                  }}
+                  disabled={!responses[currentQuestionId]}
                 >
                   Next
                 </Button>
               ) : (
                 <Button
                   onClick={() => handleSubmit()}
-                  disabled={!responses[currentQuestionIndex]}
+                  disabled={!responses[currentQuestionId]}
                 >
                   Submit
                 </Button>

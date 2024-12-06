@@ -34,6 +34,7 @@ export const PRIMARY_DATA = {
       conditions: [
         {
           if: {
+            questionId: "injuryType",
             selectedAnswers: ["injuryTypeAnswer2", "injuryTypeAnswer3"],
             match: "any"
           },
@@ -63,6 +64,7 @@ export const PRIMARY_DATA = {
       conditions: [
         {
           if: {
+            questionId: "injuryType",
             selectedAnswers: ["injuryTypeAnswer1", "injuryTypeAnswer3"],
             match: "any"
           },
