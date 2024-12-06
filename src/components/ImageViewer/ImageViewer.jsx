@@ -4,10 +4,20 @@ import { ZoomIn, ZoomOut, RotateCcw } from 'lucide-react';
 
 function ImageViewer({ imageUrls }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [imageError, setImageError] = useState(false);
   
   if (!imageUrls || imageUrls.length === 0) return null;
   
   const urls = Array.isArray(imageUrls) ? imageUrls : [imageUrls];
+
+  const handleImageError = () => {
+    console.error('Failed to load image:', urls[currentImageIndex]);
+    setImageError(true);
+  };
+
+  if (imageError) {
+    return <div className="text-red-500">Failed to load image</div>;
+  }
 
   return (
     <div className="mb-6 space-y-2">
@@ -49,6 +59,7 @@ function ImageViewer({ imageUrls }) {
                   alt={`Question reference ${currentImageIndex + 1}`}
                   className="w-full h-auto"
                   style={{ maxHeight: '400px', objectFit: 'contain' }}
+                  onError={handleImageError}
                 />
               </TransformComponent>
             </>
