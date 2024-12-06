@@ -293,15 +293,13 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
     const NerveIssueScore = scores['H'] || 0;
 
     let resultsSummary;
-    if (B3 === 'J') {
-      resultsSummary = `😔 This isn't the tool for you.`;
-    } else if (D3 >= D4 + 3 && /[GDFNEABK]/.test(B3)) {
+    if (D3 >= D4 + 3 && /[GDFNEABKJ]/.test(B3)) {
       resultsSummary = `🎉 Success! Move on to severity assessment.`;
     } else if (D3 >= D4 + 3) {
       resultsSummary = `🥳 Success! You've completed the assessment.`;
-    } else if (CystScore >= D3 - 2 && CystScore < D3 && /[ACIHL]/.test(B3)) {
+    } else if (CystScore >= D3 - 2 && CystScore < D3 && /[ACIHLJ]/.test(B3)) {
       resultsSummary = `🙌 Good work! Move on to Differential Assessment 1.`;
-    } else if (D3 > D4 && /[ACIHL]/.test(B3) && // If D3 is greater than D4 and B3 is one of ACIHL
+    } else if (D3 > D4 && /[ACIHLJ]/.test(B3) && // If D3 is greater than D4 and B3 is one of ACIHLJ
       (D4 > D16 ?
         /[ACIHL]/.test(acceptableScoresString) // Contains at least one of ACIHL
         : true)
@@ -331,10 +329,10 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
         : true)
     ) {
       resultsSummary = `🙌 Good work! Move on to Differential Assessment 4.`;
-    } else if (D3 === D4 && /[ACIHL]/.test(B3) && // If D3 equals D4 and B3 is one of ACIHL
+    } else if (D3 === D4 && /[ACIHLJ]/.test(B3) && // If D3 equals D4 and B3 is one of ACIHLJ
       (D4 > D16 ?
-        /[ACIHL]/.test(acceptableScoresString) && // Contains at least one of ACIHL
-        !/[^ACIHL]/.test(acceptableScoresString)  // ONLY contains ACIHL
+        /[ACIHLJ]/.test(acceptableScoresString) && // Contains at least one of ACIHLJ
+        !/[^ACIHLJ]/.test(acceptableScoresString)  // ONLY contains ACIHLJ
         : true)
     ) {
       resultsSummary = `🙌 Good work! Move on to Differential Assessment 1.`;
@@ -366,13 +364,13 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
         : true)
     ) {
       resultsSummary = `🙌 Good work! Move on to Differential Assessment 4.`;
-    } else if (D3 === D4 + 2 && /[GDFNEABK]/.test(B3)) {
+    } else if (D3 === D4 + 2 && /[GDFNEABKJ]/.test(B3)) {
       resultsSummary = `🎉 Success! Move on to severity assessment.`;
     } else if (D3 === D4 + 2) {
       resultsSummary = `🥳 Success! You've completed the assessment.`;
-    } else if (NerveIssueScore === D3 && /[^ACIL]/.test(B3) && /[^ACIL]/.test(sortedResults[1][0]) && D3 >= D5 + 2) {
+    } else if (NerveIssueScore === D3 && /[^ACILJ]/.test(B3) && /[^ACILJ]/.test(sortedResults[1][0]) && D3 >= D5 + 2) {
       resultsSummary = `💪 Success! Move on to nerve tests in Differential Assessment 1.`;
-    } else if (NerveIssueScore < D3 && NerveIssueScore >= D3 - 1 && D3 > D4 && /[^ACIL]/.test(B3) && D3 >= D5 + 2) {
+    } else if (NerveIssueScore < D3 && NerveIssueScore >= D3 - 1 && D3 > D4 && /[^ACILJ]/.test(B3) && D3 >= D5 + 2) {
       resultsSummary = `💪 Success! Move on to nerve tests in Differential Assessment 1.`;
     } else if (D3 >= D5 + 1 && D4 > D5 && /[AB]/.test(B3) && /[AB]/.test(sortedResults[1][0])) {
       resultsSummary = `🎉 Success! Move on to severity assessment.`;
@@ -389,8 +387,6 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
       displayedResult = "More information needed";
     } else if (/🤔/.test(resultsSummary)) {
       displayedResult = "Data unclear";
-    } else if (/😔/.test(resultsSummary)) {
-      displayedResult = "Possible growth plate fracture";
     } else {
       displayedResult = "Error";
     }
@@ -449,7 +445,7 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
     } else if (/🤙/.test(resultsSummary)) {
       additionalDetails = "Great job completing the primary assessment! Based on your results, you should now complete Differential Assessment 3 (Grade III-IV Pulley Injury vs. FDP Injury) as well as Differential Assessment 4 (Lumbrical Injury vs. FDP Injury).";
     } else if (/1/.test(resultsSummary)) {
-      additionalDetails = "Great job completing the primary assessment! Based on your results, you should now move on to Differential Assessment 1: Grade I-II Pulley Injury vs. Flexor Tenosynovitis vs. Cyst vs. Nerve Issue vs. FDS Insertional Tendinopathy.";
+      additionalDetails = "Great job completing the primary assessment! Based on your results, you should now move on to Differential Assessment 1: Grade I-II Pulley Injury vs. Flexor Tenosynovitis vs. Cyst vs. Nerve Issue vs. FDS Insertional Tendinopathy vs. Injury-Induced Pulley Thickening.";
     } else if (/2/.test(resultsSummary)) {
       additionalDetails = "Great job completing the primary assessment! Based on your results, you should now move on to Differential Assessment 2: Joint Synovitis vs. Collateral Ligament Injury vs. Lateral Band Syndrome.";
     } else if (/3/.test(resultsSummary)) {
@@ -462,8 +458,6 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
       additionalDetails = "Great job! You have completed the primary assessment. (You do not need to complete a differential assessment or severity assessment.)";
     } else if (/🤔/.test(resultsSummary)) {
       additionalDetails = "Your answers indicate too many possibilities to calculate a result. This is typically a sign that some of the tests were not performed properly or that there may be too many confounding factors (such as multiple concurrent injuries). Please retake the primary assessment and try to be more specific with your answers. If you continue to receive this result, this assessment may not be suitable for you.\n\nIf you'd like assistance, enter the code 'hb-debug' into the text box at the bottom of the page and then email us a screenshot of your full results report (including results summary, answer log, and scores) to pt@hoopersbeta.com. Or if you prefer you can schedule an in-person or online consultation with Dr. Jason Hooper, PT, DPT, OCS, SCS at www.hoopersbeta.com/private-sessions.";
-    } else if (/😔/.test(resultsSummary)) {
-      additionalDetails = "If you're seeing this, you may have been sent to this assessment by mistake; it not designed to handle the possibility of growth plate fractures.";
     } else if (/🙃/.test(resultsSummary)) {
       additionalDetails = "This is strange. Something has gone wrong in your questionnaire or you've encountered a bug. Please refresh the page and try again. If you continue to receive this result, enter the code 'hb-debug' into the text box at the bottom of the page and then email us a screenshot of your full results report (including results summary, answer log, and scores) to pt@hoopersbeta.com so we can assist you. We apologize for the inconvenience.";
     }
