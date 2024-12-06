@@ -486,6 +486,27 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
     }, 3000); // Match this with the time it takes for progress to reach 100%
   };
 
+  // Add this new function to check for early completion
+  const checkForEarlyCompletion = (currentId) => {
+    const currentQuestionIndex = getQuestionIndex(currentId);
+    const aromPositionOneIndex = questionnaire.questions.findIndex(q => q.id === 'aromPositionOne');
+    
+    if (currentQuestionIndex === aromPositionOneIndex - 1) {
+      const scores = calculateScoresForAnswers(responses);
+      const sortedScores = Object.entries(scores)
+        .sort(([, a], [, b]) => b - a);
+      
+      const [highestInjury, highestScore] = sortedScores[0] || ['', 0];
+      const secondHighestScore = sortedScores[1]?.[1] || 0;
+
+      // Check if "pulley injury grade III-IV" (injury code B) has 3+ points more than others
+      if (highestInjury === 'B' && highestScore >= secondHighestScore + 3) {
+        return true;
+      }
+    }
+    return false;
+  };
+
   // Skip to next non-skipped question
   const lastQuestionId = questionnaire.questions[questionnaire.questions.length - 1].id;
   while (skippedQuestions.has(currentQuestionId) && currentQuestionId !== lastQuestionId) {
@@ -728,8 +749,12 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
               {getQuestionIndex(currentQuestionId) < questionnaire.questions.length - 1 ? (
                 <Button
                   onClick={() => {
-                    const nextId = getNextQuestionId(currentQuestionId);
-                    setCurrentQuestionId(nextId);
+                    if (checkForEarlyCompletion(currentQuestionId)) {
+                      handleSubmit();
+                    } else {
+                      const nextId = getNextQuestionId(currentQuestionId);
+                      setCurrentQuestionId(nextId);
+                    }
                   }}
                   disabled={!responses[currentQuestionId]}
                 >
