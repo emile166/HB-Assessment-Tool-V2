@@ -89,27 +89,12 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
   const calculateScoresForAnswers = (currentResponses) => {
     const totalScores = {};
 
-    // Add debug logging
-    console.log('Questionnaire:', questionnaire);
-    console.log('InjuryMapping:', injuryMapping);
-
-    // Check if questionnaire and name exist
-    if (!questionnaire || !questionnaire.name) {
-      console.error('Questionnaire or questionnaire name is undefined');
-      return totalScores;
-    }
-
-    // Check if mapping exists for this questionnaire
-    if (!injuryMapping[questionnaire.name]) {
-      console.error(`No injury mapping found for questionnaire: ${questionnaire.name}`);
-      return totalScores;
-    }
-
     // Initialize all injury scores to 0
     Object.keys(injuryMapping[questionnaire.name]).forEach(injuryCode => {
       totalScores[injuryCode] = 0;
     });
 
+    // Calculate base scores from answers
     questionnaire.questions.forEach((q, idx) => {
       if (skippedQuestions.has(idx)) return;
 
@@ -129,93 +114,82 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
       }
     });
 
-    // Apply special scoring rules
-    const answer1 = currentResponses[0]?.text;
-    const answer3Responses = currentResponses[2];
-    const answer4Responses = currentResponses[3];
-    const answer9Responses = currentResponses[8];
+    // Apply conditions that modify scores
+    questionnaire.questions.forEach((q, idx) => {
+      if (!q.conditions) return;
 
-    // Rule for question 3
-    if (answer1 !== 'Traumatic' && answer1 !== 'Chronic' && answer3Responses) {
-      const validAnswers = ['1', '2', '3', '7', '9', '11'];
-      const hasValidAnswer = Array.isArray(answer3Responses) &&
-        answer3Responses.some((ans, idx) => validAnswers.includes(String(idx + 1)));
-      if (!hasValidAnswer) {
-        totalScores['I'] = (totalScores['I'] || 0) - 1; // Subtract from Cyst score
-      }
-    }
-
-    // Rule for question 4
-    if (answer1 !== 'Traumatic' && answer1 !== 'Non-traumatic acute' && answer4Responses) {
-      const validAnswers = ['1', '6'];
-      const hasValidAnswer = Array.isArray(answer4Responses) &&
-        answer4Responses.some((ans, idx) => validAnswers.includes(String(idx + 1)));
-      if (!hasValidAnswer) {
-        totalScores['I'] = (totalScores['I'] || 0) - 1; // Subtract from Cyst score
-      }
-    }
-
-    // Rule for question 9
-    if (answer9Responses) {
-      const penaltyAnswers = ['1', '2', '3', '4', '5', '6'];
-      const hasPenaltyAnswer = Array.isArray(answer9Responses) &&
-        answer9Responses.some((ans, idx) => penaltyAnswers.includes(String(idx + 1)));
-      if (hasPenaltyAnswer) {
-        totalScores['H'] = (totalScores['H'] || 0) - 1; // Subtract from Nerve Issues score
-      }
-    }
+      q.conditions.forEach(condition => {
+        if (condition.action === 'modifyscore') {
+          const matchesCondition = evaluateCondition(condition.if, currentResponses, idx);
+          if (matchesCondition) {
+            const scores = Array.isArray(condition.parameters.scores) 
+              ? condition.parameters.scores 
+              : [condition.parameters.scores];
+            
+            scores.forEach(score => {
+              totalScores[score] = (totalScores[score] || 0) + condition.parameters.points;
+            });
+          }
+        }
+      });
+    });
 
     return totalScores;
   };
 
-  const shouldSkipQuestion = (questionIndex) => {
-    const answer1 = responses[0]?.text;
-    const answer5 = responses[4];
-    const answer11 = responses[10]?.text;
-    const answer12 = responses[11]?.text;
+  const evaluateCondition = (condition, currentResponses, questionIndex) => {
+    if (!condition) return true;
 
-    switch (questionIndex) {
-      case 1: // Question 2
-        return answer1 === 'Non-traumatic acute' || answer1 === 'Chronic';
-      case 2: // Question 3
-        return answer1 === 'Traumatic' || answer1 === 'Chronic';
-      case 3: // Question 4
-        return answer1 === 'Traumatic' || answer1 === 'Non-traumatic acute';
-      case 5: // Question 6
-        if (answer1 === 'Non-traumatic acute' || answer1 === 'Chronic') return true;
-        if (answer5) {
-          const selectedAnswers = Array.isArray(answer5) ? answer5.map((a, idx) => String(idx + 1)) : [];
-          const skipAnswers = ['8', '9', '10', '11', '12'];
-          const hasOnlySkipAnswers = selectedAnswers.every(ans => skipAnswers.includes(ans));
-          return hasOnlySkipAnswers;
-        }
-        return false;
-      case 6: // Question 7
-        return answer1 === 'Non-traumatic acute' || answer1 === 'Chronic';
-      case 7: // Question 8
-        if (answer1 === 'Traumatic') return true;
-        if (answer5) {
-          const selectedAnswers = Array.isArray(answer5) ? answer5.map((a, idx) => String(idx + 1)) : [];
-          const skipAnswers = ['4', '8', '9', '10', '11'];
-          const hasOnlySkipAnswers = selectedAnswers.every(ans => skipAnswers.includes(ans));
-          return hasOnlySkipAnswers;
-        }
-        return false;
-      case 9: // Question 10
-        return answer1 === 'Chronic';
-      case 11: // Question 12
-        return answer11 === 'Yes';
-      case 12: // Question 13
-        return answer11 === 'Yes' || answer12 === 'Yes';
-      case 14: // Question 15
-        if (answer5) {
-          const selectedAnswers = Array.isArray(answer5) ? answer5.map((a, idx) => String(idx + 1)) : [];
-          return selectedAnswers.length === 1 && (selectedAnswers[0] === '9' || selectedAnswers[0] === '10');
-        }
-        return false;
-      default:
-        return false;
+    // If condition specifies a specific question ID
+    if (condition.questionId) {
+      const targetQuestionIndex = questionnaire.questions.findIndex(q => q.id === condition.questionId);
+      const answer = currentResponses[targetQuestionIndex];
+      if (!answer) return false;
+
+      const selectedAnswerIds = Array.isArray(answer) 
+        ? answer.map(a => a.id)
+        : [answer.id];
+
+      return condition.match === 'any'
+        ? condition.selectedAnswers.some(id => selectedAnswerIds.includes(id))
+        : condition.selectedAnswers.every(id => selectedAnswerIds.includes(id));
     }
+
+    // If condition is about the current question's answers
+    if (condition.selectedAnswers) {
+      const answer = currentResponses[questionIndex];
+      if (!answer) return false;
+
+      const selectedAnswerIds = Array.isArray(answer)
+        ? answer.map(a => a.id)
+        : [answer.id];
+
+      switch (condition.match) {
+        case 'any':
+          return condition.selectedAnswers.some(id => selectedAnswerIds.includes(id));
+        case 'all':
+          return condition.selectedAnswers.every(id => selectedAnswerIds.includes(id));
+        case 'none':
+          return !condition.selectedAnswers.some(id => selectedAnswerIds.includes(id));
+        case 'only':
+          return condition.selectedAnswers.length === selectedAnswerIds.length &&
+                 condition.selectedAnswers.every(id => selectedAnswerIds.includes(id));
+        default:
+          return false;
+      }
+    }
+
+    return true;
+  };
+
+  const shouldSkipQuestion = (questionIndex) => {
+    const currentQuestion = questionnaire.questions[questionIndex];
+    if (!currentQuestion.conditions) return false;
+
+    return currentQuestion.conditions.some(condition => {
+      if (condition.action !== 'skip') return false;
+      return evaluateCondition(condition.if, responses, questionIndex);
+    });
   };
 
   useEffect(() => {
@@ -620,7 +594,7 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
   }
 
   const currentQuestion = questionnaire.questions[currentQuestionIndex];
-  const progress = ((currentQuestionIndex + 1) / 15) * 100;
+  const progress = ((currentQuestionIndex + 1) / questionnaire.questions.length) * 100;
 
   return (
     <Card className="w-full max-w-3xl mx-auto p-4">
@@ -632,7 +606,7 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
         <div className="space-y-8">
           <div className="space-y-2">
             <div className="flex justify-between text-sm text-gray-500">
-              <span>Question {currentQuestionIndex + 1}/15</span>
+              <span>Question {currentQuestionIndex + 1}/{questionnaire.questions.length}</span>
               <span>(some questions may be skipped automatically)</span>
             </div>
             <Progress value={progress} className="w-full" />
@@ -644,7 +618,6 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
                 <VideoEmbed videoId={PRIMARY_VIDEO_IDS[`Q${currentQuestionIndex + 1}`]} />
               )}
               {PRIMARY_PHOTO_URLS[`Q${currentQuestionIndex + 1}`] && (
-                console.log(`Photos for Q${currentQuestionIndex + 1}:`, PRIMARY_PHOTO_URLS[`Q${currentQuestionIndex + 1}`]),
                 <ImageViewer imageUrls={PRIMARY_PHOTO_URLS[`Q${currentQuestionIndex + 1}`]} />
               )}
             </div>
@@ -658,20 +631,19 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
             {currentQuestion.type === 'select one answer' && (
               <RadioGroup
                 onValueChange={(value) => {
-                  const answerText = value.split('_').slice(1).join('_');
-                  const selectedAnswer = currentQuestion.answers.find(ans => ans.text === answerText);
+                  const selectedAnswer = currentQuestion.answers.find(ans => ans.id === value);
                   handleAnswer(currentQuestionIndex, selectedAnswer);
                 }}
-                value={responses[currentQuestionIndex]?.text ? `${currentQuestionIndex}_${responses[currentQuestionIndex].text}` : undefined}
+                value={responses[currentQuestionIndex]?.id}
                 className="space-y-2 mt-5"
               >
-                {currentQuestion.answers.map((ans, idx) => (
-                  <div key={idx} className="flex items-center space-x-2">
+                {currentQuestion.answers.map((ans) => (
+                  <div key={ans.id} className="flex items-center space-x-2">
                     <RadioGroupItem
-                      value={`${currentQuestionIndex}_${ans.text}`}
-                      id={`q${currentQuestionIndex}_a${idx}`}
+                      value={ans.id}
+                      id={ans.id}
                     />
-                    <label htmlFor={`q${currentQuestionIndex}_a${idx}`} className="text-sm">
+                    <label htmlFor={ans.id} className="text-sm">
                       {ans.text}
                     </label>
                   </div>
@@ -681,11 +653,11 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
 
             {currentQuestion.type === 'select all that apply' && (
               <div className="grid gap-4 mt-5">
-                {currentQuestion.answers.map((ans, idx) => (
-                  <div key={idx} className="flex items-center space-x-3">
+                {currentQuestion.answers.map((ans) => (
+                  <div key={ans.id} className="flex items-center space-x-3">
                     <Checkbox
-                      id={`q${currentQuestionIndex}_a${idx}`}
-                      checked={(responses[currentQuestionIndex] || []).includes(ans)}
+                      id={ans.id}
+                      checked={(responses[currentQuestionIndex] || []).some(a => a.id === ans.id)}
                       onCheckedChange={(checked) => {
                         const prev = responses[currentQuestionIndex] || [];
                         if (checked) {
@@ -693,13 +665,13 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
                         } else {
                           handleAnswer(
                             currentQuestionIndex,
-                            prev.filter(a => a.text !== ans.text)
+                            prev.filter(a => a.id !== ans.id)
                           );
                         }
                       }}
                     />
                     <label
-                      htmlFor={`q${currentQuestionIndex}_a${idx}`}
+                      htmlFor={ans.id}
                       className="text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                     >
                       {ans.text}
@@ -720,26 +692,7 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
               )}
               {currentQuestionIndex < questionnaire.questions.length - 1 ? (
                 <Button
-                  onClick={() => {
-                    const nextIndex = getNextQuestionIndex(currentQuestionIndex);
-                    // Check for special conditions after question 10 only when clicking Next
-                    if (currentQuestionIndex === 9) {
-                      const scores = calculateScoresForAnswers(responses);
-                      const pulleyIIIIVScore = scores['B'] || 0;
-                      const otherScores = Object.entries(scores)
-                        .filter(([key]) => key !== 'B')
-                        .map(([, score]) => score);
-                      const maxOtherScore = Math.max(...otherScores, 0);
-
-                      if (pulleyIIIIVScore >= maxOtherScore + 3) {
-                        handleSubmit(responses);
-                        return;
-                      }
-                    }
-                    if (nextIndex < questionnaire.questions.length) {
-                      setCurrentQuestionIndex(nextIndex);
-                    }
-                  }}
+                  onClick={() => setCurrentQuestionIndex(getNextQuestionIndex(currentQuestionIndex))}
                   disabled={!responses[currentQuestionIndex]}
                 >
                   Next
@@ -753,23 +706,26 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
                 </Button>
               )}
             </div>
-            <Card className="mt-6">
-              <CardHeader>
-                <CardTitle className="text-sm">Current Scores (For Debugging)</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-2 gap-2 text-sm">
-                  {Object.entries(calculateScoresForAnswers(responses))
-                    .sort((a, b) => b[1] - a[1])
-                    .map(([injury, score]) => (
-                      <div key={injury} className="flex justify-between">
-                        <span>{injuryMapping[questionnaire.name][injury] || injury}:</span>
-                        <span>{score}</span>
-                      </div>
-                    ))}
-                </div>
-              </CardContent>
-            </Card>
+
+            {debugMode && (
+              <Card className="mt-6">
+                <CardHeader>
+                  <CardTitle className="text-sm">Current Scores (For Debugging)</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-2 gap-2 text-sm">
+                    {Object.entries(calculateScoresForAnswers(responses))
+                      .sort((a, b) => b[1] - a[1])
+                      .map(([injury, score]) => (
+                        <div key={injury} className="flex justify-between">
+                          <span>{injuryMapping[questionnaire.name][injury] || injury}:</span>
+                          <span>{score}</span>
+                        </div>
+                      ))}
+                  </div>
+                </CardContent>
+              </Card>
+            )}
           </div>
         </div>
       </CardContent>

@@ -1,4 +1,4 @@
-const PRIMARY_DATA = {
+export const PRIMARY_DATA = {
     injuryType: {
       id: "injuryType",
       text: "What type of injury did you sustain?",
@@ -270,7 +270,7 @@ const PRIMARY_DATA = {
         {
           if: {
             selectedAnswers: ["injuryTypeAnswer3"],
-            match: any
+            match: "any"
           },
           action: "skip"
         },
