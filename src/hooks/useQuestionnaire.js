@@ -13,6 +13,8 @@ export function useQuestionnaire() {
         question: question.text,
         type: question.multiple ? 'select all that apply' : 'select one answer',
         answers: question.answers,
+        photos: question.photos || [],
+        video: question.video || '',
         conditions: question.conditions || []
       }))
     };

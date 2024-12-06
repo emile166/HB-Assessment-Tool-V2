@@ -2,6 +2,8 @@ export const PRIMARY_DATA = {
     injuryType: {
       id: "injuryType",
       text: "What type of injury did you sustain?",
+      video: "placeholderID",
+      photos: [],
       answers: [
         { id: "injuryTypeAnswer1", text: "Traumatic", scores: { A: 1, B: 1, C: -2, D: 1, E: 1, F: -100, G: 1, H: -2, I: -100, J: 0, K: 1, L: -100, M: -100, N: 1 } },
         { id: "injuryTypeAnswer2", text: "Non-traumatic acute", scores: { A: 1, B: 0, C: 1, D: 1, E: 1, F: 0, G: 1, H: 1, I: 1, J: 1, K: 1, L: 1, M: 1, N: 1 } },
@@ -13,6 +15,8 @@ export const PRIMARY_DATA = {
     mechanismTraumatic: {
       id: "mechanismTraumatic",
       text: "Which grip position were you in when the injury occurred?",
+      video: "placeholderID",
+      photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/4504b48a-39e8-4a6e-b08e-9ff1f846b388/Q2+-+ALL+Grip+Types.png?content-type=image%2Fpng"],
       answers: [
         { id: "mechanismTraumaticAnswer1", text: "High-angle crimp", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
         { id: "mechanismTraumaticAnswer2", text: "Half crimp", scores: { A: 1, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -40,6 +44,8 @@ export const PRIMARY_DATA = {
     mechanismAcuteNonTraumatic: {
       id: "mechanismAcuteNonTraumatic",
       text: "Which do you think contributed to your injury?",
+      video: "placeholderID",
+      photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/4504b48a-39e8-4a6e-b08e-9ff1f846b388/Q2+-+ALL+Grip+Types.png?content-type=image%2Fpng"],
       answers: [
         { id: "mechanismAcuteNonTraumaticAnswer1", text: "High-angle crimp", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 1, I: 1, J: 1, K: 1, L: 1, M: 0, N: 0 } },
         { id: "mechanismAcuteNonTraumaticAnswer2", text: "Half crimp", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 1, I: 1, J: 1, K: 0, L: 1, M: 0, N: 0 } },
@@ -82,6 +88,8 @@ export const PRIMARY_DATA = {
     mechanismChronic: {
       id: "mechanismChronic",
       text: "Which do you think contributed most to your injury?",
+      video: "placeholderID",
+      photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/4504b48a-39e8-4a6e-b08e-9ff1f846b388/Q2+-+ALL+Grip+Types.png?content-type=image%2Fpng"],
       answers: [
         { id: "mechanismChronicAnswer1", text: "High-angle crimp", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
         { id: "mechanismChronicAnswer2", text: "Half crimp", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -121,6 +129,13 @@ export const PRIMARY_DATA = {
     painLocation: {
       id: "painLocation",
       text: "Where is the discomfort/pain?",
+      video: "placeholderID",
+      photos: [
+        "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/3c82cebc-74c6-448d-8cbf-1dc7fa4f923e/Primary+-+Question+5+-+Finger+front.jpg?content-type=image%2Fjpeg",
+        "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/ffff2343-1b17-47df-aa8d-bcf0070530d2/Primary+-+Question+5+-+Hand+and+forearm+front.jpg?content-type=image%2Fjpeg",
+        "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/c3bb623f-a8f1-4a1e-9cc0-f0c7f9278a72/Primary+-+Question+5+-+Hand+back.jpg?content-type=image%2Fjpeg",
+        "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/cf08cf06-d9ca-4008-9ec0-aa988cb3a762/Primary+-+Question+5+-+Finger+right.jpg?content-type=image%2Fjpeg"
+      ],
       answers: [
         { id: "painLocationAnswer1", text: "Distal region of A2 pulley", scores: { A: 1, B: 1, C: 0, D: 0, E: -1, F: 0, G: -1, H: 0, I: 0, J: 1, K: 0, L: -2, M: -5, N: -5 } },
         { id: "painLocationAnswer2", text: "Distal region of A4 pulley", scores: { A: 1, B: 1, C: 0, D: 0, E: -1, F: 0, G: -1, H: 0, I: 0, J: 0, K: 0, L: -1, M: -2, N: -5 } },
@@ -145,6 +160,8 @@ export const PRIMARY_DATA = {
     visualBowstringing: {
       id: "visualBowstringing",
       text: "Is there visually obvious bowstringing?",
+      video: "placeholderID",
+      photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/db22606b-d34b-4078-bab5-51886105d5c2/Bowstringing+image.jpg?content-type=image%2Fjpeg"],
       answers: [
         { id: "visualBowstringingAnswer1", text: "Yes", scores: { A: 0, B: 3, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
         { id: "visualBowstringingAnswer2", text: "No or unsure", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
@@ -173,6 +190,8 @@ export const PRIMARY_DATA = {
     obviousSound: {
       id: "obviousSound",
       text: "Was there an obvious sound associated with the onset of the injury?",
+      video: "placeholderID",
+      photos: [],
       answers: [
         { id: "obviousSoundAnswer1", text: "Yes, there was a loud audible pop (loud enough for bystanders to hear)", scores: { A: 0, B: 2, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
         { id: "obviousSoundAnswer2", text: "Yes, there was a sound from my knuckle cracking", scores: { A: 0, B: 0, C: 0, D: 1, E: 1, F: 0, G: 1, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
@@ -194,6 +213,8 @@ export const PRIMARY_DATA = {
     abnormalMass: {
       id: "abnormalMass",
       text: "Can you feel an obvious abnormal mass/lump or thickening at (or very near to) the area of discomfort/pain?",
+      video: "placeholderID",
+      photos: [],
       answers: [
         { id: "abnormalMassAnswer1", text: "Yes", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 2, J: 2, K: 0, L: 0, M: 0, N: 0 } },
         { id: "abnormalMassAnswer2", text: "No", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: -1, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -223,6 +244,8 @@ export const PRIMARY_DATA = {
     injurySwelling: {
       id: "injurySwelling",
       text: "Has there been any swelling associated with the injury?",
+      video: "placeholderID",
+      photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/c3e8ac25-0a5b-4f27-9a42-716b2318ee0d/Primary+-+Question+9+-+Hand+front.jpg?content-type=image%2Fjpeg"],
       answers: [
         { id: "injurySwellingAnswer1", text: "Yes, mainly in the left or right side (but not both sides) of the DIP joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
         { id: "injurySwellingAnswer2", text: "Yes, mainly in the left or right side (but not both sides) of the PIP joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
@@ -255,6 +278,8 @@ export const PRIMARY_DATA = {
     injuryDiscoloration: {
       id: "injuryDiscoloration",
       text: "Has there been any discoloration associated with the injury?",
+      video: "placeholderID",
+      photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/26cfa0d9-eb43-48cf-abba-2edb5716c88f/Primary+-+Question+8+-+Hand+front.jpg?content-type=image%2Fjpeg"],
       answers: [
         { id: "injuryDiscolorationAnswer1", text: "Yes, bruise-like discoloration in either the left or right side (not both sides) of the PIP or DIP joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
         { id: "injuryDiscolorationAnswer2", text: "Yes, bruise-like discoloration in either the left or right side (not both sides) of the PIP joint only (not DIP joint)", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
@@ -295,6 +320,8 @@ export const PRIMARY_DATA = {
     aromPositionOne: {
       id: "aromPositionOne",
       text: "What are your active range of motion test results in position one?",
+      video: "placeholderID",
+      photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/c3e8ac25-0a5b-4f27-9a42-716b2318ee0d/Primary+-+Question+9+-+Hand+front.jpg?content-type=image%2Fjpeg"],
       answers: [
         { id: "aromPositionOneAnswer1", text: "My injury affects my PIP joint and I feel a click/catch sensation on one side of it", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
         { id: "aromPositionOneAnswer2", text: "Some discomfort/pain or mildly limited range of motion associated with my injury", scores: { A: 0, B: 0, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -306,6 +333,11 @@ export const PRIMARY_DATA = {
     aromPositionTwo: {
       id: "aromPositionTwo",
       text: "What are your active range of motion test results in position two?",
+      video: "placeholderID",
+      photos: [
+        "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/574f61b7-d74e-4802-9149-3607c6146b99/Primary+-+Question+12+-+.jpg?content-type=image%2Fjpeg",
+        "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/84930909-0843-4db5-829b-a2d82a766c07/Differential+3+-+Question+1+-+Hand+front.jpg?content-type=image%2Fjpeg"
+      ],
       answers: [
         { id: "aromPositionTwoAnswer1", text: "My injury affects my PIP joint and I feel a click/catch sensation on one side of it", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
         { id: "aromPositionTwoAnswer2", text: "Normal ROM, no discomfort/pain, and no stiffness associated with my injury", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -328,6 +360,11 @@ export const PRIMARY_DATA = {
     aromPositionThree: {
       id: "aromPositionThree",
       text: "What are your active range of motion test results in position three?",
+      video: "placeholderID",
+      photos: [
+        "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/574f61b7-d74e-4802-9149-3607c6146b99/Primary+-+Question+12+-+.jpg?content-type=image%2Fjpeg",
+        "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/84930909-0843-4db5-829b-a2d82a766c07/Differential+3+-+Question+1+-+Hand+front.jpg?content-type=image%2Fjpeg"
+      ],
       answers: [
         { id: "aromPositionThreeAnswer1", text: "My injury affects my PIP joint and I feel a click/catch sensation on one side of it", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
         { id: "aromPositionThreeAnswer2", text: "Normal ROM, no discomfort/pain, and no stiffness associated with my injury", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -353,6 +390,8 @@ export const PRIMARY_DATA = {
     tissueLoading: {
       id: "tissueLoading",
       text: "What are your tissue loading test results?",
+      video: "placeholderID",
+      photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/574f61b7-d74e-4802-9149-3607c6146b99/Primary+-+Question+12+-+.jpg?content-type=image%2Fjpeg"],
       answers: [
         { id: "tissueLoadingAnswer1", text: "Discomfort/pain with the crimp and drag tests, but crimp is worse", scores: { A: 0, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 1, I: 0, J: 1, K: 0, L: 0, M: 0, N: 0 } },
         { id: "tissueLoadingAnswer2", text: "Discomfort/pain with the crimp and drag tests, but drag is worse", scores: { A: 0, B: 0, C: 0, D: 1, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 1, N: 0 } },
@@ -371,6 +410,11 @@ export const PRIMARY_DATA = {
     passiveExtension: {
       id: "passiveExtension",
       text: "What are your passive joint extension test results?",
+      video: "placeholderID",
+      photos: [
+        "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/c3e8ac25-0a5b-4f27-9a42-716b2318ee0d/Primary+-+Question+9+-+Hand+front.jpg?content-type=image%2Fjpeg",
+        "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/c3bb623f-a8f1-4a1e-9cc0-f0c7f9278a72/Primary+-+Question+5+-+Hand+back.jpg?content-type=image%2Fjpeg"
+      ],
       answers: [
         { id: "passiveExtensionAnswer1", text: "Discomfort/pain on the palm side of my DIP or PIP joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 2, L: 0, M: 0, N: 0 } },
         { id: "passiveExtensionAnswer2", text: "More mobility than usual", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 2, L: 0, M: 0, N: 0 } },

@@ -7,8 +7,7 @@ import { Button } from "../ui/button";
 import { Progress } from "../ui/progress";
 import { DISCLAIMER_TEXT } from '../../constants/disclaimer';
 import VideoEmbed from '../VideoEmbed/VideoEmbed';
-import { PRIMARY_VIDEO_IDS } from '../../constants/primary-questionnaire-videos';
-import { PRIMARY_PHOTO_URLS } from '../../constants/primary-questionnaire-photos';
+import { PRIMARY_DATA } from '../../questionnaireData/primaryData';
 import ImageViewer from '../ImageViewer/ImageViewer';
 import AppHeader from '../AppHeader/AppHeader';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
@@ -614,11 +613,11 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
 
           <div>
             <div className="space-y-2">
-              {PRIMARY_VIDEO_IDS[`Q${currentQuestionIndex + 1}`] && (
-                <VideoEmbed videoId={PRIMARY_VIDEO_IDS[`Q${currentQuestionIndex + 1}`]} />
+              {currentQuestion.video && (
+                <VideoEmbed videoId={currentQuestion.video} />
               )}
-              {PRIMARY_PHOTO_URLS[`Q${currentQuestionIndex + 1}`] && (
-                <ImageViewer imageUrls={PRIMARY_PHOTO_URLS[`Q${currentQuestionIndex + 1}`]} />
+              {currentQuestion.photos && currentQuestion.photos.length > 0 && (
+                <ImageViewer imageUrls={currentQuestion.photos} />
               )}
             </div>
             <div className="mt-5">
