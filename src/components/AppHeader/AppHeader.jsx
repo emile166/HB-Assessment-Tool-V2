@@ -14,7 +14,7 @@ function AppHeader() {
           rel="noopener noreferrer"
           className="text-sm"
         >
-          Get My Affordable Injury Recovery Program
+          Get An Injury-Specific Recovery Program
         </a>
       </Button>
       <p className="text-gray-500 text-xs">By using this tool, you agree to our <a

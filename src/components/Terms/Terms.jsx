@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Checkbox } from "../ui/checkbox";
+import { Button } from "../ui/button";
+import AppHeader from '../AppHeader/AppHeader';
 import { TERMS_TEXT } from '../../constants/terms';
 
-function Terms({ accepted, onAcceptChange }) {
+function Terms({ accepted, onAcceptChange, onContinue }) {
+  const [localAccepted, setLocalAccepted] = useState(accepted);
+
+  const handleCheckboxChange = (checked) => {
+    setLocalAccepted(checked);
+    onAcceptChange(checked);
+  };
+
   return (
-    <Card className="mt-2 rounded-lg p-6">
+    <div className="max-w-3xl mx-auto p-4 rounded-lg">
       <CardHeader>
         <CardTitle className="text-xl font-bold text-red-500">
           READ BEFORE PROCEEDING
@@ -19,11 +28,11 @@ function Terms({ accepted, onAcceptChange }) {
             </p>
           ))}
         </div>
-        <div className="flex items-center space-x-2 mt-6">
+        <div className="flex items-center space-x-2 mt-6 mb-6">
           <Checkbox
             id="terms"
-            checked={accepted}
-            onCheckedChange={() => onAcceptChange(!accepted)}
+            checked={localAccepted}
+            onCheckedChange={handleCheckboxChange}
           />
           <label
             htmlFor="terms"
@@ -32,8 +41,16 @@ function Terms({ accepted, onAcceptChange }) {
             I understand and accept
           </label>
         </div>
+
+          <Button 
+            onClick={onContinue}
+            disabled={!localAccepted}
+            className="w-full"
+          >
+            Continue to Dashboard
+          </Button>
       </CardContent>
-    </Card>
+    </div>
   );
 }
 
