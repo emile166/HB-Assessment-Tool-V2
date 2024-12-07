@@ -105,9 +105,7 @@ function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
 
     // Calculate results based on the provided logic
     let resultsSummary;
-    if (B3 === 'J') {
-      resultsSummary = "😔\nThis isn't the tool for you.";
-    } else if (D3 >= D4 + 2 && /[GDFNEABK]/.test(B3)) {
+    if (D3 >= D4 + 2 && /[GDFNEABK]/.test(B3)) {
       resultsSummary = "🎉\nSuccess! Move on to severity assessment.";
     } else if (D3 >= D4 + 2) {
       resultsSummary = "🥳\nSuccess! You've completed the assessment.";
@@ -139,8 +137,6 @@ function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
       displayedResult = `${firstInjuryName} and ${secondInjuryName}`;
     } else if (/🤔/.test(resultsSummary)) {
       displayedResult = "Data Unclear";
-    } else if (/😔/.test(resultsSummary)) {
-      displayedResult = "Possible Growth Plate Fracture";
     }
 
     // Calculate nerve issue possibility
@@ -218,8 +214,6 @@ function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
       additionalDetails = "Great job completing the differential assessment! Your answers are associated with both an FDP injury and a lumbrical injury. These two injuries frequently occur together. For this reason, you should complete the appropriate severity assessments for both injuries. If your severity assessment results indicate different grades for each injury (e.g. FDP is grade I and lumbrical is grade II), choose your Recovery Blueprint based on the highest grade.";
     } else if (/🤔/.test(resultsSummary)) {
       additionalDetails = "Your answers indicate too many possibilities for a valid assessment. This can be due to multiple confounding factors, such as the possibility of two or more concurrent injuries. If you believe you performed all the tests properly and chose accurate answers, this may be the case for you. If so, you can email a link to your Answer Sheet to courses@hoopersbeta.com and we will be happy to assist you.";
-    } else if (/😔/.test(resultsSummary)) {
-      additionalDetails = "If you're seeing this, you may have been sent to this assessment by mistake; it not designed to handle the possibility of growth plate fractures.";
     } else if (/🙃/.test(resultsSummary)) {
       additionalDetails = "This is strange. Something has gone wrong with your Answer Sheet or you've encountered a bug. Please make a new copy of the Answer Sheet from the Master Copy and try again. If you continue to receive this result, please email your Answer Sheet to info@hoopersbeta.com and we will be happy to assist you. We apologize for the inconvenience.";
     }
