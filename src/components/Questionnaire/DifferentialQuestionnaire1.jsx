@@ -501,7 +501,7 @@ function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
               </div>
             )}
 
-            <div className="flex justify-between mt-6">
+            <div className="flex justify-end gap-4 mt-6">
               {currentQuestionIndex > 0 && (
                 <Button
                   variant="outline"
@@ -544,6 +544,15 @@ function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
               </CardContent>
             </Card>
           </div>
+        </div>
+        <div className="mt-6 text-center">
+          <Button 
+            onClick={() => onBack()} 
+            variant="outline"
+            className="w-full md:w-auto"
+          >
+            Back to Dashboard
+          </Button>
         </div>
       </CardContent>
     </Card>

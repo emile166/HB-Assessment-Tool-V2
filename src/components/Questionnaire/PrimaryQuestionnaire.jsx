@@ -737,7 +737,7 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
               </div>
             )}
 
-            <div className="flex justify-between mt-6">
+            <div className="flex justify-end gap-4 mt-6">
               {getQuestionIndex(currentQuestionId) > 0 && (
                 <Button
                   variant="outline"
@@ -804,6 +804,17 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
               </Card>
             )}
           </div>
+        </div>
+
+        {/* Add Back to Dashboard button at bottom */}
+        <div className="mt-6 text-center">
+          <Button 
+            onClick={() => onBack()} 
+            variant="outline"
+            className="w-full md:w-auto"
+          >
+            Back to Dashboard
+          </Button>
         </div>
       </CardContent>
     </Card>

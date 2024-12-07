@@ -47,37 +47,43 @@ function App() {
 
   if (!acceptedTerms) {
     return (
-      <Card className="max-w-3xl mx-auto p-4 rounded-lg">
+      <Layout>
+        <Card className="max-w-3xl mx-auto p-4 rounded-lg">
           <CardHeader>
-          <AppHeader />
+            <AppHeader />
           </CardHeader>
-      <CardContent>
-        <Terms 
-          accepted={termsChecked}
-          onAcceptChange={handleTermsAccept}
-          onContinue={handleTermsContinue}
-        />
-      </CardContent>
-      </Card>
+          <CardContent>
+            <Terms 
+              accepted={termsChecked}
+              onAcceptChange={handleTermsAccept}
+              onContinue={handleTermsContinue}
+            />
+          </CardContent>
+        </Card>
+      </Layout>
     );
   }
 
   if (selectedQuestionnaire) {
     if (selectedQuestionnaire.name === 'Primary Assessment') {
       return (
-        <PrimaryQuestionnaire
-          questionnaire={selectedQuestionnaire}
-          onBack={() => setSelectedQuestionnaire(null)}
-          onComplete={(results) => handleQuestionnaireComplete(results, 'primary')}
-        />
+        <Layout>
+          <PrimaryQuestionnaire
+            questionnaire={selectedQuestionnaire}
+            onBack={() => setSelectedQuestionnaire(null)}
+            onComplete={(results) => handleQuestionnaireComplete(results, 'primary')}
+          />
+        </Layout>
       );
     } else if (selectedQuestionnaire.name === 'Differential Assessment 1') {
       return (
-        <DifferentialQuestionnaire1
-          questionnaire={selectedQuestionnaire}
-          onBack={() => setSelectedQuestionnaire(null)}
-          primaryResults={primaryResults}
-        />
+        <Layout>
+          <DifferentialQuestionnaire1
+            questionnaire={selectedQuestionnaire}
+            onBack={() => setSelectedQuestionnaire(null)}
+            primaryResults={primaryResults}
+          />
+        </Layout>
       );
     }
   }
