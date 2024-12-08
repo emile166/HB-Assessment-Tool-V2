@@ -199,32 +199,32 @@ function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
     let additionalDetails = '';
     if (displayedResult.toLowerCase() === "nerve issue") {
       additionalDetails = "Great job complete the assessment thus far! Your answers are strongly associated with a nerve issue.\n\n" +
-        "If the affected finger is the second (index) or third (middle) digit, the culprit is most often the median nerve.\n\n" +
-        "If the affected finger is the fifth (pinky) digit, the culprit is most often ulnar nerve.\n\n" +
-        "If the affected finger is the fourth (ring) digit, please complete the nerve assessment (located in the 'Severity' tab) to help determine which nerve is most often associated with your symptoms.";
+        "If the affected finger is the second digit (index finger) or third digit (middle), the culprit is most often the median nerve.\n\n" +
+        "If the affected finger is the fifth digit (pinky finger), the culprit is most often ulnar nerve.\n\n" +
+        "If the affected finger is the fourth digit (ring finger), please go back to the dashboard and complete the nerve questionnaire under the severity assessment category. This will help determine which nerve is most often associated with your symptoms.";
     } else if (/🎉/.test(resultsSummary)) {
       additionalDetails = "Great job completing the differential assessment! Based on your results, you should now move on to severity assessment.";
     } else if (/💪/.test(resultsSummary)) {
-      additionalDetails = "Great job completing the differential assessment! Your answers are associated with a multi-faceted condition involving a possible nerve issue. Your next step will be to complete the severity assessment for your non-nerve issue. However, please continue reading below to find out more about your how the nerve issue may affect things.";
+      additionalDetails = "Great job completing the differential assessment! Your answers are associated with a multi-faceted condition involving a possible nerve issue. Your next step will be to complete the severity assessment for your *non-nerve-related* issue. However, please continue reading below to find out more about your how the nerve issue may affect things.";
     } else if (/⚡/.test(resultsSummary)) {
       additionalDetails = "Great job completing the differential assessment! Your answers are associated with a multi-faceted condition involving a possible nerve issue. You do not need to complete a severity assessment at this time. However, please continue reading below to find out more about your how the nerve issue may affect things.";
     } else if (/🥳/.test(resultsSummary)) {
       additionalDetails = "Great job! You have completed the assessment. (You do not need to complete a severity assessment.) Heck yes!";
     } else if (/🎊/.test(resultsSummary)) {
-      additionalDetails = "Great job completing the differential assessment! Your answers are associated with both an FDP injury and a lumbrical injury. These two injuries frequently occur together. For this reason, you should complete the appropriate severity assessments for both injuries. If your severity assessment results indicate different grades for each injury (e.g. FDP is grade I and lumbrical is grade II), choose your Recovery Blueprint based on the highest grade.";
+      additionalDetails = "Great job completing the differential assessment! Your answers are associated with both an FDP injury and a lumbrical injury. These two injuries frequently occur together. For this reason, you should complete the appropriate severity assessments for both injuries. If your severity assessment results indicate different grades for each injury (e.g. FDP is grade I and lumbrical is grade II), choose your recovery program based on the higher grade.";
     } else if (/🤔/.test(resultsSummary)) {
-      additionalDetails = "Your answers indicate too many possibilities for a valid assessment. This can be due to multiple confounding factors, such as the possibility of two or more concurrent injuries. If you believe you performed all the tests properly and chose accurate answers, this may be the case for you. If so, you can email a link to your Answer Sheet to courses@hoopersbeta.com and we will be happy to assist you.";
+      additionalDetails = "Your answers indicate too many possibilities for a valid assessment. This can be due to multiple confounding factors, such as the possibility of two or more concurrent injuries. If you believe you performed all the tests properly and chose accurate answers, this may be the case for you. If so, you can email screenshots of your results (including answer log and scores) to info@hoopersbeta.com and we will be happy to assist you. Enter the code 'hb-debug' in the Debug Code text box below to see your scores.";
     } else if (/🙃/.test(resultsSummary)) {
-      additionalDetails = "This is strange. Something has gone wrong with your Answer Sheet or you've encountered a bug. Please make a new copy of the Answer Sheet from the Master Copy and try again. If you continue to receive this result, please email your Answer Sheet to info@hoopersbeta.com and we will be happy to assist you. We apologize for the inconvenience.";
+      additionalDetails = "This is strange. Something has gone wrong with your answers or you've encountered a bug. Please close this page and try again. If you continue to receive this result, please email screenshots of your results (including answer log and scores) to info@hoopersbeta.com and we will be happy to assist you. Enter the code 'hb-debug' in the Debug Code text box below to see your scores. We apologize for the inconvenience.";
     }
 
     // Add nerve issue warning if applicable
     if (nerveIssuePossibility === "⚠️ High" && !/🤔/.test(resultsSummary)) {
       additionalDetails += "\n\n➡️ Please note: Your answers are associated with a high possibility of a nerve issue. Nerve issues can mask or mimic symptoms from other injuries, which can make them tricky to assess (and which can make assessing other injuries more challenging as well). We recommend the following course of action if you have approval from a qualified medical professional:\n" +
-        "1. Start treatment for the nerve issue.\n" +
+        "1. Start recovery activities for the nerve issue.\n" +
         "2. In one to two days, retake this assessment (or, if you're pressed for time, just retake Differential Assessment 1).\n" +
-        "3. If your final results change, simply follow the new recommendations on the Answer Sheet.\n" +
-        "4. If your final results do not change, continue treatment for the nerve issue and, if applicable, begin treatment for your other condition as well.\n" +
+        "3. If your final results change, simply follow the new recommendations.\n" +
+        "4. If your final results do not change, continue recovery activities for the nerve issue and, if applicable, begin recovery activities for your other condition as well.\n" +
         "5. If your symptoms do not change after a week or two or you would like a more definitive assessment that can account for the potential nerve issue, you'll need to schedule an appointment with a qualified medical professional that has experience with nerve issues and, ideally, rock climbers.";
     } else if (nerveIssuePossibility === "⚠️ High" && /🤔/.test(resultsSummary)) {
       additionalDetails += "\n\n➡️ Please note: Your answers are associated with a high possibility of a nerve issue, which could be affecting your symptoms and therefore this assessment. Nerve issues can mask or mimic symptoms from other injuries, which can make them tricky to deal with. Be aware that a nerve issue is a possible confounding factor that may need professional evaluation.";
@@ -232,9 +232,9 @@ function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
 
     // Add cyst warning if applicable
     if (cystIndication === "⚠️ Yes") {
-      additionalDetails += "\n\n➡️ Please note: Your answers are associated with the possibility of a cyst in your finger. Cysts can cause various symptoms that mimic other injuries, which makes obtaining an accurate diagnosis more challenging. Be aware that a cyst is a possible confounding factor that may need professional evaluation with ultrasound.";
+      additionalDetails += "\n\n➡️ Please note: Your answers are associated with the possibility of a cyst in your finger. Cysts can cause various symptoms that mimic other injuries, which makes injury assessment more challenging. Be aware that a cyst is a possible confounding factor that may need professional evaluation with ultrasound.";
     } else if (cystIndication === "Mild") {
-      additionalDetails += "\n\n➡️ Please note: Your answer of 'yes' to 'do you feel an abnormal mass/lump in your finger?' is associated with the possibility of a cyst. Cysts can cause various symptoms that mimic other injuries, which makes obtaining an accurate diagnosis more challenging. Be aware that a cyst is a possible confounding factor that may need professional evaluation with ultrasound.";
+      additionalDetails += "\n\n➡️ Please note: Your answer of 'yes' to 'Do you feel an abnormal mass/lump in your finger?' is associated with the possibility of a cyst. Cysts can cause various symptoms that mimic other injuries, which makes injury assessment more challenging. Be aware that a cyst is a possible confounding factor that may need professional evaluation with ultrasound.";
     }
 
     // Get injury descriptions
