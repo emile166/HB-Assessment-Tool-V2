@@ -11,7 +11,7 @@ function Dashboard({ onSelectQuestionnaire }) {
         <AppHeader />
         <CardContent className="mt-4 p-8">
           {/* Primary Assessment Section */}
-          <div className="mb-8">
+          <Card className="p-4 mb-8">
             <h2 className="text-xl font-semibold mb-4">Primary Assessment (Start Here)</h2>
             <p className="text-sm text-gray-500 mb-4">
               Start here unless otherwise instructed. This assessment will help determine which follow-up assessments you need, if any.
@@ -22,10 +22,10 @@ function Dashboard({ onSelectQuestionnaire }) {
             >
               Start Primary Assessment
             </Button>
-          </div>
+          </Card>
 
           {/* Differential Assessment Section */}
-          <div className="mb-8">
+          <Card className="p-4 mb-8">
             <h2 className="text-xl font-semibold mb-4">Differential Assessment</h2>
             <p className="text-sm text-gray-500 mb-4">
               Complete one or more of the following assessments if instructed by your primary assessment results.
@@ -40,10 +40,10 @@ function Dashboard({ onSelectQuestionnaire }) {
               </Button>
               {/* Add more differential assessment buttons as needed */}
             </div>
-          </div>
+          </Card>
 
           {/* Severity Assessment Section */}
-          <div className="mb-8">
+          <Card className="p-4">
             <h2 className="text-xl font-semibold mb-4">Severity Assessment</h2>
             <p className="text-sm text-gray-500 mb-4">
               Complete the assessment that applies to your injury if instructed by a prior assessment or qualified professional.
@@ -54,7 +54,7 @@ function Dashboard({ onSelectQuestionnaire }) {
             >
               Coming Soon
             </Button>
-          </div>
+            </Card>
         </CardContent>
       </Card>
     </Layout>
