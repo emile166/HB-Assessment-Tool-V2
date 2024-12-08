@@ -50,7 +50,7 @@ function App() {
       <Layout>
         <Card>
           <AppHeader />
-          <CardContent className="mt-8">
+          <CardContent className="mt-4">
             <Terms
               accepted={termsChecked}
               onAcceptChange={handleTermsAccept}

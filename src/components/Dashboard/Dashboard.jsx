@@ -9,7 +9,7 @@ function Dashboard({ onSelectQuestionnaire }) {
     <Layout>
       <Card>
         <AppHeader />
-        <CardContent className="mt-4 p-8">
+        <CardContent className="p-8">
           {/* Primary Assessment Section */}
           <Card className="p-4 mb-8">
             <h2 className="text-xl font-semibold mb-4">Primary Assessment (Start Here)</h2>
