@@ -27,6 +27,7 @@ function ImageViewer({ imageUrls }) {
           minScale={1}
           maxScale={4}
           centerOnInit={true}
+          wheel={{ disabled: true }}
         >
           {({ zoomIn, zoomOut, resetTransform }) => (
             <>
