@@ -14,7 +14,7 @@ function Terms({ accepted, onAcceptChange, onContinue }) {
   };
 
   return (
-    <div className="max-w-3xl mx-auto p-4 rounded-lg">
+    <div>
       <CardHeader>
         <CardTitle className="text-xl font-bold text-red-500">
           READ BEFORE PROCEEDING

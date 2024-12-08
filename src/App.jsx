@@ -48,12 +48,10 @@ function App() {
   if (!acceptedTerms) {
     return (
       <Layout>
-        <Card className="max-w-3xl mx-auto p-4 rounded-lg">
-          <CardHeader>
-            <AppHeader />
-          </CardHeader>
-          <CardContent>
-            <Terms 
+        <Card>
+          <AppHeader />
+          <CardContent className="mt-8">
+            <Terms
               accepted={termsChecked}
               onAcceptChange={handleTermsAccept}
               onContinue={handleTermsContinue}
