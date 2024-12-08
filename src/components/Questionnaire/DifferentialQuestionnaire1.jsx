@@ -198,16 +198,16 @@ function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
     // Calculate additional details
     let additionalDetails = '';
     if (displayedResult.toLowerCase() === "nerve issue") {
-      additionalDetails = "Great job complete the assessment thus far! Your answers are strongly associated with a nerve issue.\n\n" +
+      additionalDetails = "Great job completing the assessment thus far! Your answers are strongly associated with a nerve issue.\n\n" +
         "If the affected finger is the second digit (index finger) or third digit (middle), the culprit is most often the median nerve.\n\n" +
-        "If the affected finger is the fifth digit (pinky finger), the culprit is most often ulnar nerve.\n\n" +
+        "If the affected finger is the fifth digit (pinky finger), the culprit is most often the ulnar nerve.\n\n" +
         "If the affected finger is the fourth digit (ring finger), please go back to the dashboard and complete the nerve questionnaire under the severity assessment category. This will help determine which nerve is most often associated with your symptoms.";
     } else if (/🎉/.test(resultsSummary)) {
       additionalDetails = "Great job completing the differential assessment! Based on your results, you should now move on to severity assessment.";
     } else if (/💪/.test(resultsSummary)) {
-      additionalDetails = "Great job completing the differential assessment! Your answers are associated with a multi-faceted condition involving a possible nerve issue. Your next step will be to complete the severity assessment for your *non-nerve-related* issue. However, please continue reading below to find out more about your how the nerve issue may affect things.";
+      additionalDetails = "Great job completing the differential assessment! Your answers are associated with a multi-faceted condition involving a possible nerve issue. Your next step will be to complete the severity assessment for your *non-nerve-related* issue. However, please continue reading below to find out more about your the nerve issue may affect things.";
     } else if (/⚡/.test(resultsSummary)) {
-      additionalDetails = "Great job completing the differential assessment! Your answers are associated with a multi-faceted condition involving a possible nerve issue. You do not need to complete a severity assessment at this time. However, please continue reading below to find out more about your how the nerve issue may affect things.";
+      additionalDetails = "Great job completing the differential assessment! Your answers are associated with a multi-faceted condition involving a possible nerve issue. You do not need to complete a severity assessment at this time. However, please continue reading below to find out more about how the nerve issue may affect things.";
     } else if (/🥳/.test(resultsSummary)) {
       additionalDetails = "Great job! You have completed the assessment. (You do not need to complete a severity assessment.) Heck yes!";
     } else if (/🎊/.test(resultsSummary)) {
