@@ -62,7 +62,7 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
 
   useEffect(() => {
     if (showResults || currentQuestionId !== firstQuestionId) {
-      questionnaireContainerRef.current?.scrollIntoView({ 
+      questionnaireContainerRef.current?.scrollIntoView({
         behavior: 'smooth',
         block: 'start'
       });
@@ -743,15 +743,14 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
                 </div>
               )}
 
-              <div className="flex justify-end gap-4 mt-6">
-                {getQuestionIndex(currentQuestionId) > 0 && (
-                  <Button
-                    variant="outline"
-                    onClick={() => setCurrentQuestionId(getPreviousQuestionId(currentQuestionId))}
-                  >
-                    Previous
-                  </Button>
-                )}
+              <div className="flex justify-between gap-4 mt-6">
+                <Button
+                  variant="outline"
+                  onClick={() => setCurrentQuestionId(getPreviousQuestionId(currentQuestionId))}
+                  disabled={getQuestionIndex(currentQuestionId) < 1}
+                >
+                  ← Previous
+                </Button>
                 {getQuestionIndex(currentQuestionId) < questionnaire.questions.length - 1 ? (
                   <Button
                     onClick={() => {
@@ -764,7 +763,7 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
                     }}
                     disabled={!responses[currentQuestionId]}
                   >
-                    Next
+                    Next →
                   </Button>
                 ) : (
                   <Button
