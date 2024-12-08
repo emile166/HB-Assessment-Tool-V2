@@ -28,14 +28,15 @@ function Dashboard({ onSelectQuestionnaire }) {
         <div className="mb-8">
           <h2 className="text-xl font-semibold mb-4">Differential Assessment</h2>
           <p className="text-sm text-gray-500 mb-4">
-            Complete one or more of the following assessments if instructred by your primary assessment results.
+            Complete one or more of the following assessments if instructed by your primary assessment results.
           </p>
-          <div className="space-y-4">
+          <div>
+            <p className="text-sm font-bold text-gray-500 mb-4">Differential Assessment 1: Grade I-II Pulley Injury vs. Flexor Tenosynovitis vs. Cyst vs. Nerve Issue vs. FDS Insertional Tendinopathy vs. Injury-Induced Pulley Thickening</p>
             <Button
               onClick={() => onSelectQuestionnaire('differential1')}
               className="w-full"
             >
-              Differential Assessment 1
+              Start Differential Assessment 1
             </Button>
             {/* Add more differential assessment buttons as needed */}
           </div>
@@ -45,7 +46,7 @@ function Dashboard({ onSelectQuestionnaire }) {
         <div className="mb-8">
           <h2 className="text-xl font-semibold mb-4">Severity Assessment</h2>
           <p className="text-sm text-gray-500 mb-4">
-            Complete the assessment that applies to your injury ONLY if instructed by a prior assessment or qualified professional.
+            Complete the assessment that applies to your injury if instructed by a prior assessment or qualified professional.
           </p>
           <Button
             disabled={true} // Enable when severity assessments are implemented
