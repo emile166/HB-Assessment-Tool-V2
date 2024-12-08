@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { injuryMapping } from '../../utils/injuryMapping';
 import { Card, CardHeader, CardTitle, CardContent } from "../ui/card";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
@@ -35,6 +35,7 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
   const [debugMode, setDebugMode] = useState(false);
   const [debugCode, setDebugCode] = useState('');
   const [isCalculating, setIsCalculating] = useState(false);
+  const questionnaireContainerRef = useRef(null);
 
   useEffect(() => {
     const handleKeyPress = (e) => {
@@ -61,8 +62,9 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
 
   useEffect(() => {
     if (showResults || currentQuestionId !== firstQuestionId) {
-      window.scrollTo({
-        top: 0,
+      questionnaireContainerRef.current?.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
       });
     }
   }, [showResults, currentQuestionId, firstQuestionId]);
@@ -523,7 +525,7 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
   if (showResults) {
     return (
       <Layout>
-        <Card>
+        <Card ref={questionnaireContainerRef}>
           <AppHeader />
           <CardContent className="bg-gray-50 rounded-lg m-8">
             <CardTitle className="text-xl mb-2 pt-6 text-center">Primary Assessment Results</CardTitle>
@@ -659,7 +661,7 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
 
   return (
     <Layout>
-      <Card>
+      <Card ref={questionnaireContainerRef}>
         <AppHeader />
         <CardContent className="mt-4 p-8">
           <CardTitle className="text-2xl mb-4">{questionnaire.name}</CardTitle>
