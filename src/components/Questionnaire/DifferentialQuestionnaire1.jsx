@@ -14,7 +14,7 @@ import { INJURY_DESCRIPTIONS } from '../../constants/injury-descriptions';
 import Layout from '../Layout/Layout';
 import { DIFFERENTIAL_1_DATA } from '../../questionnaireData/differential1Data';
 
-function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
+function Differential1Questionnaire({ questionnaire, onBack, primaryResults }) {
   const getQuestionIndex = (questionId) => {
     return questionnaire.questions.findIndex(q => q.id === questionId);
   };
@@ -60,72 +60,37 @@ function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
     setSkippedQuestions(newSkippedQuestions);
   };
 
-  const shouldSkipQuestion = (questionId, currentResponses = responses) => {
-    const currentQuestion = questionnaire.questions.find(q => q.id === questionId);
-    if (!currentQuestion.conditions) return false;
 
-    return currentQuestion.conditions.some(condition => {
-      if (condition.action !== 'skip') return false;
-      return evaluateCondition(condition.if, currentResponses, questionId);
-    });
+
+
+
+
+  const getNextQuestionId = (currentId) => {
+    const currentIndex = getQuestionIndex(currentId);
+    let nextIndex = currentIndex + 1;
+
+    while (nextIndex < questionnaire.questions.length) {
+      const nextQuestion = questionnaire.questions[nextIndex];
+      if (!skippedQuestions.has(nextQuestion.id)) {
+        return nextQuestion.id;
+      }
+      nextIndex++;
+    }
+    return null;
   };
 
-  const evaluateCondition = (condition, currentResponses, questionId) => {
-    if (!condition) return true;
-
-    if (condition.questionId) {
-      const answer = currentResponses[condition.questionId];
-      if (!answer) return false;
-
-      const selectedAnswerIds = Array.isArray(answer)
-        ? answer.map(a => a.id)
-        : [answer.id];
-
-      switch (condition.match) {
-        case 'any':
-          return condition.selectedAnswers.some(id => selectedAnswerIds.includes(id));
-        case 'none':
-          return !condition.selectedAnswers.some(id => selectedAnswerIds.includes(id));
-        case 'only':
-          return selectedAnswerIds.every(id => condition.selectedAnswers.includes(id));
-        default:
-          return false;
+  const getPreviousQuestionId = (currentId) => {
+    const currentIndex = getQuestionIndex(currentId);
+    let prevIndex = currentIndex - 1;
+    while (prevIndex >= 0) {
+      const prevQuestion = questionnaire.questions[prevIndex];
+      if (!skippedQuestions.has(prevQuestion.id)) {
+        return prevQuestion.id;
       }
+      prevIndex--;
     }
-
-    if (condition.selectedAnswers) {
-      const answer = currentResponses[questionId];
-      if (!answer) return false;
-
-      const selectedAnswerIds = Array.isArray(answer)
-        ? answer.map(a => a.id)
-        : [answer.id];
-
-      switch (condition.match) {
-        case 'any':
-          return condition.selectedAnswers.some(id => selectedAnswerIds.includes(id));
-        case 'none':
-          return !condition.selectedAnswers.some(id => selectedAnswerIds.includes(id));
-        case 'only':
-          return selectedAnswerIds.every(id => condition.selectedAnswers.includes(id)) &&
-            condition.selectedAnswers.some(id => selectedAnswerIds.includes(id));
-        default:
-          return false;
-      }
-    }
-
-    return true;
+    return null;
   };
-
-  useEffect(() => {
-    const newSkippedQuestions = new Set();
-    for (let i = 0; i < questionnaire.questions.length; i++) {
-      if (shouldSkipQuestion(questionnaire.questions[i].id, responses)) {
-        newSkippedQuestions.add(questionnaire.questions[i].id);
-      }
-    }
-    setSkippedQuestions(newSkippedQuestions);
-  }, [responses]);
 
   const calculateScoresForAnswers = (currentResponses) => {
     const totalScores = {};
@@ -176,10 +141,85 @@ function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
     return totalScores;
   };
 
-  const checkForEarlyCompletion = (currentId) => {
-    // For now, always return false since we don't have early completion logic yet
-    return false;
+  const evaluateCondition = (condition, currentResponses, questionId) => {
+    if (!condition) return true;
+
+    if (condition.questionId) {
+      const answer = currentResponses[condition.questionId];
+      if (!answer) return false;
+
+      const selectedAnswerIds = Array.isArray(answer)
+        ? answer.map(a => a.id)
+        : [answer.id];
+
+      switch (condition.match) {
+        case 'any':
+          return condition.selectedAnswers.some(id => selectedAnswerIds.includes(id));
+        case 'none':
+          return !condition.selectedAnswers.some(id => selectedAnswerIds.includes(id));
+        case 'only':
+          return selectedAnswerIds.every(id => condition.selectedAnswers.includes(id));
+        default:
+          return false;
+      }
+    }
+
+    // If condition is about the current question's answers
+    if (condition.selectedAnswers) {
+      const answer = currentResponses[questionId];
+      if (!answer) return false;
+
+      const selectedAnswerIds = Array.isArray(answer)
+        ? answer.map(a => a.id)
+        : [answer.id];
+
+      switch (condition.match) {
+        case 'any':
+          return condition.selectedAnswers.some(id => selectedAnswerIds.includes(id));
+        case 'none':
+          return !condition.selectedAnswers.some(id => selectedAnswerIds.includes(id));
+        case 'only':
+          return selectedAnswerIds.every(id => condition.selectedAnswers.includes(id)) &&
+            condition.selectedAnswers.some(id => selectedAnswerIds.includes(id));
+        default:
+          return false;
+      }
+    }
+
+    return true;
   };
+
+  const shouldSkipQuestion = (questionId, currentResponses = responses) => {
+    const currentQuestion = questionnaire.questions.find(q => q.id === questionId);
+    if (!currentQuestion.conditions) return false;
+
+    console.log(`Checking skip conditions for question ${questionId}:`, {
+      conditions: currentQuestion.conditions,
+      responses: currentResponses
+    });
+
+    return currentQuestion.conditions.some(condition => {
+      if (condition.action !== 'skip') return false;
+      const shouldSkip = evaluateCondition(condition.if, currentResponses, questionId);
+
+      console.log(`Condition evaluation result:`, {
+        condition,
+        shouldSkip
+      });
+
+      return shouldSkip;
+    });
+  };
+
+  useEffect(() => {
+    const newSkippedQuestions = new Set();
+    for (let i = 0; i < questionnaire.questions.length; i++) {
+      if (shouldSkipQuestion(questionnaire.questions[i].id, responses)) {
+        newSkippedQuestions.add(questionnaire.questions[i].id);
+      }
+    }
+    setSkippedQuestions(newSkippedQuestions);
+  }, [responses]);
 
   const handleSubmit = (finalResponses = responses) => {
     setIsCalculating(true);
@@ -366,49 +406,24 @@ function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
         setInjuryDescription(getInjuryDescription(displayedResult))
       ]).then(() => {
         setIsCalculating(false);
+        console.log("All states updated");
       });
-    }, 3000);
+    }, 3000); // Match this with the time it takes for progress to reach 100%
   };
 
-  const getNextQuestionId = (currentId) => {
-    const currentIndex = getQuestionIndex(currentId);
-    let nextIndex = currentIndex + 1;
-
-    while (nextIndex < questionnaire.questions.length) {
-      const nextQuestion = questionnaire.questions[nextIndex];
-      if (!skippedQuestions.has(nextQuestion.id)) {
-        return nextQuestion.id;
-      }
-      nextIndex++;
-    }
-    return null;
+  // Check for early completion
+  const checkForEarlyCompletion = (currentId) => {
+    // For now, always return false since we don't have early completion logic yet
+    return false;
   };
 
-  const getPreviousQuestionId = (currentId) => {
-    const currentIndex = getQuestionIndex(currentId);
-    let prevIndex = currentIndex - 1;
-    while (prevIndex >= 0) {
-      const prevQuestion = questionnaire.questions[prevIndex];
-      if (!skippedQuestions.has(prevQuestion.id)) {
-        return prevQuestion.id;
-      }
-      prevIndex--;
-    }
-    return null;
-  };
-
-  if (!currentQuestionId || !questionnaire.questions.length) {
-    return <LoadingScreen />;
+  // Skip to next non-skipped question
+  const lastQuestionId = questionnaire.questions[questionnaire.questions.length - 1].id;
+  while (skippedQuestions.has(currentQuestionId) && currentQuestionId !== lastQuestionId) {
+    const nextId = getNextQuestionId(currentQuestionId);
+    if (!nextId) break;
+    setCurrentQuestionId(nextId);
   }
-
-  const currentQuestion = questionnaire.questions.find(q => q.id === currentQuestionId);
-
-  if (!currentQuestion) {
-    console.error('Could not find question with ID:', currentQuestionId);
-    return <LoadingScreen />;
-  }
-
-  const progress = ((getQuestionIndex(currentQuestionId) + 1) / questionnaire.questions.length) * 100;
 
   if (isCalculating) {
     return <LoadingScreen />;
@@ -492,7 +507,7 @@ function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
                 </CardContent>
               </Card>
 
-              {/* Debug Mode */}
+              {/* Debug Mode Input */}
               <div className="mt-6">
                 <input
                   type="text"
@@ -546,6 +561,9 @@ function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
       </Layout>
     );
   }
+
+  const currentQuestion = questionnaire.questions.find(q => q.id === currentQuestionId);
+  const progress = ((getQuestionIndex(currentQuestionId) + 1) / questionnaire.questions.length) * 100;
 
   return (
     <Layout>
@@ -619,7 +637,8 @@ function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
                       />
                       <label
                         htmlFor={ans.id}
-                        className="text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                        className="text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                        >
                         {ans.text}
                       </label>
                     </div>
@@ -718,4 +737,4 @@ function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
   );
 }
 
-export default DifferentialQuestionnaire1;
+export default Differential1Questionnaire;

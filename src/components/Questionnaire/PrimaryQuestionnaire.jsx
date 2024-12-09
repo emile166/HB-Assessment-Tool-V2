@@ -140,7 +140,6 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
   const evaluateCondition = (condition, currentResponses, questionId) => {
     if (!condition) return true;
 
-    // If condition specifies a specific question ID
     if (condition.questionId) {
       const answer = currentResponses[condition.questionId];
       if (!answer) return false;
@@ -446,7 +445,7 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
       return description || "";
     };
 
-    // Wait for loading animation to complete
+    // Wait for loading animation
     setTimeout(() => {
       Promise.all([
         setResults(scores),
@@ -589,7 +588,6 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
                 />
               </div>
 
-              {/* Debug Sections */}
               {debugMode && (
                 <Card className="mt-6">
                   <CardHeader>
@@ -651,7 +649,7 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
 
             <div>
               <div className="space-y-2">
-                {currentQuestion.video && (
+                {currentQuestion?.video && (
                   <VideoEmbed videoId={currentQuestion.video} />
                 )}
               </div>
