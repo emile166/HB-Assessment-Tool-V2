@@ -546,13 +546,11 @@ function Differential1Questionnaire({ questionnaire, onBack, primaryResults }) {
           <div>
             <p className="text-xs text-gray-500 text-center mb-4">We do not store any information related to this tool. If you leave this page, your answers will be lost. <a href="https://hoopersbeta.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="underline">View our privacy policy.</a></p>
           </div>
-          <div className="mt-4 text-center">
+          <div className="mt-6 text-center">
             <Button
-              onClick={() => {
-                onComplete({ results, responses }, 'primary');
-                onBack();
-              }}
-              className="m-6 w-full md:w-auto"
+              onClick={() => onBack()}
+              variant="outline"
+              className="w-full md:w-auto"
             >
               Back to Dashboard
             </Button>
