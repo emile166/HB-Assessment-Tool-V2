@@ -18,7 +18,6 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
   const getQuestionIndex = (questionId) => {
     return questionnaire.questions.findIndex(q => q.id === questionId);
   };
-
   const firstQuestionId = questionnaire.questions[0].id;
   const [currentQuestionId, setCurrentQuestionId] = useState(firstQuestionId);
   const [responses, setResponses] = useState({});
@@ -33,32 +32,8 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
   const [additionalDetails, setAdditionalDetails] = useState('');
   const [injuryDescription, setInjuryDescription] = useState('');
   const [debugMode, setDebugMode] = useState(false);
-  const [debugCode, setDebugCode] = useState('');
   const [isCalculating, setIsCalculating] = useState(false);
   const questionnaireContainerRef = useRef(null);
-
-  useEffect(() => {
-    const handleKeyPress = (e) => {
-      setDebugCode(prev => {
-        const newCode = prev + e.key;
-        // Only keep last 8 characters to prevent string from growing too long
-        const trimmedCode = newCode.slice(-8);
-
-        // Check if code matches
-        if (trimmedCode === 'hb-debug') {
-          setDebugMode(true);
-        }
-
-        return trimmedCode;
-      });
-    };
-
-    window.addEventListener('keydown', handleKeyPress);
-
-    return () => {
-      window.removeEventListener('keydown', handleKeyPress);
-    };
-  }, []);
 
   useEffect(() => {
     if (showResults || currentQuestionId !== firstQuestionId) {
@@ -122,7 +97,7 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
     });
 
     // Calculate base scores from answers
-    questionnaire.questions.forEach((q, idx) => {
+    questionnaire.questions.forEach((q) => {
       if (skippedQuestions.has(q.id)) return;
 
       const answer = currentResponses[q.id];
@@ -489,7 +464,7 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
     }, 3000); // Match this with the time it takes for progress to reach 100%
   };
 
-  // Add this new function to check for early completion
+  // Check for early completion
   const checkForEarlyCompletion = (currentId) => {
     const currentQuestionIndex = getQuestionIndex(currentId);
     const aromPositionOneIndex = questionnaire.questions.findIndex(q => q.id === 'aromPositionOne');

@@ -15,6 +15,9 @@ import Layout from '../Layout/Layout';
 import { DIFFERENTIAL_1_DATA } from '../../questionnaireData/differential1Data';
 
 function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
+  const getQuestionIndex = (questionId) => {
+    return questionnaire.questions.findIndex(q => q.id === questionId);
+  };
   const firstQuestionId = questionnaire.questions[0]?.id;
   const [currentQuestionId, setCurrentQuestionId] = useState(firstQuestionId);
   const [responses, setResponses] = useState({});
@@ -29,12 +32,7 @@ function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
   const [injuryDescription, setInjuryDescription] = useState('');
   const [debugMode, setDebugMode] = useState(false);
   const [isCalculating, setIsCalculating] = useState(false);
-
   const questionnaireContainerRef = useRef(null);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [currentQuestionId, showResults]);
 
   useEffect(() => {
     if (showResults || currentQuestionId !== firstQuestionId) {
@@ -138,10 +136,10 @@ function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
       totalScores[injuryCode] = (primaryResults?.results?.[injuryCode] || 0);
     });
 
-    questionnaire.questions.forEach((q, idx) => {
-      if (skippedQuestions.has(idx)) return;
+    questionnaire.questions.forEach((q) => {
+      if (skippedQuestions.has(q.id)) return;
 
-      const answer = currentResponses[idx];
+      const answer = currentResponses[q.id];
       if (answer) {
         if (Array.isArray(answer)) {
           answer.forEach(a => {
@@ -154,6 +152,24 @@ function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
             totalScores[category] = (totalScores[category] || 0) + score;
           }
         }
+      }
+
+      // Apply score modifications from conditions
+      if (q.conditions) {
+        q.conditions.forEach(condition => {
+          if (condition.action === 'modifyscore') {
+            const matchesCondition = evaluateCondition(condition.if, currentResponses, q.id);
+            if (matchesCondition) {
+              const scores = Array.isArray(condition.parameters.scores)
+                ? condition.parameters.scores
+                : [condition.parameters.scores];
+
+              scores.forEach(score => {
+                totalScores[score] = (totalScores[score] || 0) + condition.parameters.points;
+              });
+            }
+          }
+        });
       }
     });
 
@@ -352,10 +368,6 @@ function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
         setIsCalculating(false);
       });
     }, 3000);
-  };
-
-  const getQuestionIndex = (questionId) => {
-    return questionnaire.questions.findIndex(q => q.id === questionId);
   };
 
   const getNextQuestionId = (currentId) => {
