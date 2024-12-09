@@ -7,12 +7,12 @@ import { Button } from "../ui/button";
 import { Progress } from "../ui/progress";
 import { DISCLAIMER_TEXT } from '../../constants/disclaimer';
 import VideoEmbed from '../VideoEmbed/VideoEmbed';
-import { PRIMARY_DATA } from '../../questionnaireData/primaryData';
 import ImageViewer from '../ImageViewer/ImageViewer';
 import AppHeader from '../AppHeader/AppHeader';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import { INJURY_DESCRIPTIONS } from '../../constants/injury-descriptions';
 import Layout from '../Layout/Layout';
+import { PRIMARY_DATA } from '../../questionnaireData/primaryData';
 
 function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
   const getQuestionIndex = (questionId) => {
@@ -679,9 +679,6 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
                 {currentQuestion.video && (
                   <VideoEmbed videoId={currentQuestion.video} />
                 )}
-                {currentQuestion.photos && currentQuestion.photos.length > 0 && (
-                  <ImageViewer imageUrls={currentQuestion.photos} />
-                )}
               </div>
               <div className="mt-5">
                 <h3 className="font-medium text-lg">{currentQuestion.question}</h3>
@@ -743,6 +740,12 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
                 </div>
               )}
 
+              <div className="mt-8">
+                {currentQuestion?.photos?.length > 0 && (
+                  <ImageViewer imageUrls={currentQuestion.photos} />
+                )}
+              </div>
+
               <div className="flex justify-between gap-4 mt-6">
                 <Button
                   variant="outline"
@@ -776,7 +779,7 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
               </div>
 
               {/* Debug Code Input */}
-              <div className="mt-6">
+              <div className="mt-12">
                 <input
                   type="text"
                   placeholder="Debug code"
@@ -790,7 +793,7 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
               </div>
 
               {debugMode && (
-                <Card className="mt-6">
+                <Card className="mt-12">
                   <CardHeader>
                     <CardTitle className="text-sm">Current Scores (For Debugging)</CardTitle>
                   </CardHeader>
@@ -811,7 +814,7 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
             </div>
           </div>
 
-          {/* Add Back to Dashboard button at bottom */}
+          {/* Back to Dashboard button at bottom */}
           <div className="mt-6 text-center">
             <Button
               onClick={() => onBack()}

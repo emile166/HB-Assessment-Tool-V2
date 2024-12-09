@@ -11,6 +11,7 @@ import ImageViewer from '../ImageViewer/ImageViewer';
 import AppHeader from '../AppHeader/AppHeader';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import { INJURY_DESCRIPTIONS } from '../../constants/injury-descriptions';
+import Layout from '../Layout/Layout';
 import { DIFFERENTIAL_1_DATA } from '../../questionnaireData/differential1Data';
 
 function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
@@ -389,7 +390,7 @@ function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
   }
 
   const currentQuestion = questionnaire.questions.find(q => q.id === currentQuestionId);
-  
+
   if (!currentQuestion) {
     console.error('Could not find question with ID:', currentQuestionId);
     return <LoadingScreen />;
@@ -403,245 +404,305 @@ function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
 
   if (showResults) {
     return (
-      <Card className="w-full p-4 max-w-3xl mx-auto">
-        <CardHeader>
+      <Layout>
+        <Card ref={questionnaireContainerRef}>
           <AppHeader />
-        </CardHeader>
-        <CardContent className="bg-gray-50 rounded-lg ml-6 mr-6 mb-6">
-          <CardTitle className="text-xl mb-2 pt-6 text-center">Differential Assessment 1 Results</CardTitle>
-          <p className="text-xs text-red-500 text-center uppercase mb-8">{DISCLAIMER_TEXT}</p>
+          <CardContent className="bg-gray-50 rounded-lg m-8">
+            <CardTitle className="text-xl mb-2 pt-6 text-center">Differential Assessment 1 Results</CardTitle>
+            <p className="text-xs text-red-500 text-center uppercase mb-8">{DISCLAIMER_TEXT}</p>
 
-          {/* Main Results Section */}
-          <div className="space-y-6">
-            {/* Primary Result */}
-            <div className="bg-white border rounded-lg p-6">
-              <h2 className="text-md mb-2 text-center">Your responses suggest:</h2>
-              <p className="text-lg font-semibold bg-primary text-black mb-8 text-center rounded-sm p-2">{displayedResult}</p>
-              <p className="text-lg mb-2 text-center">{resultsSummary} See additional details below.</p>
-            </div>
-
-            {/* Risk Indicators */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
-              <div className="border rounded-lg pr-8 pl-8 pt-4 pb-4">
-                <h3 className="text-sm font-semibold text-muted-foreground mb-1">Nerve Issue Possibility</h3>
-                <p className="text-md font-medium">{nerveIssuePossibility}</p>
+            {/* Main Results Section */}
+            <div className="space-y-6">
+              {/* Primary Result */}
+              <div className="bg-white border rounded-lg p-6">
+                <h2 className="text-md mb-2 text-center">Your responses suggest:</h2>
+                <p className="text-lg font-semibold bg-primary text-black mb-8 text-center rounded-sm p-2">{displayedResult}</p>
+                <p className="text-lg mb-2 text-center">{resultsSummary} See additional details below.</p>
               </div>
-              <div className="border rounded-lg pr-8 pl-8 pt-4 pb-4">
-                <h3 className="text-sm font-semibold text-muted-foreground mb-1">Cyst Indication</h3>
-                <p className="text-md font-medium">{cystIndication}</p>
-              </div>
-            </div>
 
-            {/* Injury Details Card */}
-            {(additionalDetails || injuryDescription) && (
-              <div className="rounded-lg pr-8 pl-8 mb-4 mt-2">
-                {additionalDetails && (
-                  <div className="mb-4">
-                    <h2 className="text-md font-semibold mb-2">Additional Details</h2>
-                    <p className="text-md whitespace-pre-line">{additionalDetails}</p>
-                  </div>
-                )}
-
-                {injuryDescription && (
-                  <div>
-                    <p className="text-md">{injuryDescription}</p>
-                  </div>
-                )}
-              </div>
-            )}
-
-            {/* Answer Log */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-sm">Answer Log</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-2 text-sm">
-                  {questionnaire.questions.map((question, index) => {
-                    const response = responses[index];
-                    if (!response || skippedQuestions.has(index)) return null;
-
-                    return (
-                      <div key={index} className="border-b pb-2">
-                        <div className="font-medium">Q{index + 1}: {question.question}</div>
-                        <div className="pl-4">
-                          {Array.isArray(response) ? (
-                            response.map((ans, i) => (
-                              <div key={i}>• {ans.text}</div>
-                            ))
-                          ) : (
-                            <div>• {response.text}</div>
-                          )}
-                        </div>
-                      </div>
-                    );
-                  })}
+              {/* Risk Indicators */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                <div className="border rounded-lg pr-8 pl-8 pt-4 pb-4">
+                  <h3 className="text-sm font-semibold text-muted-foreground mb-1">Nerve Issue Possibility</h3>
+                  <p className="text-md font-medium">{nerveIssuePossibility}</p>
                 </div>
-              </CardContent>
-            </Card>
+                <div className="border rounded-lg pr-8 pl-8 pt-4 pb-4">
+                  <h3 className="text-sm font-semibold text-muted-foreground mb-1">Cyst Indication</h3>
+                  <p className="text-md font-medium">{cystIndication}</p>
+                </div>
+              </div>
 
-            {/* Debug Mode */}
-            <div className="mt-6">
-              <input
-                type="text"
-                placeholder="Debug code"
-                className="w-full p-2 border rounded"
-                onChange={(e) => {
-                  if (e.target.value === 'hb-debug') {
-                    setDebugMode(true);
-                  }
-                }}
-              />
-            </div>
+              {/* Injury Details Card */}
+              {(additionalDetails || injuryDescription) && (
+                <div className="rounded-lg pr-8 pl-8 mb-4 mt-2">
+                  {additionalDetails && (
+                    <div className="mb-4">
+                      <h2 className="text-md font-semibold mb-2">Additional Details</h2>
+                      <p className="text-md">{additionalDetails}</p>
+                    </div>
+                  )}
 
-            {debugMode && (
-              <Card className="mt-6">
+                  {injuryDescription && (
+                    <div>
+                      <p className="text-md">{injuryDescription}</p>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* Answer Log */}
+              <Card>
                 <CardHeader>
-                  <CardTitle className="text-sm">Current Scores (For Debugging)</CardTitle>
+                  <CardTitle className="text-sm">Answer Log</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-2 gap-2 text-sm">
-                    {Object.entries(calculateScoresForAnswers(responses))
-                      .sort((a, b) => b[1] - a[1])
-                      .map(([injury, score]) => (
-                        <div key={injury} className="flex justify-between">
-                          <span>{injuryMapping[questionnaire.name][injury] || injury}:</span>
-                          <span>{score}</span>
+                  <div className="space-y-2 text-sm">
+                    {questionnaire.questions.map((question) => {
+                      const response = responses[question.id];
+                      if (!response || skippedQuestions.has(question.id)) return null;
+
+                      return (
+                        <div key={question.id} className="border-b pb-2">
+                          <div className="font-medium">Q{getQuestionIndex(question.id) + 1}: {question.question}</div>
+                          <div className="pl-4">
+                            {Array.isArray(response) ? (
+                              response.map((ans, i) => (
+                                <div key={i}>• {ans.text}</div>
+                              ))
+                            ) : (
+                              <div>• {response.text}</div>
+                            )}
+                          </div>
                         </div>
-                      ))}
+                      );
+                    })}
                   </div>
                 </CardContent>
               </Card>
-            )}
+
+              {/* Debug Mode */}
+              <div className="mt-6">
+                <input
+                  type="text"
+                  placeholder="Debug code"
+                  className="w-full p-2 border rounded"
+                  onChange={(e) => {
+                    if (e.target.value === 'hb-debug') {
+                      setDebugMode(true);
+                    }
+                  }}
+                />
+              </div>
+
+              {debugMode && (
+                <Card className="mt-6">
+                  <CardHeader>
+                    <CardTitle className="text-sm">Current Scores (For Debugging)</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid grid-cols-2 gap-2 text-sm">
+                      {Object.entries(calculateScoresForAnswers(responses))
+                        .sort((a, b) => b[1] - a[1])
+                        .map(([injury, score]) => (
+                          <div key={injury} className="flex justify-between">
+                            <span>{injuryMapping[questionnaire.name][injury] || injury}:</span>
+                            <span>{score}</span>
+                          </div>
+                        ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
+
+            </div>
+          </CardContent>
+          <div>
+            <p className="text-xs text-gray-500 text-center mb-4">We do not store any information related to this tool. If you leave this page, your answers will be lost. <a href="https://hoopersbeta.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="underline">View our privacy policy.</a></p>
           </div>
-        </CardContent>
-        <p className="text-xs text-gray-500 text-center mb-4">
-          We do not store any information related to this tool. If you leave this page, your answers will be lost.
-          <a href="https://hoopersbeta.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="underline">
-            View our privacy policy.
-          </a>
-        </p>
-        <Button onClick={onBack} className="m-6 w-full md:w-auto">Back to Dashboard</Button>
-      </Card>
+          <div className="mt-4 text-center">
+            <Button
+              onClick={() => {
+                onComplete({ results, responses }, 'primary');
+                onBack();
+              }}
+              className="m-6 w-full md:w-auto"
+            >
+              Back to Dashboard
+            </Button>
+          </div>
+        </Card>
+      </Layout>
     );
   }
 
   return (
-    <Card className="w-full max-w-3xl mx-auto p-4" ref={questionnaireContainerRef}>
-      <CardHeader>
+    <Layout>
+      <Card ref={questionnaireContainerRef}>
         <AppHeader />
-        <CardTitle className="text-2xl pt-6">{questionnaire.name}</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <div className="space-y-8">
-          <div className="space-y-2">
-            <div className="flex justify-between text-sm text-gray-500">
-              <span>Question {getQuestionIndex(currentQuestionId) + 1}/{questionnaire.questions.length}</span>
-              <span>(some questions may be skipped automatically)</span>
-            </div>
-            <Progress value={progress} className="w-full" />
-          </div>
-
-          <div className="space-y-6">
-            <div className="space-y-4">
-              {currentQuestion?.video && (
-                <VideoEmbed videoId={currentQuestion.video} />
-              )}
-              {currentQuestion?.photos?.length > 0 && (
-                <ImageViewer imageUrls={currentQuestion.photos} />
-              )}
+        <CardContent className="mt-4 p-8">
+          <CardTitle className="text-2xl mb-4">{questionnaire.name}</CardTitle>
+          <div className="space-y-8">
+            <div className="space-y-2">
+              <div className="flex justify-between text-sm text-gray-500">
+                <span>Question {getQuestionIndex(currentQuestionId) + 1}/{questionnaire.questions.length}</span>
+                <span>(some questions may be skipped automatically)</span>
+              </div>
+              <Progress value={progress} className="w-full" />
             </div>
 
             <div>
-              <h3 className="font-medium text-lg mb-2">{currentQuestion.question}</h3>
-              <p className="text-sm text-gray-500">
-                {currentQuestion.type} - read all before submitting
-              </p>
-            </div>
-
-            {currentQuestion.type === 'select one answer' && (
-              <RadioGroup
-                onValueChange={(value) => {
-                  const selectedAnswer = currentQuestion.answers.find(ans => ans.id === value);
-                  handleAnswer(currentQuestionId, selectedAnswer);
-                }}
-                value={responses[currentQuestionId]?.id}
-                className="space-y-2 mt-5"
-              >
-                {currentQuestion.answers.map((ans) => (
-                  <div key={ans.id} className="flex items-center space-x-2">
-                    <RadioGroupItem value={ans.id} id={ans.id} />
-                    <label htmlFor={ans.id} className="text-sm">
-                      {ans.text}
-                    </label>
-                  </div>
-                ))}
-              </RadioGroup>
-            )}
-
-            {currentQuestion.type === 'select all that apply' && (
-              <div className="grid gap-4 mt-5">
-                {currentQuestion.answers.map((ans) => (
-                  <div key={ans.id} className="flex items-center space-x-3">
-                    <Checkbox
-                      id={ans.id}
-                      checked={(responses[currentQuestionId] || []).some(a => a.id === ans.id)}
-                      onCheckedChange={(checked) => {
-                        const prev = responses[currentQuestionId] || [];
-                        if (checked) {
-                          handleAnswer(currentQuestionId, [...prev, ans]);
-                        } else {
-                          handleAnswer(
-                            currentQuestionId,
-                            prev.filter(a => a.id !== ans.id)
-                          );
-                        }
-                      }}
-                    />
-                    <label htmlFor={ans.id} className="text-sm">
-                      {ans.text}
-                    </label>
-                  </div>
-                ))}
+              <div className="space-y-2">
+                {currentQuestion?.video && (
+                  <VideoEmbed videoId={currentQuestion.video} />
+                )}
               </div>
-            )}
+              <div className="mt-5">
+                <h3 className="ont-medium text-lg">{currentQuestion.question}</h3>
+                <p className="text-sm text-gray-500">
+                  {currentQuestion.type} - read all before submitting
+                </p>
+              </div>
 
-            <div className="flex justify-between gap-4 mt-6">
-              <Button
-                variant="outline"
-                onClick={() => setCurrentQuestionId(getPreviousQuestionId(currentQuestionId))}
-                disabled={getQuestionIndex(currentQuestionId) < 1}
-              >
-                ← Previous
-              </Button>
-              {getQuestionIndex(currentQuestionId) < questionnaire.questions.length - 1 ? (
+              {currentQuestion.type === 'select one answer' && (
+                <RadioGroup
+                  onValueChange={(value) => {
+                    const selectedAnswer = currentQuestion.answers.find(ans => ans.id === value);
+                    handleAnswer(currentQuestionId, selectedAnswer);
+                  }}
+                  value={responses[currentQuestionId]?.id}
+                  className="space-y-2 mt-5"
+                >
+                  {currentQuestion.answers.map((ans) => (
+                    <div key={ans.id} className="flex items-center space-x-2">
+                      <RadioGroupItem
+                        value={ans.id}
+                        id={ans.id}
+                      />
+                      <label htmlFor={ans.id} className="text-sm">
+                        {ans.text}
+                      </label>
+                    </div>
+                  ))}
+                </RadioGroup>
+              )}
+
+              {currentQuestion.type === 'select all that apply' && (
+                <div className="grid gap-4 mt-5">
+                  {currentQuestion.answers.map((ans) => (
+                    <div key={ans.id} className="flex items-center space-x-3">
+                      <Checkbox
+                        id={ans.id}
+                        checked={(responses[currentQuestionId] || []).some(a => a.id === ans.id)}
+                        onCheckedChange={(checked) => {
+                          const prev = responses[currentQuestionId] || [];
+                          if (checked) {
+                            handleAnswer(currentQuestionId, [...prev, ans]);
+                          } else {
+                            handleAnswer(
+                              currentQuestionId,
+                              prev.filter(a => a.id !== ans.id)
+                            );
+                          }
+                        }}
+                      />
+                      <label
+                        htmlFor={ans.id}
+                        className="text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                        {ans.text}
+                      </label>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              <div className="mt-8">
+                {currentQuestion?.photos?.length > 0 && (
+                  <ImageViewer imageUrls={currentQuestion.photos} />
+                )}
+              </div>
+
+              <div className="flex justify-between gap-4 mt-6">
                 <Button
-                  onClick={() => {
-                    if (checkForEarlyCompletion(currentQuestionId)) {
-                      handleSubmit();
-                    } else {
-                      const nextId = getNextQuestionId(currentQuestionId);
-                      setCurrentQuestionId(nextId);
+                  variant="outline"
+                  onClick={() => setCurrentQuestionId(getPreviousQuestionId(currentQuestionId))}
+                  disabled={getQuestionIndex(currentQuestionId) < 1}
+                >
+                  ← Previous
+                </Button>
+                {getQuestionIndex(currentQuestionId) < questionnaire.questions.length - 1 ? (
+                  <Button
+                    onClick={() => {
+                      if (checkForEarlyCompletion(currentQuestionId)) {
+                        handleSubmit();
+                      } else {
+                        const nextId = getNextQuestionId(currentQuestionId);
+                        setCurrentQuestionId(nextId);
+                      }
+                    }}
+                    disabled={!responses[currentQuestionId]}
+                  >
+                    Next →
+                  </Button>
+                ) : (
+                  <Button
+                    onClick={() => handleSubmit()}
+                    disabled={!responses[currentQuestionId]}
+                  >
+                    Submit
+                  </Button>
+                )}
+              </div>
+
+              {/* Debug Code Input */}
+              <div className="mt-12">
+                <input
+                  type="text"
+                  placeholder="Debug code"
+                  className="w-full p-2 border rounded"
+                  onChange={(e) => {
+                    if (e.target.value === 'hb-debug') {
+                      setDebugMode(true);
                     }
                   }}
-                  disabled={!responses[currentQuestionId]}
-                >
-                  Next →
-                </Button>
-              ) : (
-                <Button
-                  onClick={() => handleSubmit()}
-                  disabled={!responses[currentQuestionId]}
-                >
-                  Submit
-                </Button>
+                />
+              </div>
+
+              {debugMode && (
+                <Card className="mt-12">
+                  <CardHeader>
+                    <CardTitle className="text-sm">Current Scores (For Debugging)</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid grid-cols-2 gap-2 text-sm">
+                      {Object.entries(calculateScoresForAnswers(responses))
+                        .sort((a, b) => b[1] - a[1])
+                        .map(([injury, score]) => (
+                          <div key={injury} className="flex justify-between">
+                            <span>{injuryMapping[questionnaire.name][injury] || injury}:</span>
+                            <span>{score}</span>
+                          </div>
+                        ))}
+                    </div>
+                  </CardContent>
+                </Card>
               )}
             </div>
-
           </div>
-        </div>
-      </CardContent>
-    </Card>
+
+          {/* Back to Dashboard button at bottom */}
+          <div className="mt-6 text-center">
+            <Button
+              onClick={() => onBack()}
+              variant="outline"
+              className="w-full md:w-auto"
+            >
+              Back to Dashboard
+            </Button>
+          </div>
+
+        </CardContent >
+      </Card >
+    </Layout>
   );
 }
 
