@@ -313,21 +313,21 @@ function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
 
     // Add nerve issue warning if applicable
     if (nerveIssuePossibility === "⚠️ High" && !/🤔/.test(resultsSummary)) {
-      additionalDetails += "\n\n➡️ Please note: Your answers are associated with a high possibility of a nerve issue. Nerve issues can mask or mimic symptoms from other injuries, which can make them tricky to assess (and which can make assessing other injuries more challenging as well). We recommend the following course of action if you have approval from a qualified medical professional:\n" +
+      additionalDetails += " ➡️ Please note: Your answers are associated with a high possibility of a nerve issue. Nerve issues can mask or mimic symptoms from other injuries, which can make them tricky to assess (and which can make assessing other injuries more challenging as well). We recommend the following course of action if you have approval from a qualified medical professional:\n" +
         "1. Start recovery activities for the nerve issue.\n" +
         "2. In one to two days, retake this assessment (or, if you're pressed for time, just retake Differential Assessment 1).\n" +
         "3. If your final results change, simply follow the new recommendations.\n" +
         "4. If your final results do not change, continue recovery activities for the nerve issue and, if applicable, begin recovery activities for your other condition as well.\n" +
         "5. If your symptoms do not change after a week or two or you would like a more definitive assessment that can account for the potential nerve issue, you'll need to schedule an appointment with a qualified medical professional that has experience with nerve issues and, ideally, rock climbers.";
     } else if (nerveIssuePossibility === "⚠️ High" && /🤔/.test(resultsSummary)) {
-      additionalDetails += "\n\n➡️ Please note: Your answers are associated with a high possibility of a nerve issue, which could be affecting your symptoms and therefore this assessment. Nerve issues can mask or mimic symptoms from other injuries, which can make them tricky to deal with. Be aware that a nerve issue is a possible confounding factor that may need professional evaluation.";
+      additionalDetails += " ➡️ Please note: Your answers are associated with a high possibility of a nerve issue, which could be affecting your symptoms and therefore this assessment. Nerve issues can mask or mimic symptoms from other injuries, which can make them tricky to deal with. Be aware that a nerve issue is a possible confounding factor that may need professional evaluation.";
     }
 
     // Add cyst warning if applicable
     if (cystIndication === "⚠️ Yes") {
-      additionalDetails += "\n\n➡️ Please note: Your answers are associated with the possibility of a cyst in your finger. Cysts can cause various symptoms that mimic other injuries, which makes injury assessment more challenging. Be aware that a cyst is a possible confounding factor that may need professional evaluation with ultrasound.";
+      additionalDetails += " ➡️ Please note: Your answers are associated with the possibility of a cyst in your finger. Cysts can cause various symptoms that mimic other injuries, which makes injury assessment more challenging. Be aware that a cyst is a possible confounding factor that may need professional evaluation with ultrasound.";
     } else if (cystIndication === "Mild") {
-      additionalDetails += "\n\n➡️ Please note: Your answer of 'yes' to 'Do you feel an abnormal mass/lump in your finger?' is associated with the possibility of a cyst. Cysts can cause various symptoms that mimic other injuries, which makes injury assessment more challenging. Be aware that a cyst is a possible confounding factor that may need professional evaluation with ultrasound.";
+      additionalDetails += " ➡️ Please note: Your answer of 'yes' to 'Do you feel an abnormal mass/lump in your finger?' is associated with the possibility of a cyst. Cysts can cause various symptoms that mimic other injuries, which makes injury assessment more challenging. Be aware that a cyst is a possible confounding factor that may need professional evaluation with ultrasound.";
     }
 
     // Get injury descriptions
