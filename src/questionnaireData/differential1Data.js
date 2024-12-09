@@ -206,7 +206,7 @@ export const DIFFERENTIAL_1_DATA = {
         photos: [],
         answers: [
           { id: "massDescriptionAnswer1", text: "Soft/compressible", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 1, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-          { id: "massDescriptionAnswer2", text: "Firm/rigid, like a pebble", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 1, K: 0, L: 0, M: 0, N: 0 } },
+          { id: "massDescriptionAnswer2", text: "Firm/rigid", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 1, K: 0, L: 0, M: 0, N: 0 } },
           { id: "massDescriptionAnswer3", text: "Mobile (moves around when pushed)", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 1, J: 0, K: 0, L: 0, M: 0, N: 0 } },
           { id: "massDescriptionAnswer4", text: "Immobile (stays in place when pushed)", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 1, K: 0, L: 0, M: 0, N: 0 } }
         ],
