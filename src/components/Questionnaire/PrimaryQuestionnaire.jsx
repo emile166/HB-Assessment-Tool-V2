@@ -350,7 +350,7 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
     } else if (NerveIssueScore < D3 && NerveIssueScore >= D3 - 1 && D3 > D4 && /[^ACILJ]/.test(B3) && D3 >= D5 + 2) {
       resultsSummary = `💪 Success! Move on to nerve tests in Differential Assessment 1.`;
     } else if (D3 >= D5 + 1 && D4 > D5 && /[AB]/.test(B3) && /[AB]/.test(sortedResults[1][0])) {
-      resultsSummary = `🎉 Success! Move on to severity assessment.`;
+      resultsSummary = `🙌 Success! Move on to pulley severity assessment.`;
     } else if (D3 <= D4 + 1) {
       resultsSummary = `🤔 Something's wrong here.`;
     } else {
@@ -431,6 +431,8 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
       additionalDetails = "Great job completing the primary assessment! Based on your results, you should now move on to Differential Assessment 4: Lumbrical Injury vs. FDP Injury.";
     } else if (/🎉/.test(resultsSummary)) {
       additionalDetails = "Great job! You have completed the primary assessment. (You do not need to complete a differential assessment, but may need to complete a severity assessment if indicated above.)";
+    } else if (/🙌/.test(resultsSummary)) {
+      additionalDetails = "Great job! You have completed the primary assessment. (You do not need to complete a differential assessment, but you should complete the pulley severity assessment.)";
     } else if (/🥳/.test(resultsSummary)) {
       additionalDetails = "Great job! You have completed the primary assessment. (You do not need to complete a differential assessment or severity assessment.)";
     } else if (/🤔/.test(resultsSummary)) {
