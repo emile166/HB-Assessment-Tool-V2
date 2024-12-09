@@ -225,21 +225,10 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
     // Calculate scores
     const scores = calculateScoresForAnswers(finalResponses);
 
-    // Get highest scoring categories
-    const highestScores = Object.entries(scores)
-      .sort(([, a], [, b]) => b - a)
-      .filter(([, score]) => score > 0);
-
     // Sort and filter results
     const sortedResults = Object.entries(scores)
       .sort((a, b) => b[1] - a[1]);
     console.log("Sorted results:", sortedResults);
-
-    if (sortedResults.length === 0) {
-      setResultMessage("🤷‍♂️\nThere's nothing to show.");
-      setShowResults(true);
-      return;
-    }
 
     const [B3, D3] = sortedResults[0] || [null, 0];
     const [, D4] = sortedResults[1] || [null, 0];
@@ -266,15 +255,15 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
     const injuryNames = injuryMapping[questionnaire.name];
     const firstInjuryName = injuryNames[B3] || B3;
 
-    const CystScore = scores['I'] || 0;
-    const NerveIssueScore = scores['H'] || 0;
+    const cystScore = scores['I'] || 0;
+    const nerveScore = scores['H'] || 0;
 
     let resultsSummary;
     if (D3 >= D4 + 3 && /[GDFNEABKJ]/.test(B3)) {
       resultsSummary = `🎉 Success! Move on to severity assessment.`;
     } else if (D3 >= D4 + 3) {
       resultsSummary = `🥳 Success! You've completed the assessment.`;
-    } else if (CystScore >= D3 - 2 && CystScore < D3 && /[ACIHLJ]/.test(B3)) {
+    } else if (cystScore >= D3 - 2 && cystScore < D3 && /[ACIHLJ]/.test(B3)) {
       resultsSummary = `🙌 Good work! Move on to Differential Assessment 1.`;
     } else if (D3 > D4 && /[ACIHLJ]/.test(B3) && // If D3 is greater than D4 and B3 is one of ACIHLJ
       (D4 > D16 ?
@@ -345,9 +334,9 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
       resultsSummary = `🎉 Success! Move on to severity assessment.`;
     } else if (D3 === D4 + 2) {
       resultsSummary = `🥳 Success! You've completed the assessment.`;
-    } else if (NerveIssueScore === D3 && /[^ACILJ]/.test(B3) && /[^ACILJ]/.test(sortedResults[1][0]) && D3 >= D5 + 2) {
+    } else if (nerveScore === D3 && /[^ACILJ]/.test(B3) && /[^ACILJ]/.test(sortedResults[1][0]) && D3 >= D5 + 2) {
       resultsSummary = `💪 Success! Move on to nerve tests in Differential Assessment 1.`;
-    } else if (NerveIssueScore < D3 && NerveIssueScore >= D3 - 1 && D3 > D4 && /[^ACILJ]/.test(B3) && D3 >= D5 + 2) {
+    } else if (nerveScore < D3 && nerveScore >= D3 - 1 && D3 > D4 && /[^ACILJ]/.test(B3) && D3 >= D5 + 2) {
       resultsSummary = `💪 Success! Move on to nerve tests in Differential Assessment 1.`;
     } else if (D3 >= D5 + 1 && D4 > D5 && /[AB]/.test(B3) && /[AB]/.test(sortedResults[1][0])) {
       resultsSummary = `🤟 Success! Move on to pulley injury severity assessment.`;
@@ -378,21 +367,21 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
     } else if (/1/.test(resultsSummary)) {
       nerveIssuePossibility = "To be determined...";
     } else if (
-      NerveIssueScore === D3 &&
+      nerveScore === D3 &&
       /[^ACIL]/.test(B3) &&
       sortedResults[1] && /[^ACIL]/.test(sortedResults[1][0]) &&
       D3 >= D5 + 2
     ) {
       nerveIssuePossibility = "⚠️ Test Needed";
     } else if (
-      NerveIssueScore >= D3 - 2 &&
+      nerveScore >= D3 - 2 &&
       D3 > D4 &&
       /[^ACIL]/.test(B3) &&
       D3 >= D5 + 2
     ) {
       nerveIssuePossibility = "⚠️ Medium";
     } else if (
-      NerveIssueScore >= D3 - 2 &&
+      nerveScore >= D3 - 2 &&
       /unclear|information/i.test(displayedResult)
     ) {
       nerveIssuePossibility = "⚠️ Yes";
@@ -408,9 +397,9 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
       cystIndication = "To be determined...";
     } else if (firstInjuryName.toLowerCase() === "cyst") {
       cystIndication = "⚠️ Yes";
-    } else if (CystScore >= D3 - 5 && question8Answer1Selected) {
+    } else if (cystScore >= D3 - 5 && question8Answer1Selected) {
       cystIndication = "⚠️ Yes";
-    } else if (CystScore <= 0) {
+    } else if (cystScore <= 0) {
       cystIndication = "None";
     } else {
       cystIndication = "None";

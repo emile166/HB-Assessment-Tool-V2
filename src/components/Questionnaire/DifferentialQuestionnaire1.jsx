@@ -60,11 +60,6 @@ function Differential1Questionnaire({ questionnaire, onBack, primaryResults }) {
     setSkippedQuestions(newSkippedQuestions);
   };
 
-
-
-
-
-
   const getNextQuestionId = (currentId) => {
     const currentIndex = getQuestionIndex(currentId);
     let nextIndex = currentIndex + 1;
@@ -223,23 +218,28 @@ function Differential1Questionnaire({ questionnaire, onBack, primaryResults }) {
 
   const handleSubmit = (finalResponses = responses) => {
     setIsCalculating(true);
+    console.log("handleSubmit called");
+    console.log("InjuryMapping:", injuryMapping);
 
     // Calculate scores
     const scores = calculateScoresForAnswers(finalResponses);
 
-    // Get sorted results
+    // Sort and filter results
     const sortedResults = Object.entries(scores)
       .sort((a, b) => b[1] - a[1]);
-
-    if (sortedResults.length === 0) {
-      setResultMessage("🤷‍♂️\nThere's nothing to show.");
-      setShowResults(true);
-      return;
-    }
+    console.log("Sorted results:", sortedResults);
 
     const [B3, D3] = sortedResults[0] || [null, 0];
     const [, D4] = sortedResults[1] || [null, 0];
     const [, D5] = sortedResults[2] || [null, 0];
+
+    console.log("Key values:", {
+      B3, D3, D4, D5,
+      "First injury code": sortedResults[0]?.[0],
+      "First injury score": sortedResults[0]?.[1],
+      "Second injury code": sortedResults[1]?.[0],
+      "Second injury score": sortedResults[1]?.[1]
+    });
 
     const injuryNames = injuryMapping[questionnaire.name];
     const firstInjuryName = injuryNames[B3] || B3;
@@ -638,7 +638,7 @@ function Differential1Questionnaire({ questionnaire, onBack, primaryResults }) {
                       <label
                         htmlFor={ans.id}
                         className="text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                        >
+                      >
                         {ans.text}
                       </label>
                     </div>
