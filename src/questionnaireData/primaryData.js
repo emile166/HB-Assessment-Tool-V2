@@ -72,6 +72,7 @@ export const PRIMARY_DATA = {
         },
         {
           if: {
+            questionId: "mechanismAcuteNonTraumatic",
             selectedAnswers: [
               "mechanismAcuteNonTraumaticAnswer1",
               "mechanismAcuteNonTraumaticAnswer2",
@@ -117,6 +118,7 @@ export const PRIMARY_DATA = {
         },
         {
           if: {
+            questionId: "mechanismChronic",
             selectedAnswers: [
               "mechanismChronicAnswer1",
               "mechanismChronicAnswer6"
@@ -172,10 +174,12 @@ export const PRIMARY_DATA = {
       conditions: [
         {
           if: {
+            questionId: "injuryType",
             selectedAnswers: ["injuryTypeAnswer2", "injuryTypeAnswer3"],
             match: "any"
           },
           if: {
+            questionId: "painLocation",
             selectedAnswers: [
               "painLocationAnswer8",
               "painLocationAnswer9",
@@ -205,6 +209,7 @@ export const PRIMARY_DATA = {
       conditions: [
         {
           if: {
+            questionId: "injuryType",
             selectedAnswers: ["injuryTypeAnswer2", "injuryTypeAnswer3"],
             match: "any"
           },
@@ -234,6 +239,7 @@ export const PRIMARY_DATA = {
         },
         {
           if: {
+            questionId: "painLocation",
             selectedAnswers: [
               "painLocationAnswer4",
               "painLocationAnswer8",
@@ -266,6 +272,7 @@ export const PRIMARY_DATA = {
       conditions: [
         {
           if: {
+            questionId: "injurySwelling",
             selectedAnswers: [
               "injurySwellingAnswer1",
               "injurySwellingAnswer2",
@@ -300,6 +307,7 @@ export const PRIMARY_DATA = {
       conditions: [
         {
           if: {
+            questionId: "injuryType",
             selectedAnswers: ["injuryTypeAnswer3"],
             match: "any"
           },
@@ -307,6 +315,7 @@ export const PRIMARY_DATA = {
         },
         {
           if: {
+            questionId: "injuryDiscoloration",
             selectedAnswers: [
               "injuryDiscolorationAnswer1",
               "injuryDiscolorationAnswer2",
@@ -356,6 +365,7 @@ export const PRIMARY_DATA = {
       conditions: [
         {
           if: {
+            questionId: "aromPositionOne",
             selectedAnswers: ["aromPositionOneAnswer1"],
             match: "any"
           },
@@ -386,6 +396,7 @@ export const PRIMARY_DATA = {
       conditions: [
         {
           if: {
+            questionId: "aromPositionOne",
             selectedAnswers: ["aromPositionOneAnswer1", "aromPositionTwoAnswer1"],
             match: "any"
           },
@@ -431,6 +442,7 @@ export const PRIMARY_DATA = {
       conditions: [
         {
           if: {
+            questionId: "painLocation",
             selectedAnswers: [
               "painLocationAnswer9",
               "painLocationAnswer10"
