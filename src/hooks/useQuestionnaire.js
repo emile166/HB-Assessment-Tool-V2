@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { PRIMARY_DATA } from '../questionnaireData/primaryData';
-import { DIFFERENTIAL_ASSESSMENT_1_DATA } from '../constants/differential-1-data';
-import { parseCSV } from '../utils/csvParser';
+import { DIFFERENTIAL_1_DATA } from '../questionnaireData/differential1Data';
 
 export function useQuestionnaire() {
   const [questionnaires, setQuestionnaires] = useState(() => {
@@ -19,12 +18,21 @@ export function useQuestionnaire() {
       }))
     };
 
-    // Keep the differential questionnaire as is for now
-    const differentialQuestionnaire = parseCSV(DIFFERENTIAL_ASSESSMENT_1_DATA);
+    // Transform the differential data into the expected format
+    const differential1Questionnaire = {
+      name: "Differential Assessment 1",
+      questions: Object.values(DIFFERENTIAL_1_DATA).map(question => ({
+        ...question,
+        question: question.text,
+        type: question.multiple ? 'select all that apply' : 'select one answer',
+        answers: question.answers,
+        photos: question.photos || [],
+        video: question.video || '',
+        conditions: question.conditions || []
+      }))
+    };
     
-    const allQuestionnaires = [primaryQuestionnaire, ...differentialQuestionnaire];
-    console.log('Parsed questionnaires:', allQuestionnaires);
-    return allQuestionnaires;
+    return [primaryQuestionnaire, differential1Questionnaire];
   });
   
   const [selectedQuestionnaire, setSelectedQuestionnaire] = useState(null);

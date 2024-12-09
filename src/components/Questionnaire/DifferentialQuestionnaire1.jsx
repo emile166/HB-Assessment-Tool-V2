@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { injuryMapping } from '../../utils/injuryMapping';
 import { Card, CardHeader, CardTitle, CardContent } from "../ui/card";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
@@ -7,15 +7,15 @@ import { Button } from "../ui/button";
 import { Progress } from "../ui/progress";
 import { DISCLAIMER_TEXT } from '../../constants/disclaimer';
 import VideoEmbed from '../VideoEmbed/VideoEmbed';
-import { DIFFERENTIAL_1_VIDEO_IDS } from '../../constants/differential-1-videos';
-import { DIFFERENTIAL_1_PHOTOS_URLS } from '../../constants/differential-1-photos';
 import ImageViewer from '../ImageViewer/ImageViewer';
 import AppHeader from '../AppHeader/AppHeader';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import { INJURY_DESCRIPTIONS } from '../../constants/injury-descriptions';
+import { DIFFERENTIAL_1_DATA } from '../../questionnaireData/differential1Data';
 
 function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const firstQuestionId = questionnaire.questions[0]?.id;
+  const [currentQuestionId, setCurrentQuestionId] = useState(firstQuestionId);
   const [responses, setResponses] = useState({});
   const [showResults, setShowResults] = useState(false);
   const [results, setResults] = useState({});
@@ -29,17 +29,104 @@ function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
   const [debugMode, setDebugMode] = useState(false);
   const [isCalculating, setIsCalculating] = useState(false);
 
+  const questionnaireContainerRef = useRef(null);
+
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [currentQuestionIndex, showResults]);
+  }, [currentQuestionId, showResults]);
 
-  const handleAnswer = (questionIndex, answer) => {
+  useEffect(() => {
+    if (showResults || currentQuestionId !== firstQuestionId) {
+      questionnaireContainerRef.current?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  }, [showResults, currentQuestionId, firstQuestionId]);
+
+  const handleAnswer = (questionId, answer) => {
     const newResponses = {
       ...responses,
-      [questionIndex]: answer,
+      [questionId]: answer,
     };
     setResponses(newResponses);
+
+    // Calculate skipped questions after updating responses
+    const newSkippedQuestions = new Set();
+    questionnaire.questions.forEach(question => {
+      if (shouldSkipQuestion(question.id, newResponses)) {
+        newSkippedQuestions.add(question.id);
+      }
+    });
+    setSkippedQuestions(newSkippedQuestions);
   };
+
+  const shouldSkipQuestion = (questionId, currentResponses = responses) => {
+    const currentQuestion = questionnaire.questions.find(q => q.id === questionId);
+    if (!currentQuestion.conditions) return false;
+
+    return currentQuestion.conditions.some(condition => {
+      if (condition.action !== 'skip') return false;
+      return evaluateCondition(condition.if, currentResponses, questionId);
+    });
+  };
+
+  const evaluateCondition = (condition, currentResponses, questionId) => {
+    if (!condition) return true;
+
+    if (condition.questionId) {
+      const answer = currentResponses[condition.questionId];
+      if (!answer) return false;
+
+      const selectedAnswerIds = Array.isArray(answer)
+        ? answer.map(a => a.id)
+        : [answer.id];
+
+      switch (condition.match) {
+        case 'any':
+          return condition.selectedAnswers.some(id => selectedAnswerIds.includes(id));
+        case 'none':
+          return !condition.selectedAnswers.some(id => selectedAnswerIds.includes(id));
+        case 'only':
+          return selectedAnswerIds.every(id => condition.selectedAnswers.includes(id));
+        default:
+          return false;
+      }
+    }
+
+    if (condition.selectedAnswers) {
+      const answer = currentResponses[questionId];
+      if (!answer) return false;
+
+      const selectedAnswerIds = Array.isArray(answer)
+        ? answer.map(a => a.id)
+        : [answer.id];
+
+      switch (condition.match) {
+        case 'any':
+          return condition.selectedAnswers.some(id => selectedAnswerIds.includes(id));
+        case 'none':
+          return !condition.selectedAnswers.some(id => selectedAnswerIds.includes(id));
+        case 'only':
+          return selectedAnswerIds.every(id => condition.selectedAnswers.includes(id)) &&
+            condition.selectedAnswers.some(id => selectedAnswerIds.includes(id));
+        default:
+          return false;
+      }
+    }
+
+    return true;
+  };
+
+  useEffect(() => {
+    const newSkippedQuestions = new Set();
+    for (let i = 0; i < questionnaire.questions.length; i++) {
+      if (shouldSkipQuestion(questionnaire.questions[i].id, responses)) {
+        newSkippedQuestions.add(questionnaire.questions[i].id);
+      }
+    }
+    setSkippedQuestions(newSkippedQuestions);
+  }, [responses]);
 
   const calculateScoresForAnswers = (currentResponses) => {
     const totalScores = {};
@@ -72,12 +159,17 @@ function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
     return totalScores;
   };
 
+  const checkForEarlyCompletion = (currentId) => {
+    // For now, always return false since we don't have early completion logic yet
+    return false;
+  };
+
   const handleSubmit = (finalResponses = responses) => {
     setIsCalculating(true);
 
     // Calculate scores
     const scores = calculateScoresForAnswers(finalResponses);
-    
+
     // Get sorted results
     const sortedResults = Object.entries(scores)
       .sort((a, b) => b[1] - a[1]);
@@ -109,7 +201,7 @@ function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
       resultsSummary = "🎉\nSuccess! Move on to severity assessment.";
     } else if (D3 >= D4 + 2) {
       resultsSummary = "🥳\nSuccess! You've completed the assessment.";
-    } else if (nerveScore === D3 && D4 > D5 && 
+    } else if (nerveScore === D3 && D4 > D5 &&
       ((hasNerveNo && hasNerveIntensityYes) || hasNerveYes || (hasNerveNo && hasNerveIntensityNo))) {
       resultsSummary = /[GDFNEABK]/.test(B3) || /[GDFNEABK]/.test(sortedResults[1]?.[0]) ?
         "💪\nSuccess! Move on to severity assessment and be aware of the potential nerve issue." :
@@ -119,7 +211,7 @@ function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
     } else if (D3 >= D5 + 1 && D4 > D5 && /[AB]/.test(B3) && /[AB]/.test(sortedResults[1]?.[0])) {
       resultsSummary = "🎉\nSuccess! Move on to severity assessment.";
     } else if ((D3 >= D4 && D4 >= D5 + 2 && /[DE]/.test(B3) && /[DE]/.test(sortedResults[1]?.[0])) ||
-               (D3 >= D4 && D4 === D5 + 1 && /[DE]/.test(B3) && /[DE]/.test(sortedResults[1]?.[0]))) {
+      (D3 >= D4 && D4 === D5 + 1 && /[DE]/.test(B3) && /[DE]/.test(sortedResults[1]?.[0]))) {
       resultsSummary = "🎊\nSuccess! Move on to severity assessment.";
     } else if (D3 <= D4 + 1) {
       resultsSummary = "🤔\nSomething's wrong here...";
@@ -261,21 +353,49 @@ function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
     }, 3000);
   };
 
-  const getNextQuestionIndex = (currentIndex) => {
-    let nextIndex = currentIndex + 1;
-    while (nextIndex < questionnaire.questions.length && skippedQuestions.has(nextIndex)) {
-      nextIndex++;
-    }
-    return nextIndex;
+  const getQuestionIndex = (questionId) => {
+    return questionnaire.questions.findIndex(q => q.id === questionId);
   };
 
-  const getPreviousQuestionIndex = (currentIndex) => {
+  const getNextQuestionId = (currentId) => {
+    const currentIndex = getQuestionIndex(currentId);
+    let nextIndex = currentIndex + 1;
+
+    while (nextIndex < questionnaire.questions.length) {
+      const nextQuestion = questionnaire.questions[nextIndex];
+      if (!skippedQuestions.has(nextQuestion.id)) {
+        return nextQuestion.id;
+      }
+      nextIndex++;
+    }
+    return null;
+  };
+
+  const getPreviousQuestionId = (currentId) => {
+    const currentIndex = getQuestionIndex(currentId);
     let prevIndex = currentIndex - 1;
-    while (prevIndex >= 0 && skippedQuestions.has(prevIndex)) {
+    while (prevIndex >= 0) {
+      const prevQuestion = questionnaire.questions[prevIndex];
+      if (!skippedQuestions.has(prevQuestion.id)) {
+        return prevQuestion.id;
+      }
       prevIndex--;
     }
-    return prevIndex;
+    return null;
   };
+
+  if (!currentQuestionId || !questionnaire.questions.length) {
+    return <LoadingScreen />;
+  }
+
+  const currentQuestion = questionnaire.questions.find(q => q.id === currentQuestionId);
+  
+  if (!currentQuestion) {
+    console.error('Could not find question with ID:', currentQuestionId);
+    return <LoadingScreen />;
+  }
+
+  const progress = ((getQuestionIndex(currentQuestionId) + 1) / questionnaire.questions.length) * 100;
 
   if (isCalculating) {
     return <LoadingScreen />;
@@ -406,11 +526,8 @@ function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
     );
   }
 
-  const currentQuestion = questionnaire.questions[currentQuestionIndex];
-  const progress = ((currentQuestionIndex + 1) / questionnaire.questions.length) * 100;
-
   return (
-    <Card className="w-full max-w-3xl mx-auto p-4">
+    <Card className="w-full max-w-3xl mx-auto p-4" ref={questionnaireContainerRef}>
       <CardHeader>
         <AppHeader />
         <CardTitle className="text-2xl pt-6">{questionnaire.name}</CardTitle>
@@ -419,23 +536,24 @@ function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
         <div className="space-y-8">
           <div className="space-y-2">
             <div className="flex justify-between text-sm text-gray-500">
-              <span>Question {currentQuestionIndex + 1}/{questionnaire.questions.length}</span>
+              <span>Question {getQuestionIndex(currentQuestionId) + 1}/{questionnaire.questions.length}</span>
               <span>(some questions may be skipped automatically)</span>
             </div>
             <Progress value={progress} className="w-full" />
           </div>
 
-          <div>
-            <div className="space-y-2">
-              {DIFFERENTIAL_1_VIDEO_IDS[`Q${currentQuestionIndex + 1}`] && (
-                <VideoEmbed videoId={DIFFERENTIAL_1_VIDEO_IDS[`Q${currentQuestionIndex + 1}`]} />
+          <div className="space-y-6">
+            <div className="space-y-4">
+              {currentQuestion?.video && (
+                <VideoEmbed videoId={currentQuestion.video} />
               )}
-              {DIFFERENTIAL_1_PHOTOS_URLS[`Q${currentQuestionIndex + 1}`] && (
-                <ImageViewer imageUrls={DIFFERENTIAL_1_PHOTOS_URLS[`Q${currentQuestionIndex + 1}`]} />
+              {currentQuestion?.photos?.length > 0 && (
+                <ImageViewer imageUrls={currentQuestion.photos} />
               )}
             </div>
-            <div className="mt-5">
-              <h3 className="font-medium text-lg">{currentQuestion.question}</h3>
+
+            <div>
+              <h3 className="font-medium text-lg mb-2">{currentQuestion.question}</h3>
               <p className="text-sm text-gray-500">
                 {currentQuestion.type} - read all before submitting
               </p>
@@ -444,20 +562,16 @@ function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
             {currentQuestion.type === 'select one answer' && (
               <RadioGroup
                 onValueChange={(value) => {
-                  const answerText = value.split('_').slice(1).join('_');
-                  const selectedAnswer = currentQuestion.answers.find(ans => ans.text === answerText);
-                  handleAnswer(currentQuestionIndex, selectedAnswer);
+                  const selectedAnswer = currentQuestion.answers.find(ans => ans.id === value);
+                  handleAnswer(currentQuestionId, selectedAnswer);
                 }}
-                value={responses[currentQuestionIndex]?.text ? `${currentQuestionIndex}_${responses[currentQuestionIndex].text}` : undefined}
+                value={responses[currentQuestionId]?.id}
                 className="space-y-2 mt-5"
               >
-                {currentQuestion.answers.map((ans, idx) => (
-                  <div key={idx} className="flex items-center space-x-2">
-                    <RadioGroupItem
-                      value={`${currentQuestionIndex}_${ans.text}`}
-                      id={`q${currentQuestionIndex}_a${idx}`}
-                    />
-                    <label htmlFor={`q${currentQuestionIndex}_a${idx}`} className="text-sm">
+                {currentQuestion.answers.map((ans) => (
+                  <div key={ans.id} className="flex items-center space-x-2">
+                    <RadioGroupItem value={ans.id} id={ans.id} />
+                    <label htmlFor={ans.id} className="text-sm">
                       {ans.text}
                     </label>
                   </div>
@@ -467,27 +581,24 @@ function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
 
             {currentQuestion.type === 'select all that apply' && (
               <div className="grid gap-4 mt-5">
-                {currentQuestion.answers.map((ans, idx) => (
-                  <div key={idx} className="flex items-center space-x-3">
+                {currentQuestion.answers.map((ans) => (
+                  <div key={ans.id} className="flex items-center space-x-3">
                     <Checkbox
-                      id={`q${currentQuestionIndex}_a${idx}`}
-                      checked={(responses[currentQuestionIndex] || []).some(a => a.text === ans.text)}
+                      id={ans.id}
+                      checked={(responses[currentQuestionId] || []).some(a => a.id === ans.id)}
                       onCheckedChange={(checked) => {
-                        const prev = responses[currentQuestionIndex] || [];
+                        const prev = responses[currentQuestionId] || [];
                         if (checked) {
-                          handleAnswer(currentQuestionIndex, [...prev, ans]);
+                          handleAnswer(currentQuestionId, [...prev, ans]);
                         } else {
                           handleAnswer(
-                            currentQuestionIndex,
-                            prev.filter(a => a.text !== ans.text)
+                            currentQuestionId,
+                            prev.filter(a => a.id !== ans.id)
                           );
                         }
                       }}
                     />
-                    <label
-                      htmlFor={`q${currentQuestionIndex}_a${idx}`}
-                      className="text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                    >
+                    <label htmlFor={ans.id} className="text-sm">
                       {ans.text}
                     </label>
                   </div>
@@ -495,62 +606,43 @@ function DifferentialQuestionnaire1({ questionnaire, onBack, primaryResults }) {
               </div>
             )}
 
-            <div className="flex justify-end gap-4 mt-6">
-              {currentQuestionIndex > 0 && (
+            <div className="flex justify-between gap-4 mt-6">
+              <Button
+                variant="outline"
+                onClick={() => setCurrentQuestionId(getPreviousQuestionId(currentQuestionId))}
+                disabled={getQuestionIndex(currentQuestionId) < 1}
+              >
+                ← Previous
+              </Button>
+              {getQuestionIndex(currentQuestionId) < questionnaire.questions.length - 1 ? (
                 <Button
-                  variant="outline"
-                  onClick={() => setCurrentQuestionIndex(getPreviousQuestionIndex(currentQuestionIndex))}
+                  onClick={() => {
+                    if (checkForEarlyCompletion(currentQuestionId)) {
+                      handleSubmit();
+                    } else {
+                      const nextId = getNextQuestionId(currentQuestionId);
+                      setCurrentQuestionId(nextId);
+                    }
+                  }}
+                  disabled={!responses[currentQuestionId]}
                 >
-                  Previous
-                </Button>
-              )}
-              {currentQuestionIndex < questionnaire.questions.length - 1 ? (
-                <Button
-                  onClick={() => setCurrentQuestionIndex(getNextQuestionIndex(currentQuestionIndex))}
-                  disabled={!responses[currentQuestionIndex]}
-                >
-                  Next
+                  Next →
                 </Button>
               ) : (
                 <Button
                   onClick={() => handleSubmit()}
-                  disabled={!responses[currentQuestionIndex]}
+                  disabled={!responses[currentQuestionId]}
                 >
                   Submit
                 </Button>
               )}
             </div>
-            <Card className="mt-6">
-              <CardHeader>
-                <CardTitle className="text-sm">Current Scores (For Debugging)</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-2 gap-2 text-sm">
-                  {Object.entries(calculateScoresForAnswers(responses))
-                    .sort((a, b) => b[1] - a[1])
-                    .map(([injury, score]) => (
-                      <div key={injury} className="flex justify-between">
-                        <span>{injuryMapping[questionnaire.name][injury] || injury}:</span>
-                        <span>{score}</span>
-                      </div>
-                    ))}
-                </div>
-              </CardContent>
-            </Card>
+
           </div>
-        </div>
-        <div className="mt-6 text-center">
-          <Button 
-            onClick={() => onBack()} 
-            variant="outline"
-            className="w-full md:w-auto"
-          >
-            Back to Dashboard
-          </Button>
         </div>
       </CardContent>
     </Card>
   );
 }
 
-export default DifferentialQuestionnaire1; 
+export default DifferentialQuestionnaire1;
