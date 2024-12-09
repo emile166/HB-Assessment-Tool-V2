@@ -625,6 +625,10 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
   const currentQuestion = questionnaire.questions.find(q => q.id === currentQuestionId);
   const progress = ((getQuestionIndex(currentQuestionId) + 1) / questionnaire.questions.length) * 100;
 
+  if (!currentQuestion) {
+    return <LoadingScreen />;
+  }
+
   return (
     <Layout>
       <Card ref={questionnaireContainerRef}>
@@ -720,28 +724,20 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
                 >
                   ← Previous
                 </Button>
-                {getQuestionIndex(currentQuestionId) < questionnaire.questions.length - 1 ? (
-                  <Button
-                    onClick={() => {
-                      if (checkForEarlyCompletion(currentQuestionId)) {
-                        handleSubmit();
-                      } else {
-                        const nextId = getNextQuestionId(currentQuestionId);
-                        setCurrentQuestionId(nextId);
-                      }
-                    }}
-                    disabled={!responses[currentQuestionId]}
-                  >
-                    Next →
-                  </Button>
-                ) : (
-                  <Button
-                    onClick={() => handleSubmit()}
-                    disabled={!responses[currentQuestionId]}
-                  >
-                    Submit
-                  </Button>
-                )}
+                <Button
+                  onClick={() => {
+                    const nextId = getNextQuestionId(currentQuestionId);
+                    if (nextId === null) {
+                      // If there are no more questions, submit the questionnaire
+                      handleSubmit();
+                    } else {
+                      setCurrentQuestionId(nextId);
+                    }
+                  }}
+                  disabled={!responses[currentQuestionId]}
+                >
+                  {getQuestionIndex(currentQuestionId) < questionnaire.questions.length - 1 ? "Next →" : "Submit"}
+                </Button>
               </div>
 
               {/* Debug Code Input */}
