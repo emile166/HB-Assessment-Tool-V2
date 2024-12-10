@@ -28,9 +28,9 @@ function App() {
 
   const handleQuestionnaireComplete = (results, type) => {
     if (type === 'primary') {
+      console.log("Saving primary results:", results);
       setPrimaryResults(results);
     }
-    setSelectedQuestionnaire(null);
   };
 
   const handleSelectQuestionnaire = (type) => {

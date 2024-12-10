@@ -466,9 +466,10 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
         setNerveIssuePossibility(nerveIssuePossibility),
         setCystIndication(cystIndication),
         setAdditionalDetails(additionalDetails),
-        setInjuryDescription(getInjuryDescription(displayedResult))
+        setInjuryDescription(getInjuryDescription(displayedResult)),
       ]).then(() => {
         setIsCalculating(false);
+        onComplete({ results: scores, responses: finalResponses });
         console.log("All states updated");
       });
     }, 3000); // Match this with the time it takes for progress to reach 100%
