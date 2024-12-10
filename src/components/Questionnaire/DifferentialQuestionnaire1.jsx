@@ -89,6 +89,8 @@ function Differential1Questionnaire({ questionnaire, onBack, primaryResults }) {
   };
 
   const calculateScoresForAnswers = (currentResponses) => {
+    console.log("Primary Results:", primaryResults);
+    console.log("Primary Results Scores:", primaryResults?.results);
     const totalScores = {};
 
     // Initialize all injury scores to 0

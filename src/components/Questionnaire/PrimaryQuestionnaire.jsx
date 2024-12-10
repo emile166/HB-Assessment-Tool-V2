@@ -743,8 +743,9 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
                 <Button
                   onClick={() => {
                     const nextId = getNextQuestionId(currentQuestionId);
-                    if (nextId === null) {
-                      // If there are no more questions, submit the questionnaire
+                    if (checkForEarlyCompletion(currentQuestionId)) {
+                      handleSubmit();
+                    } else if (nextId === null) {
                       handleSubmit();
                     } else {
                       setCurrentQuestionId(nextId);
