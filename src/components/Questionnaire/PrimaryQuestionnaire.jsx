@@ -140,6 +140,7 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
   const evaluateCondition = (condition, currentResponses, questionId) => {
     if (!condition) return true;
 
+    // If condition has a questionId
     if (condition.questionId) {
       const answer = currentResponses[condition.questionId];
       if (!answer) return false;
