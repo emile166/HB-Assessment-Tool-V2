@@ -254,26 +254,26 @@ function Differential1Questionnaire({ questionnaire, onBack, primaryResults }) {
 
     // Calculate results based on the provided logic
     let resultsSummary;
-    if (D3 >= D4 + 2 && /[GDFNEABK]/.test(B3)) {
-      resultsSummary = "🎉\nSuccess! Move on to severity assessment.";
+    if (D3 >= D4 + 2 && /[GDFNEABKJ]/.test(B3)) {
+      resultsSummary = "🎉 Success! Move on to severity assessment.";
     } else if (D3 >= D4 + 2) {
-      resultsSummary = "🥳\nSuccess! You've completed the assessment.";
+      resultsSummary = "🥳 Success! You've completed the assessment.";
     } else if (nerveScore === D3 && D4 > D5 &&
       ((hasNerveNo && hasNerveIntensityYes) || hasNerveYes || (hasNerveNo && hasNerveIntensityNo))) {
-      resultsSummary = /[GDFNEABK]/.test(B3) || /[GDFNEABK]/.test(sortedResults[1]?.[0]) ?
-        "💪\nSuccess! Move on to severity assessment and be aware of the potential nerve issue." :
-        "⚡\nSuccess! You've completed the assessment";
+      resultsSummary = /[GDFNEABKJ]/.test(B3) || /[GDFNEABKJ]/.test(sortedResults[1]?.[0]) ?
+        "💪 Success! Move on to severity assessment and be aware of the potential nerve issue." :
+        "⚡ Success! You've completed the assessment";
     } else if (D3 > D4 && B3 === 'I' && primaryResults?.responses[7]?.text === 'Yes' && responses[4]?.text === 'Yes') {
-      resultsSummary = "🥳\nSuccess! You've completed the assessment.";
+      resultsSummary = "🥳 Success! You've completed the assessment.";
     } else if (D3 >= D5 + 1 && D4 > D5 && /[AB]/.test(B3) && /[AB]/.test(sortedResults[1]?.[0])) {
-      resultsSummary = "🎉\nSuccess! Move on to severity assessment.";
+      resultsSummary = "🎉 Success! Move on to severity assessment.";
     } else if ((D3 >= D4 && D4 >= D5 + 2 && /[DE]/.test(B3) && /[DE]/.test(sortedResults[1]?.[0])) ||
       (D3 >= D4 && D4 === D5 + 1 && /[DE]/.test(B3) && /[DE]/.test(sortedResults[1]?.[0]))) {
-      resultsSummary = "🎊\nSuccess! Move on to severity assessment.";
+      resultsSummary = "🎊 Success! Move on to severity assessment.";
     } else if (D3 <= D4 + 1) {
-      resultsSummary = "🤔\nSomething's wrong here...";
+      resultsSummary = "🤔 Something's wrong here...";
     } else {
-      resultsSummary = "🙃\nSorry, there seems to be an error.";
+      resultsSummary = "🙃 Sorry, there seems to be an error.";
     }
 
     // Calculate displayed result
