@@ -314,7 +314,7 @@ function Differential1Questionnaire({ questionnaire, onBack, primaryResults }) {
 
     // Calculate cyst indication
     let cystIndication;
-    if (/Cyst/.test(displayedResult)) {
+    if (/cyst/.test(displayedResult.toLowerCase())) {
       cystIndication = "⚠️ Yes";
     } else {
       const cystScore = scores['I'] || 0;
