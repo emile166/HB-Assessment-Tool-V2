@@ -436,6 +436,22 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
     } else if (/🙃/.test(resultsSummary)) {
       additionalDetails = "This is strange. Something has gone wrong in your questionnaire or you've encountered a bug. Please refresh the page and try again. If you continue to receive this result, enter the code 'hb-debug' into the text box at the bottom of the page and then email us a screenshot of your full results report (including results summary, answer log, and scores) to pt@hoopersbeta.com so we can assist you. We apologize for the inconvenience.";
     }
+   
+    // Add nerve issue warning if applicable
+    if (nerveIssuePossibility === "⚠️ Medium") {
+      additionalDetails += " ➡️ Please note: Your answers are associated with some possibility of a nerve issue, which could be affecting your symptoms and therefore this assessment. Nerve issues can mask or mimic symptoms from other injuries, which can make them tricky to deal with. Be aware that a nerve issue is a possible confounding factor that may need professional evaluation.";
+    } else if (nerveIssuePossibility === "⚠️ Test Needed") {
+      additionalDetails += " ➡️ Please note: Your answers are associated with some possibility of a nerve issue, which could be affecting your symptoms and therefore this assessment. Differential assessment 1 contains multiple tests for nerve issues, so you should complete that assessment to obtain more accurate results.";
+    } else if (nerveIssuePossibility === "⚠️ Test Needed") {
+      additionalDetails += " ➡️ Please note: Your answers are associated with some possibility of a nerve issue, which could be affecting your symptoms and therefore this assessment. Nerve issues can mask or mimic symptoms from other injuries, which can make them tricky to deal with. Be aware that a nerve issue is a possible confounding factor that may need professional evaluation.";
+
+    }
+    // Add cyst warning if applicable
+    if (cystIndication === "⚠️ Yes") {
+      additionalDetails += " ➡️ Please note: Your answers are associated with the possibility of a cyst in your finger. Cysts can cause various symptoms that mimic other injuries, which makes accurate assessment more challenging. Be aware that a cyst is a possible confounding factor that may need professional evaluation with ultrasound.";
+    } else if (cystIndication === "Mild") {
+      additionalDetails += " ➡️ Please note: Your answer of 'yes' to 'do you feel an abnormal mass/lump/thickening in your finger?' is associated with the possibility of a cyst. Cysts can cause various symptoms that mimic other injuries, which makes accurate assessment more challenging. Be aware that a cyst is a possible confounding factor that may need professional evaluation with ultrasound.";
+    }
 
     // Get injury description
     const getInjuryDescription = (displayedResult) => {
