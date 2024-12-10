@@ -247,10 +247,10 @@ function Differential1Questionnaire({ questionnaire, onBack, primaryResults }) {
 
     // Calculate nerve issue possibility
     const nerveScore = scores['H'] || 0;
-    const hasNerveYes = responses[8]?.text === 'Yes'; // Q9A
-    const hasNerveNo = responses[8]?.text === 'No';
-    const hasNerveIntensityYes = responses[9]?.text === 'Yes'; // Q9B
-    const hasNerveIntensityNo = responses[9]?.text === 'No';
+    const yesNerveTensionPart1 = responses[DIFFERENTIAL_1_DATA.nerveTensionPart1.id].id === "nerveTensionPart1Answer1";
+    const noNerveTensionPart1 = responses[DIFFERENTIAL_1_DATA.nerveTensionPart1.id].id === "nerveTensionPart1Answer2";
+    const yesNerveTensionPart2 = responses[DIFFERENTIAL_1_DATA.nerveTensionPart2.id].id === "nerveTensionPart2Answer1";
+    const noNerveTensionPart2 = responses[DIFFERENTIAL_1_DATA.nerveTensionPart2.id].id === "nerveTensionPart2Answer2";
 
     // Calculate results based on the provided logic
     let resultsSummary;
@@ -259,7 +259,7 @@ function Differential1Questionnaire({ questionnaire, onBack, primaryResults }) {
     } else if (D3 >= D4 + 2) {
       resultsSummary = "🥳 Success! You've completed the assessment.";
     } else if (nerveScore === D3 && D4 > D5 &&
-      ((hasNerveNo && hasNerveIntensityYes) || hasNerveYes || (hasNerveNo && hasNerveIntensityNo))) {
+      ((noNerveTensionPart1 && yesNerveTensionPart2) || yesNerveTensionPart1 || (noNerveTensionPart1 && noNerveTensionPart2))) {
       resultsSummary = /[GDFNEABKJ]/.test(B3) || /[GDFNEABKJ]/.test(sortedResults[1]?.[0]) ?
         "💪 Success! Move on to severity assessment and be aware of the potential nerve issue." :
         "⚡ Success! You've completed the assessment";
@@ -291,21 +291,21 @@ function Differential1Questionnaire({ questionnaire, onBack, primaryResults }) {
     // Calculate nerve issue possibility
     let nerveIssuePossibility;
     if (nerveScore === D3 - 2) {
-      if (hasNerveNo && hasNerveIntensityYes) nerveIssuePossibility = "None";
-      else if (hasNerveYes) nerveIssuePossibility = "⚠️ Medium";
-      else if (hasNerveNo && hasNerveIntensityNo) nerveIssuePossibility = "None";
+      if (noNerveTensionPart1 && yesNerveTensionPart2) nerveIssuePossibility = "None";
+      else if (yesNerveTensionPart1) nerveIssuePossibility = "⚠️ Medium";
+      else if (noNerveTensionPart1 && noNerveTensionPart2) nerveIssuePossibility = "None";
       else nerveIssuePossibility = "None";
     } else if (nerveScore < D3 && nerveScore > D3 - 2) {
-      if (hasNerveNo && hasNerveIntensityYes) nerveIssuePossibility = "⚠️ Medium";
-      else if (hasNerveYes) nerveIssuePossibility = "⚠️ High";
-      else if (hasNerveNo && hasNerveIntensityNo) nerveIssuePossibility = "⚠️ Medium";
+      if (noNerveTensionPart1 && yesNerveTensionPart2) nerveIssuePossibility = "⚠️ Medium";
+      else if (yesNerveTensionPart1) nerveIssuePossibility = "⚠️ High";
+      else if (noNerveTensionPart1 && noNerveTensionPart2) nerveIssuePossibility = "⚠️ Medium";
       else nerveIssuePossibility = "None";
     } else if (nerveScore === D3 && D4 > D5) {
-      if (hasNerveNo && hasNerveIntensityYes) nerveIssuePossibility = "⚠️ Medium";
-      else if (hasNerveYes) nerveIssuePossibility = "⚠️ High";
-      else if (hasNerveNo && hasNerveIntensityNo) nerveIssuePossibility = "⚠️ Data Unclear";
+      if (noNerveTensionPart1 && yesNerveTensionPart2) nerveIssuePossibility = "⚠️ Medium";
+      else if (yesNerveTensionPart1) nerveIssuePossibility = "⚠️ High";
+      else if (noNerveTensionPart1 && noNerveTensionPart2) nerveIssuePossibility = "⚠️ Data Unclear";
       else nerveIssuePossibility = "None";
-    } else if (hasNerveNo) {
+    } else if (noNerveTensionPart1) {
       nerveIssuePossibility = "⚠️ Medium";
     } else {
       nerveIssuePossibility = "None";
