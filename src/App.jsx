@@ -3,7 +3,7 @@ import Layout from './components/Layout/Layout';
 import Terms from './components/Terms/Terms';
 import Dashboard from './components/Dashboard/Dashboard';
 import PrimaryQuestionnaire from './components/Questionnaire/PrimaryQuestionnaire';
-import DifferentialQuestionnaire1 from './components/Questionnaire/DifferentialQuestionnaire1';
+import Differential1Questionnaire from './components/Questionnaire/Differential1Questionnaire';
 import AppHeader from './components/AppHeader/AppHeader';
 import { useQuestionnaire } from './hooks/useQuestionnaire';
 import { Card, CardHeader, CardContent } from "./components/ui/card";
@@ -76,7 +76,7 @@ function App() {
     } else if (selectedQuestionnaire.name === 'Differential Assessment 1') {
       return (
         <Layout>
-          <DifferentialQuestionnaire1
+          <Differential1Questionnaire
             questionnaire={selectedQuestionnaire}
             onBack={() => setSelectedQuestionnaire(null)}
             primaryResults={primaryResults}
