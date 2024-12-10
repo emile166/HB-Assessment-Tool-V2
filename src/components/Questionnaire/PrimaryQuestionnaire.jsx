@@ -336,9 +336,9 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
     } else if (D3 === D4 + 2) {
       resultsSummary = `🥳 Success! You've completed the assessment.`;
     } else if (nerveScore === D3 && /[^ACILJ]/.test(B3) && /[^ACILJ]/.test(sortedResults[1][0]) && D3 >= D5 + 2) {
-      resultsSummary = `💪 Success! Move on to nerve tests in differential assessment 1.`;
+      resultsSummary = `💪 Success! Move on to differential assessment 1, paying special attention to nerve tension tests.`;
     } else if (nerveScore < D3 && nerveScore >= D3 - 1 && D3 > D4 && /[^ACILJ]/.test(B3) && D3 >= D5 + 2) {
-      resultsSummary = `💪 Success! Move on to nerve tests in differential assessment 1.`;
+      resultsSummary = `💪 Success! ove on to differential assessment 1, paying special attention to nerve tension tests.`;
     } else if (D3 >= D5 + 1 && D4 > D5 && /[AB]/.test(B3) && /[AB]/.test(sortedResults[1][0])) {
       resultsSummary = `🤟 Success! Move on to pulley injury severity assessment.`;
     } else if (D3 <= D4 + 1) {
@@ -414,17 +414,17 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
     let additionalDetails;
 
     if (/💪/.test(resultsSummary)) {
-      additionalDetails = "Great job completing the primary assessment! Based on your results, you should now move on to the nerve tests (questions 9A and 9B) in Differential Assessment 1.";
+      additionalDetails = "Great job completing the primary assessment! Based on your results, you should now move on to differential assessment 1, paying special attention to the two nerve tension tests.";
     } else if (/🤙/.test(resultsSummary)) {
-      additionalDetails = "Great job completing the primary assessment! Based on your results, you should now complete Differential Assessment 3 (Grade III-IV Pulley Injury vs. FDP Injury) as well as Differential Assessment 4 (Lumbrical Injury vs. FDP Injury).";
+      additionalDetails = "Great job completing the primary assessment! Based on your results, you should now complete differential assessment 3 (grade III-IV pulley injury vs. FDP injury) as well as differential assessment 4 (lumbrical injury vs. FDP injury).";
     } else if (/1/.test(resultsSummary)) {
-      additionalDetails = "Great job completing the primary assessment! Based on your results, you should now move on to Differential Assessment 1: Grade I-II Pulley Injury vs. Flexor Tenosynovitis vs. Cyst vs. Nerve Issue vs. FDS Insertional Tendinopathy vs. Injury-Induced Pulley Thickening.";
+      additionalDetails = "Great job completing the primary assessment! Based on your results, you should now move on to differential assessment 1: grade I-II pulley injury vs. flexor tenosynovitis vs. cyst vs. nerve issue vs. FDS insertional tendinopathy vs. injury-induced pulley thickening.";
     } else if (/2/.test(resultsSummary)) {
-      additionalDetails = "Great job completing the primary assessment! Based on your results, you should now move on to Differential Assessment 2: Joint Synovitis vs. Collateral Ligament Injury vs. Lateral Band Syndrome.";
+      additionalDetails = "Great job completing the primary assessment! Based on your results, you should now move on to differential assessment 2: joint synovitis vs. collateral ligament injury vs. lateral band syndrome.";
     } else if (/3/.test(resultsSummary)) {
-      additionalDetails = "Great job completing the primary assessment! Based on your results, you should now move on to Differential Assessment 3: Grade III-IV Pulley Injury vs. FDP Injury.";
+      additionalDetails = "Great job completing the primary assessment! Based on your results, you should now move on to differential assessment 3: grade III-IV pulley injury vs. FDP injury.";
     } else if (/4/.test(resultsSummary)) {
-      additionalDetails = "Great job completing the primary assessment! Based on your results, you should now move on to Differential Assessment 4: Lumbrical Injury vs. FDP Injury.";
+      additionalDetails = "Great job completing the primary assessment! Based on your results, you should now move on to differential assessment 4: lumbrical injury vs. FDP injury.";
     } else if (/🎉/.test(resultsSummary)) {
       additionalDetails = "Great job! You have completed the primary assessment. (You do not need to complete a differential assessment, but may need to complete a severity assessment if indicated above.)";
     } else if (/🤟/.test(resultsSummary)) {
