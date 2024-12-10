@@ -392,13 +392,13 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
 
     // Add cyst possibility calculation
     let cystIndication;
-    const question8Answer1Selected = responses[7]?.text === 'Yes';  // Index 7 for question 8, checking if answer 1 was selected
+    const abnormalMassIsIndicated = responses[PRIMARY_DATA.abnormalMass.id].id === "abnormalMassAnswer1"; // Check if abnormalMassAnswer1 is selected
 
     if (/1/.test(resultsSummary)) {
       cystIndication = "To be determined...";
     } else if (firstInjuryName.toLowerCase() === "cyst") {
       cystIndication = "⚠️ Yes";
-    } else if (cystScore >= D3 - 5 && question8Answer1Selected) {
+    } else if (cystScore >= D3 - 5 && abnormalMassIsIndicated) {
       cystIndication = "⚠️ Yes";
     } else if (cystScore <= 0) {
       cystIndication = "None";
