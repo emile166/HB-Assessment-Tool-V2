@@ -13,6 +13,7 @@ import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import { INJURY_DESCRIPTIONS } from '../../constants/injury-descriptions';
 import Layout from '../Layout/Layout';
 import { DIFFERENTIAL_1_DATA } from '../../questionnaireData/differential1Data';
+import { PRIMARY_DATA } from '../../questionnaireData/primaryData';
 
 function Differential1Questionnaire({ questionnaire, onBack, primaryResults }) {
   const getQuestionIndex = (questionId) => {
@@ -247,10 +248,10 @@ function Differential1Questionnaire({ questionnaire, onBack, primaryResults }) {
 
     // Calculate nerve issue possibility
     const nerveScore = scores['H'] || 0;
-    const yesNerveTensionPart1 = responses[DIFFERENTIAL_1_DATA.nerveTensionPart1.id].id === "nerveTensionPart1Answer1";
-    const noNerveTensionPart1 = responses[DIFFERENTIAL_1_DATA.nerveTensionPart1.id].id === "nerveTensionPart1Answer2";
-    const yesNerveTensionPart2 = responses[DIFFERENTIAL_1_DATA.nerveTensionPart2.id].id === "nerveTensionPart2Answer1";
-    const noNerveTensionPart2 = responses[DIFFERENTIAL_1_DATA.nerveTensionPart2.id].id === "nerveTensionPart2Answer2";
+    const yesNerveTensionPart1 = responses[DIFFERENTIAL_1_DATA.nerveTensionPart1.id]?.id === "nerveTensionPart1Answer1";
+    const noNerveTensionPart1 = responses[DIFFERENTIAL_1_DATA.nerveTensionPart1.id]?.id === "nerveTensionPart1Answer2";
+    const yesNerveTensionPart2 = responses[DIFFERENTIAL_1_DATA.nerveTensionPart2.id]?.id === "nerveTensionPart2Answer1";
+    const noNerveTensionPart2 = responses[DIFFERENTIAL_1_DATA.nerveTensionPart2.id]?.id === "nerveTensionPart2Answer2";
 
     // Calculate results based on the provided logic
     let resultsSummary;
@@ -319,23 +320,23 @@ function Differential1Questionnaire({ questionnaire, onBack, primaryResults }) {
       const cystScore = scores['I'] || 0;
       const primaryCystScore = primaryResults?.results?.['I'] || 0;
       const combinedCystScore = cystScore + primaryCystScore;
-      const hadTrauma = primaryResults?.responses[0]?.text === 'Traumatic';
-      const feltMass = primaryResults?.responses[7]?.text === 'Yes';
-      const hadPriorInjury = responses[4]?.text === 'Yes';
+      const injuryTypeTraumatic = responses[PRIMARY_DATA.injuryType.id]?.id === "injuryTypeAnswer1";
+      const yesAbnormalMass = responses[PRIMARY_DATA.abnormalMass.id]?.id === "abnormalMassAnswer1";
+      const yesPriorInjury = responses[DIFFERENTIAL_1_DATA.priorInjury.id]?.id === "priorInjuryAnswer1";
 
       if (combinedCystScore >= D3 - 1) {
         cystIndication = "⚠️ Yes";
-      } else if (combinedCystScore < D3 - 1 && combinedCystScore >= D3 - 2 && hadTrauma) {
+      } else if (combinedCystScore < D3 - 1 && combinedCystScore >= D3 - 2 && injuryTypeTraumatic) {
         cystIndication = "None";
-      } else if (combinedCystScore < D3 - 1 && combinedCystScore >= D3 - 2 && !feltMass && !hadPriorInjury) {
+      } else if (combinedCystScore < D3 - 1 && combinedCystScore >= D3 - 2 && !yesAbnormalMass && !yesPriorInjury) {
         cystIndication = "None";
-      } else if (combinedCystScore < D3 - 1 && combinedCystScore >= D3 - 2 && feltMass) {
+      } else if (combinedCystScore < D3 - 1 && combinedCystScore >= D3 - 2 && yesAbnormalMass) {
         cystIndication = "⚠️ Yes";
-      } else if (combinedCystScore <= D3 - 3 && !feltMass) {
+      } else if (combinedCystScore <= D3 - 3 && !yesAbnormalMass) {
         cystIndication = "None";
-      } else if (combinedCystScore <= D3 - 3 && !hadTrauma && feltMass) {
+      } else if (combinedCystScore <= D3 - 3 && !injuryTypeTraumatic && yesAbnormalMass) {
         cystIndication = "Mild";
-      } else if (combinedCystScore >= D3 - 5 && feltMass) {
+      } else if (combinedCystScore >= D3 - 5 && yesAbnormalMass) {
         cystIndication = "⚠️ Yes";
       } else if (combinedCystScore < D3 - 5) {
         cystIndication = "None";

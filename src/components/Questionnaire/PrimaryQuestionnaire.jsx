@@ -392,8 +392,8 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
 
     // Add cyst possibility calculation
     let cystIndication;
-    // Check if the response for abnormalMass is an array and if it contains abnormalMassAnswer1
-    const abnormalMassIsIndicated = responses[PRIMARY_DATA.abnormalMass.id].id === "abnormalMassAnswer1";
+    // Check if the response for abnormalMass ontains abnormalMassAnswer1
+    const abnormalMassIsIndicated = responses[PRIMARY_DATA.abnormalMass.id]?.id === "abnormalMassAnswer1";
 
     if (/1/.test(resultsSummary)) {
       cystIndication = "To be determined...";
