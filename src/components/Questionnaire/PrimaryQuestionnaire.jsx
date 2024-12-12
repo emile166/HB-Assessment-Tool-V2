@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { injuryMapping } from '../../utils/injuryMapping';
+import { injuryMapping } from '../../constants/injuryMapping';
 import { Card, CardHeader, CardTitle, CardContent } from "../ui/card";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 import { Checkbox } from "../ui/checkbox";
@@ -10,7 +10,7 @@ import VideoEmbed from '../VideoEmbed/VideoEmbed';
 import ImageViewer from '../ImageViewer/ImageViewer';
 import AppHeader from '../AppHeader/AppHeader';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
-import { INJURY_DESCRIPTIONS } from '../../constants/injury-descriptions';
+import { INJURY_DESCRIPTIONS } from '../../constants/injuryDescriptions';
 import Layout from '../Layout/Layout';
 import { PRIMARY_DATA } from '../../questionnaireData/primaryData';
 import { DebugScores } from '@/components/Debug/DebugScores';
