@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { injuryMapping } from '@/utils/injuryMapping';
+import { injuryMapping } from '../../constants/injuryMapping';
 
 export function DebugScores({ scores, questionnaireName }) {
   const [debugMode, setDebugMode] = useState(false);
