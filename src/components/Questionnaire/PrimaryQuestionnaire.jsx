@@ -597,7 +597,7 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
           <div>
             <p className="text-xs text-gray-500 text-center mb-4">We do not store any information related to this tool. If you leave this page, your answers will be lost. <a href="https://hoopersbeta.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="underline">View our privacy policy.</a></p>
           </div>
-          <div className="mt-6 text-center">
+          <div className="mt-6 mb-6 text-center">
             <Button
               onClick={() => onBack()}
               variant="outline"
@@ -738,7 +738,7 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
           </div>
 
           {/* Back to Dashboard button at bottom */}
-          <div className="mt-6 text-center">
+          <div className="mt-6 mb-6 text-center">
             <Button
               onClick={() => onBack()}
               variant="outline"
