@@ -14,6 +14,7 @@ import { INJURY_DESCRIPTIONS } from '../../constants/injuryDescriptions';
 import Layout from '../Layout/Layout';
 import { PRIMARY_DATA } from '../../questionnaireData/primaryData';
 import { DebugScores } from '@/components/Debug/DebugScores';
+import { evaluateCondition } from '@/lib/conditionEvaluator';
 
 function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
   const getQuestionIndex = (questionId) => {
@@ -138,74 +139,13 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
     return totalScores;
   };
 
-  const evaluateCondition = (condition, currentResponses, questionId) => {
-    if (!condition) return true;
-
-    // If condition has a questionId
-    if (condition.questionId) {
-      const answer = currentResponses[condition.questionId];
-      if (!answer) return false;
-
-      const selectedAnswerIds = Array.isArray(answer)
-        ? answer.map(a => a.id)
-        : [answer.id];
-
-      switch (condition.match) {
-        case 'any':
-          return condition.selectedAnswers.some(id => selectedAnswerIds.includes(id));
-        case 'none':
-          return !condition.selectedAnswers.some(id => selectedAnswerIds.includes(id));
-        case 'only':
-          return selectedAnswerIds.every(id => condition.selectedAnswers.includes(id));
-        default:
-          return false;
-      }
-    }
-
-    // If condition is about the current question's answers
-    if (condition.selectedAnswers) {
-      const answer = currentResponses[questionId];
-      if (!answer) return false;
-
-      const selectedAnswerIds = Array.isArray(answer)
-        ? answer.map(a => a.id)
-        : [answer.id];
-
-      switch (condition.match) {
-        case 'any':
-          return condition.selectedAnswers.some(id => selectedAnswerIds.includes(id));
-        case 'none':
-          return !condition.selectedAnswers.some(id => selectedAnswerIds.includes(id));
-        case 'only':
-          return selectedAnswerIds.every(id => condition.selectedAnswers.includes(id)) &&
-            condition.selectedAnswers.some(id => selectedAnswerIds.includes(id));
-        default:
-          return false;
-      }
-    }
-
-    return true;
-  };
-
   const shouldSkipQuestion = (questionId, currentResponses = responses) => {
     const currentQuestion = questionnaire.questions.find(q => q.id === questionId);
-    if (!currentQuestion.conditions) return false;
-
-    console.log(`Checking skip conditions for question ${questionId}:`, {
-      conditions: currentQuestion.conditions,
-      responses: currentResponses
-    });
+    if (!currentQuestion?.conditions) return false;
 
     return currentQuestion.conditions.some(condition => {
       if (condition.action !== 'skip') return false;
-      const shouldSkip = evaluateCondition(condition.if, currentResponses, questionId);
-
-      console.log(`Condition evaluation result:`, {
-        condition,
-        shouldSkip
-      });
-
-      return shouldSkip;
+      return evaluateCondition(condition.if, currentResponses, questionId);
     });
   };
 
