@@ -287,9 +287,9 @@ function Differential1Questionnaire({ questionnaire, onBack, primaryResults }) {
     // Calculate additional details
     let additionalDetails = '';
     if (displayedResult.toLowerCase() === "nerve issue") {
-      additionalDetails = "Great job completing the assessment thus far! Your answers are strongly associated with a nerve issue.\n\n" +
-        "If the affected finger is the second digit (index finger) or third digit (middle), the culprit is most often the median nerve.\n\n" +
-        "If the affected finger is the fifth digit (pinky finger), the culprit is most often the ulnar nerve.\n\n" +
+      additionalDetails = "Great job completing the assessment thus far! Your answers are strongly associated with a nerve issue. " +
+        "If the affected finger is the second digit (index finger) or third digit (middle), the culprit is most often the median nerve. " +
+        "If the affected finger is the fifth digit (pinky finger), the culprit is most often the ulnar nerve. " +
         "If the affected finger is the fourth digit (ring finger), please go back to the dashboard and complete the nerve questionnaire under the severity assessment category. This will help determine which nerve is most often associated with your symptoms.";
     } else if (/🎉/.test(resultsSummary)) {
       additionalDetails = "Great job completing the differential assessment! Based on your results, you should now move on to severity assessment.";
@@ -300,7 +300,7 @@ function Differential1Questionnaire({ questionnaire, onBack, primaryResults }) {
     } else if (/🥳/.test(resultsSummary)) {
       additionalDetails = "Great job! You have completed the assessment. (You do not need to complete a severity assessment.) Heck yes!";
     } else if (/🎊/.test(resultsSummary)) {
-      additionalDetails = "Great job completing the differential assessment! Your answers are associated with both an FDP injury and a lumbrical injury. These two injuries frequently occur together. For this reason, you should complete the appropriate severity assessments for both injuries. If your severity assessment results indicate different grades for each injury (e.g. FDP is grade I and lumbrical is grade II), choose your recovery program based on the higher grade.";
+      additionalDetails = "Great job completing the differential assessment! Your answers are associated with both an FDP injury and a lumbrical injury. These two injuries frequently occur together. For this reason, you should complete the appropriate severity assessments for *both* injuries. If your severity assessment results indicate different grades for each injury (e.g. FDP is grade I and lumbrical is grade II), it is generally advised to choose a recovery program based on the *higher* grade (unless otherwise instructed by a qualified professional).";
     } else if (/🤔/.test(resultsSummary)) {
       additionalDetails = "Your answers indicate too many possibilities for a valid assessment. This can be due to multiple confounding factors, such as the possibility of two or more concurrent injuries. If you believe you performed all the tests properly and chose accurate answers, this may be the case for you. If so, you can email screenshots of your results (including answer log and scores) to info@hoopersbeta.com and we will be happy to assist you. Enter the code 'hb-debug' in the Debug Code text box below to see your scores.";
     } else if (/🙃/.test(resultsSummary)) {
@@ -309,20 +309,11 @@ function Differential1Questionnaire({ questionnaire, onBack, primaryResults }) {
 
     // Add nerve issue warning if applicable
     if (nerveIssuePossibility === "⚠️ High" && !/🤔/.test(resultsSummary)) {
-      additionalDetails += " ➡️ Please note: Your answers are associated with a high possibility of a nerve issue. Nerve issues can mask or mimic symptoms from other injuries, which can make them tricky to assess (and which can make assessing other injuries more challenging as well). We recommend the following course of action if you have approval from a qualified medical professional: " +
-        "1. Start recovery activities for the nerve issue. " +
-        "2. In one to two days, retake this entire assessment (or, if you're pressed for time, just retake differential assessment 1). " +
-        "3. If your final results change, simply follow the new recommendations. " +
-        "4. If your final results do not change, continue recovery activities for the nerve issue and, if applicable, begin recovery activities for your other condition as well. " +
-        "5. If your symptoms do not change after a week or two or you would like a more definitive assessment that can account for the potential nerve issue, you'll need to schedule an appointment with a qualified medical professional that has experience with nerve issues and, ideally, rock climbers.";
+      additionalDetails += " ➡️ Please note: During testing, you indicated a positive nerve tension test. Based on your results, it is possible your symptoms are associated with a nerve issue as well as a separate injury. The nerve issuecould be affecting your symptoms and therefore this assessment. Nerve issues can mask or mimic symptoms from other injuries, which can make them tricky to deal with. Be aware that a nerve issue is a possible confounding factor that may need professional evaluation.";
     } else if (nerveIssuePossibility === "⚠️ High" && /🤔/.test(resultsSummary)) {
       additionalDetails += " ➡️ Please note: Your answers are associated with a high possibility of a nerve issue, which could be affecting your symptoms and therefore this assessment. Nerve issues can mask or mimic symptoms from other injuries, which can make them tricky to deal with. Be aware that a nerve issue is a possible confounding factor that may need professional evaluation.";
     } else if (nerveIssuePossibility === "⚠️ Medium" && !/🤔/.test(resultsSummary)) {
-      additionalDetails += " ➡️ Please note: During testing, you indicated a positive nerve tension test. Based on your results, it is possible your symptoms are associated with a nerve issue as well as a separate injury. We recommend the following course of action if you have approval from a qualified medical professional: " +
-        "1. Start recovery activities for your non-nerve-related issue. (*Be sure to complete the severity assessment for this issue if applicable.*) " +
-        "2. In one to two days, retake differential assessment 1 (paying special attention to the nerve tension tests) to see if anything has changed since the first test. (You can repeat the nerve tests every couple days to see if you can detect any change or correlation to your symptoms.) " +
-        "3. If your results change, continue with your primary issue recovery activieis and assess your progress after about a week. If your symptoms are improving, simply continue. If they are not improving, begin nerve issue recovery exercises as well. " +
-        "4. If your symptoms do not change after a week or two, schedule an appointment with a qualified medical professional who has experience with nerve issues and, ideally, rock climbers. They will be better able to determine if you do indeed have two concurrent issues or just one that is mimicking the other. ";
+      additionalDetails += " ➡️ Please note: During testing, you indicated a positive nerve tension test. Based on your results, it is possible your symptoms are associated with a nerve issue as well as a separate injury. The nerve issuecould be affecting your symptoms and therefore this assessment. Nerve issues can mask or mimic symptoms from other injuries, which can make them tricky to deal with. Be aware that a nerve issue is a possible confounding factor that may need professional evaluation.";
     } else if (nerveIssuePossibility === "⚠️ Medium" && /🤔/.test(resultsSummary)) {
       additionalDetails += " ➡️ Please note: Your answers are associated with some possibility of a nerve issue, which could be affecting your symptoms and therefore this assessment. Nerve issues can mask or mimic symptoms from other injuries, which can make them tricky to deal with. Be aware that a nerve issue is a possible confounding factor that may need professional evaluation.";
     } else if (nerveIssuePossibility === "⚠️ Data Unclear") {
