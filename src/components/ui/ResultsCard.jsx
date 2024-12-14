@@ -23,8 +23,10 @@ export function ResultsCard({
 }) {
     return (
         <CardContent className="bg-gray-50 rounded-lg m-8">
-            <CardTitle className="text-xl mb-2 pt-6 text-center">{title}</CardTitle>
-            <p className="text-xs text-red-500 text-center uppercase mb-8">
+
+            <CardTitle className="pt-8 text-xl text-center">{title}</CardTitle>
+
+            <p className="mt-8 mb-8 text-md uppercase border rounded-lg bg-red-100 p-8">
                 {DISCLAIMER_TEXT}
             </p>
 
@@ -86,7 +88,7 @@ export function ResultsCard({
                 />
 
                 <div>
-                    <p className="text-xs text-red-500 text-center mb-4">We do not store any information related to this tool. If you leave this page, your answers will be lost. <a href="https://hoopersbeta.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="underline">View our privacy policy.</a></p>
+                    <p className="text-s text-red-500 text-center mb-4">We do not store any information related to this tool. If you leave this page, your answers will be lost. <a href="https://hoopersbeta.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="underline">View our privacy policy.</a></p>
                 </div>
 
                 {/* Add Back to Dashboard button */}
