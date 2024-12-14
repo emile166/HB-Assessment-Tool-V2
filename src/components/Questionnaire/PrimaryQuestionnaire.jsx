@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { injuryMapping } from '../../constants/injuryMapping';
-import { Card, CardHeader, CardTitle, CardContent } from "../ui/card";
+import { Card } from "../ui/card";
 import AppHeader from '../AppHeader/AppHeader';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import { INJURY_DESCRIPTIONS } from '../../constants/injuryDescriptions';
 import Layout from '../Layout/Layout';
 import { PRIMARY_DATA } from '../../questionnaireData/primaryData';
-import { DebugScores } from '@/components/Debug/DebugScores';
 import { evaluateCondition } from '@/lib/conditionEvaluator';
 import { ResultsCard } from '@/components/ui/ResultsCard';
 import { QuestionnaireLayout } from '@/components/ui/QuestionnaireLayout';

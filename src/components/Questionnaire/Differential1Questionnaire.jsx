@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { injuryMapping } from '../../constants/injuryMapping';
 import { Card } from "../ui/card";
-import { DISCLAIMER_TEXT } from '../../constants/disclaimer';
 import AppHeader from '../AppHeader/AppHeader';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import { INJURY_DESCRIPTIONS } from '../../constants/injuryDescriptions';

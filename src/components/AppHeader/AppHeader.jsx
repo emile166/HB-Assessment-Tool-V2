@@ -4,24 +4,24 @@ import { Button } from "../ui/button";
 
 function AppHeader() {
   return (
-    <div className="bg-primary text-center p-8">
-      <h1 className="text-2xl text-white font-bold mb-2">Hooper's Beta Injury Assessment Tool</h1>
-      <p className="mb-2 text-white">Finger, Hand, and Forearm Injuries</p>
-      <Button className="mt-6 mb-2 bg-secondary hover:bg-secondary/80 w-fit mx-auto">
+    <div className="bg-primary/50 text-center p-8">
+      <h1 className="text-2xl text-black font-bold mb-2">Hooper's Beta Injury Assessment Tool</h1>
+      <p className="mb-2 text-gray-500">Finger, Hand, and Forearm Injuries</p>
+      <Button className="mt-6 mb-2 bg-secondary-foreground hover:bg-secondary-foreground/80 w-fit mx-auto">
         <a
           href="https://hoopersbeta.com/recoveryblueprint"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-sm text-black"
+          className="text-sm text-white"
         >
           Get An Injury-Specific Recovery Program
         </a>
       </Button>
-      <p className="text-white text-xs">By using this tool, you agree to our <a
+      <p className="text-gray-500 text-xs">By using this tool, you agree to our <a
         href="https://hoopersbeta.com/terms-and-conditions"
         target="_blank"
         rel="noopener noreferrer"
-        className="underline"
+        className="underline text-gray-500"
       >
         terms and conditions.
       </a>
