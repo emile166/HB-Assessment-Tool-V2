@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { CardHeader, CardTitle } from "../ui/card";
 import { Button } from "../ui/button";
 
-function AppHeader() {
+const AppHeader = forwardRef((props, ref) => {
   return (
-    <div className="bg-primary/50 text-center p-8">
+    <div ref={ref} className="bg-primary/50 text-center p-8">
       <h1 className="text-2xl text-black font-bold mb-2">Hooper's Beta Injury Assessment Tool</h1>
       <p className="mb-2 text-gray-500">Finger, Hand, and Forearm Injuries</p>
       <Button className="mt-6 mb-2 bg-secondary-foreground hover:bg-secondary-foreground/80 w-fit mx-auto">
@@ -28,6 +28,8 @@ function AppHeader() {
       </p>
     </div>
   );
-}
+});
 
-export default AppHeader; 
+AppHeader.displayName = 'AppHeader';
+
+export default AppHeader;

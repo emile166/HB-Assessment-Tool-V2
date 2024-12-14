@@ -1,20 +1,39 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Button } from "../ui/button";
 import AppHeader from '../AppHeader/AppHeader';
 import Layout from '../Layout/Layout';
 
 function Dashboard({ onSelectQuestionnaire }) {
+  const headerRef = useRef(null);
+
+  useEffect(() => {
+    headerRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, []);
+
   return (
     <Layout>
       <Card>
-        <AppHeader />
+        <AppHeader ref={headerRef} />
         <CardContent className="p-8">
+
+          <h1 className="text-xl text-center mb-4">Welcome! Please watch this video to learn how to use this tool.</h1>
+          <div className="aspect-w-16 aspect-h-9 mb-8">
+            <iframe
+              className="w-full rounded-lg"
+              style={{ aspectRatio: '16/9' }}
+              src={`https://www.youtube.com/embed/placeholderID`}
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+
           {/* Primary Assessment Section */}
-          <Card className="p-4 mb-8">
-            <h2 className="text-xl font-semibold mb-4">Primary Assessment (Start Here)</h2>
+          <Card className="p-4 mb-4">
+            <h2 className="text-lg mb-4">1. Primary Assessment</h2>
             <p className="text-sm text-gray-500 mb-4">
-              Start here unless otherwise instructed. This assessment will help determine which follow-up assessments you need, if any.
+              Start here unless otherwise instructed. This is the broad initial assessment that will either give you a result or  determine which additional assessments you need to complete.
             </p>
             <Button
               onClick={() => onSelectQuestionnaire('primary')}
@@ -25,10 +44,10 @@ function Dashboard({ onSelectQuestionnaire }) {
           </Card>
 
           {/* Differential Assessment Section */}
-          <Card className="p-4 mb-8">
-            <h2 className="text-xl font-semibold mb-4">Differential Assessment</h2>
+          <Card className="p-4 mb-4">
+            <h2 className="text-lg mb-4">2. Differential Assessment</h2>
             <p className="text-sm text-gray-500 mb-4">
-              Complete one or more of the following assessments if instructed by your primary assessment results.
+              These are more specific assessments that help differentiate between injuries that can present with similar symptoms. Your scores from the primary assessment will carry over to these assessments as long as you don't close this tab or refresh the page between assessments.
             </p>
             <div>
               <p className="text-sm font-bold text-gray-500 mb-4">Differential Assessment 1: Grade I-II Pulley Injury vs. Flexor Tenosynovitis vs. Cyst vs. Nerve Issue vs. FDS Insertional Tendinopathy vs. Injury-Induced Pulley Thickening</p>
@@ -44,9 +63,9 @@ function Dashboard({ onSelectQuestionnaire }) {
 
           {/* Severity Assessment Section */}
           <Card className="p-4">
-            <h2 className="text-xl font-semibold mb-4">Severity Assessment</h2>
+            <h2 className="text-lg mb-4">3. Severity Assessment</h2>
             <p className="text-sm text-gray-500 mb-4">
-              Complete the assessment that applies to your injury if instructed by a prior assessment or qualified professional.
+              Typically the final assessment you'll need to take if instructed by a prior assessment or qualified professional. This will helps assess the severity of a specific injury, which is often essential for determining a recovery strategy. Scores from previous assessments will not carry over.
             </p>
             <Button
               disabled={true} // Enable when severity assessments are implemented
@@ -54,7 +73,7 @@ function Dashboard({ onSelectQuestionnaire }) {
             >
               Coming Soon
             </Button>
-            </Card>
+          </Card>
         </CardContent>
       </Card>
     </Layout>
