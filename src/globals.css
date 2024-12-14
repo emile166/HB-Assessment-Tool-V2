@@ -53,6 +53,10 @@
 
 }
 
+.css-fix {
+  white-space: pre-wrap;
+}
+
 @keyframes pulse {
   50% {
     opacity: .5;
