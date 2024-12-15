@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { Card, CardContent } from "../ui/card";
 import { Button } from "../ui/button";
 import AppHeader from '../AppHeader/AppHeader';
 import Layout from '../Layout/Layout';
@@ -50,14 +50,25 @@ function Dashboard({ onSelectQuestionnaire }) {
               These are more specific assessments that help differentiate between injuries that can present with similar symptoms. Any differential assessment should be completed in the same session as the primary assessment (without closing or refreshing this page).
             </p>
             <div>
-              <p className="text-sm italic text-gray-500 mb-4">Differential Assessment 1: Grade I-II Pulley Injury vs. Flexor Tenosynovitis vs. Cyst vs. Nerve Issue vs. FDS Insertional Tendinopathy vs. Injury-Induced Pulley Thickening</p>
+
+              <p className="text-sm italic text-gray-500 mb-2">Differential Assessment 1: Grade I-II Pulley Injury vs. Flexor Tenosynovitis vs. Cyst vs. Nerve Issue vs. FDS Insertional Tendinopathy vs. Injury-Induced Pulley Thickening</p>
               <Button
                 onClick={() => onSelectQuestionnaire('differential1')}
                 className="w-full mx-auto min-h-[4rem] md:min-h-[2rem] p-6"
               >
                 Start Differential Assessment 1 (10-20 minutes)
               </Button>
+
+              <p className="text-sm italic text-gray-500 mt-6 mb-2">Differential Assessment 2: Joint Capsulitis vs. Collateral Ligament Injury vs. Lateral Band Syndrome</p>
+              <Button
+                onClick={() => onSelectQuestionnaire('differential2')}
+                className="w-full mx-auto min-h-[4rem] md:min-h-[2rem] p-6"
+              >
+                Start Differential Assessment 2 (10-20 minutes)
+              </Button>
+
               {/* Add more differential assessment buttons as needed */}
+
             </div>
           </Card>
 

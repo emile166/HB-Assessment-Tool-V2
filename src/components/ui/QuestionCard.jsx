@@ -1,4 +1,3 @@
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import VideoEmbed from "../VideoEmbed/VideoEmbed";
 import ImageViewer from "../ImageViewer/ImageViewer";
 import { RadioGroup, RadioGroupItem } from "./radio-group";

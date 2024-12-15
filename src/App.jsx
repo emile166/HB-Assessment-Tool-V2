@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Layout from './components/Layout/Layout';
 import Terms from './components/Terms/Terms';
 import Dashboard from './components/Dashboard/Dashboard';
 import PrimaryQuestionnaire from './components/Questionnaire/PrimaryQuestionnaire';
 import Differential1Questionnaire from './components/Questionnaire/Differential1Questionnaire';
+import Differential2Questionnaire from './components/Questionnaire/Differential2Questionnaire';
 import AppHeader from './components/AppHeader/AppHeader';
 import { useQuestionnaire } from './hooks/useQuestionnaire';
-import { Card, CardHeader, CardContent } from "./components/ui/card";
+import { Card, CardContent } from "./components/ui/card";
 
 function App() {
   const [termsChecked, setTermsChecked] = useState(false);
@@ -38,6 +39,8 @@ function App() {
       setSelectedQuestionnaire(questionnaires[0]);
     } else if (type === 'differential1') {
       setSelectedQuestionnaire(questionnaires[1]);
+    }  else if (type === 'differential2') {
+      setSelectedQuestionnaire(questionnaires[2]);
     }
   };
 
@@ -77,6 +80,16 @@ function App() {
       return (
         <Layout>
           <Differential1Questionnaire
+            questionnaire={selectedQuestionnaire}
+            onBack={() => setSelectedQuestionnaire(null)}
+            primaryResults={primaryResults}
+          />
+        </Layout>
+      );
+    } else if (selectedQuestionnaire.name === 'Differential Assessment 2') {
+      return (
+        <Layout>
+          <Differential2Questionnaire
             questionnaire={selectedQuestionnaire}
             onBack={() => setSelectedQuestionnaire(null)}
             primaryResults={primaryResults}

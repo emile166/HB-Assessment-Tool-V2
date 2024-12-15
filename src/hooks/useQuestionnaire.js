@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { PRIMARY_DATA } from '../questionnaireData/primaryData';
 import { DIFFERENTIAL_1_DATA } from '../questionnaireData/differential1Data';
+import { DIFFERENTIAL_2_DATA } from '../questionnaireData/differential2Data';
 
 export function useQuestionnaire() {
   const [questionnaires, setQuestionnaires] = useState(() => {
@@ -31,8 +32,21 @@ export function useQuestionnaire() {
         conditions: question.conditions || []
       }))
     };
+
+    const differential2Questionnaire = {
+      name: "Differential Assessment 2",
+      questions: Object.values(DIFFERENTIAL_2_DATA).map(question => ({
+        ...question,
+        question: question.text,
+        type: question.multiple ? 'select all that apply' : 'select one answer',
+        answers: question.answers,
+        photos: question.photos || [],
+        video: question.video || '',
+        conditions: question.conditions || []
+      }))
+    };
     
-    return [primaryQuestionnaire, differential1Questionnaire];
+    return [primaryQuestionnaire, differential1Questionnaire, differential2Questionnaire];
   });
   
   const [selectedQuestionnaire, setSelectedQuestionnaire] = useState(null);
