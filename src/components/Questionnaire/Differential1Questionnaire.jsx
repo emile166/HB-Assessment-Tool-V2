@@ -273,10 +273,6 @@ function Differential1Questionnaire({ questionnaire, onBack, primaryResults }) {
         cystIndication = "⚠️ Yes";
       } else if (combinedCystScore <= D3 - 3 && !yesAbnormalMass) {
         cystIndication = "None";
-      } else if (combinedCystScore <= D3 - 3 && !injuryTypeTraumatic && yesAbnormalMass) {
-        cystIndication = "Mild";
-      } else if (combinedCystScore >= D3 - 5 && yesAbnormalMass) {
-        cystIndication = "⚠️ Yes";
       } else if (combinedCystScore < D3 - 5) {
         cystIndication = "None";
       } else {
