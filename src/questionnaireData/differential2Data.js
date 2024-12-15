@@ -41,7 +41,7 @@ export const DIFFERENTIAL_2_DATA = {
             { id: "lateralStressTestAnswer2", text: "Yes, discomfort/pain in only the *PIP* joint on the *opposite* side I was pressing on", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
             { id: "lateralStressTestAnswer3", text: "Yes, discomfort/pain in only the *DIP* joint on the *opposite* side I was pressing on", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "lateralStressTestAnswer4", text: "Yes, some there is some joint laxity", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 2, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "lateralStressTestAnswer5", text: "No discomfort/pain", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "lateralStressTestAnswer5", text: "No discomfort/pain", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "lateralStressTestAnswer6", text: "No joint laxity", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
         ],
         multiple: true,
