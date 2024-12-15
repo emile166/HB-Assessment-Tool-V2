@@ -37,7 +37,7 @@ function Dashboard({ onSelectQuestionnaire }) {
             </p>
             <Button
               onClick={() => onSelectQuestionnaire('primary')}
-              className="w-full"
+              className="w-full mx-auto min-h-[4rem] md:min-h-[2rem] p-6"
             >
               Start Primary Assessment (10-20 minutes)
             </Button>
@@ -53,7 +53,7 @@ function Dashboard({ onSelectQuestionnaire }) {
               <p className="text-sm italic text-gray-500 mb-4">Differential Assessment 1: Grade I-II Pulley Injury vs. Flexor Tenosynovitis vs. Cyst vs. Nerve Issue vs. FDS Insertional Tendinopathy vs. Injury-Induced Pulley Thickening</p>
               <Button
                 onClick={() => onSelectQuestionnaire('differential1')}
-                className="w-full"
+                className="w-full mx-auto min-h-[4rem] md:min-h-[2rem] p-6"
               >
                 Start Differential Assessment 1 (10-20 minutes)
               </Button>
@@ -69,7 +69,7 @@ function Dashboard({ onSelectQuestionnaire }) {
             </p>
             <Button
               disabled={true} // Enable when severity assessments are implemented
-              className="w-full"
+              className="w-full mx-auto min-h-[4rem] md:min-h-[2rem] p-6"
             >
               Coming Soon
             </Button>
