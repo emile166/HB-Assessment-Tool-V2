@@ -4,7 +4,7 @@ import { Button } from "../ui/button";
 
 const AppHeader = forwardRef((props, ref) => {
   return (
-    <div ref={ref} className="bg-primary/50 text-center p-8 rounded-lg">
+    <div ref={ref} className="bg-primary/25 text-center p-8 rounded-lg">
       <a href="/dashboard" className="text-2xl text-black font-bold mb-2">
         Hooper's Beta Injury Assessment Tool
       </a>
