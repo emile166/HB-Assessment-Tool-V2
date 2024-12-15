@@ -28,7 +28,6 @@ function Differential1Questionnaire({ questionnaire, onBack, primaryResults }) {
   const [cystIndication, setCystIndication] = useState('');
   const [additionalDetails, setAdditionalDetails] = useState('');
   const [injuryDescription, setInjuryDescription] = useState('');
-  const [debugMode, setDebugMode] = useState(false);
   const [isCalculating, setIsCalculating] = useState(false);
   const questionnaireContainerRef = useRef(null);
 

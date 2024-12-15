@@ -19,7 +19,6 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
   const [currentQuestionId, setCurrentQuestionId] = useState(firstQuestionId);
   const [responses, setResponses] = useState({});
   const [showResults, setShowResults] = useState(false);
-  const [resultMessage, setResultMessage] = useState('');
   const [results, setResults] = useState({});
   const [skippedQuestions, setSkippedQuestions] = useState(new Set());
   const [displayedResult, setDisplayedResult] = useState('');
@@ -28,7 +27,6 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
   const [cystIndication, setCystIndication] = useState('');
   const [additionalDetails, setAdditionalDetails] = useState('');
   const [injuryDescription, setInjuryDescription] = useState('');
-  const [debugMode, setDebugMode] = useState(false);
   const [isCalculating, setIsCalculating] = useState(false);
   const questionnaireContainerRef = useRef(null);
 
