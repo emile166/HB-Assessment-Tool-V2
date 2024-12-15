@@ -197,86 +197,86 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
 
     let resultsSummary;
     if (D3 >= D4 + 3 && /[GDFNEABKJ]/.test(B3)) {
-      resultsSummary = `🎉 Success! Move on to severity assessment.`;
+      resultsSummary = `🎉 Success! Go back to the dashboard and complete the applicable severity assessment.`;
     } else if (D3 >= D4 + 3) {
       resultsSummary = `🥳 Success! You've completed the assessment.`;
     } else if (cystScore >= D3 - 2 && cystScore < D3 && /[ACIHLJ]/.test(B3)) {
-      resultsSummary = `🙌 Good work! Move on to differential assessment 1.`;
+      resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessment 1.`;
     } else if (D3 > D4 && /[ACIHLJ]/.test(B3) && // If D3 is greater than D4 and B3 is one of ACIHLJ
       (D4 > D16 ?
         /[ACIHL]/.test(acceptableScoresString) // Contains at least one of ACIHL
         : true)
     ) {
-      resultsSummary = `🙌 Good work! Move on to differential assessment 1.`;
+      resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessment 1.`;
     } else if (D3 > D4 && /[FGN]/.test(B3) && // If D3 is greater than D4 and B3 is one of FGN
       (D4 > D16 ?
         /[FGN]/.test(acceptableScoresString) // Contains at least one of FGN
         : true)
     ) {
-      resultsSummary = `🙌 Good work! Move on to differential assessment 2.`;
+      resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessment 2.`;
     } else if (D3 > D4 && /[BDE]/.test(B3) && // If D3 is greater than D4 and B3 is one of BDE
       (D4 > D16 ?
         /[BDE]{2}/.test(acceptableScoresString) // Contains at least two of BDE
         : true)
     ) {
-      resultsSummary = `🙌 Good work! Move on to differential assessments 3 & 4.`;
+      resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessments 3 & 4.`;
     } else if (D3 > D4 && /[BD]/.test(B3) && // If D3 is greater than D4 and B3 is one of BD
       (D4 > D16 ?
         /[BD]/.test(acceptableScoresString) // Contains at least one of BD
         : true)
     ) {
-      resultsSummary = `🙌 Good work! Move on to differential assessment 3.`;
+      resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessment 3.`;
     } else if (D3 > D4 && /[DE]/.test(B3) && // If D3 is greater than D4 and B3 is one of DE
       (D4 > D16 ?
         /[DE]/.test(acceptableScoresString) // Contains at least one of DE
         : true)
     ) {
-      resultsSummary = `🙌 Good work! Move on to differential assessment 4.`;
+      resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessment 4.`;
     } else if (D3 === D4 && /[ACIHLJ]/.test(B3) && // If D3 equals D4 and B3 is one of ACIHLJ
       (D4 > D16 ?
         /[ACIHLJ]/.test(acceptableScoresString) && // Contains at least one of ACIHLJ
         !/[^ACIHLJ]/.test(acceptableScoresString)  // ONLY contains ACIHLJ
         : true)
     ) {
-      resultsSummary = `🙌 Good work! Move on to differential assessment 1.`;
+      resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessment 1.`;
     } else if (D3 === D4 && /[FGN]/.test(B3) && // If D3 equals D4 and B3 is one of FGN
       (D4 > D16 ?
         /[FGN]/.test(acceptableScoresString) && // Contains at least one of FGN
         !/[^FGN]/.test(acceptableScoresString)  // ONLY contains FGN
         : true)
     ) {
-      resultsSummary = `🙌 Good work! Move on to differential assessment 2.`;
+      resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessment 2.`;
     } else if (D3 === D4 && /[BDE]/.test(B3) && // If D3 equals D4 and B3 is one of BDE
       (D4 > D16 ?
         /[BDE]{2}/.test(acceptableScoresString) && // Contains at least two of BDE
         !/[^BDE]/.test(acceptableScoresString)  // ONLY contains BDE
         : true)
     ) {
-      resultsSummary = `🙌 Good work! Move on to differential assessments 3 & 4.`;
+      resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessments 3 & 4.`;
     } else if (D3 === D4 && /[BD]/.test(B3) && // If D3 equals D4 and B3 is one of BD
       (D4 > D16 ?
         /[BD]/.test(acceptableScoresString) && // Contains at least one of BD
         !/[^BD]/.test(acceptableScoresString)  // ONLY contains BD
         : true)
     ) {
-      resultsSummary = `🙌 Good work! Move on to differential assessment 3.`;
+      resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessment 3.`;
     } else if (D3 === D4 && /[DE]/.test(B3) && // If D3 equals D4 and B3 is one of DE
       (D4 > D16 ?
         /[DE]/.test(acceptableScoresString) && // Contains at least one of DE
         !/[^DE]/.test(acceptableScoresString)  // ONLY contains DE
         : true)
     ) {
-      resultsSummary = `🙌 Good work! Move on to differential assessment 4.`;
+      resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessment 4.`;
     } else if (D3 === D4 + 2 && /[GDFNEABKJ]/.test(B3)) {
-      resultsSummary = `🎉 Success! Move on to severity assessment.`;
+      resultsSummary = `🎉 Success! Go back to the dashboard and complete the applicable severity assessment.`;
     } else if (D3 === D4 + 2) {
       resultsSummary = `🥳 Success! You've completed the assessment.`;
     } else if (nerveScore === D3 && /[^ACILJ]/.test(B3) && /[^ACILJ]/.test(sortedResults[1][0]) && D3 >= D5 + 2) {
-      resultsSummary = `💪 Success! Move on to differential assessment 1, paying special attention to nerve tension tests.`;
+      resultsSummary = `💪 Success! Go back to the dashboard and complete differential assessment 1, paying special attention to nerve tension tests.`;
     } else if (nerveScore < D3 && nerveScore >= D3 - 1 && D3 > D4 && /[^ACILJ]/.test(B3) && D3 >= D5 + 2) {
-      resultsSummary = `💪 Success! ove on to differential assessment 1, paying special attention to nerve tension tests.`;
+      resultsSummary = `💪 Success! Go back to the dashboard and complete differential assessment 1, paying special attention to nerve tension tests.`;
     } else if (D3 >= D5 + 1 && D4 > D5 && /[AB]/.test(B3) && /[AB]/.test(sortedResults[1][0])) {
-      resultsSummary = `🤟 Success! Move on to pulley injury severity assessment.`;
+      resultsSummary = `🤟 Success! Go back to the dashboard and complete the pulley injury severity assessment.`;
     } else if (D3 <= D4 + 1) {
       resultsSummary = `🤔 Something's wrong here.`;
     } else {
