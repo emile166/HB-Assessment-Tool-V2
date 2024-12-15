@@ -6,7 +6,7 @@ export function AnswerLog({ questions, responses, skippedQuestions, getQuestionI
       <CardHeader>
         <CardTitle className="text-sm">Answer Log</CardTitle>
       </CardHeader>
-      <CardContent>
+      <CardContent className="p-4 md:p-6 md:pt-0">
         <div className="space-y-2 text-sm">
           {questions.map((question) => {
             const response = responses[question.id];

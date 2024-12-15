@@ -22,9 +22,9 @@ export function ResultsCard({
     children
 }) {
     return (
-        <CardContent className="bg-gray-50 rounded-lg m-8">
+        <CardContent className="bg-gray-50 rounded-lg m-2 md:m-8">
 
-            <CardTitle className="pt-8 text-xl text-center">{title}</CardTitle>
+            <CardTitle className="pt-4 text-xl text-center">{title}</CardTitle>
 
             <p className="mt-8 mb-8 text-md uppercase border rounded-lg bg-red-100 p-8">
                 {DISCLAIMER_TEXT}
@@ -32,7 +32,7 @@ export function ResultsCard({
 
             <div className="space-y-6">
                 {/* Primary Result */}
-                <div className="bg-white border rounded-lg p-6">
+                <div className="bg-white border rounded-lg p-4 md:p-6">
                     <h2 className="text-md mb-2 text-center">Your responses suggest:</h2>
                     <p className="text-lg font-semibold bg-primary text-black mb-8 text-center rounded-sm p-2">
                         {displayedResult}
@@ -44,13 +44,13 @@ export function ResultsCard({
 
                 {/* Risk Indicators */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
-                    <div className="border rounded-lg pr-8 pl-8 pt-4 pb-4">
+                    <div className="border rounded-lg p-4 md:px-8 md:py-4">
                         <h3 className="text-sm font-semibold text-muted-foreground mb-1">
                             Nerve Issue Possibility
                         </h3>
                         <p className="text-md font-medium">{nerveIssuePossibility}</p>
                     </div>
-                    <div className="border rounded-lg pr-8 pl-8 pt-4 pb-4">
+                    <div className="border rounded-lg p-4 md:px-8 md:py-4">
                         <h3 className="text-sm font-semibold text-muted-foreground mb-1">
                             Cyst Indication
                         </h3>

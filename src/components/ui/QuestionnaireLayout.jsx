@@ -20,10 +20,10 @@ export function QuestionnaireLayout({
         <Layout>
             <Card ref={containerRef}>
                 <AppHeader />
-                <CardContent className="mt-4 p-8">
+                <CardContent className="mt-2 p-4 md:p-8">
                     <CardTitle className="text-2xl mb-4">{title}</CardTitle>
 
-                    <div className="space-y-8">
+                    <div className="space-y-6 md:space-y-8">
                         <div className="space-y-2">
                             <div className="flex justify-between text-sm text-gray-500">
                                 <span>Question {currentQuestion}/{totalQuestions}</span>
@@ -40,7 +40,7 @@ export function QuestionnaireLayout({
                         />
 
                         {/* Back to Dashboard button */}
-                        <div className="mt-6 mb-6 text-center">
+                        <div className="mt-4 md:mt-6 mb-4 md:mb-6 text-center">
                             <Button
                                 onClick={onBack}
                                 variant="outline"
