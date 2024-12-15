@@ -8,12 +8,12 @@ export function DebugScores({ scores, questionnaireName }) {
   return (
     <>
       {/* Debug Code Input */}
-      <div className="mt-6">
+      <div>
         <input
           type="text"
           placeholder="Debug code"
           className="w-full p-2 border rounded"
-          onChange={(e) => {
+          onChange={(e) => {    
             if (e.target.value === 'hb-debug') {
               setDebugMode(true);
             }
@@ -22,9 +22,9 @@ export function DebugScores({ scores, questionnaireName }) {
       </div>
 
       {debugMode && (
-        <Card className="mt-6">
-          <CardHeader>
-            <CardTitle className="text-sm">Current Scores (For Debugging)</CardTitle>
+        <Card className="p-6">
+          <CardHeader className="p-4">
+            <CardTitle className="text-sm">Current Scores</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-2 gap-2 text-sm">
