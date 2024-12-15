@@ -9,13 +9,15 @@ export function AnswerLog({ questions, responses, skippedQuestions, getQuestionI
     };
 
     return (
-        <Card>
-            <button onClick={toggleLog} className="mt-8 ml-8 underline">
-                {isOpen ? 'Hide Answer Log' : 'See Answer Log'}
-            </button>
-            <CardContent className="pl-4 pr-4 md:pl-8 md:pr-8">
+        <div className="p-4">
+            <div className="text-center">
+                <button onClick={toggleLog} className="mx-8 mb-2 underline font-sm text-primary">
+                    {isOpen ? 'Hide Answer Log' : 'See Answer Log'}
+                </button>
+            </div>
+            <div>
                 {isOpen && (
-                    <div className="space-y-2 text-sm">
+                    <Card className="p-6 text-sm space-y-2">
                         {questions.map((question) => {
                             const response = responses[question.id];
                             if (!response || skippedQuestions.has(question.id)) return null;
@@ -37,9 +39,9 @@ export function AnswerLog({ questions, responses, skippedQuestions, getQuestionI
                                 </div>
                             );
                         })}
-                    </div>
+                    </Card>
                 )}
-            </CardContent>
-        </Card>
+            </div>
+        </div>
     );
 } 

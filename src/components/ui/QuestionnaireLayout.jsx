@@ -21,26 +21,18 @@ export function QuestionnaireLayout({
             <Card ref={containerRef}>
                 <AppHeader />
                 <CardContent className="mt-2 p-4 md:p-8">
-                    <CardTitle className="text-2xl mb-4">{title}</CardTitle>
+                    <CardTitle className="text-xl mb-4">{title}</CardTitle>
 
                     <div className="space-y-6 md:space-y-8">
                         <div className="space-y-2">
-                            <div className="flex justify-between text-sm text-gray-500">
-                                <span>Question {currentQuestion}/{totalQuestions}</span>
-                                <span>(some questions may be skipped automatically)</span>
-                            </div>
+                            <p className="flex justify-between text-sm text-gray-500">Question {currentQuestion}/{totalQuestions} (some questions are skipped automatically)</p>
                             <Progress value={progress} className="w-full" />
                         </div>
 
                         {children}
 
-                        <DebugScores 
-                            scores={scores}
-                            questionnaireName={questionnaireName}
-                        />
-
                         {/* Back to Dashboard button */}
-                        <div className="mt-4 md:mt-6 mb-4 md:mb-6 text-center">
+                        <div className="pt-8 text-center">
                             <Button
                                 onClick={onBack}
                                 variant="outline"
@@ -49,6 +41,12 @@ export function QuestionnaireLayout({
                                 Back to Dashboard
                             </Button>
                         </div>
+
+                        <DebugScores
+                            scores={scores}
+                            questionnaireName={questionnaireName}
+                        />
+
                     </div>
                 </CardContent>
             </Card>

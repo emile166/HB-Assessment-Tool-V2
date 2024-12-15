@@ -17,7 +17,7 @@ function Dashboard({ onSelectQuestionnaire }) {
         <AppHeader ref={headerRef} />
         <CardContent className="p-4 md:p-8">
 
-          <h1 className="text-xl text-center mb-4">Welcome! Please watch this video to learn how to use this tool.</h1>
+          <h1 className="text-xl text-center mt-4 mb-4">Welcome! Please watch this video to learn how to use this tool.</h1>
           <div className="aspect-w-16 aspect-h-9 mb-8">
             <iframe
               className="w-full rounded-lg"

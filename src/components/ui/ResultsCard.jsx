@@ -22,17 +22,17 @@ export function ResultsCard({
     children
 }) {
     return (
-        <CardContent className="bg-gray-50 rounded-lg m-2 md:m-8">
+        <div className="mb-8">
 
-            <CardTitle className="pt-4 text-xl text-center">{title}</CardTitle>
+            <CardTitle className="mt-8 text-xl text-center">{title}</CardTitle>
 
-            <p className="mt-8 mb-8 text-md uppercase border rounded-lg bg-red-100 p-8">
+            <Card className="p-4 m-4 bg-red-100">
                 {DISCLAIMER_TEXT}
-            </p>
+            </Card>
 
-            <div className="space-y-6">
+            <div>
                 {/* Primary Result */}
-                <div className="bg-white border rounded-lg p-4 md:p-6">
+                <Card className="p-4 m-4">
                     <h2 className="text-md mb-2 text-center">Your responses suggest:</h2>
                     <p className="text-lg font-semibold bg-primary text-black mb-8 text-center rounded-sm p-2">
                         {displayedResult}
@@ -40,27 +40,27 @@ export function ResultsCard({
                     <p className="text-lg mb-2 text-center">
                         {resultsSummary} See additional details below.
                     </p>
-                </div>
+                </Card>
 
                 {/* Risk Indicators */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
-                    <div className="border rounded-lg p-4 md:px-8 md:py-4">
-                        <h3 className="text-sm font-semibold text-muted-foreground mb-1">
-                            Nerve Issue Possibility
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-4">
+                    <Card className="p-4">
+                        <h3 className="text-sm font-semibold text-muted-foreground">
+                            Nerve Issue Indication
                         </h3>
                         <p className="text-md font-medium">{nerveIssuePossibility}</p>
-                    </div>
-                    <div className="border rounded-lg p-4 md:px-8 md:py-4">
-                        <h3 className="text-sm font-semibold text-muted-foreground mb-1">
+                    </Card>
+                    <Card className="p-4">
+                        <h3 className="text-sm font-semibold text-muted-foreground">
                             Cyst Indication
                         </h3>
                         <p className="text-md font-medium">{cystIndication}</p>
-                    </div>
+                    </Card>
                 </div>
 
                 {/* Injury Details */}
                 {(additionalDetails || injuryDescription) && (
-                    <div className="rounded-lg pr-8 pl-8 mb-4 mt-2">
+                    <div className="rounded-lg px-8 mb-4 mt-8">
                         {additionalDetails && (
                             <div className="mb-4">
                                 <h2 className="text-md font-semibold mb-2">Additional Details</h2>
@@ -70,6 +70,20 @@ export function ResultsCard({
                         {injuryDescription && <p className="text-md">{injuryDescription}</p>}
                     </div>
                 )}
+
+                <div>
+                    <p className="text-xs text-gray-500 text-center mt-8 px-4">We do not save or store any information related to this tool. <a href="https://hoopersbeta.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="underline">View our privacy policy.</a></p>
+                </div>
+
+                {/* Back to Dashboard button */}
+                <div className="mt-4 mb-8 text-center">
+                    <Button
+                        onClick={onBack}
+                        className="w-auto"
+                    >
+                        Back to Dashboard
+                    </Button>
+                </div>
 
                 {/* Answer Log */}
                 {questions && responses && (
@@ -87,23 +101,9 @@ export function ResultsCard({
                     questionnaireName={questionnaireName}
                 />
 
-                <div>
-                    <p className="text-xs text-gray-500 text-center mb-4">We do not store any information related to this tool. If you leave this page, your answers will not be saved. <a href="https://hoopersbeta.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="underline">View our privacy policy.</a></p>
-                </div>
-
-                {/* Add Back to Dashboard button */}
-                <div className="mt-6 mb-6 text-center">
-                    <Button
-                        onClick={onBack}
-                        variant="outline"
-                        className="w-full md:w-auto"
-                    >
-                        Back to Dashboard
-                    </Button>
-                </div>
-
                 {children}
+
             </div>
-        </CardContent>
+        </div>
     );
 } 
