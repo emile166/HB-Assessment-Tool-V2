@@ -2,7 +2,7 @@
  * Evaluates if selected answers match condition requirements
  * @param {string[]} selectedAnswerIds - Array of selected answer IDs
  * @param {string[]} conditionAnswers - Array of answer IDs to match against
- * @param {string} matchType - Type of match to perform ('any'|'none'|'only') 
+ * @param {string} matchType - Type of match to perform ('any'|'none'|'only'|'all') 
  * @returns {boolean}
  */
 export function evaluateAnswerMatch(selectedAnswerIds, conditionAnswers, matchType) {
@@ -14,6 +14,8 @@ export function evaluateAnswerMatch(selectedAnswerIds, conditionAnswers, matchTy
     case 'only':
       return selectedAnswerIds.every(id => conditionAnswers.includes(id)) &&
         conditionAnswers.some(id => selectedAnswerIds.includes(id));
+    case 'all':
+      return conditionAnswers.every(id => selectedAnswerIds.includes(id));
     default:
       return false;
   }
