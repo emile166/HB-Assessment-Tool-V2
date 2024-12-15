@@ -33,13 +33,13 @@ function Dashboard({ onSelectQuestionnaire }) {
           <Card className="p-4 mb-4">
             <h2 className="text-lg mb-4">1. Primary Assessment</h2>
             <p className="text-sm text-gray-500 mb-4">
-              Start here unless otherwise instructed. This is the broad initial assessment that will either give you a result or  determine which additional assessments you need to complete.
+              Start here unless otherwise instructed. This is the broad initial assessment that will either give you a final result or determine which additional assessments you need to complete.
             </p>
             <Button
               onClick={() => onSelectQuestionnaire('primary')}
               className="w-full"
             >
-              Start Primary Assessment
+              Start Primary Assessment (10-20 minutes)
             </Button>
           </Card>
 
@@ -47,15 +47,15 @@ function Dashboard({ onSelectQuestionnaire }) {
           <Card className="p-4 mb-4">
             <h2 className="text-lg mb-4">2. Differential Assessment</h2>
             <p className="text-sm text-gray-500 mb-4">
-              These are more specific assessments that help differentiate between injuries that can present with similar symptoms. Your scores from the primary assessment will carry over to these assessments as long as you don't close this tab or refresh the page between assessments.
+              These are more specific assessments that help differentiate between injuries that can present with similar symptoms. Any differential assessment should be completed in the same session as the primary assessment (without closing or refreshing this page).
             </p>
             <div>
-              <p className="text-sm font-bold text-gray-500 mb-4">Differential Assessment 1: Grade I-II Pulley Injury vs. Flexor Tenosynovitis vs. Cyst vs. Nerve Issue vs. FDS Insertional Tendinopathy vs. Injury-Induced Pulley Thickening</p>
+              <p className="text-sm italic text-gray-500 mb-4">Differential Assessment 1: Grade I-II Pulley Injury vs. Flexor Tenosynovitis vs. Cyst vs. Nerve Issue vs. FDS Insertional Tendinopathy vs. Injury-Induced Pulley Thickening</p>
               <Button
                 onClick={() => onSelectQuestionnaire('differential1')}
                 className="w-full"
               >
-                Start Differential Assessment 1
+                Start Differential Assessment 1 (10-20 minutes)
               </Button>
               {/* Add more differential assessment buttons as needed */}
             </div>
@@ -65,7 +65,7 @@ function Dashboard({ onSelectQuestionnaire }) {
           <Card className="p-4">
             <h2 className="text-lg mb-4">3. Severity Assessment</h2>
             <p className="text-sm text-gray-500 mb-4">
-              Typically the final assessment you'll need to take if instructed by a prior assessment or qualified professional. This will helps assess the severity of a specific injury, which is often essential for determining a recovery strategy. Scores from previous assessments will not carry over.
+              Typically the final assessment you'll need to take if instructed by a prior assessment or qualified professional. This will helps assess the severity of a specific injury, which is often essential for determining a recovery strategy.
             </p>
             <Button
               disabled={true} // Enable when severity assessments are implemented
