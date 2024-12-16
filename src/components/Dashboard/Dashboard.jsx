@@ -103,7 +103,7 @@ function Dashboard({ onSelectQuestionnaire }) {
                 className="w-full mx-auto min-h-[4rem] md:min-h-[2rem] p-6"
                 variant="outline"
               >
-                Pulley Injury Severity Assessment (10-20 minutes)
+                Pulley Injury (10-20 minutes)
               </Button>
 
             </div>
