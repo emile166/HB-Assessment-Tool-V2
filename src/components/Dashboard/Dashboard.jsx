@@ -49,30 +49,30 @@ function Dashboard({ onSelectQuestionnaire }) {
             <p className="text-sm text-gray-500 mb-4">
               These are more specific assessments that help differentiate between injuries that can present with similar symptoms. Any differential assessment should be completed in the same session as the primary assessment (without closing or refreshing this page).
             </p>
-            <div>
+            <div className="space-y-4">
 
-              <p className="text-sm italic text-gray-500 mb-2">Differential Assessment 1: Grade I-II Pulley Injury vs. Flexor Tenosynovitis vs. Cyst vs. Nerve Issue vs. FDS Insertional Tendinopathy vs. Injury-Induced Pulley Thickening</p>
               <Button
                 onClick={() => onSelectQuestionnaire('differential1')}
-                className="w-full mx-auto min-h-[4rem] md:min-h-[2rem] p-6"
+                className="w-full mx-auto min-h-[6rem] md:min-h-[6rem] p-6"
+                variant="outline"
               >
-                Start Differential Assessment 1 (10-20 minutes)
+                Differential Assessment 1 (10-20 minutes):<br />Grade I-II Pulley Injury vs. Flexor Tenosynovitis vs. Cyst vs. Nerve Issue vs. FDS Insertional Tendinopathy vs. Injury-Induced Pulley Thickening
               </Button>
 
-              <p className="text-sm italic text-gray-500 mt-6 mb-2">Differential Assessment 2: Joint Capsulitis vs. Collateral Ligament Injury vs. Lateral Band Syndrome</p>
               <Button
                 onClick={() => onSelectQuestionnaire('differential2')}
-                className="w-full mx-auto min-h-[4rem] md:min-h-[2rem] p-6"
+                className="w-full mx-auto min-h-[4rem] md:min-h-[4rem] p-6"
+                variant="outline"
               >
-                Start Differential Assessment 2 (~10 minutes)
+                Differential Assessment 2 (~10 minutes):<br />Joint Capsulitis vs. Collateral Ligament Injury vs. Lateral Band Syndrome
               </Button>
 
-              <p className="text-sm italic text-gray-500 mt-6 mb-2">Differential Assessment 3: Grade III-IV Pulley Injury vs FDP Injury</p>
               <Button
                 onClick={() => onSelectQuestionnaire('differential3')}
-                className="w-full mx-auto min-h-[4rem] md:min-h-[2rem] p-6"
+                className="w-full mx-auto min-h-[4rem] md:min-h-[4rem] p-6"
+                variant="outline"
               >
-                Start Differential Assessment 3 (~5 minutes)
+                Differential Assessment 3 (~5 minutes):<br />Grade III-IV Pulley Injury vs FDP Injury
               </Button>
 
               {/* Add more differential assessment buttons as needed */}
@@ -89,6 +89,7 @@ function Dashboard({ onSelectQuestionnaire }) {
             <Button
               disabled={true} // Enable when severity assessments are implemented
               className="w-full mx-auto min-h-[4rem] md:min-h-[2rem] p-6"
+              variant="outline"
             >
               Coming Soon
             </Button>
