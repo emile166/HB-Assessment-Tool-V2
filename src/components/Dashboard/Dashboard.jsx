@@ -46,34 +46,37 @@ function Dashboard({ onSelectQuestionnaire }) {
           {/* Differential Assessment Section */}
           <Card className="p-4 mb-4">
             <h2 className="text-lg mb-4">2. Differential Assessment</h2>
-            <p className="text-sm text-gray-500 mb-4">
+            <p className="text-sm text-gray-500 mb-6">
               These are more specific assessments that help differentiate between injuries that can present with similar symptoms. Any differential assessment should be completed in the same session as the primary assessment (without closing or refreshing this page).
             </p>
-            <div className="space-y-4">
+            <div>
 
               <Button
                 onClick={() => onSelectQuestionnaire('differential1')}
-                className="w-full mx-auto min-h-[6rem] md:min-h-[6rem] p-6"
+                className="w-full mx-auto min-h-[4rem] md:min-h-[2rem] p-6"
                 variant="outline"
               >
-                Differential Assessment 1 (10-20 minutes):<br />Grade I-II Pulley Injury vs. Flexor Tenosynovitis vs. Cyst vs. Nerve Issue vs. FDS Insertional Tendinopathy vs. Injury-Induced Pulley Thickening
+                Differential Assessment 1 (10-20 minutes)
               </Button>
+              <p className="text-xs text-gray-500 text-center px-8 mt-1 mb-6">Grade I-II Pulley Injury vs. Flexor Tenosynovitis vs. Cyst vs. Nerve Issue vs. FDS Insertional Tendinopathy vs. Injury-Induced Pulley Thickening</p>
 
               <Button
                 onClick={() => onSelectQuestionnaire('differential2')}
-                className="w-full mx-auto min-h-[4rem] md:min-h-[4rem] p-6"
+                className="w-full mx-auto min-h-[4rem] md:min-h-[2rem] p-6"
                 variant="outline"
               >
-                Differential Assessment 2 (~10 minutes):<br />Joint Capsulitis vs. Collateral Ligament Injury vs. Lateral Band Syndrome
+                Differential Assessment 2 (~10 minutes)
               </Button>
+              <p className="text-xs text-gray-500 text-center px-8 mt-1 mb-6">Joint Capsulitis vs. Collateral Ligament Injury vs. Lateral Band Syndrome</p>
 
               <Button
                 onClick={() => onSelectQuestionnaire('differential3')}
-                className="w-full mx-auto min-h-[4rem] md:min-h-[4rem] p-6"
+                className="w-full mx-auto min-h-[4rem] md:min-h-[2rem] p-6"
                 variant="outline"
               >
-                Differential Assessment 3 (~5 minutes):<br />Grade III-IV Pulley Injury vs FDP Injury
+                Differential Assessment 3 (~5 minutes)
               </Button>
+              <p className="text-xs text-gray-500 text-center px-8 mt-1 mb-6">Grade III-IV Pulley Injury vs FDP Injury</p>
 
               {/* Add more differential assessment buttons as needed */}
 
