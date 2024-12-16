@@ -7,6 +7,7 @@ import { DebugScores } from "../Debug/DebugScores";
 export function ResultsCard({
     title,
     displayedResult,
+    locationResult,
     resultsSummary,
     nerveIssuePossibility,
     cystIndication,
@@ -37,26 +38,37 @@ export function ResultsCard({
                     <p className="text-lg font-semibold bg-primary text-black mb-8 text-center rounded-sm p-2">
                         {displayedResult}
                     </p>
+                    {locationResult && (
+                        <div className="mb-8">
+                            <h3 className="text-md mb-2 text-center">At this location:</h3>
+                            <p className="text-lg font-semibold bg-primary text-black mb-4 text-center rounded-sm p-2">
+                                {locationResult}
+                            </p>
+                        </div>
+                    )}
                     <p className="text-lg mb-2 text-center">
                         {resultsSummary} See additional details below.
                     </p>
                 </Card>
 
                 {/* Risk Indicators */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-4">
-                    <Card className="p-4">
-                        <h3 className="text-sm font-semibold text-muted-foreground">
-                            Nerve Issue Indication
-                        </h3>
-                        <p className="text-md font-medium">{nerveIssuePossibility}</p>
-                    </Card>
-                    <Card className="p-4">
-                        <h3 className="text-sm font-semibold text-muted-foreground">
-                            Cyst Indication
-                        </h3>
-                        <p className="text-md font-medium">{cystIndication}</p>
-                    </Card>
-                </div>
+                {(questionnaireName === 'Primary Assessment' || 
+                  questionnaireName.startsWith('Differential Assessment')) && (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-4">
+                        <Card className="p-4">
+                            <h3 className="text-sm font-semibold text-muted-foreground">
+                                Nerve Issue Indication
+                            </h3>
+                            <p className="text-md font-medium">{nerveIssuePossibility}</p>
+                        </Card>
+                        <Card className="p-4">
+                            <h3 className="text-sm font-semibold text-muted-foreground">
+                                Cyst Indication
+                            </h3>
+                            <p className="text-md font-medium">{cystIndication}</p>
+                        </Card>
+                    </div>
+                )}
 
                 {/* Injury Details */}
                 {(additionalDetails || injuryDescription) && (

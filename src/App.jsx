@@ -7,6 +7,7 @@ import Differential1Questionnaire from './components/Questionnaire/Differential1
 import Differential2Questionnaire from './components/Questionnaire/Differential2Questionnaire';
 import Differential3Questionnaire from './components/Questionnaire/Differential3Questionnaire';
 import Differential4Questionnaire from './components/Questionnaire/Differential4Questionnaire';
+import PulleySeverityQuestionnaire from './components/Questionnaire/PulleySeverityQuestionnaire';
 import AppHeader from './components/AppHeader/AppHeader';
 import { useQuestionnaire } from './hooks/useQuestionnaire';
 import { Card, CardContent } from "./components/ui/card";
@@ -47,6 +48,8 @@ function App() {
       setSelectedQuestionnaire(questionnaires[3]);
     } else if (type === 'differential4') {
       setSelectedQuestionnaire(questionnaires[4]);
+    } else if (type === 'pulleySeverity') {
+      setSelectedQuestionnaire(questionnaires[5]);
     }
   };
 
@@ -119,6 +122,16 @@ function App() {
             questionnaire={selectedQuestionnaire}
             onBack={() => setSelectedQuestionnaire(null)}
             primaryResults={primaryResults}
+          />
+        </Layout>
+      );
+    } else if (selectedQuestionnaire.name === 'Pulley Injury Severity Assessment') {
+      return (
+        <Layout>
+          <PulleySeverityQuestionnaire
+            questionnaire={selectedQuestionnaire}
+            onBack={() => setSelectedQuestionnaire(null)}
+            onComplete={(results) => handleQuestionnaireComplete(results, 'pulleySeverity')}
           />
         </Layout>
       );

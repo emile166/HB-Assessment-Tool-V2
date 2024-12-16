@@ -96,13 +96,17 @@ function Dashboard({ onSelectQuestionnaire }) {
             <p className="text-sm text-gray-500 mb-4">
               Typically the final assessment you'll need to take if instructed by a prior assessment or qualified professional. This will helps assess the severity of a specific injury, which is often essential for determining a recovery strategy.
             </p>
-            <Button
-              disabled={true} // Enable when severity assessments are implemented
-              className="w-full mx-auto min-h-[4rem] md:min-h-[2rem] p-6"
-              variant="outline"
-            >
-              Coming Soon
-            </Button>
+            <div className="space-y-4">
+
+              <Button
+                onClick={() => onSelectQuestionnaire('pulleySeverity')}
+                className="w-full mx-auto min-h-[4rem] md:min-h-[2rem] p-6"
+                variant="outline"
+              >
+                Pulley Injury Severity Assessment (10-20 minutes)
+              </Button>
+
+            </div>
           </Card>
         </CardContent>
       </Card>
