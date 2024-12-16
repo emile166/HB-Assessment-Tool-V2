@@ -3,6 +3,7 @@ import { PRIMARY_DATA } from '../questionnaireData/primaryData';
 import { DIFFERENTIAL_1_DATA } from '../questionnaireData/differential1Data';
 import { DIFFERENTIAL_2_DATA } from '../questionnaireData/differential2Data';
 import { DIFFERENTIAL_3_DATA } from '../questionnaireData/differential3Data';
+import { DIFFERENTIAL_4_DATA } from '../questionnaireData/differential4Data';
 
 export function useQuestionnaire() {
   const [questionnaires, setQuestionnaires] = useState(() => {
@@ -59,10 +60,29 @@ export function useQuestionnaire() {
         conditions: question.conditions || []
       }))
     };
-    
-    return [primaryQuestionnaire, differential1Questionnaire, differential2Questionnaire, differential3Questionnaire];
+
+    const differential4Questionnaire = {
+      name: "Differential Assessment 3",
+      questions: Object.values(DIFFERENTIAL_4_DATA).map(question => ({
+        ...question,
+        question: question.text,
+        type: question.multiple ? 'select all that apply' : 'select one answer',
+        answers: question.answers,
+        photos: question.photos || [],
+        video: question.video || '',
+        conditions: question.conditions || []
+      }))
+    };
+
+    return [
+      primaryQuestionnaire,
+      differential1Questionnaire,
+      differential2Questionnaire,
+      differential3Questionnaire,
+      differential4Questionnaire
+    ];
   });
-  
+
   const [selectedQuestionnaire, setSelectedQuestionnaire] = useState(null);
   const [error, setError] = useState(null);
 

@@ -78,7 +78,14 @@ function Dashboard({ onSelectQuestionnaire }) {
               </Button>
               <p className="text-xs text-gray-500 text-center px-8 mt-1 mb-6">Grade III-IV Pulley Injury vs FDP Injury</p>
 
-              {/* Add more differential assessment buttons as needed */}
+              <Button
+                onClick={() => onSelectQuestionnaire('differential4')}
+                className="w-full mx-auto min-h-[4rem] md:min-h-[2rem] p-6"
+                variant="outline"
+              >
+                Differential Assessment 4 (~5 minutes)
+              </Button>
+              <p className="text-xs text-gray-500 text-center px-8 mt-1 mb-2">Lumbrical Injury vs. FDP Injury</p>
 
             </div>
           </Card>
