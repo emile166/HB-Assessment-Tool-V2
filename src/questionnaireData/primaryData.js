@@ -178,13 +178,16 @@ export const PRIMARY_DATA = {
             selectedAnswers: ["injuryTypeAnswer2", "injuryTypeAnswer3"],
             match: "any"
           },
+          action: "skip"
+        },
+        {
           if: {
             questionId: "painLocation",
             selectedAnswers: [
               "painLocationAnswer8",
               "painLocationAnswer9",
               "painLocationAnswer10",
-              "painLocationAnswer11",
+              "painLocation Answer11",
               "painLocationAnswer12"
             ],
             match: "only"
