@@ -162,7 +162,7 @@ export const DIFFERENTIAL_1_DATA = {
     id: "massLocationA2",
     text: "Where in the A2 region do you feel the mass/lump or thickening?",
     video: "placeholderId",
-    photos: [],
+    photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/cf35206c-f5fc-4d72-8897-89eaa8f4b839/Differential+1+-+massLocationA2+and+massLocationA4.jpg?content-type=image%2Fjpeg"],
     answers: [
       { id: "massLocationA2Answer1", text: "Over the middle or distal end of the A2 pulley", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 1, K: 0, L: 0, M: 0, N: 0 } },
       { id: "massLocationA2Answer2", text: "Closer to the MCP joint near the base of the A2 pulley", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 1, J: 0, K: 0, L: 0, M: 0, N: 0 } }
@@ -184,7 +184,7 @@ export const DIFFERENTIAL_1_DATA = {
     id: "massLocationA4",
     text: "Where in the A4 region do you feel the mass/lump or thickening?",
     video: "placeholderId",
-    photos: [],
+    photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/893baf4b-8488-4b64-8b91-4f9bf5afa335/Differential+1+-+massLocationA4.jpg?content-type=image%2Fjpeg"],
     answers: [
       { id: "massLocationA4Answer1", text: "Directly over the middle phalanx", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 1, K: 0, L: 0, M: 0, N: 0 } },
       { id: "massLocationA4Answer2", text: "On one side of the middle phalanx", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 1, J: 0, K: 0, L: 0, M: 0, N: 0 } }
