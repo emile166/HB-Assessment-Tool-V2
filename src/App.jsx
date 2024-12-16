@@ -5,6 +5,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 import PrimaryQuestionnaire from './components/Questionnaire/PrimaryQuestionnaire';
 import Differential1Questionnaire from './components/Questionnaire/Differential1Questionnaire';
 import Differential2Questionnaire from './components/Questionnaire/Differential2Questionnaire';
+import Differential3Questionnaire from './components/Questionnaire/Differential3Questionnaire';
 import AppHeader from './components/AppHeader/AppHeader';
 import { useQuestionnaire } from './hooks/useQuestionnaire';
 import { Card, CardContent } from "./components/ui/card";
@@ -41,6 +42,8 @@ function App() {
       setSelectedQuestionnaire(questionnaires[1]);
     }  else if (type === 'differential2') {
       setSelectedQuestionnaire(questionnaires[2]);
+    }  else if (type === 'differential3') {
+      setSelectedQuestionnaire(questionnaires[3]);
     }
   };
 
@@ -90,6 +93,16 @@ function App() {
       return (
         <Layout>
           <Differential2Questionnaire
+            questionnaire={selectedQuestionnaire}
+            onBack={() => setSelectedQuestionnaire(null)}
+            primaryResults={primaryResults}
+          />
+        </Layout>
+      );
+    } else if (selectedQuestionnaire.name === 'Differential Assessment 3') {
+      return (
+        <Layout>
+          <Differential3Questionnaire
             questionnaire={selectedQuestionnaire}
             onBack={() => setSelectedQuestionnaire(null)}
             primaryResults={primaryResults}
