@@ -16,7 +16,7 @@ const AppHeader = forwardRef((props, ref) => {
           rel="noopener noreferrer"
           className="text-sm text-white"
         >
-          Get An Injury-Specific Recovery Program
+          Get My Science-Backed Recovery Program
         </a>
       </Button>
       <p className="text-gray-500 text-xs">By using this tool, you agree to our <a
