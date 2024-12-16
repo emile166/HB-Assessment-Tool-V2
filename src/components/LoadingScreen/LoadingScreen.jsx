@@ -25,7 +25,7 @@ function LoadingScreen({ title = "Calculating Results", message = "Analyzing res
   return (
     <Card>
       <AppHeader />
-      <CardContent className="bg-gray-50 rounded-lg m-8">
+      <CardContent className="bg-gray-50 rounded-lg m-4">
         <div className="min-h-[400px] flex flex-col items-center justify-center space-y-6">
           <div className="text-center space-y-4">
             <h2 className="text-lg font-semibold">{title}</h2>
