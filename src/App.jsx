@@ -39,21 +39,17 @@ function App() {
   };
 
   const handleSelectQuestionnaire = (type) => {
-    if (type === 'primary') {
-      setSelectedQuestionnaire(questionnaires[0]);
-    } else if (type === 'differential1') {
-      setSelectedQuestionnaire(questionnaires[1]);
-    } else if (type === 'differential2') {
-      setSelectedQuestionnaire(questionnaires[2]);
-    } else if (type === 'differential3') {
-      setSelectedQuestionnaire(questionnaires[3]);
-    } else if (type === 'differential4') {
-      setSelectedQuestionnaire(questionnaires[4]);
-    } else if (type === 'pulleySeverity') {
-      setSelectedQuestionnaire(questionnaires[5]);
-    } else if (type === 'jointCapsulitisSeverity') {
-      setSelectedQuestionnaire(questionnaires[6]);
-    }
+    const questionnaireMap = {
+      primary: questionnaires.find(q => q.name === 'Primary Assessment'),
+      differential1: questionnaires.find(q => q.name === 'Differential Assessment 1'),
+      differential2: questionnaires.find(q => q.name === 'Differential Assessment 2'),
+      differential3: questionnaires.find(q => q.name === 'Differential Assessment 3'),
+      differential4: questionnaires.find(q => q.name === 'Differential Assessment 4'),
+      pulleySeverity: questionnaires.find(q => q.name === 'Pulley Injury Severity Assessment'),
+      jointCapsulitisSeverity: questionnaires.find(q => q.name === 'Joint Capsulitis Severity Assessment'),
+    };
+
+    setSelectedQuestionnaire(questionnaireMap[type] || null);
   };
 
   if (error) {
