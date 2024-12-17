@@ -65,7 +65,7 @@ function Dashboard({ onSelectQuestionnaire }) {
                 className="w-full mx-auto min-h-[4rem] md:min-h-[2rem] p-6"
                 variant="outline"
               >
-                Differential Assessment 2 (~10 minutes)
+                Differential Assessment 2 (10 minutes)
               </Button>
               <p className="text-xs text-gray-500 text-center px-8 mt-1 mb-6">Joint Capsulitis vs. Collateral Ligament Injury vs. Lateral Band Syndrome</p>
 
@@ -74,7 +74,7 @@ function Dashboard({ onSelectQuestionnaire }) {
                 className="w-full mx-auto min-h-[4rem] md:min-h-[2rem] p-6"
                 variant="outline"
               >
-                Differential Assessment 3 (~5 minutes)
+                Differential Assessment 3 (5 minutes)
               </Button>
               <p className="text-xs text-gray-500 text-center px-8 mt-1 mb-6">Grade III-IV Pulley Injury vs FDP Injury</p>
 
@@ -83,7 +83,7 @@ function Dashboard({ onSelectQuestionnaire }) {
                 className="w-full mx-auto min-h-[4rem] md:min-h-[2rem] p-6"
                 variant="outline"
               >
-                Differential Assessment 4 (~5 minutes)
+                Differential Assessment 4 (5 minutes)
               </Button>
               <p className="text-xs text-gray-500 text-center px-8 mt-1 mb-2">Lumbrical Injury vs. FDP Injury</p>
 
@@ -111,7 +111,7 @@ function Dashboard({ onSelectQuestionnaire }) {
                 className="w-full mx-auto min-h-[4rem] md:min-h-[2rem] p-6"
                 variant="outline"
               >
-                Joint Capsulitis (~5 minutes)
+                Joint Capsulitis (5 minutes)
               </Button>
 
             </div>
