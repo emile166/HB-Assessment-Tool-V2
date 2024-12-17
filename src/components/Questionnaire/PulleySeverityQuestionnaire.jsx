@@ -282,7 +282,7 @@ function PulleySeverityQuestionnaire({ questionnaire, onBack, onComplete }) {
   // Helper function for additional details
   const calculateAdditionalDetails = (summary) => {
     if (summary.includes("🙃")) {
-      return "This is strange. Something has gone wrong with your Answer Sheet or you've encountered a bug. Please refresh and try again. If you continue to receive this result, please contact support for assistance.";
+      return "This is strange; you may have encountered a bug. Please refresh this page and try again. If you continue to receive this result, please email us screenshots of your answer log and scores (enter code ‘hb-debug’ into the debug field below) to info@hoopersbeta.com and we will be happy to assist you. We apologize for the inconvenience.";
     } else if (summary.includes("⚕️")) {
       return "A grade IVb pulley injury involves complete ruptures of multiple pulleys. Due to the complexity of this injury and the possibility of other complicating factors, your first step should be to see your primary care physician. They will likely order imaging to confirm the extent of the damage while ruling out involvement of other tissues. They will then help you decide if you will need surgical intervention or if you can begin conservative treatment.";
     } else if (summary.includes("🧑‍⚕️")) {
@@ -290,15 +290,15 @@ function PulleySeverityQuestionnaire({ questionnaire, onBack, onComplete }) {
     } else if (summary.includes("🥳")) {
       return "Great job completing the pulley severity assessment! Your answers are associated with a clear grade and location of injury. Huzzah!";
     } else if (summary.includes("😓")) {
-      return "Your answers did not indicate a clear result; however, they do show the possibility of a Grade IVb pulley injury, which is a rupture of multiple pulleys. If this does not sound right to you, please retake the severity questionnaire and make sure you are as accurate and specific as possible with your answers.";
+      return "Your answers did not indicate a clear result; however, they do show the possibility of a Grade IVb pulley injury, which is a rupture of multiple pulleys. If this does not sound right to you, please retake the severity questionnaire and make sure you are as accurate and specific as possible with your answers. If you continue to receive the same result, your condition may simply require professional evaluation. You can schedule an online or in-person appointment with Dr. Jason Hooper, PT, DPT, OCS, SCS by going here: https://www.hoopersbeta.com/private-sessions.";
     } else if (summary.includes("🤔")) {
-      return "Your answers did not indicate a clear grade or location of injury. If you are certain you have a pulley injury, please retake the severity questionnaire and make sure you are as accurate and specific as possible with your answers.";
+      return "Your answers did not indicate a clear grade or location of injury. If you are certain you have a pulley injury, please retake the severity questionnaire and make sure you are as accurate and specific as possible with your answers. If you continue to receive the same result, your condition may simply require professional evaluation. You can schedule an online or in-person appointment with Dr. Jason Hooper, PT, DPT, OCS, SCS by going here: https://www.hoopersbeta.com/private-sessions.";
     } else if (summary.includes("😞")) {
-      return "Your answers did not indicate a clear grade. If you are certain you have a pulley injury, please retake the severity questionnaire and make sure you are as accurate and specific as possible with your answers.";
+      return "Your answers did not indicate a clear grade. If you are certain you have a pulley injury, please retake the severity questionnaire and make sure you are as accurate and specific as possible with your answers. If you continue to receive the same result, your condition may simply require professional evaluation. You can schedule an online or in-person appointment with Dr. Jason Hooper, PT, DPT, OCS, SCS by going here: https://www.hoopersbeta.com/private-sessions.";
     } else if (summary.includes("🙏")) {
-      return "Your results indicate a clear grade of injury, but the location is not clear. Please retake this assessment and pay special attention to questions related to the location of your injury, ensuring you're being as accurate and specific as possible with your answers.";
+      return "Your results indicate a clear grade of injury, but the location is not clear. Please retake this assessment and pay special attention to questions related to the location of your injury, ensuring you’re being as accurate and specific as possible with your answers. If you continue to receive the same result, your condition may simply require professional evaluation. You can start by emailing us screenshots of your answer log and scores (enter code ‘hb-debug’ into the debug field below) to info@hoopersbeta.com and we will be happy to assist you if you can. Alternatively, you can speed up the process by scheduling an online or in-person appointment with Dr. Jason Hooper, PT, DPT, OCS, SCS by going here: https://www.hoopersbeta.com/private-sessions.";
     } else {
-      return "This is strange; you may have encountered a bug. Please refresh this page and try again. If you continue to receive this result, please contact support for assistance.";
+      return "This is strange; you may have encountered a bug. Please refresh this page and try again. If you continue to receive this result, please email us screenshots of your answer log and scores (enter code ‘hb-debug’ into the debug field below) to  info@hoopersbeta.com and we will be happy to assist you. We apologize for the inconvenience.";
     }
   };
 
