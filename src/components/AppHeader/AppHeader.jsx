@@ -8,17 +8,8 @@ const AppHeader = forwardRef((props, ref) => {
       <a href="/dashboard" className="text-2xl text-black font-bold mb-2">
         Hooper's Beta Injury Assessment Tool
       </a>
-      <p className="mb-2 text-gray-500">Finger, Hand, and Forearm Injuries</p>
-      <Button className="mt-6 mb-2 bg-secondary-foreground hover:bg-secondary-foreground/80 w-fit mx-auto min-h-[3rem] px-6 py-3">
-        <a
-          href="https://hoopersbeta.com/recoveryblueprint"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm text-white"
-        >
-          Get My Science-Backed Recovery Program
-        </a>
-      </Button>
+      <p className="text-gray-500">Finger, Hand, and Forearm Injuries</p>
+
       <p className="text-gray-500 text-xs">By using this tool, you agree to our <a
         href="https://hoopersbeta.com/terms-and-conditions"
         target="_blank"
@@ -28,6 +19,19 @@ const AppHeader = forwardRef((props, ref) => {
         terms and conditions.
       </a>
       </p>
+
+      <p className="mt-8 font-bold text-secondary-foreground">Completed the assessment?</p>
+
+      <Button className="bg-secondary-foreground hover:bg-secondary-foreground/80 w-fit mx-auto min-h-[3rem] px-6 py-3">
+        <a
+          href="https://hoopersbeta.com/recoveryblueprint"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm text-white"
+        >
+          GET AN INJURY-SPECIFIC RECOVERY PROGRAM HERE
+        </a>
+      </Button>
     </div>
   );
 });
