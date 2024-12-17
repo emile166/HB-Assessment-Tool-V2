@@ -155,6 +155,45 @@ function Differential4Questionnaire({ questionnaire, onBack, primaryResults }) {
     setSkippedQuestions(newSkippedQuestions);
   }, [responses]);
 
+  // Helper function to check for forearm and hand pain
+  const checkForearmAndHandPain = (responses) => {
+    // Track pain locations for each question
+    const fourFingerPain = {
+      palm: responses.fourFingerStretch?.some(a => a.id === "fourFingerStretchAnswer1") || false,
+      forearm: responses.fourFingerStretch?.some(a => a.id === "fourFingerStretchAnswer2") || false
+    };
+
+    const singleFingerPain = {
+      palm: responses.singleFingerStretch?.some(a => a.id === "singleFingerStretchAnswer1") || false,
+      forearm: responses.singleFingerStretch?.some(a => a.id === "singleFingerStretchAnswer2") || false
+    };
+
+    const isolatedTissuePain = {
+      both: responses.isolatedTissueLoading?.id === "isolatedTissueLoadingAnswer3" || false
+    };
+
+    // Count questions where both palm and forearm pain are indicated
+    let questionsWithBothPains = 0;
+
+    // Check fourFingerStretch
+    if (fourFingerPain.palm && fourFingerPain.forearm) {
+      questionsWithBothPains++;
+    }
+
+    // Check singleFingerStretch
+    if (singleFingerPain.palm && singleFingerPain.forearm) {
+      questionsWithBothPains++;
+    }
+
+    // Check isolatedTissueLoading
+    if (isolatedTissuePain.both) {
+      questionsWithBothPains++;
+    }
+
+    // Return true if questionsWithBothPains is greater than or equal to 2
+    return questionsWithBothPains >= 2;
+  };
+
   const handleSubmit = (finalResponses = responses) => {
     setIsCalculating(true);
     console.log("handleSubmit called");
@@ -193,14 +232,16 @@ function Differential4Questionnaire({ questionnaire, onBack, primaryResults }) {
 
     // Calculate results based on the provided logic
     let resultsSummary;
-    if (D3 >= D4 + 2 && /[GDFNEABKJ]/.test(B3)) {
+    if (checkForearmAndHandPain(finalResponses)) {
+      resultsSummary = "🎊 Success! Go back to the dashboard and complete the applicable severity assessments.";
+    } else if (D3 >= D4 + 2 && /[GDFNEABKJ]/.test(B3)) {
       resultsSummary = "🎉 Success! Go back to the dashboard and complete the applicable severity assessment.";
     } else if (D3 >= D4 + 2) {
       resultsSummary = "🥳 Success! You've completed the assessment.";
     } else if (nerveScore === D3 && D4 > D5 &&
       ((noNerveTensionPart1 && yesNerveTensionPart2) || yesNerveTensionPart1 || (noNerveTensionPart1 && noNerveTensionPart2))) {
       resultsSummary = /[GDFNEABKJ]/.test(B3) || /[GDFNEABKJ]/.test(sortedResults[1]?.[0]) ?
-        "💪 Success! Go back to the dashboard and complete the applicable severity assessment (and be aware of the potential nerve issue)." :
+        "💪 Success! Go back to the dashboard and complete the applicable severity assessments (and be aware of the potential nerve issue)." :
         "⚡ Success! You've completed the assessment";
     } else if (D3 > D4 && B3 === 'I' && primaryResults?.responses[7]?.text === 'Yes' && responses[4]?.text === 'Yes') {
       resultsSummary = "🥳 Success! You've completed the assessment.";
@@ -208,7 +249,7 @@ function Differential4Questionnaire({ questionnaire, onBack, primaryResults }) {
       resultsSummary = "🎉 Success! Go back to the dashboard and complete the applicable severity assessment.";
     } else if ((D3 >= D4 && D4 >= D5 + 2 && /[DE]/.test(B3) && /[DE]/.test(sortedResults[1]?.[0])) ||
       (D3 >= D4 && D4 === D5 + 1 && /[DE]/.test(B3) && /[DE]/.test(sortedResults[1]?.[0]))) {
-      resultsSummary = "🎊 Success! Go back to the dashboard and complete the applicable severity assessment.";
+      resultsSummary = "🎊 Success! Go back to the dashboard and complete the applicable severity assessments.";
     } else if (D3 <= D4 + 1) {
       resultsSummary = "🤔 Something's wrong here...";
     } else {

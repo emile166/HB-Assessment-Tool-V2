@@ -63,7 +63,7 @@ export function useQuestionnaire() {
     };
 
     const differential4Questionnaire = {
-      name: "Differential Assessment 3",
+      name: "Differential Assessment 4",
       questions: Object.values(DIFFERENTIAL_4_DATA).map(question => ({
         ...question,
         question: question.text,
