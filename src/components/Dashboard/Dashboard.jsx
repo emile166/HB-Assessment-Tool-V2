@@ -106,6 +106,14 @@ function Dashboard({ onSelectQuestionnaire }) {
                 Pulley Injury (10-20 minutes)
               </Button>
 
+              <Button
+                onClick={() => onSelectQuestionnaire('jointCapsulitisSeverity')}
+                className="w-full mx-auto min-h-[4rem] md:min-h-[2rem] p-6"
+                variant="outline"
+              >
+                Joint Capsulitis (~5 minutes)
+              </Button>
+
             </div>
           </Card>
         </CardContent>

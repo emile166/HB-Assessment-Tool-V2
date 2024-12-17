@@ -3,7 +3,7 @@ Joint Capsulitis Logic/Prompt:
 
 I’ve added a new severity questionnaire called JointCapsulitisSeverityQuestionnaire.jsx. I’ve copied and pasted all the code from the PulleySeverityQuestionnaire.jsx file into this new JointCapsulitisSeverityQuestionnaire.jsx file. I’ve changed the name of the function from PulleySeverityQuestionnaire to JointCapsulitisSeverityQuestionnaire. This new questionnaire should operate very similarly to the other questionnaires, but as usual the results logic needs to be unique. I’ve added the appropriate injury mapping to the injuryMapping.js file, where A=Grade I, B=Grade II, and C=Grade III.
 
-I need you to translate the results logic I originally wrote for a google sheet (written below) into logic that works in this assessment app and that is consistent with the way the logic is written for the other questionnaires. I’ve put a comment on line 158 to show you where I think the logic should go.
+I need you to translate the results logic I originally wrote for a google sheet (written below) into logic that works in this assessment app and that is consistent with the way the logic is written for the other questionnaires. I’ve put a comment on line 152 to show you where I think the logic should go.
 
 Make sure you use question IDs and answer IDs rather than indices in the logic whenever possible to ensure the code is flexible.
 

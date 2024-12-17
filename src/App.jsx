@@ -8,6 +8,7 @@ import Differential2Questionnaire from './components/Questionnaire/Differential2
 import Differential3Questionnaire from './components/Questionnaire/Differential3Questionnaire';
 import Differential4Questionnaire from './components/Questionnaire/Differential4Questionnaire';
 import PulleySeverityQuestionnaire from './components/Questionnaire/PulleySeverityQuestionnaire';
+import JointCapsulitisSeverityQuestionnaire from './components/Questionnaire/JointCapsulitisSeverityQuestionnaire';
 import AppHeader from './components/AppHeader/AppHeader';
 import { useQuestionnaire } from './hooks/useQuestionnaire';
 import { Card, CardContent } from "./components/ui/card";
@@ -50,6 +51,8 @@ function App() {
       setSelectedQuestionnaire(questionnaires[4]);
     } else if (type === 'pulleySeverity') {
       setSelectedQuestionnaire(questionnaires[5]);
+    } else if (type === 'jointCapsulitisSeverity') {
+      setSelectedQuestionnaire(questionnaires[6]);
     }
   };
 
@@ -132,6 +135,16 @@ function App() {
             questionnaire={selectedQuestionnaire}
             onBack={() => setSelectedQuestionnaire(null)}
             onComplete={(results) => handleQuestionnaireComplete(results, 'pulleySeverity')}
+          />
+        </Layout>
+      );
+    } else if (selectedQuestionnaire.name === 'Joint Capsulitis Severity Assessment') {
+      return (
+        <Layout>
+          <JointCapsulitisSeverityQuestionnaire
+            questionnaire={selectedQuestionnaire}
+            onBack={() => setSelectedQuestionnaire(null)}
+            onComplete={(results) => handleQuestionnaireComplete(results, 'jointCapsulitisSeverity')}
           />
         </Layout>
       );
