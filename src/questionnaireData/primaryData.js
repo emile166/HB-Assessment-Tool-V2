@@ -339,13 +339,20 @@ export const PRIMARY_DATA = {
       id: "aromPositionOne",
       text: "What are your active range of motion test results in position one?",
       video: "placeholderID",
-      photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/c3e8ac25-0a5b-4f27-9a42-716b2318ee0d/Primary+-+Question+9+-+Hand+front.jpg?content-type=image%2Fjpeg"],
+      photos: [
+        "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/574f61b7-d74e-4802-9149-3607c6146b99/Primary+-+Question+12+-+.jpg?content-type=image%2Fjpeg",
+        "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/84930909-0843-4db5-829b-a2d82a766c07/Differential+3+-+Question+1+-+Hand+front.jpg?content-type=image%2Fjpeg"
+      ],
       answers: [
         { id: "aromPositionOneAnswer1", text: "My injury affects my PIP joint and I feel a click/catch sensation on one side of it", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
-        { id: "aromPositionOneAnswer2", text: "Some discomfort/pain or mildly limited range of motion associated with my injury", scores: { A: 0, B: 0, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-        { id: "aromPositionOneAnswer3", text: "No discomfort/pain associated with my injury", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
+        { id: "aromPositionOneAnswer2", text: "Normal ROM, no discomfort/pain, and no stiffness associated with my injury", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+        { id: "aromPositionOneAnswer3", text: "Some discomfort/pain in my forearm", scores: { A: 0, B: 0, C: 0, D: 1, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+        { id: "aromPositionOneAnswer4", text: "Some discomfort/pain in the palm of my hand", scores: { A: 0, B: 0, C: 0, D: 0, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+        { id: "aromPositionOneAnswer5", text: "Some discomfort/pain in the A1 to A4 pulley region (palm side)", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+        { id: "aromPositionOneAnswer6", text: "Some discomfort/pain in the palm side of the DIP joint *only*", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
+        { id: "aromPositionOneAnswer7", text: "My injury affects my A2 or A4 region and I feel an obvious click/catch sensation", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 1, J: 1, K: 0, L: 0, M: 0, N: 0 } }
       ],
-      multiple: false,
+      multiple: true,
       conditions: []
     },
     aromPositionTwo: {
