@@ -428,7 +428,7 @@ export const PRIMARY_DATA = {
         { id: "tissueLoadingAnswer9", text: "No injury-related symptoms with any of the tissue loading tests", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 1, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
         { id: "tissueLoadingAnswer10", text: "None of these options apply to me", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
       ],
-      multiple: false,
+      multiple: true,
       conditions: []
     },
     passiveExtension: {
