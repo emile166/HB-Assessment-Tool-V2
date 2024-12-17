@@ -99,5 +99,22 @@ export const injuryMapping = {
     'L': '',
     'M': '',
     'N': ''
+  },
+
+  'Joint Capsulitis Severity Assessment': {
+    'A': 'Grade I',
+    'B': 'Grade II',
+    'C': 'Grade III',
+    'D': '',
+    'E': '',
+    'F': '',
+    'G': '',
+    'H': '',
+    'I': '',
+    'J': '',
+    'K': '',
+    'L': '',
+    'M': '',
+    'N': ''
   }
 };
