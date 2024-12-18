@@ -285,7 +285,7 @@ function Differential4Questionnaire({ questionnaire, onBack, primaryResults }) {
       else if (yesNerveTensionPart1) nerveIssuePossibility = "⚠️ High";
       else if (noNerveTensionPart1 && noNerveTensionPart2) nerveIssuePossibility = "⚠️ Data Unclear";
       else nerveIssuePossibility = "None";
-    } else if (noNerveTensionPart1) {
+    } else if (yesNerveTensionPart1) {
       nerveIssuePossibility = "⚠️ Medium";
     } else {
       nerveIssuePossibility = "None";
