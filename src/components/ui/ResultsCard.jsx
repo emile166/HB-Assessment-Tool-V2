@@ -52,23 +52,23 @@ export function ResultsCard({
                 </Card>
 
                 {/* Risk Indicators */}
-                {(questionnaireName === 'Primary Assessment' || 
-                  questionnaireName.startsWith('Differential Assessment')) && (
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-4">
-                        <Card className="p-4">
-                            <h3 className="text-sm font-semibold text-muted-foreground">
-                                Nerve Issue Indication
-                            </h3>
-                            <p className="text-md font-medium">{nerveIssuePossibility}</p>
-                        </Card>
-                        <Card className="p-4">
-                            <h3 className="text-sm font-semibold text-muted-foreground">
-                                Cyst Indication
-                            </h3>
-                            <p className="text-md font-medium">{cystIndication}</p>
-                        </Card>
-                    </div>
-                )}
+                {(questionnaireName === 'Primary Assessment' ||
+                    questionnaireName.startsWith('Differential Assessment')) && (
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-4">
+                            <Card className="p-4">
+                                <h3 className="text-sm font-semibold text-muted-foreground">
+                                    Nerve Issue Indication
+                                </h3>
+                                <p className="text-md font-medium">{nerveIssuePossibility}</p>
+                            </Card>
+                            <Card className="p-4">
+                                <h3 className="text-sm font-semibold text-muted-foreground">
+                                    Cyst Indication
+                                </h3>
+                                <p className="text-md font-medium">{cystIndication}</p>
+                            </Card>
+                        </div>
+                    )}
 
                 {/* Injury Details */}
                 {(additionalDetails || injuryDescription) && (
@@ -82,6 +82,14 @@ export function ResultsCard({
                         {injuryDescription && <p className="text-md">{injuryDescription}</p>}
                     </div>
                 )}
+
+                <Card className="p-8 m-4 bg-secondary">
+                    <h3 className="text-lg text-center text-secondary-foreground font-semibold mb-2">Ready to start recovering?</h3>
+                    <p className="text-center mb-4">
+                        Hooper’s Beta offers affordable, comprehensive programs to assist with recovery from specific rock-climbing related injuries through a convenient mobile app. For more information, please visit: <a href="https://hoopersbeta.com/recoveryblueprint" target="_blank" rel="noopener noreferrer" className="underline font-bold text-secondary-foreground">hoopersbeta.com/recoveryblueprint</a>.
+                    </p>
+                    <img src="https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/b2574595-dc2e-4470-a6e6-35e381ec1c10/hand+holding+phone+in+city+with+blueprint+on+screen.jpg?content-type=image%2Fjpeg" alt="Recovery Blueprint Mobile App" className="m-auto size-9/12 rounded-lg" />
+                </Card>
 
                 <div>
                     <p className="text-xs text-gray-500 text-center mt-8 px-4">We do not save or store any information related to this tool. <a href="https://hoopersbeta.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="underline">View our privacy policy.</a></p>
