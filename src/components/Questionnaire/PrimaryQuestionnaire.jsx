@@ -29,6 +29,7 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
   const [injuryDescription, setInjuryDescription] = useState('');
   const [isCalculating, setIsCalculating] = useState(false);
   const questionnaireContainerRef = useRef(null);
+  const [earlyCompletion, setEarlyCompletion] = useState(false);
 
   useEffect(() => {
     if (showResults || currentQuestionId !== firstQuestionId) {
@@ -156,6 +157,9 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
     setIsCalculating(true);
     console.log("handleSubmit called");
     console.log("InjuryMapping:", injuryMapping);
+    const isGradeIVb = responses['visualBowstringing']?.id === 'visualBowstringingAnswer1';
+    console.log("Early completion:", isGradeIVb);
+    console.log("Visual bowstringing response:", responses['visualBowstringing']?.id);
 
     // Calculate scores
     const scores = calculateScoresForAnswers(finalResponses);
@@ -194,110 +198,122 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
     const nerveScore = scores['H'] || 0;
 
     let resultsSummary;
-    if (D3 >= D4 + 3 && /[GDFNEABKJ]/.test(B3)) {
-      resultsSummary = `🎉 Success! Go back to the dashboard and complete the applicable severity assessment.`;
-    } else if (D3 >= D4 + 3) {
-      resultsSummary = `🥳 Success! You've completed the assessment.`;
-    } else if (cystScore >= D3 - 2 && cystScore < D3 && /[ACIHLJ]/.test(B3)) {
-      resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessment 1.`;
-    } else if (D3 > D4 && /[ACIHLJ]/.test(B3) && // If D3 is greater than D4 and B3 is one of ACIHLJ
-      (D4 > D16 ?
-        /[ACIHL]/.test(acceptableScoresString) // Contains at least one of ACIHL
-        : true)
-    ) {
-      resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessment 1.`;
-    } else if (D3 > D4 && /[FGN]/.test(B3) && // If D3 is greater than D4 and B3 is one of FGN
-      (D4 > D16 ?
-        /[FGN]/.test(acceptableScoresString) // Contains at least one of FGN
-        : true)
-    ) {
-      resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessment 2.`;
-    } else if (D3 > D4 && /[BDE]/.test(B3) && // If D3 is greater than D4 and B3 is one of BDE
-      (D4 > D16 ?
-        /[BDE]{2}/.test(acceptableScoresString) // Contains at least two of BDE
-        : true)
-    ) {
-      resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessments 3 & 4.`;
-    } else if (D3 > D4 && /[BD]/.test(B3) && // If D3 is greater than D4 and B3 is one of BD
-      (D4 > D16 ?
-        /[BD]/.test(acceptableScoresString) // Contains at least one of BD
-        : true)
-    ) {
-      resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessment 3.`;
-    } else if (D3 > D4 && /[DE]/.test(B3) && // If D3 is greater than D4 and B3 is one of DE
-      (D4 > D16 ?
-        /[DE]/.test(acceptableScoresString) // Contains at least one of DE
-        : true)
-    ) {
-      resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessment 4.`;
-    } else if (D3 === D4 && /[ACIHLJ]/.test(B3) && // If D3 equals D4 and B3 is one of ACIHLJ
-      (D4 > D16 ?
-        /[ACIHLJ]/.test(acceptableScoresString) && // Contains at least one of ACIHLJ
-        !/[^ACIHLJ]/.test(acceptableScoresString)  // ONLY contains ACIHLJ
-        : true)
-    ) {
-      resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessment 1.`;
-    } else if (D3 === D4 && /[FGN]/.test(B3) && // If D3 equals D4 and B3 is one of FGN
-      (D4 > D16 ?
-        /[FGN]/.test(acceptableScoresString) && // Contains at least one of FGN
-        !/[^FGN]/.test(acceptableScoresString)  // ONLY contains FGN
-        : true)
-    ) {
-      resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessment 2.`;
-    } else if (D3 === D4 && /[BDE]/.test(B3) && // If D3 equals D4 and B3 is one of BDE
-      (D4 > D16 ?
-        /[BDE]{2}/.test(acceptableScoresString) && // Contains at least two of BDE
-        !/[^BDE]/.test(acceptableScoresString)  // ONLY contains BDE
-        : true)
-    ) {
-      resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessments 3 & 4.`;
-    } else if (D3 === D4 && /[BD]/.test(B3) && // If D3 equals D4 and B3 is one of BD
-      (D4 > D16 ?
-        /[BD]/.test(acceptableScoresString) && // Contains at least one of BD
-        !/[^BD]/.test(acceptableScoresString)  // ONLY contains BD
-        : true)
-    ) {
-      resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessment 3.`;
-    } else if (D3 === D4 && /[DE]/.test(B3) && // If D3 equals D4 and B3 is one of DE
-      (D4 > D16 ?
-        /[DE]/.test(acceptableScoresString) && // Contains at least one of DE
-        !/[^DE]/.test(acceptableScoresString)  // ONLY contains DE
-        : true)
-    ) {
-      resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessment 4.`;
-    } else if (D3 === D4 + 2 && /[GDFNEABKJ]/.test(B3)) {
-      resultsSummary = `🎉 Success! Go back to the dashboard and complete the applicable severity assessment.`;
-    } else if (D3 === D4 + 2) {
-      resultsSummary = `🥳 Success! You've completed the assessment.`;
-    } else if (nerveScore === D3 && /[^ACILJ]/.test(B3) && /[^ACILJ]/.test(sortedResults[1][0]) && D3 >= D5 + 2) {
-      resultsSummary = `💪 Success! Go back to the dashboard and complete differential assessment 1, paying special attention to nerve tension tests.`;
-    } else if (nerveScore < D3 && nerveScore >= D3 - 1 && D3 > D4 && /[^ACILJ]/.test(B3) && D3 >= D5 + 2) {
-      resultsSummary = `💪 Success! Go back to the dashboard and complete differential assessment 1, paying special attention to nerve tension tests.`;
-    } else if (D3 >= D5 + 1 && D4 > D5 && /[AB]/.test(B3) && /[AB]/.test(sortedResults[1][0])) {
-      resultsSummary = `🤟 Success! Go back to the dashboard and complete the pulley injury severity assessment.`;
-    } else if (D3 <= D4 + 1) {
-      resultsSummary = `🤔 Something's wrong here.`;
-    } else {
-      resultsSummary = `🙃 Sorry, there seems to be an error.`;
-    }
-
     let displayedResult;
-    if (/💪/.test(resultsSummary) || /🎉/.test(resultsSummary) || /🥳/.test(resultsSummary)) {
-      displayedResult = firstInjuryName;
-    } else if (/🤟/.test(resultsSummary)) {
-      displayedResult = "Pulley injury";
-    } else if (/🤙/.test(resultsSummary) || /🙌/.test(resultsSummary)) {
-      displayedResult = "More information needed";
-    } else if (/🤔/.test(resultsSummary)) {
-      displayedResult = "Data unclear";
+
+    // Early completion override for Grade IVb
+    if (isGradeIVb) {
+      resultsSummary = "⚕️ Medical evaluation is needed.";
+      displayedResult = "Grade IVb";
     } else {
-      displayedResult = "Error";
+      // Regular results logic
+
+      // resultsSummary logic
+      if (D3 >= D4 + 3 && /[GDFNEABKJ]/.test(B3)) {
+        resultsSummary = `🎉 Success! Go back to the dashboard and complete the applicable severity assessment.`;
+      } else if (D3 >= D4 + 3) {
+        resultsSummary = `🥳 Success! You've completed the assessment.`;
+      } else if (cystScore >= D3 - 2 && cystScore < D3 && /[ACIHLJ]/.test(B3)) {
+        resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessment 1.`;
+      } else if (D3 > D4 && /[ACIHLJ]/.test(B3) && // If D3 is greater than D4 and B3 is one of ACIHLJ
+        (D4 > D16 ?
+          /[ACIHL]/.test(acceptableScoresString) // Contains at least one of ACIHL
+          : true)
+      ) {
+        resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessment 1.`;
+      } else if (D3 > D4 && /[FGN]/.test(B3) && // If D3 is greater than D4 and B3 is one of FGN
+        (D4 > D16 ?
+          /[FGN]/.test(acceptableScoresString) // Contains at least one of FGN
+          : true)
+      ) {
+        resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessment 2.`;
+      } else if (D3 > D4 && /[BDE]/.test(B3) && // If D3 is greater than D4 and B3 is one of BDE
+        (D4 > D16 ?
+          /[BDE]{2}/.test(acceptableScoresString) // Contains at least two of BDE
+          : true)
+      ) {
+        resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessments 3 & 4.`;
+      } else if (D3 > D4 && /[BD]/.test(B3) && // If D3 is greater than D4 and B3 is one of BD
+        (D4 > D16 ?
+          /[BD]/.test(acceptableScoresString) // Contains at least one of BD
+          : true)
+      ) {
+        resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessment 3.`;
+      } else if (D3 > D4 && /[DE]/.test(B3) && // If D3 is greater than D4 and B3 is one of DE
+        (D4 > D16 ?
+          /[DE]/.test(acceptableScoresString) // Contains at least one of DE
+          : true)
+      ) {
+        resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessment 4.`;
+      } else if (D3 === D4 && /[ACIHLJ]/.test(B3) && // If D3 equals D4 and B3 is one of ACIHLJ
+        (D4 > D16 ?
+          /[ACIHLJ]/.test(acceptableScoresString) && // Contains at least one of ACIHLJ
+          !/[^ACIHLJ]/.test(acceptableScoresString)  // ONLY contains ACIHLJ
+          : true)
+      ) {
+        resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessment 1.`;
+      } else if (D3 === D4 && /[FGN]/.test(B3) && // If D3 equals D4 and B3 is one of FGN
+        (D4 > D16 ?
+          /[FGN]/.test(acceptableScoresString) && // Contains at least one of FGN
+          !/[^FGN]/.test(acceptableScoresString)  // ONLY contains FGN
+          : true)
+      ) {
+        resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessment 2.`;
+      } else if (D3 === D4 && /[BDE]/.test(B3) && // If D3 equals D4 and B3 is one of BDE
+        (D4 > D16 ?
+          /[BDE]{2}/.test(acceptableScoresString) && // Contains at least two of BDE
+          !/[^BDE]/.test(acceptableScoresString)  // ONLY contains BDE
+          : true)
+      ) {
+        resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessments 3 & 4.`;
+      } else if (D3 === D4 && /[BD]/.test(B3) && // If D3 equals D4 and B3 is one of BD
+        (D4 > D16 ?
+          /[BD]/.test(acceptableScoresString) && // Contains at least one of BD
+          !/[^BD]/.test(acceptableScoresString)  // ONLY contains BD
+          : true)
+      ) {
+        resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessment 3.`;
+      } else if (D3 === D4 && /[DE]/.test(B3) && // If D3 equals D4 and B3 is one of DE
+        (D4 > D16 ?
+          /[DE]/.test(acceptableScoresString) && // Contains at least one of DE
+          !/[^DE]/.test(acceptableScoresString)  // ONLY contains DE
+          : true)
+      ) {
+        resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessment 4.`;
+      } else if (D3 === D4 + 2 && /[GDFNEABKJ]/.test(B3)) {
+        resultsSummary = `🎉 Success! Go back to the dashboard and complete the applicable severity assessment.`;
+      } else if (D3 === D4 + 2) {
+        resultsSummary = `🥳 Success! You've completed the assessment.`;
+      } else if (nerveScore === D3 && /[^ACILJ]/.test(B3) && /[^ACILJ]/.test(sortedResults[1][0]) && D3 >= D5 + 2) {
+        resultsSummary = `💪 Success! Go back to the dashboard and complete differential assessment 1, paying special attention to nerve tension tests.`;
+      } else if (nerveScore < D3 && nerveScore >= D3 - 1 && D3 > D4 && /[^ACILJ]/.test(B3) && D3 >= D5 + 2) {
+        resultsSummary = `💪 Success! Go back to the dashboard and complete differential assessment 1, paying special attention to nerve tension tests.`;
+      } else if (D3 >= D5 + 1 && D4 > D5 && /[AB]/.test(B3) && /[AB]/.test(sortedResults[1][0])) {
+        resultsSummary = `🤟 Success! Go back to the dashboard and complete the pulley injury severity assessment.`;
+      } else if (D3 <= D4 + 1) {
+        resultsSummary = `🤔 Something's wrong here.`;
+      } else {
+        resultsSummary = `🙃 Sorry, there seems to be an error.`;
+      }
+
+      // displayedResult logic
+      if (/💪/.test(resultsSummary) || /🎉/.test(resultsSummary) || /🥳/.test(resultsSummary)) {
+        displayedResult = firstInjuryName;
+      } else if (/🤟/.test(resultsSummary)) {
+        displayedResult = "Pulley injury";
+      } else if (/🤙/.test(resultsSummary) || /🙌/.test(resultsSummary)) {
+        displayedResult = "More information needed";
+      } else if (/🤔/.test(resultsSummary)) {
+        displayedResult = "Data unclear";
+      } else {
+        displayedResult = "Error";
+      }
     }
 
     // Add nerve issue possibility calculation
     let nerveIssuePossibility;
-
-    if (firstInjuryName.toLowerCase() === "nerve issue") {
+    if (displayedResult === "Grade IVb") {  // Add this condition
+      nerveIssuePossibility = "None";
+    } else if (firstInjuryName.toLowerCase() === "nerve issue") {
       nerveIssuePossibility = "⚠️ High";
     } else if (/1/.test(resultsSummary)) {
       nerveIssuePossibility = "To be determined...";
@@ -326,14 +342,13 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
 
     // Add cyst possibility calculation
     let cystIndication;
-    // Check if the response for abnormalMass ontains abnormalMassAnswer1
-    const abnormalMassIsIndicated = responses[PRIMARY_DATA.abnormalMass.id]?.id === "abnormalMassAnswer1";
-
-    if (/1/.test(resultsSummary)) {
+    if (displayedResult === "Grade IVb") {  // Add this condition
+      cystIndication = "None";
+    } else if (/1/.test(resultsSummary)) {
       cystIndication = "To be determined...";
     } else if (firstInjuryName.toLowerCase() === "cyst") {
       cystIndication = "⚠️ Yes";
-    } else if (cystScore >= D3 - 5 && abnormalMassIsIndicated) {
+    } else if (cystScore >= D3 - 5 && responses[PRIMARY_DATA.abnormalMass.id]?.id === "abnormalMassAnswer1") {
       cystIndication = "⚠️ Yes";
     } else if (cystScore <= 0) {
       cystIndication = "None";
@@ -344,7 +359,9 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
     // Add additional details based on result type
     let additionalDetails;
 
-    if (/💪/.test(resultsSummary)) {
+    if (/⚕️/.test(resultsSummary)) {
+      additionalDetails = "A grade IVb pulley injury involves complete ruptures of multiple pulleys. Due to the complexity of this injury and the possibility of other complicating factors, your first step should be to see your primary care physician. They will likely order imaging to confirm the extent of the damage while ruling out involvement of other tissues. They will then help you decide if you will need surgical intervention or if you can begin conservative treatment.";
+    } else if (/💪/.test(resultsSummary)) {
       additionalDetails = "Great job completing the primary assessment! Based on your results, you should now move on to differential assessment 1, paying special attention to the two nerve tension tests.";
     } else if (/🤙/.test(resultsSummary)) {
       additionalDetails = "Great job completing the primary assessment! Based on your results, you should now complete differential assessment 3 (grade III-IV pulley injury vs. FDP injury) as well as differential assessment 4 (lumbrical injury vs. FDP injury).";
@@ -377,6 +394,7 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
       additionalDetails += " ➡️ Please note: Your answers are associated with some possibility of a nerve issue, which could be affecting your symptoms and therefore this assessment. Nerve issues can mask or mimic symptoms from other injuries, which can make them tricky to deal with. Be aware that a nerve issue is a possible confounding factor that may need professional evaluation.";
 
     }
+
     // Add cyst warning if applicable
     if (cystIndication === "⚠️ Yes") {
       additionalDetails += " ➡️ Please note: Your answers are associated with the possibility of a cyst in your finger. Cysts can cause various symptoms that mimic other injuries, which makes accurate assessment more challenging. Be aware that a cyst is a possible confounding factor that may need professional evaluation with ultrasound.";
@@ -386,7 +404,7 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
 
     // Get injury description
     const getInjuryDescription = (displayedResult) => {
-      const description = INJURY_DESCRIPTIONS[displayedResult.toLowerCase()];
+      const description = INJURY_DESCRIPTIONS[displayedResult.toLowerCase()]?.description;
       return description || "";
     };
 
@@ -403,7 +421,16 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
         setInjuryDescription(getInjuryDescription(displayedResult)),
       ]).then(() => {
         setIsCalculating(false);
-        onComplete({ results: scores, responses: finalResponses });
+        onComplete({
+          results: scores,
+          responses: finalResponses,
+          displayedResult,
+          resultsSummary,
+          nerveIssuePossibility,
+          cystIndication,
+          additionalDetails,
+          injuryDescription
+        });
         console.log("All states updated");
       });
     }, 3000); // Match this with the time it takes for progress to reach 100%
@@ -415,10 +442,13 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
 
     // Check for bowstringing
     const visualBowstringingIndex = questionnaire.questions.findIndex(q => q.id === 'visualBowstringing');
-    if (currentQuestionIndex === visualBowstringingIndex) { // If they get to the bowstringing question
+    if (currentQuestionIndex === visualBowstringingIndex) {
       const visualBowstringingResponse = responses['visualBowstringing']?.id;
-      
+      console.log("Checking bowstringing response:", visualBowstringingResponse);
+
       if (visualBowstringingResponse === 'visualBowstringingAnswer1') {
+        console.log("Setting early completion to true");
+        setEarlyCompletion(true);
         return true;
       }
     }
