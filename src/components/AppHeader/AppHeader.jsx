@@ -20,7 +20,7 @@ const AppHeader = forwardRef((props, ref) => {
       </a>
       </p>
 
-      <p className="mt-8 font-bold text-secondary-foreground">Completed the assessment?</p>
+      <p className="mt-8 text-gray-500">Completed the assessment?</p>
 
       <Button className="bg-secondary-foreground hover:bg-secondary-foreground/80 w-fit mx-auto min-h-[4rem] md:min-h-[3rem] px-6 py-3">
         <a
