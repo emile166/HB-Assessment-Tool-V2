@@ -35,7 +35,7 @@ function Dashboard({ onSelectQuestionnaire }) {
               <li>Assess one injury at a time.</li>
               <li>Start with the primary assessment unless otherwise instructed.</li>
               <li>Only select answers that are relevant to the injury you’re assessing.</li>
-              <li>Complete all applicable assessments in the one sitting.</li>
+              <li>Complete all applicable assessments in the one sitting (typically 20-40 minutes in total).</li>
               <li>Do not close the tab or refresh the page between assessments.</li>
               <li>Follow instructions carefully. Improper testing will lead to inaccurate results.</li>
             </ul>
