@@ -35,18 +35,18 @@ export function ResultsCard({
                 {/* Primary Result */}
                 <Card className="p-4 m-4">
                     <h2 className="text-md mb-2 text-center">Your responses suggest:</h2>
-                    <p className="text-lg font-semibold bg-primary text-black mb-8 text-center rounded-sm p-2">
+                    <p className="text-lg font-semibold bg-primary uppercase text-black mb-8 text-center rounded-sm p-2">
                         {displayedResult}
                     </p>
                     {locationResult && (
                         <div className="mb-8">
                             <h3 className="text-md mb-2 text-center">At this location:</h3>
-                            <p className="text-lg font-semibold bg-primary text-black mb-4 text-center rounded-sm p-2">
+                            <p className="text-lg font-semibold bg-primary uppercase text-black mb-4 text-center rounded-sm p-2">
                                 {locationResult}
                             </p>
                         </div>
                     )}
-                    <p className="text-lg mb-2 text-center">
+                    <p className="text-lg mb-2 font-semibold text-center">
                         {resultsSummary} See additional details below.
                     </p>
                 </Card>

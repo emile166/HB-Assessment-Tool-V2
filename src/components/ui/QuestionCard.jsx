@@ -21,9 +21,13 @@ export function QuestionCard({
 
       <div className="mt-5">
         <h3 className="font-medium text-lg">{question.question}</h3>
-        <p className="text-sm text-gray-500">
-          {question.type} - read all before submitting
-        </p>
+        {question.type === 'select one answer' && (
+            <span className="text-sm text-gray-500">{question.type}</span>
+        )}
+        {question.type === 'select all that apply' && (
+            <span className="text-sm text-red-500">{question.type}</span>
+        )}
+        <span className="text-sm text-gray-500"> - read all before submitting</span>
       </div>
 
       {question.type === 'select one answer' && (
