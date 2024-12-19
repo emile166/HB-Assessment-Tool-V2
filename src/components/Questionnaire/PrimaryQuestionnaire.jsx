@@ -412,8 +412,19 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
   // Check for early completion
   const checkForEarlyCompletion = (currentId) => {
     const currentQuestionIndex = getQuestionIndex(currentId);
-    const aromPositionOneIndex = questionnaire.questions.findIndex(q => q.id === 'aromPositionOne');
 
+    // Check for bowstringing
+    const visualBowstringingIndex = questionnaire.questions.findIndex(q => q.id === 'visualBowstringing');
+    if (currentQuestionIndex === visualBowstringingIndex) { // If they get to the bowstringing question
+      const visualBowstringingResponse = responses['visualBowstringing']?.id;
+      
+      if (visualBowstringingResponse === 'visualBowstringingAnswer1') {
+        return true;
+      }
+    }
+
+    // Check for severe pulley injury indication
+    const aromPositionOneIndex = questionnaire.questions.findIndex(q => q.id === 'aromPositionOne');
     if (currentQuestionIndex === aromPositionOneIndex - 1) {
       const scores = calculateScoresForAnswers(responses);
       const sortedScores = Object.entries(scores)
