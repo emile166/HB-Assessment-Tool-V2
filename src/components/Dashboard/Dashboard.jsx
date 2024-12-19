@@ -33,6 +33,7 @@ function Dashboard({ onSelectQuestionnaire }) {
             <h2 className="text-xl font-bold text-red-500 mb-2 text-center underline">Rules:</h2>
             <ul className="list-disc list-inside text-md">
               <li>Assess one injury at a time.</li>
+              <li>Start with the primary assessment unless otherwise instructed.</li>
               <li>Only select answers that are relevant to the injury you’re assessing.</li>
               <li>Complete all applicable assessments in the one sitting.</li>
               <li>Do not close the tab or refresh the page between assessments.</li>
@@ -44,7 +45,7 @@ function Dashboard({ onSelectQuestionnaire }) {
           <Card className="p-4 mb-4">
             <h2 className="text-lg mb-4">1. Primary Assessment</h2>
             <p className="text-sm text-gray-500 mb-4">
-              Start here unless otherwise instructed. This is the broad initial assessment that will either give you a final result or determine which additional assessments you need to complete.
+              This is the broad initial assessment that will either give you a final result or determine which additional assessments you need to complete.
             </p>
             <Button
               onClick={() => onSelectQuestionnaire('primary')}
