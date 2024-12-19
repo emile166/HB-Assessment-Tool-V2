@@ -9,6 +9,7 @@ import Differential3Questionnaire from './components/Questionnaire/Differential3
 import Differential4Questionnaire from './components/Questionnaire/Differential4Questionnaire';
 import PulleySeverityQuestionnaire from './components/Questionnaire/PulleySeverityQuestionnaire';
 import JointCapsulitisSeverityQuestionnaire from './components/Questionnaire/JointCapsulitisSeverityQuestionnaire';
+import FDPSeverityQuestionnaire from './components/Questionnaire/FDPSeverityQuestionnaire';
 import AppHeader from './components/AppHeader/AppHeader';
 import { useQuestionnaire } from './hooks/useQuestionnaire';
 import { Card, CardContent } from "./components/ui/card";
@@ -47,6 +48,7 @@ function App() {
       differential4: questionnaires.find(q => q.name === 'Differential Assessment 4'),
       pulleySeverity: questionnaires.find(q => q.name === 'Pulley Injury Severity Assessment'),
       jointCapsulitisSeverity: questionnaires.find(q => q.name === 'Joint Capsulitis Severity Assessment'),
+      fdpSeverity: questionnaires.find(q => q.name === 'FDP Injury Severity Assessment'),
     };
 
     setSelectedQuestionnaire(questionnaireMap[type] || null);
@@ -141,6 +143,16 @@ function App() {
             questionnaire={selectedQuestionnaire}
             onBack={() => setSelectedQuestionnaire(null)}
             onComplete={(results) => handleQuestionnaireComplete(results, 'jointCapsulitisSeverity')}
+          />
+        </Layout>
+      );
+    } else if (selectedQuestionnaire.name === 'FDP Injury Severity Assessment') {
+      return (
+        <Layout>
+          <FDPSeverityQuestionnaire
+            questionnaire={selectedQuestionnaire}
+            onBack={() => setSelectedQuestionnaire(null)}
+            onComplete={(results) => handleQuestionnaireComplete(results, 'fdpSeverity')}
           />
         </Layout>
       );

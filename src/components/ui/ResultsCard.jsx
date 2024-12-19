@@ -8,6 +8,7 @@ export function ResultsCard({
     title,
     displayedResult,
     locationResult,
+    versionResult,
     resultsSummary,
     nerveIssuePossibility,
     cystIndication,
@@ -38,11 +39,13 @@ export function ResultsCard({
                     <p className="text-lg font-semibold bg-primary uppercase text-black mb-8 text-center rounded-sm p-2">
                         {displayedResult}
                     </p>
-                    {locationResult && (
-                        <div className="mb-8">
-                            <h3 className="text-md mb-2 text-center">At this location:</h3>
-                            <p className="text-lg font-semibold bg-primary uppercase text-black mb-4 text-center rounded-sm p-2">
-                                {locationResult}
+                    {(locationResult || versionResult) && (
+                        <div className="mt-4">
+                            <h3 className="text-md mb-2 text-center">
+                                {locationResult ? "At this location:" : "Recovery program version:"}
+                            </h3>
+                            <p className="text-lg font-semibold bg-primary uppercase text-black mb-8 text-center rounded-sm p-2">
+                                {locationResult || versionResult}
                             </p>
                         </div>
                     )}
