@@ -46,9 +46,19 @@ export function ResultsCard({
                             </p>
                         </div>
                     )}
+
                     <p className="text-lg mb-2 font-semibold text-center">
                         {resultsSummary} See additional details below.
                     </p>
+
+                    <div className="mt-8 text-center">
+                        <Button
+                            onClick={onBack}
+                            className="w-auto"
+                        >
+                            Back to Dashboard
+                        </Button>
+                    </div>
                 </Card>
 
                 {/* Risk Indicators */}
@@ -91,20 +101,6 @@ export function ResultsCard({
                     <img src="https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/b2574595-dc2e-4470-a6e6-35e381ec1c10/hand+holding+phone+in+city+with+blueprint+on+screen.jpg?content-type=image%2Fjpeg" alt="Recovery Blueprint Mobile App" className="m-auto size-9/12 rounded-lg" />
                 </Card>
 
-                <div>
-                    <p className="text-xs text-gray-500 text-center mt-8 px-4">We do not save or store any information related to this tool. <a href="https://hoopersbeta.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="underline">View our privacy policy.</a></p>
-                </div>
-
-                {/* Back to Dashboard button */}
-                <div className="mt-4 mb-8 text-center">
-                    <Button
-                        onClick={onBack}
-                        className="w-auto"
-                    >
-                        Back to Dashboard
-                    </Button>
-                </div>
-
                 {/* Answer Log */}
                 {questions && responses && (
                     <AnswerLog
@@ -120,6 +116,18 @@ export function ResultsCard({
                     scores={scores}
                     questionnaireName={questionnaireName}
                 />
+
+                {/* Back to Dashboard button */}
+                <div className="mt-12 mb-8 text-center">
+                    <p className="text-xs text-gray-500 mb-2">We do not save or store any information related to this tool. <a href="https://hoopersbeta.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="underline">View our privacy policy.</a></p>
+
+                    <Button
+                        onClick={onBack}
+                        className="w-auto"
+                    >
+                        Back to Dashboard
+                    </Button>
+                </div>
 
                 {children}
 
