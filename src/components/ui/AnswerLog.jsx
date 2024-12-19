@@ -11,7 +11,7 @@ export function AnswerLog({ questions, responses, skippedQuestions, getQuestionI
     return (
         <div className="p-4">
             <div className="text-center">
-                <button onClick={toggleLog} className="mx-8 mb-2 underline font-sm text-primary">
+                <button onClick={toggleLog} className="mx-8 mb-2 underline font-sm text-secondary-foreground">
                     {isOpen ? 'Hide Answer Log' : 'See Answer Log'}
                 </button>
             </div>
