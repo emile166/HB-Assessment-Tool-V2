@@ -18,7 +18,7 @@ function Dashboard({ onSelectQuestionnaire }) {
         <CardContent className="p-4 md:p-8">
 
           <h1 className="text-xl text-center mt-4 mb-4">Welcome! Please watch this video to learn how to use this tool.</h1>
-          <div className="aspect-w-16 aspect-h-9 mb-8">
+          <div className="aspect-w-16 aspect-h-9 mb-4">
             <iframe
               className="w-full rounded-lg"
               style={{ aspectRatio: '16/9' }}
@@ -28,6 +28,17 @@ function Dashboard({ onSelectQuestionnaire }) {
               allowFullScreen
             />
           </div>
+
+          <Card className="p-8 mb-12 bg-gray-100">
+            <h2 className="text-xl font-bold text-red-500 mb-2 text-center underline">Rules:</h2>
+            <ul className="list-disc list-inside text-md">
+              <li>Assess one injury at a time.</li>
+              <li>Only select answers that are relevant to the injury you’re assessing.</li>
+              <li>Complete all applicable assessments in the one sitting.</li>
+              <li>Do not close the tab or refresh the page between assessments.</li>
+              <li>Follow instructions carefully. Improper testing will lead to inaccurate results.</li>
+            </ul>
+          </Card>
 
           {/* Primary Assessment Section */}
           <Card className="p-4 mb-4">
