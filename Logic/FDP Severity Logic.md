@@ -71,7 +71,7 @@ IFS(
 additionalDetails:
 
 IFS(
-        REGEXMATCH(C16, "🙃"), "This is strange; you may have encountered a bug. Please refresh this page and try again. If you continue to receive this result, please email us screenshots of your answer log and scores (enter code ‘hb-debug’ into the debug field below) to  info@hoopersbeta.com and we will be happy to assist you. We apologize for the inconvenience.",
+        REGEXMATCH(C16, "🙃"), "This is strange; you may have encountered a bug. Please refresh this page and try again. If you continue to receive this result, please email us screenshots of your answer log and scores (enter code ‘hb-debug’ into the debug field below) to info@hoopersbeta.com and we will be happy to assist you. We apologize for the inconvenience.",
 
         REGEXMATCH(C16, "⚕️"), "Your answers are associated with a Grade III injury, which is a tear or rupture of the FDP. Your first step should be to schedule an appointment with your primary care physician who will likely need to order imaging to confirm the injury. They will then guide you on what steps to take next, whether that be conservative treatment or a surgical referral.”,
 

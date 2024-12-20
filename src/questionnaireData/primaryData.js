@@ -187,7 +187,7 @@ export const PRIMARY_DATA = {
               "painLocationAnswer8",
               "painLocationAnswer9",
               "painLocationAnswer10",
-              "painLocation Answer11",
+              "painLocationAnswer11",
               "painLocationAnswer12"
             ],
             match: "only"
