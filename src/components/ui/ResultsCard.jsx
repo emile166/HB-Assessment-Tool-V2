@@ -58,6 +58,7 @@ export function ResultsCard({
                         <Button
                             onClick={onBack}
                             className="w-auto"
+                            variant="outline"
                         >
                             Back to Dashboard
                         </Button>
