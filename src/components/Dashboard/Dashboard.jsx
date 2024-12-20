@@ -31,14 +31,14 @@ function Dashboard({ onSelectQuestionnaire }) {
 
           <Card className="p-8 mb-12 bg-gray-100">
             <h2 className="text-xl font-bold text-red-500 mb-2 text-center underline">Rules:</h2>
-            <ul className="list-disc list-inside text-md">
+            <ol className="list-decimal list-inside text-md">
               <li>Assess one injury at a time.</li>
               <li>Start with the primary assessment unless otherwise instructed.</li>
               <li>Only select answers that are relevant to the injury you’re assessing.</li>
               <li>Complete all applicable assessments in the one sitting (typically 20-40 minutes in total).</li>
               <li>Do not close the tab or refresh the page between assessments.</li>
               <li>Follow instructions carefully. Improper testing will lead to inaccurate results.</li>
-            </ul>
+            </ol>
           </Card>
 
           {/* Primary Assessment Section */}
