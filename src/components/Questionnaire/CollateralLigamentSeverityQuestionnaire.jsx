@@ -9,7 +9,7 @@ import { ResultsCard } from '@/components/ui/ResultsCard';
 import { QuestionnaireLayout } from '@/components/ui/QuestionnaireLayout';
 import { QuestionCard } from '@/components/ui/QuestionCard';
 
-function JointCapsulitisSeverityQuestionnaire({ questionnaire, onBack, onComplete }) {
+function CollateralLigamentSeverityQuestionnaire({ questionnaire, onBack, onComplete }) {
     const getQuestionIndex = (questionId) => {
         return questionnaire.questions.findIndex(q => q.id === questionId);
     };
@@ -183,9 +183,9 @@ function JointCapsulitisSeverityQuestionnaire({ questionnaire, onBack, onComplet
 
         // Calculate displayed result
         let displayedResult;
-        if (D3 >= D4 + 2) {
+        if (D3 >= D4 + 3) {
             displayedResult = injuryMapping[questionnaire.name][B3];
-        } else if (D3 < D4 + 2 && D3 >= D4 && D4 >= D5 + 2) {
+        } else if (D3 < D4 + 3 && D3 >= D4 && D4 >= D5 + 3) {
             if ((/[AB]/.test(B3) && /[AB]/.test(B4))) {
                 displayedResult = "Grade II";
             } else if ((/[BC]/.test(B3) && /[BC]/.test(B4))) {
@@ -199,7 +199,9 @@ function JointCapsulitisSeverityQuestionnaire({ questionnaire, onBack, onComplet
 
         // Calculate results summary
         let resultsSummary;
-        if (/Grade/.test(displayedResult)) {
+        if (displayedResult === "Grade III") {
+            resultsSummary = "⚕️ Medical evaluation is needed. ";
+        } else if (/Grade/.test(displayedResult)) {
             resultsSummary = "🥳 Success! You’ve completed the assessment.";
         } else if (displayedResult === "Data Unclear") {
             resultsSummary = "🤔 Something's wrong here...";
@@ -211,10 +213,12 @@ function JointCapsulitisSeverityQuestionnaire({ questionnaire, onBack, onComplet
         let additionalDetails;
         if (/🙃/.test(resultsSummary)) {
             additionalDetails = "This is strange; you may have encountered a bug. Please refresh this page and try again. If you continue to receive this result, please email us screenshots of your answer log and scores (enter code ‘hb-debug’ into the debug field below) to info@hoopersbeta.com and we will be happy to assist you. We apologize for the inconvenience.";
+        } else if (/⚕️/.test(resultsSummary)) {
+            additionalDetails = "⚕️Your answers indicate a Grade III injury, which is a tear of the collateral ligament resulting in instability of the joint. Your first step should be to make an appointment with your primary care physician who may order imaging to confirm the extent of the injury. They will then be able to assist you in ordering occupational therapy with a hand specialist, who will guide you through bracing while the injury heals. You may also require sport specific retraining once you have completed your initial hand therapy.";
         } else if (/🥳/.test(resultsSummary)) {
-            additionalDetails = "Great job completing the joint capsulitis severity questionnaire! Your answers are associated with a clear grade of injury. Huzzah!";
+            additionalDetails = "Great job completing the collateral ligament injury severity questionnaire! Your answers are associated with a clear grade of injury. Huzzah!";
         } else if (/🤔/.test(resultsSummary)) {
-            additionalDetails = "Your answers did not indicate a clear grade of injury. If you’re certain you have joint capsulitis, please retake the severity questionnaire and make sure you are as accurate and specific as possible with your answers. If you continue to receive the same result, your condition may simply require professional evaluation. You can start by emailing us screenshots of your answer log and scores (enter code ‘hb-debug’ into the debug field below) to info@hoopersbeta.com and we will be happy to assist you if you can. Alternatively, you can speed up the process by scheduling an online or in-person appointment with Dr. Jason Hooper, PT, DPT, OCS, SCS by going here: https://www.hoopersbeta.com/private-sessions.";
+            additionalDetails = "Your answers did not indicate a clear grade of injury. If you’re certain you have a collateral ligament injury, please retake the severity questionnaire and make sure you are as accurate and specific as possible with your answers. If you continue to receive the same result, your condition may simply require professional evaluation. You can start by emailing us screenshots of your answer log and scores (enter code ‘hb-debug’ into the debug field below) to info@hoopersbeta.com and we will be happy to assist you if you can. Alternatively, you can speed up the process by scheduling an online or in-person appointment with Dr. Jason Hooper, PT, DPT, OCS, SCS by going here: https://www.hoopersbeta.com/private-sessions.";
         } else {
             additionalDetails = "This is strange; you may have encountered a bug. Please refresh this page and try again. If you continue to receive this result, please email us screenshots of your answer log and scores (enter code ‘hb-debug’ into the debug field below) to info@hoopersbeta.com and we will be happy to assist you. We apologize for the inconvenience.";
         }
@@ -245,7 +249,7 @@ function JointCapsulitisSeverityQuestionnaire({ questionnaire, onBack, onComplet
                 <Card ref={questionnaireContainerRef}>
                     <AppHeader />
                     <ResultsCard
-                        title="Joint Capsulitis Severity Assessment Results"
+                        title="Collateral Ligament Injury Severity Assessment Results"
                         displayedResult={displayedResult}
                         locationResult={locationResult}
                         resultsSummary={resultsSummary}
@@ -305,4 +309,4 @@ function JointCapsulitisSeverityQuestionnaire({ questionnaire, onBack, onComplet
     );
 }
 
-export default JointCapsulitisSeverityQuestionnaire;
+export default CollateralLigamentSeverityQuestionnaire;

@@ -12,6 +12,7 @@ import JointCapsulitisSeverityQuestionnaire from './components/Questionnaire/Joi
 import FDPSeverityQuestionnaire from './components/Questionnaire/FDPSeverityQuestionnaire';
 import LumbricalSeverityQuestionnaire from './components/Questionnaire/LumbricalSeverityQuestionnaire';
 import PulleyThickeningSeverityQuestionnaire from './components/Questionnaire/pulleyThickeningSeverityQuestionnaire';
+import CollateralLigamentSeverityQuestionnaire from './components/Questionnaire/CollateralLigamentSeverityQuestionnaire';
 import AppHeader from './components/AppHeader/AppHeader';
 import { useQuestionnaire } from './hooks/useQuestionnaire';
 import { Card, CardContent } from "./components/ui/card";
@@ -53,6 +54,7 @@ function App() {
       fdpSeverity: questionnaires.find(q => q.name === 'FDP Injury Severity Assessment'),
       lumbricalSeverity: questionnaires.find(q => q.name === 'Lumbrical Injury Severity Assessment'),
       pulleyThickeningSeverity: questionnaires.find(q => q.name === 'Pulley Thickening Severity Assessment'),
+      collateralLigamentSeverity: questionnaires.find(q => q.name === 'Collateral Ligament Injury Severity Assessment'),
     };
 
     setSelectedQuestionnaire(questionnaireMap[type] || null);
@@ -177,6 +179,16 @@ function App() {
             questionnaire={selectedQuestionnaire}
             onBack={() => setSelectedQuestionnaire(null)}
             onComplete={(results) => handleQuestionnaireComplete(results, 'pulleyThickeningSeverity')}
+          />
+        </Layout>
+      );
+    } else if (selectedQuestionnaire.name === 'Collateral Ligament Injury Severity Assessment') {
+      return (
+        <Layout>
+          <CollateralLigamentSeverityQuestionnaire
+            questionnaire={selectedQuestionnaire}
+            onBack={() => setSelectedQuestionnaire(null)}
+            onComplete={(results) => handleQuestionnaireComplete(results, 'collateralLigamentSeverity')}
           />
         </Layout>
       );

@@ -147,7 +147,15 @@ function Dashboard({ onSelectQuestionnaire }) {
                 className="w-full mx-auto min-h-[4rem] md:min-h-[2rem] p-6"
                 variant="outline"
               >
-                Pulley Thickening (5 minutes)
+                Injury-Induced Pulley Thickening (5 minutes)
+              </Button>
+
+              <Button
+                onClick={() => onSelectQuestionnaire('collateralLigamentSeverity')}
+                className="w-full mx-auto min-h-[4rem] md:min-h-[2rem] p-6"
+                variant="outline"
+              >
+                Collateral Ligament Injury (5-10 minutes)
               </Button>
 
             </div>

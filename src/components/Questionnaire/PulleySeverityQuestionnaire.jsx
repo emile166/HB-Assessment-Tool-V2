@@ -298,7 +298,7 @@ function PulleySeverityQuestionnaire({ questionnaire, onBack, onComplete }) {
         } else if (summary.includes("🙏")) {
             return "Your results indicate a clear grade of injury, but the location is not clear. Please retake this assessment and pay special attention to questions related to the location of your injury, ensuring you’re being as accurate and specific as possible with your answers. If you continue to receive the same result, your condition may simply require professional evaluation. You can start by emailing us screenshots of your answer log and scores (enter code ‘hb-debug’ into the debug field below) to info@hoopersbeta.com and we will be happy to assist you if you can. Alternatively, you can speed up the process by scheduling an online or in-person appointment with Dr. Jason Hooper, PT, DPT, OCS, SCS by going here: https://www.hoopersbeta.com/private-sessions.";
         } else {
-            return "This is strange; you may have encountered a bug. Please refresh this page and try again. If you continue to receive this result, please email us screenshots of your answer log and scores (enter code ‘hb-debug’ into the debug field below) to  info@hoopersbeta.com and we will be happy to assist you. We apologize for the inconvenience.";
+            return "This is strange; you may have encountered a bug. Please refresh this page and try again. If you continue to receive this result, please email us screenshots of your answer log and scores (enter code ‘hb-debug’ into the debug field below) to info@hoopersbeta.com and we will be happy to assist you. We apologize for the inconvenience.";
         }
     };
 

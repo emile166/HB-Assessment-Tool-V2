@@ -9,7 +9,7 @@ import { JOINT_CAPSULITIS_SEVERITY_DATA } from '../questionnaireData/jointCapsul
 import { FDP_SEVERITY_DATA } from '../questionnaireData/fdpSeverityData';
 import { LUMBRICAL_SEVERITY_DATA } from '../questionnaireData/lumbricalSeverityData';
 import { PULLEY_THICKENING_SEVERITY_DATA } from '../questionnaireData/pulleyThickeningSeverityData';
-
+import { COLLATERAL_LIGAMENT_SEVERITY_DATA } from '../questionnaireData/collateralLigamentSeverityData';
 export function useQuestionnaire() {
   const [questionnaires, setQuestionnaires] = useState(() => {
     // Transform the primary data into the expected format
@@ -144,6 +144,19 @@ export function useQuestionnaire() {
       }))
     };
 
+    const collateralLigamentSeverityQuestionnaire = {
+      name: "Collateral Ligament Injury Severity Assessment",
+      questions: Object.values(COLLATERAL_LIGAMENT_SEVERITY_DATA).map(question => ({
+        ...question,
+        question: question.text,
+        type: question.multiple ? 'select all that apply' : 'select one answer',
+        answers: question.answers,
+        photos: question.photos || [],
+        video: question.video || '',
+        conditions: question.conditions || []
+      }))
+    };
+
     return [
       primaryQuestionnaire,
       differential1Questionnaire,
@@ -154,7 +167,8 @@ export function useQuestionnaire() {
       jointCapsulitisSeverityQuestionnaire,
       fdpSeverityQuestionnaire,
       lumbricalSeverityQuestionnaire,
-      pulleyThickeningSeverityQuestionnaire
+      pulleyThickeningSeverityQuestionnaire,
+      collateralLigamentSeverityQuestionnaire
     ];
   });
 
