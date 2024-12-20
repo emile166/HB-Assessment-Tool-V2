@@ -9,7 +9,7 @@ import { ResultsCard } from '@/components/ui/ResultsCard';
 import { QuestionnaireLayout } from '@/components/ui/QuestionnaireLayout';
 import { QuestionCard } from '@/components/ui/QuestionCard';
 
-function JointCapsulitisSeverityQuestionnaire({ questionnaire, onBack, onComplete }) {
+function LateralBandSeverityQuestionnaire({ questionnaire, onBack, onComplete }) {
     const getQuestionIndex = (questionId) => {
         return questionnaire.questions.findIndex(q => q.id === questionId);
     };
@@ -182,7 +182,9 @@ function JointCapsulitisSeverityQuestionnaire({ questionnaire, onBack, onComplet
 
         // Calculate results summary
         let resultsSummary;
-        if (/Grade/.test(displayedResult)) {
+        if (displayedResult === "Grade III") {
+            resultsSummary = "⚕️ Medical evaluation is needed.";
+        } else if (/Grade/.test(displayedResult)) {
             resultsSummary = "🥳 Success! You’ve completed the assessment.";
         } else if (displayedResult === "Data Unclear") {
             resultsSummary = "🤔 Something's wrong here...";
@@ -194,10 +196,12 @@ function JointCapsulitisSeverityQuestionnaire({ questionnaire, onBack, onComplet
         let additionalDetails;
         if (/🙃/.test(resultsSummary)) {
             additionalDetails = "This is strange; you may have encountered a bug. Please refresh this page and try again. If you continue to receive this result, please email us screenshots of your answer log and scores (enter code ‘hb-debug’ into the debug field below) to info@hoopersbeta.com and we will be happy to assist you. We apologize for the inconvenience.";
+        } else if (resultsSummary.includes("⚕️")) {
+            additionalDetails = "Your answers are associated with a Grade III injury, which is a tear of the lateral band. This often results in a deformity of the finger, which requires an occupational therapist or hand therapist familiar with splinting to treat. Be sure to reach out to your primary care physician for a referral to get started on treatment as soon as possible. Once cleared by your physician or hand therapist, you may begin sport specific retraining.";
         } else if (/🥳/.test(resultsSummary)) {
-            additionalDetails = "Great job completing the joint capsulitis severity questionnaire! Your answers are associated with a clear grade of injury. Huzzah!";
+            additionalDetails = "Great job completing the lateral band syndrome severity questionnaire! Your answers are associated with a clear grade of injury. Huzzah!";
         } else if (/🤔/.test(resultsSummary)) {
-            additionalDetails = "Your answers did not indicate a clear grade of injury. If you’re certain you have joint capsulitis, please retake the severity questionnaire and make sure you are as accurate and specific as possible with your answers. If you continue to receive the same result, your condition may simply require professional evaluation. You can start by emailing us screenshots of your answer log and scores (enter code ‘hb-debug’ into the debug field below) to info@hoopersbeta.com and we will be happy to assist you if you can. Alternatively, you can speed up the process by scheduling an online or in-person appointment with Dr. Jason Hooper, PT, DPT, OCS, SCS by going here: https://www.hoopersbeta.com/private-sessions.";
+            additionalDetails = "Your answers did not indicate a clear grade of injury. If you’re certain you have lateral band syndrome, please retake the severity questionnaire and make sure you are as accurate and specific as possible with your answers. If you continue to receive the same result, your condition may simply require professional evaluation. You can start by emailing us screenshots of your answer log and scores (enter code ‘hb-debug’ into the debug field below) to info@hoopersbeta.com and we will be happy to assist you if you can. Alternatively, you can speed up the process by scheduling an online or in-person appointment with Dr. Jason Hooper, PT, DPT, OCS, SCS by going here: https://www.hoopersbeta.com/private-sessions.";
         } else {
             additionalDetails = "This is strange; you may have encountered a bug. Please refresh this page and try again. If you continue to receive this result, please email us screenshots of your answer log and scores (enter code ‘hb-debug’ into the debug field below) to info@hoopersbeta.com and we will be happy to assist you. We apologize for the inconvenience.";
         }
@@ -221,7 +225,26 @@ function JointCapsulitisSeverityQuestionnaire({ questionnaire, onBack, onComplet
     // Check for early completion
     const checkForEarlyCompletion = (currentId) => {
         const currentQuestionIndex = getQuestionIndex(currentId);
-        // Currently no early completion logic for this questionnaire
+
+        // Check before tissue loading questions
+        const fingerDeformityIndex = questionnaire.questions.findIndex(q => q.id === 'fingerDeformity');
+
+        if (currentQuestionIndex === fingerDeformityIndex) {
+            const scores = calculateScoresForAnswers(responses);
+            const sortedScores = Object.entries(scores)
+                .filter(([code]) => /^[ABC]$/.test(code))
+                .sort(([, a], [, b]) => b - a);
+
+            const [highestGrade, highestScore] = sortedScores[0] || ['', 0];
+            const secondHighestScore = sortedScores[1]?.[1] || 0;
+
+            // Check if Grade III (C) is highest scoring with 3+ point lead
+            if (highestGrade === 'C' && highestScore >= secondHighestScore + 3) {
+                setEarlyCompletion(true);
+                return true;
+            }
+        }
+
         return false;
     };
 
@@ -243,7 +266,7 @@ function JointCapsulitisSeverityQuestionnaire({ questionnaire, onBack, onComplet
                 <Card ref={questionnaireContainerRef}>
                     <AppHeader />
                     <ResultsCard
-                        title="Joint Capsulitis Severity Assessment Results"
+                        title="Lateral Band Syndrome Severity Assessment Results"
                         displayedResult={displayedResult}
                         locationResult={locationResult}
                         resultsSummary={resultsSummary}
@@ -303,4 +326,4 @@ function JointCapsulitisSeverityQuestionnaire({ questionnaire, onBack, onComplet
     );
 }
 
-export default JointCapsulitisSeverityQuestionnaire;
+export default LateralBandSeverityQuestionnaire;

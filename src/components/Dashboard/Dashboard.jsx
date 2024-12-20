@@ -158,6 +158,14 @@ function Dashboard({ onSelectQuestionnaire }) {
                 Collateral Ligament Injury (5-10 minutes)
               </Button>
 
+              <Button
+                onClick={() => onSelectQuestionnaire('lateralBandSeverity')}
+                className="w-full mx-auto min-h-[4rem] md:min-h-[2rem] p-6"
+                variant="outline"
+              >
+                Lateral Band Syndrome (5 minutes)
+              </Button>
+
             </div>
           </Card>
         </CardContent>

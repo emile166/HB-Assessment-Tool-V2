@@ -1,4 +1,4 @@
-export const LUMBRICAL_SEVERITY_DATA = {
+export const LATERAL_BAND_SEVERITY_DATA = {
 
     fingerDeformity: {
         id: "fingerDeformity",
@@ -58,6 +58,6 @@ export const LUMBRICAL_SEVERITY_DATA = {
         ],
         multiple: false,
         conditions: []
-    },
+    }
 
 }

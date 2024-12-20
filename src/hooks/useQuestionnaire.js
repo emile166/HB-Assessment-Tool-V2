@@ -10,6 +10,9 @@ import { FDP_SEVERITY_DATA } from '../questionnaireData/fdpSeverityData';
 import { LUMBRICAL_SEVERITY_DATA } from '../questionnaireData/lumbricalSeverityData';
 import { PULLEY_THICKENING_SEVERITY_DATA } from '../questionnaireData/pulleyThickeningSeverityData';
 import { COLLATERAL_LIGAMENT_SEVERITY_DATA } from '../questionnaireData/collateralLigamentSeverityData';
+import { LATERAL_BAND_SEVERITY_DATA } from '../questionnaireData/lateralBandSeverityData';
+
+
 export function useQuestionnaire() {
   const [questionnaires, setQuestionnaires] = useState(() => {
     // Transform the primary data into the expected format
@@ -157,6 +160,19 @@ export function useQuestionnaire() {
       }))
     };
 
+    const lateralBandSeverityQuestionnaire = {
+      name: "Lateral Band Syndrome Severity Assessment",
+      questions: Object.values(LATERAL_BAND_SEVERITY_DATA).map(question => ({
+        ...question,
+        question: question.text,
+        type: question.multiple ? 'select all that apply' : 'select one answer',
+        answers: question.answers,
+        photos: question.photos || [],
+        video: question.video || '',
+        conditions: question.conditions || []
+      }))
+    };
+
     return [
       primaryQuestionnaire,
       differential1Questionnaire,
@@ -168,7 +184,8 @@ export function useQuestionnaire() {
       fdpSeverityQuestionnaire,
       lumbricalSeverityQuestionnaire,
       pulleyThickeningSeverityQuestionnaire,
-      collateralLigamentSeverityQuestionnaire
+      collateralLigamentSeverityQuestionnaire,
+      lateralBandSeverityQuestionnaire
     ];
   });
 

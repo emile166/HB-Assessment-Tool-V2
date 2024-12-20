@@ -149,23 +149,6 @@ function CollateralLigamentSeverityQuestionnaire({ questionnaire, onBack, onComp
         setSkippedQuestions(newSkippedQuestions);
     }, [responses]);
 
-    // Enter new logic here
-
-    // Check for early completion
-    const checkForEarlyCompletion = (currentId) => {
-        const currentQuestionIndex = getQuestionIndex(currentId);
-        // Currently no early completion logic for this questionnaire
-        return false;
-    };
-
-    // Skip to next non-skipped question
-    const lastQuestionId = questionnaire.questions[questionnaire.questions.length - 1].id;
-    while (skippedQuestions.has(currentQuestionId) && currentQuestionId !== lastQuestionId) {
-        const nextId = getNextQuestionId(currentQuestionId);
-        if (!nextId) break;
-        setCurrentQuestionId(nextId);
-    }
-
     const handleSubmit = (finalResponses = responses) => {
         setIsCalculating(true);
 
@@ -238,6 +221,21 @@ function CollateralLigamentSeverityQuestionnaire({ questionnaire, onBack, onComp
             });
         }, 3000);
     };
+
+    // Check for early completion
+    const checkForEarlyCompletion = (currentId) => {
+        const currentQuestionIndex = getQuestionIndex(currentId);
+        // Currently no early completion logic for this questionnaire
+        return false;
+    };
+
+    // Skip to next non-skipped question
+    const lastQuestionId = questionnaire.questions[questionnaire.questions.length - 1].id;
+    while (skippedQuestions.has(currentQuestionId) && currentQuestionId !== lastQuestionId) {
+        const nextId = getNextQuestionId(currentQuestionId);
+        if (!nextId) break;
+        setCurrentQuestionId(nextId);
+    }
 
     if (isCalculating) {
         return <LoadingScreen />;
