@@ -142,6 +142,14 @@ function Dashboard({ onSelectQuestionnaire }) {
                 Lumbrical Injury (10 minutes)
               </Button>
 
+              <Button
+                onClick={() => onSelectQuestionnaire('pulleyThickeningSeverity')}
+                className="w-full mx-auto min-h-[4rem] md:min-h-[2rem] p-6"
+                variant="outline"
+              >
+                Pulley Thickening (5 minutes)
+              </Button>
+
             </div>
           </Card>
         </CardContent>

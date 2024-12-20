@@ -8,6 +8,7 @@ import { PULLEY_SEVERITY_DATA } from '../questionnaireData/pulleySeverityData';
 import { JOINT_CAPSULITIS_SEVERITY_DATA } from '../questionnaireData/jointCapsulitisSeverityData';
 import { FDP_SEVERITY_DATA } from '../questionnaireData/fdpSeverityData';
 import { LUMBRICAL_SEVERITY_DATA } from '../questionnaireData/lumbricalSeverityData';
+import { PULLEY_THICKENING_SEVERITY_DATA } from '../questionnaireData/pulleyThickeningSeverityData';
 
 export function useQuestionnaire() {
   const [questionnaires, setQuestionnaires] = useState(() => {
@@ -130,6 +131,19 @@ export function useQuestionnaire() {
       }))
     };
 
+    const pulleyThickeningSeverityQuestionnaire = {
+      name: "Pulley Thickening Severity Assessment",
+      questions: Object.values(PULLEY_THICKENING_SEVERITY_DATA).map(question => ({
+        ...question,
+        question: question.text,
+        type: question.multiple ? 'select all that apply' : 'select one answer',
+        answers: question.answers,
+        photos: question.photos || [],
+        video: question.video || '',
+        conditions: question.conditions || []
+      }))
+    };
+
     return [
       primaryQuestionnaire,
       differential1Questionnaire,
@@ -139,7 +153,8 @@ export function useQuestionnaire() {
       pulleySeverityQuestionnaire,
       jointCapsulitisSeverityQuestionnaire,
       fdpSeverityQuestionnaire,
-      lumbricalSeverityQuestionnaire
+      lumbricalSeverityQuestionnaire,
+      pulleyThickeningSeverityQuestionnaire
     ];
   });
 
