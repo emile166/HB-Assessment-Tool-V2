@@ -7,6 +7,7 @@ import { DIFFERENTIAL_4_DATA } from '../questionnaireData/differential4Data';
 import { PULLEY_SEVERITY_DATA } from '../questionnaireData/pulleySeverityData';
 import { JOINT_CAPSULITIS_SEVERITY_DATA } from '../questionnaireData/jointCapsulitisSeverityData';
 import { FDP_SEVERITY_DATA } from '../questionnaireData/fdpSeverityData';
+import { LUMBRICAL_SEVERITY_DATA } from '../questionnaireData/lumbricalSeverityData';
 
 export function useQuestionnaire() {
   const [questionnaires, setQuestionnaires] = useState(() => {
@@ -116,6 +117,19 @@ export function useQuestionnaire() {
       }))
     };
 
+    const lumbricalSeverityQuestionnaire = {
+      name: "Lumbrical Injury Severity Assessment",
+      questions: Object.values(LUMBRICAL_SEVERITY_DATA).map(question => ({
+        ...question,
+        question: question.text,
+        type: question.multiple ? 'select all that apply' : 'select one answer',
+        answers: question.answers,
+        photos: question.photos || [],
+        video: question.video || '',
+        conditions: question.conditions || []
+      }))
+    };
+
     return [
       primaryQuestionnaire,
       differential1Questionnaire,
@@ -124,7 +138,8 @@ export function useQuestionnaire() {
       differential4Questionnaire,
       pulleySeverityQuestionnaire,
       jointCapsulitisSeverityQuestionnaire,
-      fdpSeverityQuestionnaire
+      fdpSeverityQuestionnaire,
+      lumbricalSeverityQuestionnaire
     ];
   });
 

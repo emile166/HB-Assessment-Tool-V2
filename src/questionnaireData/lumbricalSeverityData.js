@@ -60,6 +60,19 @@ export const LUMBRICAL_SEVERITY_DATA = {
         conditions: []
     },
 
+    injuryMechanism: {
+        id: "injuryMechanism",
+        text: "Did your injury occur while you were in a two finger pocket or mono?",
+        video: "placeholderID",
+        photos: [],
+        answers: [
+            { id: "injuryMechanismAnswer1", text: "Yes", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "injuryMechanismAnswer2", text: "No", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
+        ],
+        multiple: false,
+        conditions: []
+    },
+
     tissueLoadingIsolatedDrag: {
         id: "tissueLoadingIsolatedDrag",
         text: "What are your tissue loading test results while the affected finger(s) are in a drag position and the adjacent fingers are curled?",
@@ -71,19 +84,6 @@ export const LUMBRICAL_SEVERITY_DATA = {
             { id: "tissueLoadingIsolatedDragAnswer3", text: "Discomfort/pain starts with mild (3-4 out of 10) force", scores: { A: 0, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "tissueLoadingIsolatedDragAnswer4", text: "Discomfort/pain starts with moderate (5-7 out of 10) force", scores: { A: 1, B: 1, C: -1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "tissueLoadingIsolatedDragAnswer5", text: "Discomfort/pain starts with heavy (8-10 out of 10) force", scores: { A: 1, B: -1, C: -1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
-        ],
-        multiple: false,
-        conditions: []
-    },
-
-    injuryMechanism: {
-        id: "injuryMechanism",
-        text: "Did your injury occur while you were in a two finger pocket or mono?",
-        video: "placeholderID",
-        photos: [],
-        answers: [
-            { id: "injuryMechanismAnswer1", text: "Yes", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "injuryMechanismAnswer2", text: "No", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
         ],
         multiple: false,
         conditions: []
