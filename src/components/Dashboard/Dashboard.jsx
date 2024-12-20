@@ -166,6 +166,14 @@ function Dashboard({ onSelectQuestionnaire }) {
                 Lateral Band Syndrome (5 minutes)
               </Button>
 
+              <Button
+                onClick={() => onSelectQuestionnaire('volarPlateSeverity')}
+                className="w-full mx-auto min-h-[4rem] md:min-h-[2rem] p-6"
+                variant="outline"
+              >
+                Volar Plate Injury (10 minutes)
+              </Button>
+
             </div>
           </Card>
         </CardContent>

@@ -50,7 +50,7 @@ export const VOLAR_PLATE_SEVERITY_DATA = {
         answers: [
             { id: "jointHyperextensionAnswer1", text: "Discomfort/pain on the palm side of my joint but no increase in mobility", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "jointHyperextensionAnswer2", text: "Discomfort/pain on the palm side of my joint and more mobility than usual", scores: { A: -1, B: 0, C: 2, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "jointHyperextensionAnswer3", text: "No discomfort/pain and no increase in mobilit", scores: { A: 1, B: -1, C: -1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "jointHyperextensionAnswer3", text: "No discomfort/pain and no increase in mobility", scores: { A: 1, B: -1, C: -1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "jointHyperextensionAnswer4", text: "No discomfort/pain but more mobility than usual", scores: { A: -1, B: 0, C: 2, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
         ],
         multiple: true,
