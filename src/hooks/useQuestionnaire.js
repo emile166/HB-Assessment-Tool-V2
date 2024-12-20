@@ -12,6 +12,7 @@ import { PULLEY_THICKENING_SEVERITY_DATA } from '../questionnaireData/pulleyThic
 import { COLLATERAL_LIGAMENT_SEVERITY_DATA } from '../questionnaireData/collateralLigamentSeverityData';
 import { LATERAL_BAND_SEVERITY_DATA } from '../questionnaireData/lateralBandSeverityData';
 import { VOLAR_PLATE_SEVERITY_DATA } from '../questionnaireData/volarPlateSeverityData';
+import { NERVE_ISSUE_IDENTIFICATION_DATA } from '../questionnaireData/nerveIssueIdentificationData';
 
 export function useQuestionnaire() {
   const [questionnaires, setQuestionnaires] = useState(() => {
@@ -186,6 +187,19 @@ export function useQuestionnaire() {
       }))
     };
 
+    const nerveIssueIdentificationQuestionnaire = {
+      name: "Nerve Issue Identification Assessment",
+      questions: Object.values(NERVE_ISSUE_IDENTIFICATION_DATA).map(question => ({
+        ...question,
+        question: question.text,
+        type: question.multiple ? 'select all that apply' : 'select one answer',
+        answers: question.answers,
+        photos: question.photos || [],
+        video: question.video || '',
+        conditions: question.conditions || []
+      }))
+    };
+
     return [
       primaryQuestionnaire,
       differential1Questionnaire,
@@ -199,7 +213,8 @@ export function useQuestionnaire() {
       pulleyThickeningSeverityQuestionnaire,
       collateralLigamentSeverityQuestionnaire,
       lateralBandSeverityQuestionnaire,
-      volarPlateSeverityQuestionnaire
+      volarPlateSeverityQuestionnaire,
+      nerveIssueIdentificationQuestionnaire
     ];
   });
 

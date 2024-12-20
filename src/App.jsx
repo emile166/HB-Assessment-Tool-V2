@@ -15,6 +15,7 @@ import PulleyThickeningSeverityQuestionnaire from './components/Questionnaire/pu
 import CollateralLigamentSeverityQuestionnaire from './components/Questionnaire/CollateralLigamentSeverityQuestionnaire';
 import LateralBandSeverityQuestionnaire from './components/Questionnaire/LateralBandSeverityQuestionnaire';
 import VolarPlateSeverityQuestionnaire from './components/Questionnaire/VolarPlateSeverityQuestionnaire';
+import NerveIssueIdentificationQuestionnaire from './components/Questionnaire/NerveIssueIdentificationQuestionnaire';
 import AppHeader from './components/AppHeader/AppHeader';
 import { useQuestionnaire } from './hooks/useQuestionnaire';
 import { Card, CardContent } from "./components/ui/card";
@@ -59,6 +60,7 @@ function App() {
       collateralLigamentSeverity: questionnaires.find(q => q.name === 'Collateral Ligament Injury Severity Assessment'),
       lateralBandSeverity: questionnaires.find(q => q.name === 'Lateral Band Syndrome Severity Assessment'),
       volarPlateSeverity: questionnaires.find(q => q.name === 'Volar Plate Injury Severity Assessment'),
+      nerveIssueIdentification: questionnaires.find(q => q.name === 'Nerve Issue Identification Assessment'),
     };
 
     setSelectedQuestionnaire(questionnaireMap[type] || null);
@@ -213,6 +215,16 @@ function App() {
             questionnaire={selectedQuestionnaire}
             onBack={() => setSelectedQuestionnaire(null)}
             onComplete={(results) => handleQuestionnaireComplete(results, 'volarPlateSeverity')}
+          />
+        </Layout>
+      );
+    } else if (selectedQuestionnaire.name === 'Nerve Issue Identification Assessment') {
+      return (
+        <Layout>
+          <NerveIssueIdentificationQuestionnaire
+            questionnaire={selectedQuestionnaire}
+            onBack={() => setSelectedQuestionnaire(null)}
+            onComplete={(results) => handleQuestionnaireComplete(results, 'nerveIssueIdentification')}
           />
         </Layout>
       );

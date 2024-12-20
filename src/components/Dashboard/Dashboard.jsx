@@ -174,6 +174,14 @@ function Dashboard({ onSelectQuestionnaire }) {
                 Volar Plate Injury (10 minutes)
               </Button>
 
+              <Button
+                onClick={() => onSelectQuestionnaire('nerveIssueIdentification')}
+                className="w-full mx-auto min-h-[4rem] md:min-h-[2rem] p-6"
+                variant="outline"
+              >
+                Nerve Issue Identification (5-10 minutes)
+              </Button>
+
             </div>
           </Card>
         </CardContent>
