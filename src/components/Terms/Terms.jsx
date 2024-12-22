@@ -15,12 +15,9 @@ function Terms({ accepted, onAcceptChange, onContinue }) {
 
   return (
     <div>
-      <CardHeader>
-        <CardTitle className="text-xl font-bold text-red-500">
-          READ BEFORE PROCEEDING
-        </CardTitle>
-      </CardHeader>
       <CardContent>
+        <h2 className="text-xl font-bold text-red-500 mb-4">READ BEFORE PROCEEDING</h2>
+
         <div className="space-y-4">
           {TERMS_TEXT.map((section, index) => (
             <p key={index} className="text-muted-foreground">
@@ -42,13 +39,13 @@ function Terms({ accepted, onAcceptChange, onContinue }) {
           </label>
         </div>
 
-          <Button 
-            onClick={onContinue}
-            disabled={!localAccepted}
-            className="w-full"
-          >
-            Continue to Dashboard
-          </Button>
+        <Button
+          onClick={onContinue}
+          disabled={!localAccepted}
+          className="w-full"
+        >
+          Continue to Dashboard
+        </Button>
       </CardContent>
     </div>
   );
