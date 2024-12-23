@@ -168,7 +168,7 @@ function FDPSeverityQuestionnaire({ questionnaire, onBack, onComplete }) {
         let displayedResult;
         if (D3 >= D4 + 3) {
             displayedResult = injuryMapping[questionnaire.name][B3];
-        } else if (D3 < D4 + 3 && D3 >= D4 && D4 >= D5 + 3) { // may want to reduce this to D4 >= D5 + 1 or 2 because getting it to 3 or more is pretty hard with so few questions
+        } else if (D3 < D4 + 3 && D3 >= D4 && D4 >= D5 + 2) { // may want to reduce this to D4 >= D5 + 1 or 2 because getting it to 3 or more is pretty hard with so few questions
             if ((/[AB]/.test(B3) && /[AB]/.test(B4))) {
                 displayedResult = "Grade II";
             } else if ((/[BC]/.test(B3) && /[BC]/.test(B4))) {

@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { Card, CardContent } from "../ui/card";
 import { Checkbox } from "../ui/checkbox";
 import { Button } from "../ui/button";
-import AppHeader from '../AppHeader/AppHeader';
-import { TERMS_TEXT } from '../../constants/terms';
+import TermsText from '../../constants/TermsText';
 
 function Terms({ accepted, onAcceptChange, onContinue }) {
   const [localAccepted, setLocalAccepted] = useState(accepted);
@@ -19,11 +18,7 @@ function Terms({ accepted, onAcceptChange, onContinue }) {
         <h2 className="text-xl font-bold text-red-500 mb-4">READ BEFORE PROCEEDING</h2>
 
         <div className="space-y-4">
-          {TERMS_TEXT.map((section, index) => (
-            <p key={index} className="text-muted-foreground">
-              {section}
-            </p>
-          ))}
+          <TermsText />
         </div>
         <div className="flex items-center space-x-2 mt-6 mb-6">
           <Checkbox

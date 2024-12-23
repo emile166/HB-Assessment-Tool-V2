@@ -101,7 +101,7 @@ export const DIFFERENTIAL_1_DATA = {
       { id: "painFocalPointAnswer1", text: "Distal region of A2 pulley", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 1, K: 0, L: -200, M: 0, N: 0 } },
       { id: "painFocalPointAnswer2", text: "Just one side of the proximal region of the A4 pulley", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 1, M: 0, N: 0 } },
       { id: "painFocalPointAnswer3", text: "Entire proximal region of the A4 pulley", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 1, K: 0, L: 1, M: 0, N: 0 } },
-      { id: "painFocalPointAnswer4", text: "Directly over the A2 pulley or A4 pulley", scores: { A: 0, B: 0, C: 1, D: 0, E: 0, F: 0, G: 0, H: 1, I: 1, J: 1, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "painFocalPointAnswer4", text: "Directly over the A2 pulley or A4 pulley", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 1, I: 1, J: 1, K: 0, L: 0, M: 0, N: 0 } },
       { id: "painFocalPointAnswer5", text: "Sides of the A2 or A4 pulley region", scores: { A: 0, B: 0, C: 1, D: 0, E: 0, F: 0, G: 0, H: 1, I: 1, J: 0, K: 0, L: 0, M: 0, N: 0 } },
       { id: "painFocalPointAnswer6", text: "None of these apply to me", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
     ],

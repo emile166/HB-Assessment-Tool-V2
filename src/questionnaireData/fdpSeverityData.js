@@ -99,7 +99,7 @@ export const FDP_SEVERITY_DATA = {
 
     tissueLoadingIsolatedDrag: {
         id: "tissueLoadingIsolatedDrag",
-        text: "questionText",
+        text: "What are your tissue loading test results for the isolated drag position?",
         video: "placeholderID",
         photos: [],
         answers: [

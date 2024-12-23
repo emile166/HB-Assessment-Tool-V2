@@ -212,11 +212,11 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
         resultsSummary = `🎉 Success! Go back to the dashboard and complete the applicable severity assessment.`;
       } else if (D3 >= D4 + 3) {
         resultsSummary = `🥳 Success! You've completed the assessment.`;
-      } else if (cystScore >= D3 - 2 && cystScore < D3 && /[ACIHLJ]/.test(B3)) {
+      } else if (cystScore >= D3 - 2 && cystScore < D3 && /[ABCIHLJ]/.test(B3)) {
         resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessment 1.`;
-      } else if (D3 > D4 && /[ACIHLJ]/.test(B3) && // If D3 is greater than D4 and B3 is one of ACIHLJ
+      } else if (D3 > D4 && /[ABCIHLJ]/.test(B3) && // If D3 is greater than D4 and B3 is one of ABCIHLJ
         (D4 > D16 ?
-          /[ACIHL]/.test(acceptableScoresString) // Contains at least one of ACIHL
+          /[ABCIHLJ]/.test(acceptableScoresString) // Contains at least one of ABCIHLJ
           : true)
       ) {
         resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessment 1.`;
@@ -244,10 +244,10 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
           : true)
       ) {
         resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessment 4.`;
-      } else if (D3 === D4 && /[ACIHLJ]/.test(B3) && // If D3 equals D4 and B3 is one of ACIHLJ
+      } else if (D3 === D4 && /[ABCIHLJ]/.test(B3) && // If D3 equals D4 and B3 is one of ABCIHLJ
         (D4 > D16 ?
-          /[ACIHLJ]/.test(acceptableScoresString) && // Contains at least one of ACIHLJ
-          !/[^ACIHLJ]/.test(acceptableScoresString)  // ONLY contains ACIHLJ
+          /[ABCIHLJ]/.test(acceptableScoresString) && // Contains at least one of ABCIHLJ
+          !/[^ABCIHLJ]/.test(acceptableScoresString)  // ONLY contains ABCIHLJ
           : true)
       ) {
         resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessment 1.`;
@@ -283,9 +283,9 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
         resultsSummary = `🎉 Success! Go back to the dashboard and complete the applicable severity assessment.`;
       } else if (D3 === D4 + 2) {
         resultsSummary = `🥳 Success! You've completed the assessment.`;
-      } else if (nerveScore === D3 && /[^ACILJ]/.test(B3) && /[^ACILJ]/.test(sortedResults[1][0]) && D3 >= D5 + 2) {
+      } else if (nerveScore === D3 && /[^ABCILJ]/.test(B3) && /[^ABCILJ]/.test(sortedResults[1][0]) && D3 >= D5 + 2) {
         resultsSummary = `💪 Success! Go back to the dashboard and complete differential assessment 1, paying special attention to nerve tension tests.`;
-      } else if (nerveScore < D3 && nerveScore >= D3 - 1 && D3 > D4 && /[^ACILJ]/.test(B3) && D3 >= D5 + 2) {
+      } else if (nerveScore < D3 && nerveScore >= D3 - 1 && D3 > D4 && /[^ABCILJ]/.test(B3) && D3 >= D5 + 2) {
         resultsSummary = `💪 Success! Go back to the dashboard and complete differential assessment 1, paying special attention to nerve tension tests.`;
       } else if (D3 >= D5 + 1 && D4 > D5 && /[AB]/.test(B3) && /[AB]/.test(sortedResults[1][0])) {
         resultsSummary = `🤟 Success! Go back to the dashboard and complete the pulley injury severity assessment.`;
@@ -319,15 +319,15 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
       nerveIssuePossibility = "To be determined...";
     } else if (
       nerveScore === D3 &&
-      /[^ACILJ]/.test(B3) &&
-      sortedResults[1] && /[^ACILJ]/.test(sortedResults[1][0]) &&
+      /[^ABCILJ]/.test(B3) &&
+      sortedResults[1] && /[^ABCILJ]/.test(sortedResults[1][0]) &&
       D3 >= D5 + 2
     ) {
       nerveIssuePossibility = "⚠️ Test Needed";
     } else if (
       nerveScore >= D3 - 2 &&
       D3 > D4 &&
-      /[^ACILJ]/.test(B3) &&
+      /[^ABCILJ]/.test(B3) &&
       D3 >= D5 + 2
     ) {
       nerveIssuePossibility = "⚠️ Medium";
@@ -342,7 +342,7 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
 
     // Add cyst possibility calculation
     let cystIndication;
-    if (displayedResult === "Grade IVb") {  // Add this condition
+    if (displayedResult === "Grade IVb") {
       cystIndication = "None";
     } else if (/1/.test(resultsSummary)) {
       cystIndication = "To be determined...";
@@ -366,7 +366,7 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
     } else if (/🤙/.test(resultsSummary)) {
       additionalDetails = "Great job completing the primary assessment! Based on your results, you should now complete differential assessment 3 (grade III-IV pulley injury vs. FDP injury) as well as differential assessment 4 (lumbrical injury vs. FDP injury).";
     } else if (/1/.test(resultsSummary)) {
-      additionalDetails = "Great job completing the primary assessment! Based on your results, you should now move on to differential assessment 1: grade I-II pulley injury vs. flexor tenosynovitis vs. cyst vs. nerve issue vs. FDS insertional tendinopathy vs. injury-induced pulley thickening.";
+      additionalDetails = "Great job completing the primary assessment! Based on your results, you should now move on to differential assessment 1: pulley injury vs. flexor tenosynovitis vs. cyst vs. nerve issue vs. FDS insertional tendinopathy vs. injury-induced pulley thickening.";
     } else if (/2/.test(resultsSummary)) {
       additionalDetails = "Great job completing the primary assessment! Based on your results, you should now move on to differential assessment 2: joint synovitis vs. collateral ligament injury vs. lateral band syndrome.";
     } else if (/3/.test(resultsSummary)) {

@@ -199,7 +199,7 @@ function PulleySeverityQuestionnaire({ questionnaire, onBack, onComplete }) {
                 displayedResult = "Data Unclear (Grade IVb Warning)";
             } else if (highestGradeScore < secondGradeScore + 3 &&
                 highestGradeScore > secondGradeScore &&
-                secondGradeScore >= thirdGradeScore + 3) {
+                secondGradeScore >= thirdGradeScore + 2) {
                 // Handle grade pairs logic
                 if (/[AB]/.test(highestGrade) && /[AB]/.test(secondGrade)) {
                     displayedResult = "Grade II";
@@ -305,16 +305,13 @@ function PulleySeverityQuestionnaire({ questionnaire, onBack, onComplete }) {
     // Check for early completion
     const checkForEarlyCompletion = (currentId) => {
         const currentQuestionIndex = getQuestionIndex(currentId);
+        const visibleBowstringingIndex = questionnaire.questions.findIndex(q => q.id === 'visibleBowstringing');
 
-        // Check first three questions condition
-        if (currentQuestionIndex === 2) { // After answering first three questions
-            const injuryTypeResponse = responses['injuryType']?.id;
-            const obviousSoundResponse = responses['obviousSound']?.id;
+        // Check if visible bowstringing is indicated
+        if (currentQuestionIndex === visibleBowstringingIndex) {
             const visibleBowstringingResponse = responses['visibleBowstringing']?.id;
 
-            if (injuryTypeResponse === 'injuryTypeAnswer1' &&
-                obviousSoundResponse === 'obviousSoundAnswer1' &&
-                visibleBowstringingResponse === 'visibleBowstringingAnswer1') {
+            if (visibleBowstringingResponse === 'visibleBowstringingAnswer1') {
                 setEarlyCompletion(true);
                 return true;
             }

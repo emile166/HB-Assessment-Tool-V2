@@ -51,7 +51,7 @@ function Dashboard({ onSelectQuestionnaire }) {
               onClick={() => onSelectQuestionnaire('primary')}
               className="w-full mx-auto min-h-[4rem] md:min-h-[2rem] p-6"
             >
-              Start Primary Assessment (10-20 minutes)
+              Start Primary Assessment (15-25 minutes)
             </Button>
           </Card>
 
@@ -70,7 +70,7 @@ function Dashboard({ onSelectQuestionnaire }) {
               >
                 Differential Assessment 1 (10-20 minutes)
               </Button>
-              <p className="text-xs text-gray-500 text-center px-8 mt-1 mb-6">Grade I-II Pulley Injury vs. Flexor Tenosynovitis vs. Cyst vs. Nerve Issue vs. FDS Insertional Tendinopathy vs. Injury-Induced Pulley Thickening</p>
+              <p className="text-xs text-gray-500 text-center px-8 mt-1 mb-6">Pulley Injury vs. Flexor Tenosynovitis vs. Cyst vs. Nerve Issue vs. FDS Insertional Tendinopathy vs. Injury-Induced Pulley Thickening</p>
 
               <Button
                 onClick={() => onSelectQuestionnaire('differential2')}
