@@ -11,7 +11,7 @@ const AppHeader = forwardRef((props, ref) => {
       <p className="text-gray-500">Finger, Hand, and Forearm Injuries</p>
 
       <p className="text-gray-500 text-xs">By using this tool, you agree to our <a
-        href="https://hoopersbeta.com/terms-and-conditions"
+        href="https://hoopersbeta.com/termsandconditions"
         target="_blank"
         rel="noopener noreferrer"
         className="underline text-gray-500"
