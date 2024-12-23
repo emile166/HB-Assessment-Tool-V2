@@ -26,15 +26,16 @@ function FDPSeverityQuestionnaire({ questionnaire, onBack, onComplete }) {
     const questionnaireContainerRef = useRef(null);
     const [earlyCompletion, setEarlyCompletion] = useState(false);
     const [versionResult, setVersionResult] = useState('');
+    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
     useEffect(() => {
-        if (showResults || currentQuestionId !== firstQuestionId) {
+        if (showResults || currentQuestionIndex >= 0) {
             questionnaireContainerRef.current?.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
             });
         }
-    }, [showResults, currentQuestionId, firstQuestionId]);
+    }, [showResults, currentQuestionIndex]);
 
     const handleAnswer = (questionId, answer) => {
         const newResponses = {
@@ -298,7 +299,7 @@ function FDPSeverityQuestionnaire({ questionnaire, onBack, onComplete }) {
     }
 
     if (isCalculating) {
-        return <LoadingScreen />;
+        return <LoadingScreen containerRef={questionnaireContainerRef} />;
     }
 
     if (showResults) {
@@ -321,6 +322,7 @@ function FDPSeverityQuestionnaire({ questionnaire, onBack, onComplete }) {
                         scores={calculateScoresForAnswers(responses)}
                         questionnaireName={questionnaire.name}
                         onBack={onBack}
+                        containerRef={questionnaireContainerRef}
                     />
                 </Card>
             </Layout>

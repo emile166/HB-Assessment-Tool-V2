@@ -30,15 +30,16 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
   const [isCalculating, setIsCalculating] = useState(false);
   const questionnaireContainerRef = useRef(null);
   const [earlyCompletion, setEarlyCompletion] = useState(false);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
   useEffect(() => {
-    if (showResults || currentQuestionId !== firstQuestionId) {
-      questionnaireContainerRef.current?.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  }, [showResults, currentQuestionId, firstQuestionId]);
+      if (showResults || currentQuestionIndex >= 0) {
+          questionnaireContainerRef.current?.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+          });
+      }
+  }, [showResults, currentQuestionIndex]);
 
   const handleAnswer = (questionId, answer) => {
     const newResponses = {
@@ -480,7 +481,7 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
   }
 
   if (isCalculating) {
-    return <LoadingScreen />;
+    return <LoadingScreen containerRef={questionnaireContainerRef} />;
   }
 
   if (showResults) {
@@ -503,6 +504,7 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
             scores={calculateScoresForAnswers(responses)}
             questionnaireName={questionnaire.name}
             onBack={onBack}
+            containerRef={questionnaireContainerRef}
           />
         </Card>
       </Layout>

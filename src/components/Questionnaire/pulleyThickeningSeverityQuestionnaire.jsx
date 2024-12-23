@@ -26,15 +26,16 @@ function PulleyThickeningSeverityQuestionnaire({ questionnaire, onBack, onComple
     const [isCalculating, setIsCalculating] = useState(false);
     const questionnaireContainerRef = useRef(null);
     const [earlyCompletion, setEarlyCompletion] = useState(false);
+    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
     useEffect(() => {
-        if (showResults || currentQuestionId !== firstQuestionId) {
+        if (showResults || currentQuestionIndex >= 0) {
             questionnaireContainerRef.current?.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
             });
         }
-    }, [showResults, currentQuestionId, firstQuestionId]);
+    }, [showResults, currentQuestionIndex]);
 
     const handleAnswer = (questionId, answer) => {
         const newResponses = {
@@ -234,7 +235,7 @@ function PulleyThickeningSeverityQuestionnaire({ questionnaire, onBack, onComple
     };
 
     if (isCalculating) {
-        return <LoadingScreen />;
+        return <LoadingScreen containerRef={questionnaireContainerRef} />;
     }
 
     if (showResults) {
@@ -257,6 +258,7 @@ function PulleyThickeningSeverityQuestionnaire({ questionnaire, onBack, onComple
                         scores={calculateScoresForAnswers(responses)}
                         questionnaireName={questionnaire.name}
                         onBack={onBack}
+                        containerRef={questionnaireContainerRef}
                     />
                 </Card>
             </Layout>

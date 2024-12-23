@@ -3,6 +3,7 @@ import { DISCLAIMER_TEXT } from "@/constants/disclaimer";
 import { AnswerLog } from "@/components/ui/AnswerLog";
 import { Button } from "../ui/button";
 import { DebugScores } from "../Debug/DebugScores";
+import { ScrollToTop } from "./ScrollToTop";
 
 export function ResultsCard({
     title,
@@ -21,11 +22,12 @@ export function ResultsCard({
     scores,
     questionnaireName,
     onBack,
+    containerRef,
     children
 }) {
     return (
         <div className="mb-8">
-
+            {containerRef && <ScrollToTop containerRef={containerRef} />}
             <CardTitle className="mt-8 text-xl text-center">{title}</CardTitle>
 
             <Card className="p-4 m-4 bg-red-100">
