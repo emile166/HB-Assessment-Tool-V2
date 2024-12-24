@@ -34,10 +34,10 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
 
   useEffect(() => {
     if (showResults || currentQuestionIndex >= 0 || currentQuestionId) {
-        questionnaireContainerRef.current?.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
+      questionnaireContainerRef.current?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
     }
   }, [showResults, currentQuestionIndex, currentQuestionId]);
 
@@ -69,7 +69,7 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
       }
       nextIndex++;
     }
-    
+
     return null;
   };
 
@@ -221,7 +221,11 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
           /[ABCIHLJ]/.test(acceptableScoresString) // Contains at least one of ABCIHLJ
           : true)
       ) {
-        resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessment 1.`;
+        if (D4 >= D5 + 2 && /[AB]/.test(B3) && /[AB]/.test(sortedResults[1][0])) { // If D4 is greater than D5 + 2 and B3 is A or B and the second injury code is also A or B, that means the top two scores are pulley injuries
+          resultsSummary = `🤟 Success! Go back to the dashboard and complete the pulley injury severity assessment.`;
+        } else {
+          resultsSummary = `🙌 Good work! Go back to the dashboard and complete differential assessment 1.`;
+        }
       } else if (D3 > D4 && /[FGN]/.test(B3) && // If D3 is greater than D4 and B3 is one of FGN
         (D4 > D16 ?
           /[FGN]/.test(acceptableScoresString) // Contains at least one of FGN
