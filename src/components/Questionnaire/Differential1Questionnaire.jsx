@@ -33,13 +33,13 @@ function Differential1Questionnaire({ questionnaire, onBack, primaryResults }) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
   useEffect(() => {
-      if (showResults || currentQuestionIndex >= 0) {
-          questionnaireContainerRef.current?.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-          });
-      }
-  }, [showResults, currentQuestionIndex]);
+    if (showResults || currentQuestionIndex >= 0 || currentQuestionId) {
+        questionnaireContainerRef.current?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+  }, [showResults, currentQuestionIndex, currentQuestionId]);
 
   const handleAnswer = (questionId, answer) => {
     const newResponses = {
