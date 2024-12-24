@@ -21,12 +21,14 @@ const TermsText = () => {
 
             <p>
                 TERMS AND CONDITIONS: By clicking 'Start,' you acknowledge and agree that:
-                <ul className="list-disc list-inside my-4">
-                    <li>This tool is intended for informational purposes only and does not replace professional medical advice, diagnosis, or treatment.</li>
-                    <li>You must be 18 years or older to use this tool. If you are under 18, do not proceed.</li>
-                    <li>Severe injuries (e.g., dislocations, suspected fractures, or complete sensation loss) require immediate medical attention. Do not use this tool if you have such injuries or any condition that could be aggravated by this assessment.</li>
-                    <li>You are responsible for ensuring you are physically fit to complete the assessment. If you experience discomfort or are uncertain about your condition, stop immediately and consult a healthcare provider.</li>
-                </ul>
+            </p>
+            <ul className="list-disc list-inside">
+                <li>This tool is intended for informational purposes only and does not replace professional medical advice, diagnosis, or treatment.</li>
+                <li>You must be 18 years or older to use this tool. If you are under 18, do not proceed.</li>
+                <li>Severe injuries (e.g., dislocations, suspected fractures, or complete sensation loss) require immediate medical attention. Do not use this tool if you have such injuries or any condition that could be aggravated by this assessment.</li>
+                <li>You are responsible for ensuring you are physically fit to complete the assessment. If you experience discomfort or are uncertain about your condition, stop immediately and consult a healthcare provider.</li>
+            </ul>
+            <p>
                 By proceeding, you confirm that you have read, understood, and agree to these terms. For full details, please review our Terms and Conditions, available here: {' '}
                 <a href="http://hoopersbeta.com/termsandconditions" target="_blank" rel="noopener noreferrer" className="underline text-blue-500">hoopersbeta.com/termsandconditions</a>
             </p>

@@ -92,6 +92,21 @@ export const DIFFERENTIAL_1_DATA = {
     conditions: []
   },
 
+  gripComparison: {
+    id: "gripComparison",
+    text: "Which grip position(s) causes discomfort/pain associated with your injury?",
+    video: "placeholderID",
+    photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/4504b48a-39e8-4a6e-b08e-9ff1f846b388/Q2+-+ALL+Grip+Types.png?content-type=image%2Fpng"],
+    answers: [
+      { id: "gripComparisonAnswer1", text: "Both half and high angle crimps", scores: { A: 1, B: 0, C: 1, D: 0, E: 0, F: 0, G: 0, H: 1, I: 0, J: 1, K: 0, L: 1, M: 0, N: 0 } },
+      { id: "gripComparisonAnswer2", text: "Half crimp only", scores: { A: -1, B: 0, C: 1, D: 0, E: 0, F: 0, G: 0, H: 1, I: 1, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "gripComparisonAnswer3", text: "High angle crimp only", scores: { A: -1, B: 0, C: 1, D: 0, E: 0, F: 0, G: 0, H: 1, I: 1, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "gripComparisonAnswer4", text: "Neither", scores: { A: -100, B: 0, C: -100, D: 0, E: 0, F: 0, G: 0, H: 1, I: 1, J: -100, K: 0, L: -100, M: 0, N: 0 } }
+    ],
+    multiple: false,
+    conditions: []
+  },
+
   painFocalPoint: {
     id: "painFocalPoint",
     text: "Where is the focal point of your discomfort/pain?",
