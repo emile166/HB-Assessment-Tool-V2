@@ -6,8 +6,8 @@ export const LUMBRICAL_SEVERITY_DATA = {
         video: "placeholderID",
         photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/e419fbca-9fa8-483d-8bfd-4128edc05733/Lumbrical+severity+-+Question+1+-+Hand+front.jpg?content-type=image%2Fjpeg"],
         answers: [
-            { id: "injuryDiscolorationAnswer1", text: "Yes, in my palm", scores: { A: -100, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "injuryDiscolorationAnswer2", text: "Yes, at the base of my finger", scores: { A: -100, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "injuryDiscolorationAnswer1", text: "1. Yes, in my palm", scores: { A: -100, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "injuryDiscolorationAnswer2", text: "2. Yes, at the base of my finger", scores: { A: -100, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "injuryDiscolorationAnswer3", text: "No", scores: { A: 1, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "injuryDiscolorationAnswer4", text: "None of these options apply to me, or I’m unsure", scores: { A: 1, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
         ],

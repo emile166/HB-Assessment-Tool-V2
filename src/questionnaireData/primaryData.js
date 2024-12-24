@@ -433,7 +433,7 @@ export const PRIMARY_DATA = {
     id: "injurySwelling",
     text: "Has there been any swelling associated with the injury?",
     video: "placeholderID",
-    photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/c3e8ac25-0a5b-4f27-9a42-716b2318ee0d/Primary+-+Question+9+-+Hand+front.jpg?content-type=image%2Fjpeg"],
+    photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/d3894a14-38ad-46e9-a939-92ab9c5b7264/PIP+and+DIP+Joints.jpg?content-type=image%2Fjpeg"],
     answers: [
       { id: "injurySwellingAnswer1", text: "Yes, mainly in the left or right side (but not both sides) of the DIP joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
       { id: "injurySwellingAnswer2", text: "Yes, mainly in the left or right side (but not both sides) of the PIP joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
@@ -469,7 +469,10 @@ export const PRIMARY_DATA = {
     id: "injuryDiscoloration",
     text: "Has there been any discoloration associated with the injury?",
     video: "placeholderID",
-    photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/26cfa0d9-eb43-48cf-abba-2edb5716c88f/Primary+-+Question+8+-+Hand+front.jpg?content-type=image%2Fjpeg"],
+    photos: [
+      "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/26cfa0d9-eb43-48cf-abba-2edb5716c88f/Primary+-+Question+8+-+Hand+front.jpg?content-type=image%2Fjpeg",
+      "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/d3894a14-38ad-46e9-a939-92ab9c5b7264/PIP+and+DIP+Joints.jpg?content-type=image%2Fjpeg"
+    ],
     answers: [
       { id: "injuryDiscolorationAnswer1", text: "Yes, bruise-like discoloration in either the left or right side (not both sides) of the PIP or DIP joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
       { id: "injuryDiscolorationAnswer2", text: "Yes, bruise-like discoloration in either the left or right side (not both sides) of the PIP joint only (not DIP joint)", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
@@ -622,8 +625,7 @@ export const PRIMARY_DATA = {
     text: "What are your passive joint extension test results?",
     video: "placeholderID",
     photos: [
-      "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/c3e8ac25-0a5b-4f27-9a42-716b2318ee0d/Primary+-+Question+9+-+Hand+front.jpg?content-type=image%2Fjpeg",
-      "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/c3bb623f-a8f1-4a1e-9cc0-f0c7f9278a72/Primary+-+Question+5+-+Hand+back.jpg?content-type=image%2Fjpeg"
+      "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/d3894a14-38ad-46e9-a939-92ab9c5b7264/PIP+and+DIP+Joints.jpg?content-type=image%2Fjpeg"
     ],
     answers: [
       { id: "passiveExtensionAnswer1", text: "Discomfort/pain on the palm side of my DIP or PIP joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 2, L: 0, M: 0, N: 0 } },
