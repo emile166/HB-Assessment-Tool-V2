@@ -1,5 +1,19 @@
 export const LUMBRICAL_SEVERITY_DATA = {
 
+    injuryType: {
+        id: "injuryType",
+        text: "What type of injury did you sustain?",
+        video: "placeholderID",
+        photos: [],
+        answers: [
+            { id: "injuryTypeAnswer1", text: "Traumatic (occurred as a result of sudden trauma – typically characterized by an unexpected overload of the tissue in a single obvious event/moment)", scores: { A: 1, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "injuryTypeAnswer2", text: "Non-traumatic acute (occurred in a single session or single climb but not as a result of any obvious traumatic event or overload)", scores: { A: 1, B: 1, C: -100, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "injuryTypeAnswer3", text: "None of these options apply to me, or I’m unsure", scores: { A: 1, B: 0, C: -100, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
+        ],
+        multiple: false,
+        conditions: []
+    },
+    
     injuryDiscoloration: {
         id: "injuryDiscoloration",
         text: "Has there been any discoloration associated with the injury?",
@@ -21,8 +35,8 @@ export const LUMBRICAL_SEVERITY_DATA = {
         video: "placeholderID",
         photos: [],
         answers: [
-            { id: "aromPositionOneAnswer1", text: "Discomfort/pain in my palm when getting into the test position", scores: { A: -1, B: 0, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "aromPositionOneAnswer2", text: "Discomfort/pain in my palm starts with minimal (1-2 out of 10) force", scores: { A: -1, B: 0, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "aromPositionOneAnswer1", text: "Discomfort/pain in my palm when getting into the test position", scores: { A: -1, B: 1, C: 2, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "aromPositionOneAnswer2", text: "Discomfort/pain in my palm starts with minimal (1-2 out of 10) force", scores: { A: -1, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "aromPositionOneAnswer3", text: "Discomfort/pain in my palm starts with mild (3-4 out of 10) force", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "aromPositionOneAnswer4", text: "Discomfort/pain in my palm starts with moderate (5-7 out of 10) force", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "aromPositionOneAnswer5", text: "Discomfort/pain in my palm starts with heavy (8-10 out of 10) force", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -52,9 +66,9 @@ export const LUMBRICAL_SEVERITY_DATA = {
         video: "placeholderID",
         photos: [],
         answers: [
-            { id: "promIsolatedFingersAnswer1", text: "Normal range of motion and no discomfort/pain associated with my injury", scores: { A: 1, B: 0, C: -1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "promIsolatedFingersAnswer1", text: "Normal range of motion and no discomfort/pain associated with my injury", scores: { A: 1, B: 0, C: -2, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "promIsolatedFingersAnswer2", text: "Normal range of motion but some discomfort/pain associated with my injury", scores: { A: 0, B: 1, C: -1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "promIsolatedFingersAnswer3", text: "Limited range of motion and significant discomfort/pain associated with my injury", scores: { A: 0, B: 0, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
+            { id: "promIsolatedFingersAnswer3", text: "Limited range of motion and significant discomfort/pain associated with my injury", scores: { A: 0, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
         ],
         multiple: false,
         conditions: []
@@ -82,7 +96,7 @@ export const LUMBRICAL_SEVERITY_DATA = {
             { id: "tissueLoadingIsolatedDragAnswer1", text: "Discomfort/pain starts when getting into the test position", scores: { A: -1, B: 1, C: 2, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "tissueLoadingIsolatedDragAnswer2", text: "Discomfort/pain starts with minimal (1-2 out of 10) force", scores: { A: 0, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "tissueLoadingIsolatedDragAnswer3", text: "Discomfort/pain starts with mild (3-4 out of 10) force", scores: { A: 0, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "tissueLoadingIsolatedDragAnswer4", text: "Discomfort/pain starts with moderate (5-7 out of 10) force", scores: { A: 1, B: 1, C: -1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "tissueLoadingIsolatedDragAnswer4", text: "Discomfort/pain starts with moderate (5-7 out of 10) force", scores: { A: 1, B: 2, C: -1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "tissueLoadingIsolatedDragAnswer5", text: "Discomfort/pain starts with heavy (8-10 out of 10) force", scores: { A: 1, B: -1, C: -1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
         ],
         multiple: false,

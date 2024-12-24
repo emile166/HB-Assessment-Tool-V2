@@ -6,11 +6,11 @@ export const PULLEY_THICKENING_SEVERITY_DATA = {
         video: "placeholderID",
         photos: [],
         answers: [
-            { id: "palpationTestAnswer1", text: "Discomfort/pain starts with minimal (1-2 out of 10) pressure", scores: { A: 0, B: 0, C: 2, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "palpationTestAnswer2", text: "Discomfort/pain starts with mild (3-4 out of 10) pressure", scores: { A: 0, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "palpationTestAnswer3", text: "Discomfort/pain starts with moderate (5-7 out of 10) pressure", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "palpationTestAnswer4", text: "Discomfort/pain starts with heavy (8-10 out of 10) pressure", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "palpationTestAnswer5", text: "No discomfort/pain even with heavy (8-10 out of 10) pressure", scores: { A: 2, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
+            { id: "palpationTestAnswer1", text: "Discomfort/pain starts with minimal (1-2 out of 10) pressure", scores: { A: 0, B: 2, C: 3, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "palpationTestAnswer2", text: "Discomfort/pain starts with mild (3-4 out of 10) pressure", scores: { A: 0, B: 1, C: 2, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "palpationTestAnswer3", text: "Discomfort/pain starts with moderate (5-7 out of 10) pressure", scores: { A: 0, B: 2, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "palpationTestAnswer4", text: "Discomfort/pain starts with heavy (8-10 out of 10) pressure", scores: { A: 2, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "palpationTestAnswer5", text: "No discomfort/pain even with heavy (8-10 out of 10) pressure", scores: { A: 3, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
         ],
         multiple: false,
         conditions: []
@@ -22,11 +22,11 @@ export const PULLEY_THICKENING_SEVERITY_DATA = {
         video: "placeholderID",
         photos: [],
         answers: [
-            { id: "tissueLoadingAnswer1", text: "Discomfort/pain starts with minimal (1-2 out of 10) pressure", scores: { A: 0, B: 0, C: 2, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "tissueLoadingAnswer2", text: "Discomfort/pain starts with mild (3-4 out of 10) pressure", scores: { A: 0, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "tissueLoadingAnswer3", text: "Discomfort/pain starts with moderate (5-7 out of 10) pressure", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "tissueLoadingAnswer4", text: "Discomfort/pain starts with heavy (8-10 out of 10) pressure", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "tissueLoadingAnswer5", text: "No discomfort/pain even with heavy (8-10 out of 10) pressure", scores: { A: 2, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
+            { id: "tissueLoadingAnswer1", text: "Discomfort/pain starts with minimal (1-2 out of 10) pressure", scores: { A: 0, B: 2, C: 3, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "tissueLoadingAnswer2", text: "Discomfort/pain starts with mild (3-4 out of 10) pressure", scores: { A: 0, B: 1, C: 2, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "tissueLoadingAnswer3", text: "Discomfort/pain starts with moderate (5-7 out of 10) pressure", scores: { A: 0, B: 2, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "tissueLoadingAnswer4", text: "Discomfort/pain starts with heavy (8-10 out of 10) pressure", scores: { A: 2, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "tissueLoadingAnswer5", text: "No discomfort/pain even with heavy (8-10 out of 10) pressure", scores: { A: 3, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
         ],
         multiple: false,
         conditions: []

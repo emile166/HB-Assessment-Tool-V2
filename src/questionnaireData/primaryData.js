@@ -5,9 +5,9 @@ export const PRIMARY_DATA = {
     video: "placeholderID",
     photos: [],
     answers: [
-      { id: "injuryTypeAnswer1", text: "Traumatic", scores: { A: 1, B: 1, C: -2, D: 1, E: 1, F: -100, G: 1, H: -2, I: -100, J: 0, K: 1, L: -100, M: -100, N: 1 } },
-      { id: "injuryTypeAnswer2", text: "Non-traumatic acute", scores: { A: 1, B: 0, C: 1, D: 1, E: 1, F: 0, G: 1, H: 1, I: 1, J: 1, K: 1, L: 1, M: 1, N: 1 } },
-      { id: "injuryTypeAnswer3", text: "Chronic", scores: { A: 0, B: -100, C: 1, D: -5, E: -5, F: 1, G: -3, H: 1, I: 1, J: 1, K: -5, L: 1, M: 1, N: 1 } }
+      { id: "injuryTypeAnswer1", text: "Traumatic (occurred as a result of sudden trauma – typically characterized by an unexpected overload of the tissue in a single obvious event/moment)", scores: { A: 1, B: 1, C: -2, D: 1, E: 1, F: -100, G: 1, H: -2, I: -100, J: 0, K: 1, L: -100, M: -100, N: 1 } },
+      { id: "injuryTypeAnswer2", text: "Non-traumatic acute (occurred in a single session or single climb but not as a result of any obvious traumatic event or overload)", scores: { A: 1, B: 0, C: 1, D: 1, E: 1, F: 0, G: 1, H: 1, I: 1, J: 1, K: 1, L: 1, M: 1, N: 1 } },
+      { id: "injuryTypeAnswer3", text: "Chronic (slow build-up of symptoms over a week or more)", scores: { A: 0, B: -100, C: 1, D: -5, E: -5, F: 1, G: -3, H: 1, I: 1, J: 1, K: -5, L: 1, M: 1, N: 1 } }
     ],
     multiple: false,
     conditions: []
