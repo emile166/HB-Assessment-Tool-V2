@@ -405,8 +405,7 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
 
     // Get injury description
     const getInjuryDescription = (displayedResult) => {
-      const description = INJURY_DESCRIPTIONS[displayedResult.toLowerCase()]?.description;
-      return description || "";
+      return INJURY_DESCRIPTIONS[displayedResult.toLowerCase()] || "";
     };
 
     // Wait for loading animation
