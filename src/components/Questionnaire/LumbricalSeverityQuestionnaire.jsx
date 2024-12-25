@@ -169,7 +169,7 @@ function LumbricalSeverityQuestionnaire({ questionnaire, onBack, onComplete }) {
         let displayedResult = 'Data Unclear';
         if (highestScore >= secondScore + 3) {
             displayedResult = injuryMapping[questionnaire.name][highestGrade];
-        } else if (highestScore < secondScore + 3 && highestScore >= secondScore && secondScore >= thirdScore + 3) {
+        } else if (highestScore < secondScore + 3 && highestScore >= secondScore && secondScore >= thirdScore + 2) {
             if ((highestGrade === 'A' && secondGrade === 'B') || (highestGrade === 'B' && secondGrade === 'A')) {
                 displayedResult = 'Grade II';
             } else if ((highestGrade === 'B' && secondGrade === 'C') || (highestGrade === 'C' && secondGrade === 'B')) {
