@@ -35,7 +35,7 @@ function PulleySeverityQuestionnaire({ questionnaire, onBack, onComplete }) {
                 block: 'start'
             });
         }
-      }, [showResults, currentQuestionIndex, currentQuestionId]);
+    }, [showResults, currentQuestionIndex, currentQuestionId]);
 
     const handleAnswer = (questionId, answer) => {
         const newResponses = {
@@ -175,11 +175,8 @@ function PulleySeverityQuestionnaire({ questionnaire, onBack, onComplete }) {
         // Calculate Grade IVb score
         const gradeIVbScore = scores['E'] || 0;
 
-        // Early completion override for Grade IVb
-        if (earlyCompletion &&
-            responses['injuryType']?.id === 'injuryTypeAnswer1' &&
-            responses['obviousSound']?.id === 'obviousSoundAnswer1' &&
-            responses['visibleBowstringing']?.id === 'visibleBowstringingAnswer1') {
+        // Bowstringing override for Grade IVb
+        if (responses['visibleBowstringing']?.id === 'visibleBowstringingAnswer1') {
             displayedResult = "Grade IVb";
             locationResult = "A2+A3+A4";
             resultsSummary = "⚕️ Medical evaluation is needed.";
@@ -192,6 +189,7 @@ function PulleySeverityQuestionnaire({ questionnaire, onBack, onComplete }) {
             const [highestLocation, highestLocationScore] = locationScores[0] || ['', 0];
             const [secondLocation, secondLocationScore] = locationScores[1] || ['', 0];
             const [thirdLocation, thirdLocationScore] = locationScores[2] || ['', 0];
+            const [fourthLocation, fourthLocationScore] = locationScores[3] || ['', 0];
 
             // Calculate displayedResult
             if (highestGradeScore >= secondGradeScore + 3) {
@@ -200,6 +198,20 @@ function PulleySeverityQuestionnaire({ questionnaire, onBack, onComplete }) {
                 displayedResult = "Data Unclear (Grade IVb Warning)";
             } else if (highestGradeScore < secondGradeScore + 3 &&
                 highestGradeScore > secondGradeScore &&
+                secondGradeScore >= thirdGradeScore + 2) {
+                // Handle grade pairs logic
+                if (/[AB]/.test(highestGrade) && /[AB]/.test(secondGrade)) {
+                    displayedResult = "Grade II";
+                } else if (/[BC]/.test(highestGrade) && /[BC]/.test(secondGrade)) {
+                    displayedResult = "Grade III";
+                } else if (/[CD]/.test(highestGrade) && /[CD]/.test(secondGrade)) {
+                    displayedResult = "Grade IVa";
+                } else if (/[DE]/.test(highestGrade) && /[DE]/.test(secondGrade)) {
+                    displayedResult = "Grade IVb";
+                } else {
+                    displayedResult = "Data Unclear";
+                }
+            } else if (highestGradeScore === secondGradeScore &&
                 secondGradeScore >= thirdGradeScore + 2) {
                 // Handle grade pairs logic
                 if (/[AB]/.test(highestGrade) && /[AB]/.test(secondGrade)) {
@@ -230,6 +242,44 @@ function PulleySeverityQuestionnaire({ questionnaire, onBack, onComplete }) {
                 } else if (displayedResult === "Grade IVa" && /[IJ]/.test(highestLocation)) {
                     locationResult = injuryMapping[questionnaire.name][highestLocation];
                 } else if (displayedResult === "Grade IVa" && secondLocationScore > thirdLocationScore) {
+                    if (/[FGI]/.test(highestLocation) && /[FGI]/.test(secondLocation)) {
+                        locationResult = "A2+A3";
+                    } else if (/[GHJ]/.test(highestLocation) && /[GHJ]/.test(secondLocation)) {
+                        locationResult = "A3+A4";
+                    }
+                } else if (displayedResult === "Grade IVa" && secondLocationScore === thirdLocationScore) {
+                    if (/[FGI]/.test(highestLocation) && /[FGI]/.test(secondLocation)) {
+                        locationResult = "A2+A3";
+                    } else if (/[GHJ]/.test(highestLocation) && /[GHJ]/.test(secondLocation)) {
+                        locationResult = "A3+A4";
+                    }
+                } else {
+                    locationResult = "Data Unclear";
+                }
+            } else if (highestLocationScore < secondLocationScore + 2 && highestLocationScore > secondLocationScore) {
+                if (/Grade (I|II|III)/.test(displayedResult)) {
+                    locationResult = "Data Unclear";
+                } else if (displayedResult === "Grade IVa" && secondLocationScore > thirdLocationScore) {
+                    if (/[FGI]/.test(highestLocation) && /[FGI]/.test(secondLocation)) {
+                        locationResult = "A2+A3";
+                    } else if (/[GHJ]/.test(highestLocation) && /[GHJ]/.test(secondLocation)) {
+                        locationResult = "A3+A4";
+                    }
+                } else if (displayedResult === "Grade IVa" && secondLocationScore === thirdLocationScore) {
+                    if (/[FGI]/.test(highestLocation) && /[FGI]/.test(secondLocation)) {
+                        locationResult = "A2+A3";
+                    } else if (/[GHJ]/.test(highestLocation) && /[GHJ]/.test(secondLocation)) {
+                        locationResult = "A3+A4";
+                    }
+                } else {
+                    locationResult = "Data Unclear";
+                }
+            } else if (highestLocationScore === secondLocationScore) {
+                if (/Grade (I|II|III)/.test(displayedResult)) {
+                    locationResult = "Data Unclear";
+                } else if (displayedResult === "Grade IVa" &&
+                    secondLocationScore >= thirdLocationScore &&
+                    thirdLocationScore > fourthLocationScore) {
                     if (/[FGI]/.test(highestLocation) && /[FGI]/.test(secondLocation)) {
                         locationResult = "A2+A3";
                     } else if (/[GHJ]/.test(highestLocation) && /[GHJ]/.test(secondLocation)) {
@@ -285,13 +335,13 @@ function PulleySeverityQuestionnaire({ questionnaire, onBack, onComplete }) {
         if (summary.includes("🙃")) {
             return "This is strange; you may have encountered a bug. Please refresh this page and try again. If you continue to receive this result, please email us screenshots of your answer log and scores (enter code ‘hb-debug’ into the debug field below) to info@hoopersbeta.com and we will be happy to assist you. We apologize for the inconvenience.";
         } else if (summary.includes("⚕️")) {
-            return "A grade IVb pulley injury involves complete ruptures of multiple pulleys. Due to the complexity of this injury and the possibility of other complicating factors, your first step should be to see your primary care physician. They will likely order imaging to confirm the extent of the damage while ruling out involvement of other tissues. They will then help you decide if you will need surgical intervention or if you can begin conservative treatment.";
+            return "A grade IVb pulley injury involves complete ruptures of multiple pulleys. Selecting 'yes' to visible bowstringing will trigger this result. You should not use this tool to assess severe injuries. Due to the complexity of this injury and the possibility of other complicating factors, your first step should be to see your primary care physician. They will likely order imaging to confirm the extent of the damage while ruling out involvement of other tissues. They will then help you decide if you will need surgical intervention or if you can begin conservative treatment.";
         } else if (summary.includes("🧑‍⚕️")) {
             return "A grade IVa injury means two adjacent pulley tears. This grade of injury can be treated conservatively with a guided recovery program. However, before starting any treatment you must obtain a proper diagnosis from a qualified professional (using ultrasound or MRI) to rule out the possibility of a grade IVb injury, which is a more severe injury that may require surgery. This assessment tool is not a diagnostic tool and as such is not a replacement for proper medical advice.";
         } else if (summary.includes("🥳")) {
             return "Great job completing the pulley severity assessment! Your answers are associated with a clear grade and location of injury. Huzzah!";
         } else if (summary.includes("😓")) {
-            return "Your answers did not indicate a clear result; however, they do show the possibility of a Grade IVb pulley injury, which is a rupture of multiple pulleys. If this does not sound right to you, please retake the severity questionnaire and make sure you are as accurate and specific as possible with your answers. If you continue to receive the same result, your condition may simply require professional evaluation. You can schedule an online or in-person appointment with Dr. Jason Hooper, PT, DPT, OCS, SCS by going here: https://www.hoopersbeta.com/private-sessions.";
+            return "Your answers did not indicate a clear result; however, they do show the possibility of a Grade IVb pulley injury, which is a rupture of multiple pulleys that requires evalution by a medical professional. You should not use this tool to assess severe injuries. If this does not sound right to you, please retake the severity questionnaire and make sure you are as accurate and specific as possible with your answers. If you continue to receive the same result, your condition may simply require professional evaluation. You can schedule an online or in-person appointment with Dr. Jason Hooper, PT, DPT, OCS, SCS by going here: https://www.hoopersbeta.com/private-sessions.";
         } else if (summary.includes("🤔")) {
             return "Your answers did not indicate a clear grade or location of injury. If you are certain you have a pulley injury, please retake the severity questionnaire and make sure you are as accurate and specific as possible with your answers. If you continue to receive the same result, your condition may simply require professional evaluation. You can schedule an online or in-person appointment with Dr. Jason Hooper, PT, DPT, OCS, SCS by going here: https://www.hoopersbeta.com/private-sessions.";
         } else if (summary.includes("😞")) {
