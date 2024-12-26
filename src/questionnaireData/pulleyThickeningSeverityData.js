@@ -38,9 +38,11 @@ export const PULLEY_THICKENING_SEVERITY_DATA = {
         video: "placeholderID",
         photos: [],
         answers: [
-            { id: "impactOnStrengthAnswer1", text: "Significant impact (approximately 51-100% perceived reduction)", scores: { A: 0, B: 0, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "impactOnStrengthAnswer2", text: "Moderate impact (approximately 25-50% perceived reduction)", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "impactOnStrengthAnswer3", text: "Mild impact (less than 25% perceived reduction)", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
+            { id: "impactOnStrengthAnswer1", text: "Severe impact - I can no longer climb or train anywhere near my baseline due to pain.", scores: { A: -1, B: 0, C: 2, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "impactOnStrengthAnswer2", text: "Large impact - I've had to reduce my climbing and/or training intensity a fair amount due to the pain.", scores: { A: 0, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "impactOnStrengthAnswer3", text: "Moderate impact - It definitely bothers me and probably reduces peak performance a bit, but I've been grinding through it.", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "impactOnStrengthAnswer4", text: "Mild impact - It's definitely annoying but not enough to hugely impact me.", scores: { A: 1, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "impactOnStrengthAnswer5", text: "Minimal - It barely affects me, if at all.", scores: { A: 2, B: 0, C: -1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
         ],
         multiple: false,
         conditions: []

@@ -6,7 +6,7 @@ export const PRIMARY_DATA = {
     photos: [],
     answers: [
       { id: "injuryTypeAnswer1", text: "Traumatic (occurred as a result of sudden trauma – typically characterized by an unexpected overload of the tissue in a single obvious event/moment)", scores: { A: 1, B: 1, C: -2, D: 1, E: 1, F: -100, G: 1, H: -2, I: -100, J: 0, K: 1, L: -100, M: -100, N: 1 } },
-      { id: "injuryTypeAnswer2", text: "Non-traumatic acute (occurred in a single session or single climb but not as a result of any obvious traumatic event or overload)", scores: { A: 1, B: 0, C: 1, D: 1, E: 1, F: 0, G: 1, H: 1, I: 1, J: 1, K: 1, L: 1, M: 1, N: 1 } },
+      { id: "injuryTypeAnswer2", text: "Non-traumatic acute (occurred in a single session or single climb but not as a result of any obvious traumatic event or overload)", scores: { A: 1, B: 0, C: 1, D: 1, E: 1, F: 0, G: 1, H: 1, I: 1, J: 1, K: 1, L: 1, M: 0, N: 1 } },
       { id: "injuryTypeAnswer3", text: "Chronic (slow build-up of symptoms over a week or more)", scores: { A: 0, B: -100, C: 1, D: -5, E: -5, F: 1, G: -3, H: 1, I: 1, J: 1, K: -5, L: 1, M: 1, N: 1 } }
     ],
     multiple: false,
@@ -66,7 +66,7 @@ export const PRIMARY_DATA = {
 
   mechanismTraumaticPinky: {
     id: "mechanismTraumaticPinky",
-    text: "Which grip position were you in when the injury occurred?",
+    text: "Which grip position was your pinky in when the injury occurred? (Think carefully before answering; due to the shortness of the pinky finger in most people, it is often in a lower-angle grip position than the other fingers.)",
     video: "placeholderID",
     photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/4504b48a-39e8-4a6e-b08e-9ff1f846b388/Q2+-+ALL+Grip+Types.png?content-type=image%2Fpng"],
     answers: [
@@ -109,7 +109,7 @@ export const PRIMARY_DATA = {
     answers: [
       { id: "mechanismAcuteNonTraumaticAnswer1", text: "High-angle crimp", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 1, I: 1, J: 1, K: 1, L: 1, M: 0, N: 0 } },
       { id: "mechanismAcuteNonTraumaticAnswer2", text: "Half crimp", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 1, I: 1, J: 1, K: 0, L: 1, M: 0, N: 0 } },
-      { id: "mechanismAcuteNonTraumaticAnswer4", text: "Three-finger drag", scores: { A: 0, B: 0, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 1, N: 0 } },
+      { id: "mechanismAcuteNonTraumaticAnswer4", text: "Three-finger drag", scores: { A: 0, B: 0, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
       { id: "mechanismAcuteNonTraumaticAnswer5", text: "Open hand", scores: { A: 0, B: 0, C: 0, D: 1, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
       { id: "mechanismAcuteNonTraumaticAnswer6", text: "Twisting or side-loading grip (e.g. finger lock, ring lock, side pull, gaston, etc.)", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
       { id: "mechanismAcuteNonTraumaticAnswer7", text: "Two-finger pocket (crimp)", scores: { A: 1, B: 0, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
@@ -156,13 +156,13 @@ export const PRIMARY_DATA = {
 
   mechanismAcuteNonTraumaticPinky: {
     id: "mechanismAcuteNonTraumaticPinky",
-    text: "Which do you think contributed to your injury?",
+    text: "Which pinky finger position do you think contributed to your injury? (Think carefully before answering; due to the shortness of the pinky finger in most people, it is often in a lower-angle grip position than the other fingers.)",
     video: "placeholderID",
     photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/4504b48a-39e8-4a6e-b08e-9ff1f846b388/Q2+-+ALL+Grip+Types.png?content-type=image%2Fpng"],
     answers: [
       { id: "mechanismAcuteNonTraumaticPinkyAnswer1", text: "High-angle crimp", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 1, I: 1, J: 1, K: 1, L: 1, M: 0, N: 0 } },
       { id: "mechanismAcuteNonTraumaticPinkyAnswer2", text: "Half crimp", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 1, I: 1, J: 1, K: 0, L: 1, M: 0, N: 0 } },
-      { id: "mechanismAcuteNonTraumaticPinkyAnswer4", text: "Drag or open position", scores: { A: 0, B: 0, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 1, N: 0 } },
+      { id: "mechanismAcuteNonTraumaticPinkyAnswer4", text: "Drag or open position", scores: { A: 0, B: 0, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
       { id: "mechanismAcuteNonTraumaticPinkyAnswer6", text: "Twisting or side-loading grip (e.g. finger lock, ring lock, side pull, gaston, etc.)", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
       { id: "mechanismAcuteNonTraumaticPinkyAnswer7", text: "Two-finger pocket (crimp)", scores: { A: 1, B: 0, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
       { id: "mechanismAcuteNonTraumaticPinkyAnswer8", text: "Two-finger pocket (drag or open hand)", scores: { A: 0, B: 0, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -255,13 +255,12 @@ export const PRIMARY_DATA = {
 
   mechanismChronicPinky: {
     id: "mechanismChronicPinky",
-    text: "Which do you think contributed most to your injury?",
+    text: "Regarding the grip position of your *pinky* finger, which do you think contributed most to your injury/condition? (Think carefully before answering; due to the shortness of the pinky finger in most people, it is often in a lower-angle grip position than the other fingers.)",
     video: "placeholderID",
     photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/4504b48a-39e8-4a6e-b08e-9ff1f846b388/Q2+-+ALL+Grip+Types.png?content-type=image%2Fpng"],
     answers: [
-      { id: "mechanismChronicPinkyAnswer1", text: "Crimping", scores: { A: 0, B: 0, C: 1, D: 0, E: 0, F: 1, G: 0, H: 1, I: 1, J: 1, K: 0, L: 1, M: 1, N: 0 } },
-      { id: "mechanismChronicPinkyAnswer2", text: "Three-finger drag", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 1, N: 0 } },
-      { id: "mechanismChronicPinkyAnswer3", text: "Open hand", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 1, N: 0 } },
+      { id: "mechanismChronicPinkyAnswer1", text: "Half crimp or high angle grips", scores: { A: 0, B: 0, C: 1, D: 0, E: 0, F: 1, G: 0, H: 1, I: 1, J: 1, K: 0, L: 1, M: 1, N: 0 } },
+      { id: "mechanismChronicPinkyAnswer2", text: "Drag or open hand grips", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 1, N: 0 } },
       { id: "mechanismChronicPinkyAnswer4", text: "Pockets", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 1, M: 1, N: 0 } },
       { id: "mechanismChronicPinkyAnswer5", text: "Twisting or side-loading grip (e.g. finger lock, ring lock, side pull, gaston, etc.)", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
       { id: "mechanismChronicPinkyAnswer6", text: "None of these apply to me, or unsure", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
