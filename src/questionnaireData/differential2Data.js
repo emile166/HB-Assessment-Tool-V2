@@ -2,7 +2,7 @@ export const DIFFERENTIAL_2_DATA = {
     injuryDescription: {
         id: "injuryDescription",
         text: "How would you describe your injury?",
-        video: "placeholderId",
+        video: "",
         photos: [],
         answers: [
             { id: "injuryDescriptionAnswer1", text: "Caused by lateral or torsional forces (e.g. finger lock, ring lock, side pull, gaston, etc.)", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
@@ -18,7 +18,7 @@ export const DIFFERENTIAL_2_DATA = {
     painLocation: {
         id: "painLocation",
         text: "Where is the discomfort/pain located?",
-        video: "placeholderID",
+        video: "",
         photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/d3894a14-38ad-46e9-a939-92ab9c5b7264/PIP+and+DIP+Joints.jpg?content-type=image%2Fjpeg"],
         answers: [
             { id: "painLocationAnswer1", text: "Back side of the DIP or PIP joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: -1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: -1 } },
@@ -34,7 +34,7 @@ export const DIFFERENTIAL_2_DATA = {
     lateralStressTest: {
         id: "lateralStressTest",
         text: "Does the lateral stress test cause discomfort/pain and/or reveal joint laxity?",
-        video: "placeholderID",
+        video: "",
         photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/d3894a14-38ad-46e9-a939-92ab9c5b7264/PIP+and+DIP+Joints.jpg?content-type=image%2Fjpeg"],
         answers: [
             { id: "lateralStressTestAnswer1", text: "Yes, discomfort/pain in both sides of my injured joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -64,7 +64,7 @@ export const DIFFERENTIAL_2_DATA = {
     passiveJointExtension: {
         id: "passiveJointExtension",
         text: "What are your passive joint extension test results?",
-        video: "placeholderID",
+        video: "",
         photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/d3894a14-38ad-46e9-a939-92ab9c5b7264/PIP+and+DIP+Joints.jpg?content-type=image%2Fjpeg"],
         answers: [
             { id: "passiveJointExtensionAnswer1", text: "The test caused discomfort/pain on the back side of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -76,7 +76,7 @@ export const DIFFERENTIAL_2_DATA = {
     activeRangeOfMotion: {
         id: "activeRangeOfMotion",
         text: "What are your active range of motion test results?",
-        video: "placeholderID",
+        video: "",
         photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/d3894a14-38ad-46e9-a939-92ab9c5b7264/PIP+and+DIP+Joints.jpg?content-type=image%2Fjpeg"],
         answers: [
             { id: "activeRangeOfMotionAnswer1", text: "My injury affects my PIP joint and I feel a click/catch sensation on one side of it", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
@@ -92,7 +92,7 @@ export const DIFFERENTIAL_2_DATA = {
     jointEnlargement: {
         id: "jointEnlargement",
         text: "Has there been any swelling or enlargement of the affected joint?",
-        video: "placeholderID",
+        video: "",
         photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/d3894a14-38ad-46e9-a939-92ab9c5b7264/PIP+and+DIP+Joints.jpg?content-type=image%2Fjpeg"],
         answers: [
             { id: "jointEnlargementAnswer1", text: "Yes, constant joint swelling or enlargement of the entire joint (DIP or PIP) for more than a week", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },

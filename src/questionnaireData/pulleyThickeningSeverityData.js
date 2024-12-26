@@ -3,7 +3,7 @@ export const PULLEY_THICKENING_SEVERITY_DATA = {
     palpationTest: {
         id: "palpationTest",
         text: "Do you have discomfort/pain with palpation over the affected area?",
-        video: "placeholderID",
+        video: "",
         photos: [],
         answers: [
             { id: "palpationTestAnswer1", text: "Discomfort/pain starts with minimal (1-2 out of 10) pressure", scores: { A: 0, B: 2, C: 3, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -19,7 +19,7 @@ export const PULLEY_THICKENING_SEVERITY_DATA = {
     tissueLoading: {
         id: "tissueLoading",
         text: "What are your tissue loading test results?",
-        video: "placeholderID",
+        video: "",
         photos: [],
         answers: [
             { id: "tissueLoadingAnswer1", text: "Discomfort/pain starts with minimal (1-2 out of 10) pressure", scores: { A: 0, B: 2, C: 3, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -35,7 +35,7 @@ export const PULLEY_THICKENING_SEVERITY_DATA = {
     impactOnStrength: {
         id: "impactOnStrength",
         text: "To what extent do you feel your injury impacts your strength or climbing performance?",
-        video: "placeholderID",
+        video: "",
         photos: [],
         answers: [
             { id: "impactOnStrengthAnswer1", text: "Severe impact - I can no longer climb or train anywhere near my baseline due to pain.", scores: { A: -1, B: 0, C: 2, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -51,7 +51,7 @@ export const PULLEY_THICKENING_SEVERITY_DATA = {
     symptomProgression: {
         id: "symptomProgression",
         text: "What is your symptom progression like?",
-        video: "placeholderID",
+        video: "",
         photos: [],
         answers: [
             { id: "symptomProgressionAnswer1", text: "Improving", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },

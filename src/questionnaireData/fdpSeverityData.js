@@ -3,7 +3,7 @@ export const FDP_SEVERITY_DATA = {
     injuryType: {
         id: "injuryType",
         text: "What type of injury did you sustain?",
-        video: "placeholderID",
+        video: "",
         photos: [],
         answers: [
             { id: "injuryTypeAnswer1", text: "Traumatic (occurred as a result of sudden trauma – typically characterized by an unexpected overload of the tissue in a single obvious event/moment)", scores: { A: 1, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -17,7 +17,7 @@ export const FDP_SEVERITY_DATA = {
     injuryDiscoloration: {
         id: "injuryDiscoloration",
         text: "Has there been any discoloration in your finger or forearm associated with the injury",
-        video: "placeholderID",
+        video: "",
         photos: [],
         answers: [
             { id: "injuryDiscolorationAnswer1", text: "Yes", scores: { A: 0, B: 0, C: 2, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -31,7 +31,7 @@ export const FDP_SEVERITY_DATA = {
     aromFist: {
         id: "aromFist",
         text: "What are your active range of motion test results?",
-        video: "placeholderID",
+        video: "",
         photos: [],
         answers: [
             { id: "aromFistAnswer1", text: "I’m unable to make a fist due to discomfort/pain associated with my injury", scores: { A: -1, B: -1, C: 2, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -46,7 +46,7 @@ export const FDP_SEVERITY_DATA = {
     passiveRangeOfMotion: {
         id: "passiveRangeOfMotion",
         text: "What are your passive range of motion test results?",
-        video: "placeholderID",
+        video: "",
         photos: [],
         answers: [
             { id: "passiveRangeOfMotionAnswer1", text: "Limited range of motion due to discomfort/pain associated with my injury", scores: { A: 0, B: 0, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -60,7 +60,7 @@ export const FDP_SEVERITY_DATA = {
     injurySwelling: {
         id: "injurySwelling",
         text: "Has there been any swelling in your finger or forearm associated with your injury?",
-        video: "placeholderID",
+        video: "",
         photos: [],
         answers: [
             { id: "injurySwellingAnswer1", text: "Yes", scores: { A: 0, B: 1, C: 2, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -73,7 +73,7 @@ export const FDP_SEVERITY_DATA = {
     injuryMechanism: {
         id: "injuryMechanism",
         text: "Did your injury occur while you were in a two finger pocket or mono?",
-        video: "placeholderID",
+        video: "",
         photos: [],
         answers: [
             { id: "injuryMechanismAnswer1", text: "Yes", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -86,7 +86,7 @@ export const FDP_SEVERITY_DATA = {
     fifthDigit: {
         id: "fifthDigit",
         text: "Is your fifth digit (pinky finger) the one that is injured?",
-        video: "placeholderID",
+        video: "",
         photos: [],
         answers: [
             { id: "fifthDigitAnswer1", text: "Yes", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -99,7 +99,7 @@ export const FDP_SEVERITY_DATA = {
     tissueLoadingDrag: {
         id: "tissueLoadingDrag",
         text: "What are your tissue loading test results for the drag position?",
-        video: "placeholderID",
+        video: "",
         photos: [],
         answers: [
             { id: "tissueLoadingDragAnswer1", text: "Discomfort/pain starts with minimal (1-2 out of 10) force", scores: { A: 0, B: 0, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -114,7 +114,7 @@ export const FDP_SEVERITY_DATA = {
     tissueLoadingIsolatedDrag: {
         id: "tissueLoadingIsolatedDrag",
         text: "What are your tissue loading test results for the isolated drag position?",
-        video: "placeholderID",
+        video: "",
         photos: [],
         answers: [
             { id: "tissueLoadingIsolatedDragAnswer1", text: "Discomfort/pain starts with minimal (1-2 out of 10) force", scores: { A: 0, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },

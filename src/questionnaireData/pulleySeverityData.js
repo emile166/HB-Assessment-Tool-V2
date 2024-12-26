@@ -2,7 +2,7 @@ export const PULLEY_SEVERITY_DATA = {
     injuryType: {
         id: "injuryType",
         text: "What type of injury did you sustain?",
-        video: "placeholderID",
+        video: "",
         photos: [],
         answers: [
             { id: "injuryTypeAnswer1", text: "Traumatic (occurred as a result of sudden trauma – typically characterized by an unexpected overload of the tissue in a single obvious event/moment)", scores: { A: -1, B: 1, C: 1, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -16,7 +16,7 @@ export const PULLEY_SEVERITY_DATA = {
     obviousSound: {
         id: "obviousSound",
         text: "Was there an obvious sound associated with the onset of the injury?",
-        video: "placeholderID",
+        video: "",
         photos: [],
         answers: [
             { id: "obviousSoundAnswer1", text: "Yes, there was a loud audible pop (loud enough for bystanders to hear)", scores: { A: 0, B: 0, C: 1, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -31,7 +31,7 @@ export const PULLEY_SEVERITY_DATA = {
     visibleBowstringing: {
         id: "visibleBowstringing",
         text: "Is there visually obvious bowstringing?",
-        video: "placeholderID",
+        video: "",
         photos: [],
         answers: [
             { id: "visibleBowstringingAnswer1", text: "Yes", scores: { A: -100, B: -100, C: 0, D: 0, E: 3, F: 0, G: 0, H: 0, I: 0, J: 0, K: 3, L: 0, M: 0, N: 0 } },
@@ -44,7 +44,7 @@ export const PULLEY_SEVERITY_DATA = {
     palpableBowstringing: {
         id: "palpableBowstringing",
         text: "Can you feel obvious bowstringing with palpation?",
-        video: "placeholderID",
+        video: "",
         photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/84930909-0843-4db5-829b-a2d82a766c07/Differential+3+-+Question+1+-+Hand+front.jpg?content-type=image%2Fjpeg"],
         answers: [
             { id: "palpableBowstringingAnswer1", text: "Yes, over the A2 and A3 region", scores: { A: 0, B: 0, C: 1, D: 1, E: 0, F: 1, G: 1, H: 0, I: 1, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -70,7 +70,7 @@ export const PULLEY_SEVERITY_DATA = {
     injurySwelling: {
         id: "injurySwelling",
         text: "Has there been any swelling associated with the injury?",
-        video: "placeholderID",
+        video: "",
         photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/84930909-0843-4db5-829b-a2d82a766c07/Differential+3+-+Question+1+-+Hand+front.jpg?content-type=image%2Fjpeg"],
         answers: [
             { id: "injurySwellingAnswer1", text: "Yes, in the A2, A3, and A4 regions", scores: { A: -2, B: -1, C: 0, D: 0, E: 1, F: 1, G: 1, H: 1, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
@@ -89,7 +89,7 @@ export const PULLEY_SEVERITY_DATA = {
     injuryDiscoloration: {
         id: "injuryDiscoloration",
         text: "Has there been any discoloration associated with the injury?",
-        video: "placeholderID",
+        video: "",
         photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/84930909-0843-4db5-829b-a2d82a766c07/Differential+3+-+Question+1+-+Hand+front.jpg?content-type=image%2Fjpeg"],
         answers: [
             { id: "injuryDiscolorationAnswer1", text: "Yes, in the A2, A3, and A4 regions", scores: { A: -2, B: -1, C: 0, D: 0, E: 1, F: 1, G: 1, H: 1, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
@@ -108,7 +108,7 @@ export const PULLEY_SEVERITY_DATA = {
     painLocation: {
         id: "painLocation",
         text: "Where is the discomfort/pain?",
-        video: "placeholderID",
+        video: "",
         photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/ea2f9146-c934-430e-9368-3556dabd71bc/Pulley+Severity+-+Question+7+-+Hand+front.jpg?content-type=image%2Fjpeg"],
         answers: [
             { id: "painLocationAnswer1", text: "Entire A2 to A4 region", scores: { A: -2, B: -1, C: 0, D: 0, E: 1, F: 1, G: 1, H: 1, I: 0, J: 0, K: 2, L: 0, M: 0, N: 0 } },
@@ -128,7 +128,7 @@ export const PULLEY_SEVERITY_DATA = {
     aromFist: {
         id: "aromFist",
         text: "What are your active range of motion test results while making a fist?",
-        video: "placeholderID",
+        video: "",
         photos: [],
         answers: [
             { id: "aromFistAnswer1", text: "I’m unable to make a fist due to the discomfort/pain of my injury", scores: { A: -1, B: -1, C: 0, D: 0, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -143,7 +143,7 @@ export const PULLEY_SEVERITY_DATA = {
     tissueLoadingDrag: {
         id: "tissueLoadingDrag",
         text: "What are your tissue loading test results while in a drag position?",
-        video: "placeholderID",
+        video: "",
         photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/84930909-0843-4db5-829b-a2d82a766c07/Differential+3+-+Question+1+-+Hand+front.jpg?content-type=image%2Fjpeg"],
         answers: [
             { id: "tissueLoadingDragAnswer1", text: "Discomfort/pain in the entire A2 to A4 region", scores: { A: -1, B: -1, C: 0, D: 0, E: 1, F: 1, G: 1, H: 1, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
@@ -161,7 +161,7 @@ export const PULLEY_SEVERITY_DATA = {
     tissueLoadingHalfCrimp: {
         id: "tissueLoadingHalfCrimp",
         text: "What are your tissue loading test results while in a half crimp position?",
-        video: "placeholderID",
+        video: "",
         photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/ea2f9146-c934-430e-9368-3556dabd71bc/Pulley+Severity+-+Question+7+-+Hand+front.jpg?content-type=image%2Fjpeg"],
         answers: [
             { id: "tissueLoadingHalfCrimpAnswer1", text: "Discomfort/pain in the entire A2 to A4 region", scores: { A: 0, B: 0, C: 0, D: 0, E: 1, F: 1, G: 1, H: 1, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
@@ -180,8 +180,8 @@ export const PULLEY_SEVERITY_DATA = {
 
     tissueLoadingFullCrimp: {
         id: "tissueLoadingFullCrimp",
-        text: "questionText",
-        video: "placeholderID",
+        text: "What are your tissue loading test results while in a full crimp position?",
+        video: "",
         photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/ea2f9146-c934-430e-9368-3556dabd71bc/Pulley+Severity+-+Question+7+-+Hand+front.jpg?content-type=image%2Fjpeg"],
         answers: [
             { id: "tissueLoadingFullCrimpAnswer1", text: "Discomfort/pain in the distal A2 region", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: -1, I: 0, J: -1, K: 0, L: 0, M: 0, N: 0 } },
@@ -205,7 +205,7 @@ export const PULLEY_SEVERITY_DATA = {
     injuredPulley: {
         id: "injuredPulley",
         text: "Are you confident that you already know which pulley(s) you injured?",
-        video: "placeholderID",
+        video: "",
         photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/84930909-0843-4db5-829b-a2d82a766c07/Differential+3+-+Question+1+-+Hand+front.jpg?content-type=image%2Fjpeg"],
         answers: [
             { id: "injuredPulleyAnswer1", text: "Yes, A2", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 3, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },

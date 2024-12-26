@@ -3,7 +3,7 @@ export const VOLAR_PLATE_SEVERITY_DATA = {
     injuryType: {
         id: "injuryType",
         text: "What type of injury did you sustain?",
-        video: "placeholderID",
+        video: "",
         photos: [],
         answers: [
             { id: "injuryTypeAnswer1", text: "Traumatic (occurred as a result of sudden trauma – typically characterized by an unexpected overload of the tissue in a single obvious event/moment)", scores: { A: 0, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -17,7 +17,7 @@ export const VOLAR_PLATE_SEVERITY_DATA = {
     obviousSound: {
         id: "obviousSound",
         text: "Was there an obvious sound associated with the onset of the injury?",
-        video: "placeholderID",
+        video: "",
         photos: [],
         answers: [
             { id: "obviousSoundAnswer1", text: "Yes, there was a loud audible pop (loud enough for bystanders to hear)", scores: { A: -1, B: 0, C: 2, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -32,7 +32,7 @@ export const VOLAR_PLATE_SEVERITY_DATA = {
     injuryDiscoloration: {
         id: "injuryDiscoloration",
         text: "Has there been any discoloration associated with the injury?",
-        video: "placeholderID",
+        video: "",
         photos: [],
         answers: [
             { id: "injuryDiscolorationAnswer1", text: "Yes, on the palm side of the joint", scores: { A: -1, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -45,7 +45,7 @@ export const VOLAR_PLATE_SEVERITY_DATA = {
     jointHyperextension: {
         id: "jointHyperextension",
         text: "What are your joint hyperextension test results?",
-        video: "placeholderID",
+        video: "",
         photos: [],
         answers: [
             { id: "jointHyperextensionAnswer1", text: "Discomfort/pain on the palm side of my joint but no increase in mobility", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -60,7 +60,7 @@ export const VOLAR_PLATE_SEVERITY_DATA = {
     tissueLoadingHalfCrimp: {
         id: "tissueLoadingHalfCrimp",
         text: "What are your tissue loading test results while in a half crimp position?",
-        video: "placeholderID",
+        video: "",
         photos: [],
         answers: [
             { id: "tissueLoadingHalfCrimpAnswer1", text: "No discomfort/pain associated with my injury", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -74,7 +74,7 @@ export const VOLAR_PLATE_SEVERITY_DATA = {
     tissueLoadingFullCrimp: {
         id: "tissueLoadingFullCrimp",
         text: "What are your tissue loading test results while in a full crimp position?",
-        video: "placeholderID",
+        video: "",
         photos: [],
         answers: [
             { id: "tissueLoadingFullCrimpAnswer1", text: "No discomfort/pain associated with my injury", scores: { A: 1, B: -1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },

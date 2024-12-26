@@ -3,7 +3,7 @@ export const NERVE_ISSUE_IDENTIFICATION_DATA = {
     nerveTensionTestOne: {
         id: "nerveTensionTestOne",
         text: "Do any of the nerve tension tests create symptoms at or very near to your injury site?",
-        video: "placeholderID",
+        video: "",
         photos: [],
         answers: [
             { id: "nerveTensionTestOneAnswer1", text: "Yes, the ulnar nerve test", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -18,7 +18,7 @@ export const NERVE_ISSUE_IDENTIFICATION_DATA = {
     nerveTensionTestTwo: {
         id: "nerveTensionTestTwo",
         text: "Do any of the nerve tension tests create more intense symptoms anywhere in your injured arm compared to your uninjured arm (not including the neck and upper traps)?",
-        video: "placeholderID",
+        video: "",
         photos: [],
         answers: [
             { id: "nerveTensionTestTwoAnswer1", text: "Yes, the ulnar nerve test", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -41,7 +41,7 @@ export const NERVE_ISSUE_IDENTIFICATION_DATA = {
     nerveTensionTestThree: {
         id: "nerveTensionTestThree",
         text: "Which test caused more significant symptoms?",
-        video: "placeholderID",
+        video: "",
         photos: [],
         answers: [
             { id: "nerveTensionTestThreeAnswer1", text: "Ulnar nerve test ", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },

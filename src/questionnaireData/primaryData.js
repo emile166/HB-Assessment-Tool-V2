@@ -2,7 +2,7 @@ export const PRIMARY_DATA = {
   injuryType: {
     id: "injuryType",
     text: "What type of injury did you sustain?",
-    video: "placeholderID",
+    video: "",
     photos: [],
     answers: [
       { id: "injuryTypeAnswer1", text: "Traumatic (occurred as a result of sudden trauma – typically characterized by an unexpected overload of the tissue in a single obvious event/moment)", scores: { A: 1, B: 1, C: -2, D: 1, E: 1, F: -100, G: 1, H: -2, I: -100, J: 0, K: 1, L: -100, M: -100, N: 1 } },
@@ -16,7 +16,7 @@ export const PRIMARY_DATA = {
   pinkyFinger: {
     id: "pinkyFinger",
     text: "Does your injury primarily affect your pinky finger (fifth digit) or stem from trauma to your pinky finger? (If your pain is located in your palm or forearm but was caused by trauma to the pinky finger, select 'yes'.)",
-    video: "placeholderID",
+    video: "",
     photos: [],
     answers: [
       { id: "pinkyFingerAnswer1", text: "Yes", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -29,7 +29,7 @@ export const PRIMARY_DATA = {
   mechanismTraumatic: {
     id: "mechanismTraumatic",
     text: "Which grip position were you in when the injury occurred?",
-    video: "placeholderID",
+    video: "",
     photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/4504b48a-39e8-4a6e-b08e-9ff1f846b388/Q2+-+ALL+Grip+Types.png?content-type=image%2Fpng"],
     answers: [
       { id: "mechanismTraumaticAnswer1", text: "High-angle crimp", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
@@ -67,7 +67,7 @@ export const PRIMARY_DATA = {
   mechanismTraumaticPinky: {
     id: "mechanismTraumaticPinky",
     text: "Which grip position was your pinky in when the injury occurred? (Think carefully before answering; due to the shortness of the pinky finger in most people, it is often in a lower-angle grip position than the other fingers.)",
-    video: "placeholderID",
+    video: "",
     photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/4504b48a-39e8-4a6e-b08e-9ff1f846b388/Q2+-+ALL+Grip+Types.png?content-type=image%2Fpng"],
     answers: [
       { id: "mechanismTraumaticPinkyAnswer1", text: "High-angle crimp", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
@@ -104,7 +104,7 @@ export const PRIMARY_DATA = {
   mechanismAcuteNonTraumatic: {
     id: "mechanismAcuteNonTraumatic",
     text: "Which do you think contributed to your injury?",
-    video: "placeholderID",
+    video: "",
     photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/4504b48a-39e8-4a6e-b08e-9ff1f846b388/Q2+-+ALL+Grip+Types.png?content-type=image%2Fpng"],
     answers: [
       { id: "mechanismAcuteNonTraumaticAnswer1", text: "High-angle crimp", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 1, I: 1, J: 1, K: 1, L: 1, M: 0, N: 0 } },
@@ -157,7 +157,7 @@ export const PRIMARY_DATA = {
   mechanismAcuteNonTraumaticPinky: {
     id: "mechanismAcuteNonTraumaticPinky",
     text: "Which pinky finger position do you think contributed to your injury? (Think carefully before answering; due to the shortness of the pinky finger in most people, it is often in a lower-angle grip position than the other fingers.)",
-    video: "placeholderID",
+    video: "",
     photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/4504b48a-39e8-4a6e-b08e-9ff1f846b388/Q2+-+ALL+Grip+Types.png?content-type=image%2Fpng"],
     answers: [
       { id: "mechanismAcuteNonTraumaticPinkyAnswer1", text: "High-angle crimp", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 1, I: 1, J: 1, K: 1, L: 1, M: 0, N: 0 } },
@@ -210,7 +210,7 @@ export const PRIMARY_DATA = {
   mechanismChronic: {
     id: "mechanismChronic",
     text: "Which do you think contributed most to your injury?",
-    video: "placeholderID",
+    video: "",
     photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/4504b48a-39e8-4a6e-b08e-9ff1f846b388/Q2+-+ALL+Grip+Types.png?content-type=image%2Fpng"],
     answers: [
       { id: "mechanismChronicAnswer1", text: "Crimping", scores: { A: 0, B: 0, C: 1, D: 0, E: 0, F: 1, G: 0, H: 1, I: 1, J: 1, K: 0, L: 1, M: 1, N: 0 } },
@@ -256,7 +256,7 @@ export const PRIMARY_DATA = {
   mechanismChronicPinky: {
     id: "mechanismChronicPinky",
     text: "Regarding the grip position of your *pinky* finger, which do you think contributed most to your injury/condition? (Think carefully before answering; due to the shortness of the pinky finger in most people, it is often in a lower-angle grip position than the other fingers.)",
-    video: "placeholderID",
+    video: "",
     photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/4504b48a-39e8-4a6e-b08e-9ff1f846b388/Q2+-+ALL+Grip+Types.png?content-type=image%2Fpng"],
     answers: [
       { id: "mechanismChronicPinkyAnswer1", text: "Half crimp or high angle grips", scores: { A: 0, B: 0, C: 1, D: 0, E: 0, F: 1, G: 0, H: 1, I: 1, J: 1, K: 0, L: 1, M: 1, N: 0 } },
@@ -301,7 +301,7 @@ export const PRIMARY_DATA = {
   painLocation: {
     id: "painLocation",
     text: "Where is the discomfort/pain?",
-    video: "placeholderID",
+    video: "",
     photos: [
       "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/3c82cebc-74c6-448d-8cbf-1dc7fa4f923e/Primary+-+Question+5+-+Finger+front.jpg?content-type=image%2Fjpeg",
       "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/ffff2343-1b17-47df-aa8d-bcf0070530d2/Primary+-+Question+5+-+Hand+and+forearm+front.jpg?content-type=image%2Fjpeg",
@@ -333,7 +333,7 @@ export const PRIMARY_DATA = {
   visualBowstringing: {
     id: "visualBowstringing",
     text: "Is there visually obvious bowstringing?",
-    video: "placeholderID",
+    video: "",
     photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/db22606b-d34b-4078-bab5-51886105d5c2/Bowstringing+image.jpg?content-type=image%2Fjpeg"],
     answers: [
       { id: "visualBowstringingAnswer1", text: "Yes", scores: { A: 0, B: 3, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -369,7 +369,7 @@ export const PRIMARY_DATA = {
   obviousSound: {
     id: "obviousSound",
     text: "Was there an obvious sound associated with the onset of the injury?",
-    video: "placeholderID",
+    video: "",
     photos: [],
     answers: [
       { id: "obviousSoundAnswer1", text: "Yes, there was a loud audible pop (loud enough for bystanders to hear)", scores: { A: 0, B: 2, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
@@ -394,7 +394,7 @@ export const PRIMARY_DATA = {
   abnormalMass: {
     id: "abnormalMass",
     text: "Can you feel an obvious abnormal mass/lump or thickening at (or very near to) the area of discomfort/pain?",
-    video: "placeholderID",
+    video: "",
     photos: [],
     answers: [
       { id: "abnormalMassAnswer1", text: "Yes", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 2, J: 2, K: 0, L: 0, M: 0, N: 0 } },
@@ -431,7 +431,7 @@ export const PRIMARY_DATA = {
   injurySwelling: {
     id: "injurySwelling",
     text: "Has there been any swelling associated with the injury?",
-    video: "placeholderID",
+    video: "",
     photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/d3894a14-38ad-46e9-a939-92ab9c5b7264/PIP+and+DIP+Joints.jpg?content-type=image%2Fjpeg"],
     answers: [
       { id: "injurySwellingAnswer1", text: "Yes, mainly in the left or right side (but not both sides) of the DIP joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -467,7 +467,7 @@ export const PRIMARY_DATA = {
   injuryDiscoloration: {
     id: "injuryDiscoloration",
     text: "Has there been any discoloration associated with the injury?",
-    video: "placeholderID",
+    video: "",
     photos: [
       "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/26cfa0d9-eb43-48cf-abba-2edb5716c88f/Primary+-+Question+8+-+Hand+front.jpg?content-type=image%2Fjpeg",
       "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/d3894a14-38ad-46e9-a939-92ab9c5b7264/PIP+and+DIP+Joints.jpg?content-type=image%2Fjpeg"
@@ -515,7 +515,7 @@ export const PRIMARY_DATA = {
   aromPositionOne: {
     id: "aromPositionOne",
     text: "What are your active range of motion test results in position one?",
-    video: "placeholderID",
+    video: "",
     photos: [
       "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/574f61b7-d74e-4802-9149-3607c6146b99/Primary+-+Question+12+-+.jpg?content-type=image%2Fjpeg",
       "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/84930909-0843-4db5-829b-a2d82a766c07/Differential+3+-+Question+1+-+Hand+front.jpg?content-type=image%2Fjpeg"
@@ -536,7 +536,7 @@ export const PRIMARY_DATA = {
   aromPositionTwo: {
     id: "aromPositionTwo",
     text: "What are your active range of motion test results in position two?",
-    video: "placeholderID",
+    video: "",
     photos: [
       "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/574f61b7-d74e-4802-9149-3607c6146b99/Primary+-+Question+12+-+.jpg?content-type=image%2Fjpeg",
       "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/84930909-0843-4db5-829b-a2d82a766c07/Differential+3+-+Question+1+-+Hand+front.jpg?content-type=image%2Fjpeg"
@@ -567,7 +567,7 @@ export const PRIMARY_DATA = {
   aromPositionThree: {
     id: "aromPositionThree",
     text: "What are your active range of motion test results in position three?",
-    video: "placeholderID",
+    video: "",
     photos: [
       "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/574f61b7-d74e-4802-9149-3607c6146b99/Primary+-+Question+12+-+.jpg?content-type=image%2Fjpeg",
       "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/84930909-0843-4db5-829b-a2d82a766c07/Differential+3+-+Question+1+-+Hand+front.jpg?content-type=image%2Fjpeg"
@@ -601,7 +601,7 @@ export const PRIMARY_DATA = {
   tissueLoading: {
     id: "tissueLoading",
     text: "What are your tissue loading test results?",
-    video: "placeholderID",
+    video: "",
     photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/574f61b7-d74e-4802-9149-3607c6146b99/Primary+-+Question+12+-+.jpg?content-type=image%2Fjpeg"],
     answers: [
       { id: "tissueLoadingAnswer1", text: "Discomfort/pain with the crimp and drag tests, but crimp is worse", scores: { A: 0, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 1, I: 0, J: 1, K: 0, L: 0, M: 0, N: 0 } },
@@ -622,7 +622,7 @@ export const PRIMARY_DATA = {
   passiveExtension: {
     id: "passiveExtension",
     text: "What are your passive joint extension test results?",
-    video: "placeholderID",
+    video: "",
     photos: [
       "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/d3894a14-38ad-46e9-a939-92ab9c5b7264/PIP+and+DIP+Joints.jpg?content-type=image%2Fjpeg"
     ],

@@ -2,7 +2,7 @@ export const DIFFERENTIAL_4_DATA = {
     fourFingerStretch: {
         id: "fourFingerStretch",
         text: "Do you have injury-related symptoms during four-finger extension?",
-        video: "placeholderID",
+        video: "",
         photos: [],
         answers: [
             { id: "fourFingerStretchAnswer1", text: "Yes, in my palm", scores: { A: 0, B: 0, C: 0, D: 0, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -15,7 +15,7 @@ export const DIFFERENTIAL_4_DATA = {
     singleFingerStretch: {
         id: "singleFingerStretch",
         text: "Do you have injury-related symptoms during isolated finger stretching?",
-        video: "placeholderID",
+        video: "",
         photos: [],
         answers: [
             { id: "singleFingerStretchAnswer1", text: "Yes, in my palm", scores: { A: 0, B: 0, C: 0, D: 0, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -28,7 +28,7 @@ export const DIFFERENTIAL_4_DATA = {
     isolatedTissueLoading: {
         id: "isolatedTissueLoading",
         text: "Where are your injury-related symptoms during the tissue loading test?",
-        video: "placeholderID",
+        video: "",
         photos: [],
         answers: [
             { id: "isolatedTissueLoadingAnswer1", text: "Palm only (worse with adjacent fingers flexed)", scores: { A: 0, B: 0, C: 0, D: 0, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },

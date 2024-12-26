@@ -3,7 +3,7 @@ export const LUMBRICAL_SEVERITY_DATA = {
     injuryType: {
         id: "injuryType",
         text: "What type of injury did you sustain?",
-        video: "placeholderID",
+        video: "",
         photos: [],
         answers: [
             { id: "injuryTypeAnswer1", text: "Traumatic (occurred as a result of sudden trauma – typically characterized by an unexpected overload of the tissue in a single obvious event/moment)", scores: { A: 1, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -17,7 +17,7 @@ export const LUMBRICAL_SEVERITY_DATA = {
     injuryDiscoloration: {
         id: "injuryDiscoloration",
         text: "Has there been any discoloration associated with the injury?",
-        video: "placeholderID",
+        video: "",
         photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/e419fbca-9fa8-483d-8bfd-4128edc05733/Lumbrical+severity+-+Question+1+-+Hand+front.jpg?content-type=image%2Fjpeg"],
         answers: [
             { id: "injuryDiscolorationAnswer1", text: "1. Yes, in my palm", scores: { A: -100, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -32,7 +32,7 @@ export const LUMBRICAL_SEVERITY_DATA = {
     aromPositionOne: {
         id: "aromPositionOne",
         text: "What are your active range of motion test results in position one?",
-        video: "placeholderID",
+        video: "",
         photos: [],
         answers: [
             { id: "aromPositionOneAnswer1", text: "Discomfort/pain in my palm when getting into the test position", scores: { A: -1, B: 1, C: 2, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -49,7 +49,7 @@ export const LUMBRICAL_SEVERITY_DATA = {
     promFourFingers: {
         id: "promFourFingers",
         text: "What are your passive range of motion test results with four fingers?",
-        video: "placeholderID",
+        video: "",
         photos: [],
         answers: [
             { id: "promFourFingersAnswer1", text: "Normal range of motion and no discomfort/pain associated with my injury", scores: { A: 1, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -63,7 +63,7 @@ export const LUMBRICAL_SEVERITY_DATA = {
     promIsolatedFingers: {
         id: "promIsolatedFingers",
         text: "What are your passive range of motion test results with isolated fingers?",
-        video: "placeholderID",
+        video: "",
         photos: [],
         answers: [
             { id: "promIsolatedFingersAnswer1", text: "Normal range of motion and no discomfort/pain associated with my injury", scores: { A: 1, B: 0, C: -2, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -77,7 +77,7 @@ export const LUMBRICAL_SEVERITY_DATA = {
     injuryMechanism: {
         id: "injuryMechanism",
         text: "Did your injury occur while you were in a two finger pocket or mono?",
-        video: "placeholderID",
+        video: "",
         photos: [],
         answers: [
             { id: "injuryMechanismAnswer1", text: "Yes", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -90,7 +90,7 @@ export const LUMBRICAL_SEVERITY_DATA = {
     tissueLoadingIsolatedDrag: {
         id: "tissueLoadingIsolatedDrag",
         text: "What are your tissue loading test results while the affected finger(s) are in a drag position and the adjacent fingers are curled?",
-        video: "placeholderID",
+        video: "",
         photos: [],
         answers: [
             { id: "tissueLoadingIsolatedDragAnswer1", text: "Discomfort/pain starts when getting into the test position", scores: { A: -1, B: 1, C: 2, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
