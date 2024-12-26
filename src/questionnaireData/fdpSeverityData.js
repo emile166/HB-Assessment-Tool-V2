@@ -1,5 +1,19 @@
 export const FDP_SEVERITY_DATA = {
 
+    injuryType: {
+        id: "injuryType",
+        text: "What type of injury did you sustain?",
+        video: "placeholderID",
+        photos: [],
+        answers: [
+            { id: "injuryTypeAnswer1", text: "Traumatic (occurred as a result of sudden trauma – typically characterized by an unexpected overload of the tissue in a single obvious event/moment)", scores: { A: 1, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "injuryTypeAnswer2", text: "Non-traumatic acute (occurred in a single session or single climb but not as a result of any obvious traumatic event or overload)", scores: { A: 1, B: 1, C: -2, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "injuryTypeAnswer3", text: "None of these options apply to me, or I’m unsure", scores: { A: 1, B: 0, C: -2, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
+        ],
+        multiple: false,
+        conditions: []
+    },
+
     injuryDiscoloration: {
         id: "injuryDiscoloration",
         text: "Has there been any discoloration in your finger or forearm associated with the injury",
