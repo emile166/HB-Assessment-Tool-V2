@@ -31,7 +31,7 @@ export const DIFFERENTIAL_1_DATA = {
     video: "",
     photos: [],
     answers: [
-      { id: "passiveExtensionAnswer1", text: "Yes", scores: { A: -1, B: 0, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: -1, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "passiveExtensionAnswer1", text: "Yes", scores: { A: -1, B: 0, C: 2.5, D: 0, E: 0, F: 0, G: 0, H: 0, I: -1, J: 0, K: 0, L: 0, M: 0, N: 0 } },
       { id: "passiveExtensionAnswer2", text: "No", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
     ],
     multiple: false,
@@ -114,7 +114,7 @@ export const DIFFERENTIAL_1_DATA = {
     photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/cf97b932-d4c9-4f59-a40c-733c254fc82f/Differental+1+-+Question+8+-+Hand+front.jpg?content-type=image%2Fjpeg"],
     answers: [
       { id: "painFocalPointAnswer1", text: "Distal region of A2 pulley", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 1, K: 0, L: -200, M: 0, N: 0 } },
-      { id: "painFocalPointAnswer2", text: "Just one side of the proximal region of the A4 pulley", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 1, M: 0, N: 0 } },
+      { id: "painFocalPointAnswer2", text: "Just one side of the proximal region of the A4 pulley", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 3, M: 0, N: 0 } },
       { id: "painFocalPointAnswer3", text: "Entire proximal region of the A4 pulley", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 1, K: 0, L: 1, M: 0, N: 0 } },
       { id: "painFocalPointAnswer4", text: "Directly over the A2 pulley or A4 pulley", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 1, I: 1, J: 1, K: 0, L: 0, M: 0, N: 0 } },
       { id: "painFocalPointAnswer5", text: "Sides of the A2 or A4 pulley region", scores: { A: 0, B: 0, C: 1, D: 0, E: 0, F: 0, G: 0, H: 1, I: 1, J: 0, K: 0, L: 0, M: 0, N: 0 } },
