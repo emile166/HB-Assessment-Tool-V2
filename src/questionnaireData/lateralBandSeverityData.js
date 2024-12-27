@@ -19,7 +19,7 @@ export const LATERAL_BAND_SEVERITY_DATA = {
         video: "",
         photos: [],
         answers: [
-            { id: "injuryTypeAnswer1", text: "Traumatic (occurred as a result of sudden trauma – typically characterized by an unexpected overload of the tissue in a single obvious event/moment)", scores: { A: 0, B: 0, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "injuryTypeAnswer1", text: "Traumatic (occurred as a result of sudden trauma – typically characterized by an unexpected overload of the tissue in a single obvious event/moment)", scores: { A: 0, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "injuryTypeAnswer2", text: "Non-traumatic acute (occurred in a single session or single climb but not as a result of any obvious traumatic event or overload)", scores: { A: 1, B: 1, C: -1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "injuryTypeAnswer3", text: "None of these options apply to me, or I’m unsure", scores: { A: 1, B: 0, C: -1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
         ],
@@ -35,7 +35,7 @@ export const LATERAL_BAND_SEVERITY_DATA = {
         answers: [
             { id: "aromFistAnswer1", text: "Unable to make a tight fist due to pain or a clicking/catching feeling on the side of the injured joint", scores: { A: -1, B: 0, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "aromFistAnswer2", text: "Able to make a tight fist but have a clicking/catching feeling on the side of the injured joint", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "aromFistAnswer3", text: "Able to make a tight fist without a clicking/catching feeling, but the test causes discomfort/pain in the side of the injured joint", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "aromFistAnswer3", text: "Able to make a tight fist without a clicking/catching feeling, but the test causes discomfort/pain in the side of the injured joint", scores: { A: 1, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "aromFistAnswer4", text: "No issues with active range of motion", scores: { A: 1, B: -1, C: -1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
         ],
         multiple: false,
