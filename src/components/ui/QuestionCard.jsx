@@ -41,12 +41,14 @@ export function QuestionCard({
             onAnswer(selectedAnswer);
           }}
           value={response?.id}
-          className="space-y-2 mt-5"
+          className="space-y-2 mt-5 relative"
         >
           {question.answers.map((ans) => (
-            <div key={ans.id} className="flex items-center space-x-2">
-              <RadioGroupItem value={ans.id} id={ans.id} />
-              <label htmlFor={ans.id} className="text-sm">
+            <div key={ans.id} className="flex items-start space-x-2 relative min-h-[24px]">
+              <div className="flex-none">
+                <RadioGroupItem value={ans.id} id={ans.id} />
+              </div>
+              <label htmlFor={ans.id} className="text-sm leading-normal">
                 {ans.text}
               </label>
             </div>
