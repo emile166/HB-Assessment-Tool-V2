@@ -15,21 +15,25 @@ export function QuestionCard({
 }) {
   return (
     <div>
+
+      {/* Video Display */}
       <div className="space-y-2">
         {question?.video && <VideoEmbed videoId={question.video} />}
       </div>
 
+      {/* Question and Question Type Display */}
       <div className="mt-5">
         <h3 className="font-medium text-lg">{question.question}</h3>
         {question.type === 'select one answer' && (
-            <span className="text-sm text-gray-500">{question.type}</span>
+          <span className="text-sm text-gray-500">{question.type}</span>
         )}
         {question.type === 'select all that apply' && (
-            <span className="text-sm text-red-500">{question.type}</span>
+          <span className="text-sm text-red-500">{question.type}</span>
         )}
         <span className="text-sm text-gray-500"> - read all before submitting</span>
       </div>
 
+      {/* Select One Answer Display */}
       {question.type === 'select one answer' && (
         <RadioGroup
           onValueChange={(value) => {
@@ -50,6 +54,7 @@ export function QuestionCard({
         </RadioGroup>
       )}
 
+      {/* Select All That Apply Answer Display */}
       {question.type === 'select all that apply' && (
         <div className="grid gap-4 mt-5">
           {question.answers.map((ans) => (
@@ -74,12 +79,14 @@ export function QuestionCard({
         </div>
       )}
 
+      {/* Photo Display */}
       <div className="mt-8">
         {question?.photos?.length > 0 && (
           <ImageViewer imageUrls={question.photos} />
         )}
       </div>
 
+      {/* Next and Previous Buttons */}
       <div className="flex justify-between gap-4 mt-6">
         <Button
           variant="outline"

@@ -21,8 +21,11 @@ export function QuestionnaireLayout({
             <Card ref={containerRef}>
                 <AppHeader />
                 <CardContent className="mt-2 p-4 md:p-8">
+
+                    {/* Questionnaire Title */}
                     <CardTitle className="text-xl mb-4">{title}</CardTitle>
 
+                    {/* Progress bar */}
                     <div className="space-y-6 md:space-y-8">
                         <div className="space-y-2">
                             <p className="flex justify-between text-sm text-gray-500">Question {currentQuestion}/{totalQuestions} (some questions are skipped automatically)</p>
@@ -42,6 +45,7 @@ export function QuestionnaireLayout({
                             </Button>
                         </div>
 
+                        {/* Debug code entry */}
                         <DebugScores
                             scores={scores}
                             questionnaireName={questionnaireName}
