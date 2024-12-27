@@ -378,7 +378,7 @@ function PulleySeverityQuestionnaire({ questionnaire, onBack, onComplete }) {
 
             const [highestGrade, highestScore] = sortedGradeScores[0] || ['', 0];
             const secondHighestScore = sortedGradeScores[1]?.[1] || 0;
-            const thirdHighestScore = sortedGradeScores[2]?.[2] || 0;
+            const thirdHighestScore = sortedGradeScores[2]?.[1] || 0;
 
             if (/[CDE]/.test(highestGrade) &&
                 highestScore >= secondHighestScore + 2 &&
