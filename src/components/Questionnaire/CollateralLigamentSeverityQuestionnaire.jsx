@@ -169,7 +169,7 @@ function CollateralLigamentSeverityQuestionnaire({ questionnaire, onBack, onComp
         let displayedResult;
         if (D3 >= D4 + 3) {
             displayedResult = injuryMapping[questionnaire.name][B3];
-        } else if (D3 < D4 + 3 && D3 >= D4 && D4 >= D5 + 3) {
+        } else if (D3 < D4 + 3 && D3 >= D4 && D4 >= D5 + 2) {
             if ((/[AB]/.test(B3) && /[AB]/.test(B4))) {
                 displayedResult = "Grade II";
             } else if ((/[BC]/.test(B3) && /[BC]/.test(B4))) {
