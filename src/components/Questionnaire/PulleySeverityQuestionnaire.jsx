@@ -150,6 +150,72 @@ function PulleySeverityQuestionnaire({ questionnaire, onBack, onComplete }) {
         setSkippedQuestions(newSkippedQuestions);
     }, [responses]);
 
+    // Helper function for location result calculation
+    const calculateLocationResult = (displayedResult, locationScores) => {
+        const [highestLocation, highestLocationScore] = locationScores[0] || ['', 0];
+        const [secondLocation, secondLocationScore] = locationScores[1] || ['', 0];
+        const [thirdLocation, thirdLocationScore] = locationScores[2] || ['', 0];
+        const [fourthLocation, fourthLocationScore] = locationScores[3] || ['', 0];
+
+        if (displayedResult === "Data Unclear (Grade IVb Warning)") {
+            return "Data Unclear";
+        } else if (displayedResult === "Grade IVb") {
+            return "A2+A3+A4";
+        } else if (highestLocationScore >= secondLocationScore + 2) {
+            if (displayedResult === "Data Unclear") {
+                return injuryMapping[questionnaire.name][highestLocation];
+            } else if (/Grade (I|II|III)/.test(displayedResult) && /[FGH]/.test(highestLocation)) {
+                return injuryMapping[questionnaire.name][highestLocation];
+            } else if (displayedResult === "Grade IVa" && /[IJ]/.test(highestLocation)) {
+                return injuryMapping[questionnaire.name][highestLocation];
+            } else if (displayedResult === "Grade IVa" && secondLocationScore > thirdLocationScore) {
+                if (/[FGI]/.test(highestLocation) && /[FGI]/.test(secondLocation)) {
+                    return "A2+A3";
+                } else if (/[GHJ]/.test(highestLocation) && /[GHJ]/.test(secondLocation)) {
+                    return "A3+A4";
+                }
+            } else if (displayedResult === "Grade IVa" && secondLocationScore === thirdLocationScore) {
+                if (/[FGI]/.test(highestLocation) && /[FGI]/.test(secondLocation)) {
+                    return "A2+A3";
+                } else if (/[GHJ]/.test(highestLocation) && /[GHJ]/.test(secondLocation)) {
+                    return "A3+A4";
+                }
+            }
+            return "Data Unclear";
+        } else if (highestLocationScore < secondLocationScore + 2 && highestLocationScore > secondLocationScore) {
+            if (/Grade (I|II|III)/.test(displayedResult)) {
+                return "Data Unclear";
+            } else if (displayedResult === "Grade IVa" && secondLocationScore > thirdLocationScore) {
+                if (/[FGI]/.test(highestLocation) && /[FGI]/.test(secondLocation)) {
+                    return "A2+A3";
+                } else if (/[GHJ]/.test(highestLocation) && /[GHJ]/.test(secondLocation)) {
+                    return "A3+A4";
+                }
+            } else if (displayedResult === "Grade IVa" && secondLocationScore === thirdLocationScore) {
+                if (/[FGI]/.test(highestLocation) && /[FGI]/.test(secondLocation)) {
+                    return "A2+A3";
+                } else if (/[GHJ]/.test(highestLocation) && /[GHJ]/.test(secondLocation)) {
+                    return "A3+A4";
+                }
+            }
+            return "Data Unclear";
+        } else if (highestLocationScore === secondLocationScore) {
+            if (/Grade (I|II|III)/.test(displayedResult)) {
+                return "Data Unclear";
+            } else if (displayedResult === "Grade IVa" &&
+                secondLocationScore >= thirdLocationScore &&
+                thirdLocationScore > fourthLocationScore) {
+                if (/[FGI]/.test(highestLocation) && /[FGI]/.test(secondLocation)) {
+                    return "A2+A3";
+                } else if (/[GHJ]/.test(highestLocation) && /[GHJ]/.test(secondLocation)) {
+                    return "A3+A4";
+                }
+            }
+            return "Data Unclear";
+        }
+        return "Data Unclear";
+    };
+
     const handleSubmit = (finalResponses = responses) => {
         setIsCalculating(true);
         console.log("handleSubmit called");
@@ -185,11 +251,6 @@ function PulleySeverityQuestionnaire({ questionnaire, onBack, onComplete }) {
             const [highestGrade, highestGradeScore] = gradeScores[0] || ['', 0];
             const [secondGrade, secondGradeScore] = gradeScores[1] || ['', 0];
             const [thirdGrade, thirdGradeScore] = gradeScores[2] || ['', 0];
-
-            const [highestLocation, highestLocationScore] = locationScores[0] || ['', 0];
-            const [secondLocation, secondLocationScore] = locationScores[1] || ['', 0];
-            const [thirdLocation, thirdLocationScore] = locationScores[2] || ['', 0];
-            const [fourthLocation, fourthLocationScore] = locationScores[3] || ['', 0];
 
             // Calculate displayedResult
             if (highestGradeScore >= secondGradeScore + 3) {
@@ -229,68 +290,8 @@ function PulleySeverityQuestionnaire({ questionnaire, onBack, onComplete }) {
                 displayedResult = "Data Unclear";
             }
 
-            // Calculate locationResult
-            if (displayedResult === "Data Unclear (Grade IVb Warning)") {
-                locationResult = "Data Unclear";
-            } else if (displayedResult === "Grade IVb") {
-                locationResult = "A2+A3+A4";
-            } else if (highestLocationScore >= secondLocationScore + 2) {
-                if (displayedResult === "Data Unclear") {
-                    locationResult = injuryMapping[questionnaire.name][highestLocation];
-                } else if (/Grade (I|II|III)/.test(displayedResult) && /[FGH]/.test(highestLocation)) {
-                    locationResult = injuryMapping[questionnaire.name][highestLocation];
-                } else if (displayedResult === "Grade IVa" && /[IJ]/.test(highestLocation)) {
-                    locationResult = injuryMapping[questionnaire.name][highestLocation];
-                } else if (displayedResult === "Grade IVa" && secondLocationScore > thirdLocationScore) {
-                    if (/[FGI]/.test(highestLocation) && /[FGI]/.test(secondLocation)) {
-                        locationResult = "A2+A3";
-                    } else if (/[GHJ]/.test(highestLocation) && /[GHJ]/.test(secondLocation)) {
-                        locationResult = "A3+A4";
-                    }
-                } else if (displayedResult === "Grade IVa" && secondLocationScore === thirdLocationScore) {
-                    if (/[FGI]/.test(highestLocation) && /[FGI]/.test(secondLocation)) {
-                        locationResult = "A2+A3";
-                    } else if (/[GHJ]/.test(highestLocation) && /[GHJ]/.test(secondLocation)) {
-                        locationResult = "A3+A4";
-                    }
-                } else {
-                    locationResult = "Data Unclear";
-                }
-            } else if (highestLocationScore < secondLocationScore + 2 && highestLocationScore > secondLocationScore) {
-                if (/Grade (I|II|III)/.test(displayedResult)) {
-                    locationResult = "Data Unclear";
-                } else if (displayedResult === "Grade IVa" && secondLocationScore > thirdLocationScore) {
-                    if (/[FGI]/.test(highestLocation) && /[FGI]/.test(secondLocation)) {
-                        locationResult = "A2+A3";
-                    } else if (/[GHJ]/.test(highestLocation) && /[GHJ]/.test(secondLocation)) {
-                        locationResult = "A3+A4";
-                    }
-                } else if (displayedResult === "Grade IVa" && secondLocationScore === thirdLocationScore) {
-                    if (/[FGI]/.test(highestLocation) && /[FGI]/.test(secondLocation)) {
-                        locationResult = "A2+A3";
-                    } else if (/[GHJ]/.test(highestLocation) && /[GHJ]/.test(secondLocation)) {
-                        locationResult = "A3+A4";
-                    }
-                } else {
-                    locationResult = "Data Unclear";
-                }
-            } else if (highestLocationScore === secondLocationScore) {
-                if (/Grade (I|II|III)/.test(displayedResult)) {
-                    locationResult = "Data Unclear";
-                } else if (displayedResult === "Grade IVa" &&
-                    secondLocationScore >= thirdLocationScore &&
-                    thirdLocationScore > fourthLocationScore) {
-                    if (/[FGI]/.test(highestLocation) && /[FGI]/.test(secondLocation)) {
-                        locationResult = "A2+A3";
-                    } else if (/[GHJ]/.test(highestLocation) && /[GHJ]/.test(secondLocation)) {
-                        locationResult = "A3+A4";
-                    }
-                } else {
-                    locationResult = "Data Unclear";
-                }
-            } else {
-                locationResult = "Data Unclear";
-            }
+            // Calculate locationResult using the new helper function
+            locationResult = calculateLocationResult(displayedResult, locationScores);
 
             // Calculate resultsSummary
             resultsSummary = displayedResult === "Grade IVb" ? "⚕️ Medical evaluation is needed." :
@@ -376,13 +377,19 @@ function PulleySeverityQuestionnaire({ questionnaire, onBack, onComplete }) {
                 .filter(([key]) => /^[A-E]$/.test(key))
                 .sort(([, a], [, b]) => b - a);
 
+            const locationScores = Object.entries(scores)
+                .filter(([key]) => /^[F-K]$/.test(key))
+                .sort(([, a], [, b]) => b - a);
+
+            const locationResult = calculateLocationResult(displayedResult, locationScores);
             const [highestGrade, highestScore] = sortedGradeScores[0] || ['', 0];
             const secondHighestScore = sortedGradeScores[1]?.[1] || 0;
             const thirdHighestScore = sortedGradeScores[2]?.[1] || 0;
 
             if (/[CDE]/.test(highestGrade) &&
                 highestScore >= secondHighestScore + 2 &&
-                secondHighestScore >= thirdHighestScore + 2) {
+                secondHighestScore >= thirdHighestScore + 2 &&
+                locationResult !== "Data Unclear") {
                 setEarlyCompletion(true);
                 return true;
             }
