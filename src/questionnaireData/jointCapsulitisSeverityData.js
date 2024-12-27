@@ -7,7 +7,7 @@ export const JOINT_CAPSULITIS_SEVERITY_DATA = {
         answers: [
             { id: "aromFistAnswer1", text: "Unable to make a tight fist due to discomfort/pain or stiffness in the joint", scores: { A: -1, B: 0, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "aromFistAnswer2", text: "Full range of motion but some discomfort/pain or stiffness when making a tight fist", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "aromFistAnswer3", text: "No discomfort/pain and full range of motion when making a tight fist", scores: { A: 1, B: 0, C: -1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
+            { id: "aromFistAnswer3", text: "No discomfort/pain and full range of motion when making a tight fist", scores: { A: 1, B: 1, C: -1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
         ],
         multiple: false,
         conditions: []
@@ -48,7 +48,7 @@ export const JOINT_CAPSULITIS_SEVERITY_DATA = {
         photos: [],
         answers: [
             { id: "jointEnlargementAnswer1", text: "No noticeable enlargement", scores: { A: 1, B: 0, C: -1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "jointEnlargementAnswer2", text: "Slightly larger than normal, but not super noticeable", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "jointEnlargementAnswer2", text: "Slightly larger than normal, but not super noticeable", scores: { A: 1, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "jointEnlargementAnswer3", text: "Obviously enlarged to the point where the joint sticks out quite a bit", scores: { A: -1, B: 0, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "jointEnlargementAnswer4", text: "Somewhere between answers two and three", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
         ],

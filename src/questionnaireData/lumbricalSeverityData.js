@@ -67,7 +67,7 @@ export const LUMBRICAL_SEVERITY_DATA = {
         photos: [],
         answers: [
             { id: "promIsolatedFingersAnswer1", text: "Normal range of motion and no discomfort/pain associated with my injury", scores: { A: 1, B: 0, C: -2, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "promIsolatedFingersAnswer2", text: "Normal range of motion but some discomfort/pain associated with my injury", scores: { A: 0, B: 1, C: -1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "promIsolatedFingersAnswer2", text: "Normal range of motion but some discomfort/pain associated with my injury", scores: { A: 1, B: 1, C: -1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "promIsolatedFingersAnswer3", text: "Limited range of motion and significant discomfort/pain associated with my injury", scores: { A: 0, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
         ],
         multiple: false,
@@ -96,8 +96,8 @@ export const LUMBRICAL_SEVERITY_DATA = {
             { id: "tissueLoadingIsolatedDragAnswer1", text: "Discomfort/pain starts when getting into the test position", scores: { A: -1, B: 1, C: 2, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "tissueLoadingIsolatedDragAnswer2", text: "Discomfort/pain starts with minimal (1-2 out of 10) force", scores: { A: 0, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "tissueLoadingIsolatedDragAnswer3", text: "Discomfort/pain starts with mild (3-4 out of 10) force", scores: { A: 0, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "tissueLoadingIsolatedDragAnswer4", text: "Discomfort/pain starts with moderate (5-7 out of 10) force", scores: { A: 1, B: 2, C: -1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "tissueLoadingIsolatedDragAnswer5", text: "Discomfort/pain starts with heavy (8-10 out of 10) force", scores: { A: 1, B: -1, C: -1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
+            { id: "tissueLoadingIsolatedDragAnswer4", text: "Discomfort/pain starts with moderate (5-7 out of 10) force", scores: { A: 1, B: 1, C: -1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "tissueLoadingIsolatedDragAnswer5", text: "Discomfort/pain starts with heavy (8-10 out of 10) force", scores: { A: 2, B: -1, C: -2, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
         ],
         multiple: false,
         conditions: []

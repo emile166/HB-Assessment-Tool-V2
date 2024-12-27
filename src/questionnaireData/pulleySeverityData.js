@@ -134,7 +134,7 @@ export const PULLEY_SEVERITY_DATA = {
             { id: "aromFistAnswer1", text: "I’m unable to make a fist due to the discomfort/pain of my injury", scores: { A: -1, B: -1, C: 0, D: 0, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "aromFistAnswer2", text: "I can make a loose fist, but squeezing at all makes my injury hurt", scores: { A: 0, B: 0, C: 1, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "aromFistAnswer3", text: "I can make a normal fist and squeeze some, but squeezing hard makes my injury hurt", scores: { A: 0, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "aromFistAnswer4", text: "I can make a tight first and squeeze hard without pain from my injury", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
+            { id: "aromFistAnswer4", text: "I can make a tight first and squeeze hard without pain from my injury", scores: { A: 2, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
         ],
         multiple: false,
         conditions: []

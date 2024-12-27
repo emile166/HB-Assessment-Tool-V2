@@ -24,7 +24,7 @@ export const COLLATERAL_LIGAMENT_SEVERITY_DATA = {
         ],
         answers: [
             { id: "injuryDiscolorationAnswer1", text: "Yes, on the left or right side of the injured joint", scores: { A: -1, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "injuryDiscolorationAnswer2", text: "No", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
+            { id: "injuryDiscolorationAnswer2", text: "No", scores: { A: 1, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
         ],
         multiple: false,
         conditions: []
@@ -40,7 +40,7 @@ export const COLLATERAL_LIGAMENT_SEVERITY_DATA = {
         ],
         answers: [
             { id: "injurySwellingAnswer1", text: "Yes, on the left or right side of the injured joint", scores: { A: -1, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "injurySwellingAnswer2", text: "No", scores: { A: 1, B: 0, C: -1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
+            { id: "injurySwellingAnswer2", text: "No", scores: { A: 1, B: 1, C: -1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
         ],
         multiple: false,
         conditions: []
