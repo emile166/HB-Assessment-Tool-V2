@@ -60,7 +60,7 @@ export function QuestionCard({
       {question.type === 'select all that apply' && (
         <div className="grid gap-4 mt-5">
           {question.answers.map((ans) => (
-            <div key={ans.id} className="flex items-center space-x-3">
+            <div key={ans.id} className="flex items-start space-x-3">
               <Checkbox
                 id={ans.id}
                 checked={(response || []).some(a => a.id === ans.id)}
@@ -73,7 +73,7 @@ export function QuestionCard({
                   }
                 }}
               />
-              <label htmlFor={ans.id} className="text-sm leading-none">
+              <label htmlFor={ans.id} className="text-sm leading-normal">
                 {ans.text}
               </label>
             </div>
