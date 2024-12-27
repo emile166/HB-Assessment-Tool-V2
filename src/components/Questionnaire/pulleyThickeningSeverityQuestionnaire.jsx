@@ -204,7 +204,19 @@ function PulleyThickeningSeverityQuestionnaire({ questionnaire, onBack, onComple
         if (/🙃/.test(resultsSummary)) {
             additionalDetails = "This is strange; you may have encountered a bug. Please refresh this page and try again. If you continue to receive this result, please email us screenshots of your answer log and scores (enter code ‘hb-debug’ into the debug field below) to info@hoopersbeta.com and we will be happy to assist you. We apologize for the inconvenience.";
         } else if (/🥳/.test(resultsSummary)) {
-            additionalDetails = "Great job completing the injury-induced pulley thickening severity questionnaire! Your answers are associated with a clear grade of injury. Huzzah! Keep in mind that when selecting a Recovery Blueprint you’ll need to choose the one that applies to your specific injury location (either A2 or A4 pulley). If you don’t know which pulley you injured, you can identify it based on the location of your symptoms. If needed, use this reference image for guidance: https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/84930909-0843-4db5-829b-a2d82a766c07/Differential+3+-+Question+1+-+Hand+front.jpg?content-type=image%2Fjpeg";
+            additionalDetails = (
+                <>
+                    Great job completing the injury-induced pulley thickening severity questionnaire! Your answers are associated with a clear grade of injury. Huzzah! Keep in mind that when selecting a Recovery Blueprint you’ll need to choose the one that applies to your specific injury location (either A2 or A4 pulley). If you don’t know which pulley you injured, you can identify it based on the location of your symptoms. If needed, use {' '}
+                    <a 
+                        href="https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/84930909-0843-4db5-829b-a2d82a766c07/Differential+3+-+Question+1+-+Hand+front.jpg?content-type=image%2Fjpeg" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-blue-500 underline"
+                    >
+                        this reference image for guidance
+                    </a>.
+                </>
+            );
         } else if (/🤔/.test(resultsSummary)) {
             additionalDetails = "Your answers did not indicate a clear grade of injury. If you’re certain that you have injury-induced pulley thickening, please retake this questionnaire and ensure that your responses are as accurate and specific as possible. Since recovery times can vary significantly among individuals with this condition, we generally recommend a conservative approach. Therefore, if you’re having trouble deciding between two answers, it’s generally best to pick the one that implies more significant/severe symptoms rather than the milder answer. For example, if you can’t decide if your pain is “mild” or “moderate”, it’s typically advised to select “moderate.” If you continue to receive the same result from this assessment, your condition may simply require professional evaluation. You can schedule an online or in-person appointment with Dr. Jason Hooper, PT, DPT, OCS, SCS by going here: https://www.hoopersbeta.com/private-sessions.";
         } else {
