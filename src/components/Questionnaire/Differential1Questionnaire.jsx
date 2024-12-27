@@ -185,7 +185,7 @@ function Differential1Questionnaire({ questionnaire, onBack, primaryResults }) {
     const firstInjuryName = injuryNames[B3] || B3;
     const secondInjuryName = sortedResults[1] ? injuryNames[sortedResults[1][0]] : '';
 
-    // Calculate nerve issue possibility
+    // Useful constants for results logic
     const nerveScore = scores['H'] || 0;
     const yesNerveTensionPart1 = responses[DIFFERENTIAL_1_DATA.nerveTensionPart1.id]?.id === "nerveTensionPart1Answer1";
     const noNerveTensionPart1 = responses[DIFFERENTIAL_1_DATA.nerveTensionPart1.id]?.id === "nerveTensionPart1Answer2";
@@ -203,8 +203,6 @@ function Differential1Questionnaire({ questionnaire, onBack, primaryResults }) {
       resultsSummary = /[GDFNEABKJ]/.test(B3) || /[GDFNEABKJ]/.test(sortedResults[1]?.[0]) ?
         "💪 Success! Go back to the dashboard and complete the applicable severity assessment (and be aware of the potential nerve issue)." :
         "⚡ Success! You've completed the assessment";
-    } else if (D3 > D4 && B3 === 'I' && primaryResults?.responses[7]?.text === 'Yes' && responses[4]?.text === 'Yes') {
-      resultsSummary = "🥳 Success! You've completed the assessment.";
     } else if (D3 >= D5 + 1 && D4 > D5 && /[AB]/.test(B3) && /[AB]/.test(sortedResults[1]?.[0])) {
       resultsSummary = "🎉 Success! Go back to the dashboard and complete the applicable severity assessment.";
     } else if ((D3 >= D4 && D4 >= D5 + 2 && /[DE]/.test(B3) && /[DE]/.test(sortedResults[1]?.[0])) ||

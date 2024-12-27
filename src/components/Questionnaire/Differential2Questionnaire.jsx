@@ -210,8 +210,6 @@ function Differential2Questionnaire({ questionnaire, onBack, primaryResults }) {
             resultsSummary = /[GDFNEABKJ]/.test(B3) || /[GDFNEABKJ]/.test(sortedResults[1]?.[0]) ?
                 "💪 Success! Go back to the dashboard and complete the applicable severity assessment (and be aware of the potential nerve issue)." :
                 "⚡ Success! You've completed the assessment";
-        } else if (D3 > D4 && B3 === 'I' && primaryResults?.responses[7]?.text === 'Yes' && responses[4]?.text === 'Yes') {
-            resultsSummary = "🥳 Success! You've completed the assessment.";
         } else if (D3 >= D5 + 1 && D4 > D5 && /[AB]/.test(B3) && /[AB]/.test(sortedResults[1]?.[0])) {
             resultsSummary = "🎉 Success! Go back to the dashboard and complete the applicable severity assessment.";
         } else if ((D3 >= D4 && D4 >= D5 + 2 && /[DE]/.test(B3) && /[DE]/.test(sortedResults[1]?.[0])) ||
