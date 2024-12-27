@@ -301,7 +301,7 @@ export const PRIMARY_DATA = {
   painLocation: {
     id: "painLocation",
     text: "Where is the discomfort/pain?",
-    video: "",
+    video: "https://www.youtube.com/embed/MCm8URGtAvQ?si=Epro0Sv3N9AB9p1m&rel=0",
     photos: [
       "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/3c82cebc-74c6-448d-8cbf-1dc7fa4f923e/Primary+-+Question+5+-+Finger+front.jpg?content-type=image%2Fjpeg",
       "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/ffff2343-1b17-47df-aa8d-bcf0070530d2/Primary+-+Question+5+-+Hand+and+forearm+front.jpg?content-type=image%2Fjpeg",
@@ -333,7 +333,7 @@ export const PRIMARY_DATA = {
   visualBowstringing: {
     id: "visualBowstringing",
     text: "Is there visually obvious bowstringing?",
-    video: "",
+    video: "https://www.youtube.com/embed/blpfiq1k6S0?si=0DZqEZFhFm8mF8UU&rel=0",
     photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/db22606b-d34b-4078-bab5-51886105d5c2/Bowstringing+image.jpg?content-type=image%2Fjpeg"],
     answers: [
       { id: "visualBowstringingAnswer1", text: "Yes", scores: { A: 0, B: 3, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -369,7 +369,7 @@ export const PRIMARY_DATA = {
   obviousSound: {
     id: "obviousSound",
     text: "Was there an obvious sound associated with the onset of the injury?",
-    video: "",
+    video: "https://www.youtube.com/embed/Dtlqa1LMW7w?si=X8_biz3MfYX6QIpc&rel=0",
     photos: [],
     answers: [
       { id: "obviousSoundAnswer1", text: "Yes, there was a loud audible pop (loud enough for bystanders to hear)", scores: { A: 0, B: 2, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
@@ -394,7 +394,7 @@ export const PRIMARY_DATA = {
   abnormalMass: {
     id: "abnormalMass",
     text: "Can you feel an obvious abnormal mass/lump or thickening at (or very near to) the area of discomfort/pain?",
-    video: "",
+    video: "https://www.youtube.com/embed/u1Xsvw9RLxQ?si=o5Gf0SyMU9idb6hg&rel=0",
     photos: [],
     answers: [
       { id: "abnormalMassAnswer1", text: "Yes", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 2, J: 2, K: 0, L: 0, M: 0, N: 0 } },
@@ -467,7 +467,7 @@ export const PRIMARY_DATA = {
   injuryDiscoloration: {
     id: "injuryDiscoloration",
     text: "Has there been any discoloration associated with the injury?",
-    video: "",
+    video: "https://www.youtube.com/embed/ZeESVjF9MDk?si=SPCvrlmlnJXHlkA-&rel=0",
     photos: [
       "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/26cfa0d9-eb43-48cf-abba-2edb5716c88f/Primary+-+Question+8+-+Hand+front.jpg?content-type=image%2Fjpeg",
       "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/d3894a14-38ad-46e9-a939-92ab9c5b7264/PIP+and+DIP+Joints.jpg?content-type=image%2Fjpeg"
@@ -515,7 +515,7 @@ export const PRIMARY_DATA = {
   aromPositionOne: {
     id: "aromPositionOne",
     text: "What are your active range of motion test results in position one?",
-    video: "",
+    video: "https://www.youtube.com/embed/eA_kX6UgSGM?si=YjE9D3WaXRpfBzPq&rel=0",
     photos: [
       "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/574f61b7-d74e-4802-9149-3607c6146b99/Primary+-+Question+12+-+.jpg?content-type=image%2Fjpeg",
       "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/84930909-0843-4db5-829b-a2d82a766c07/Differential+3+-+Question+1+-+Hand+front.jpg?content-type=image%2Fjpeg"
@@ -601,7 +601,7 @@ export const PRIMARY_DATA = {
   tissueLoading: {
     id: "tissueLoading",
     text: "What are your tissue loading test results?",
-    video: "",
+    video: "https://www.youtube.com/embed/rp4dtyvE66s?si=36FLvMGt7nwDMv2J&rel=0",
     photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/574f61b7-d74e-4802-9149-3607c6146b99/Primary+-+Question+12+-+.jpg?content-type=image%2Fjpeg"],
     answers: [
       { id: "tissueLoadingAnswer1", text: "Discomfort/pain with the crimp and drag tests, but crimp is worse", scores: { A: 0, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 1, I: 0, J: 1, K: 0, L: 0, M: 0, N: 0 } },
@@ -622,7 +622,7 @@ export const PRIMARY_DATA = {
   passiveExtension: {
     id: "passiveExtension",
     text: "What are your passive joint extension test results?",
-    video: "",
+    video: "https://www.youtube.com/embed/3Rl9B-5DlQ8?si=iNlhu5Hpg4oDyOdN&rel=0",
     photos: [
       "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/d3894a14-38ad-46e9-a939-92ab9c5b7264/PIP+and+DIP+Joints.jpg?content-type=image%2Fjpeg"
     ],

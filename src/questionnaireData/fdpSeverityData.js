@@ -17,7 +17,7 @@ export const FDP_SEVERITY_DATA = {
     injuryDiscoloration: {
         id: "injuryDiscoloration",
         text: "Has there been any discoloration in your finger or forearm associated with the injury",
-        video: "",
+        video: "https://www.youtube.com/embed/ZeESVjF9MDk?si=KpZNAiAc5VKC861-&rel=0",
         photos: [],
         answers: [
             { id: "injuryDiscolorationAnswer1", text: "Yes", scores: { A: 0, B: 0, C: 2, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -31,7 +31,7 @@ export const FDP_SEVERITY_DATA = {
     aromFist: {
         id: "aromFist",
         text: "What are your active range of motion test results?",
-        video: "",
+        video: "https://www.youtube.com/embed/zGtvBrrVJ5Y?si=ONO0PvkCC3o6iG_u&rel=0",
         photos: [],
         answers: [
             { id: "aromFistAnswer1", text: "I’m unable to make a fist due to discomfort/pain associated with my injury", scores: { A: -1, B: -1, C: 2, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -46,7 +46,7 @@ export const FDP_SEVERITY_DATA = {
     passiveRangeOfMotion: {
         id: "passiveRangeOfMotion",
         text: "What are your passive range of motion test results?",
-        video: "",
+        video: "https://www.youtube.com/embed/1xSnQe2VqyY?si=aGogvO9cahw1oloE&rel=0",
         photos: [],
         answers: [
             { id: "passiveRangeOfMotionAnswer1", text: "Limited range of motion due to discomfort/pain associated with my injury", scores: { A: 0, B: 0, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -99,7 +99,7 @@ export const FDP_SEVERITY_DATA = {
     tissueLoadingDrag: {
         id: "tissueLoadingDrag",
         text: "What are your tissue loading test results for the drag position?",
-        video: "",
+        video: "https://www.youtube.com/embed/5ZZ6c4tValQ?si=fhO4sK0_uBc763Fd&rel=0",
         photos: [],
         answers: [
             { id: "tissueLoadingDragAnswer1", text: "Discomfort/pain starts with minimal (1-2 out of 10) force", scores: { A: 0, B: 0, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -114,7 +114,7 @@ export const FDP_SEVERITY_DATA = {
     tissueLoadingIsolatedDrag: {
         id: "tissueLoadingIsolatedDrag",
         text: "What are your tissue loading test results for the isolated drag position?",
-        video: "",
+        video: "https://www.youtube.com/embed/zLrHn0JNw4g?si=L8bLxBRW9YGKpqwz&rel=0",
         photos: [],
         answers: [
             { id: "tissueLoadingIsolatedDragAnswer1", text: "Discomfort/pain starts with minimal (1-2 out of 10) force", scores: { A: 0, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },

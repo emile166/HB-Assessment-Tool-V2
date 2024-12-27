@@ -17,7 +17,7 @@ export const COLLATERAL_LIGAMENT_SEVERITY_DATA = {
     injuryDiscoloration: {
         id: "injuryDiscoloration",
         text: "Has there been any discoloration associated with the injury?",
-        video: "",
+        video: "https://www.youtube.com/embed/ZeESVjF9MDk?si=KpZNAiAc5VKC861-&rel=0",
         photos: [
             "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/cf08cf06-d9ca-4008-9ec0-aa988cb3a762/Primary+-+Question+5+-+Finger+right.jpg?content-type=image%2Fjpeg",
             "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/ea4c76b1-14f4-4681-be30-9c52f069279e/Primary+-+Question+5+-+Finger+left.jpg?content-type=image%2Fjpeg"
@@ -49,7 +49,7 @@ export const COLLATERAL_LIGAMENT_SEVERITY_DATA = {
     aromPositionThree: {
         id: "aromPositionThree",
         text: "What are your active range of motion test results in position three?",
-        video: "",
+        video: "https://www.youtube.com/embed/MhX8rMs08wo?si=2yJQQgcViIBKUOxl&rel=0",
         photos: [],
         answers: [
             { id: "aromPositionThreeAnswer1", text: "Normal range of motion and no discomfort/pain associated with my injury", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -63,7 +63,7 @@ export const COLLATERAL_LIGAMENT_SEVERITY_DATA = {
     lateralStressTestPain: {
         id: "lateralStressTestPain",
         text: "Does the lateral stress test cause discomfort/pain associated with your injury?",
-        video: "",
+        video: "https://www.youtube.com/embed/fTbSiqEw06w?si=_kjmmDMmZQK9PRA2&rel=0",
         photos: [],
         answers: [
             { id: "lateralStressTestPainAnswer1", text: "Yes", scores: { A: 0, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -76,7 +76,7 @@ export const COLLATERAL_LIGAMENT_SEVERITY_DATA = {
     lateralStressTestLaxity: {
         id: "lateralStressTestLaxity",
         text: "Does the lateral stress test show joint laxity?",
-        video: "",
+        video: "https://www.youtube.com/embed/15pPAVs07z4?si=3X3MEDNac_aGnQQT&rel=0",
         photos: [],
         answers: [
             { id: "lateralStressTestLaxityAnswer1", text: "Yes", scores: { A: -2, B: 0, C: 2, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },

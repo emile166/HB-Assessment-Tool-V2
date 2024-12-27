@@ -2,7 +2,7 @@ export const JOINT_CAPSULITIS_SEVERITY_DATA = {
     aromFist: {
         id: "aromFist",
         text: "What are your active range of motion test results when making a tight fist?",
-        video: "",
+        video: "https://www.youtube.com/embed/Z9BT8RdYkZE?si=tYbSG3Swaa8o09DA&rel=0",
         photos: [],
         answers: [
             { id: "aromFistAnswer1", text: "Unable to make a tight fist due to discomfort/pain or stiffness in the joint", scores: { A: -1, B: 0, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -16,7 +16,7 @@ export const JOINT_CAPSULITIS_SEVERITY_DATA = {
     aromFullFlexion: {
         id: "aromFullFlexion",
         text: "What are your active range of motion test results when performing full flexion?",
-        video: "",
+        video: "https://www.youtube.com/embed/202D9iemtPc?si=7MPCUsLnRrtGPHQB&rel=0",
         photos: [],
         answers: [
             { id: "aromFullFlexionAnswer1", text: "Full range of motion", scores: { A: 1, B: -1, C: -1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },

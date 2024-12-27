@@ -3,7 +3,7 @@ export const PULLEY_THICKENING_SEVERITY_DATA = {
     palpationTest: {
         id: "palpationTest",
         text: "Do you have discomfort/pain with palpation over the affected area?",
-        video: "",
+        video: "https://www.youtube.com/embed/bH2yP58aqpA?si=YY0R2wu3BMF-vb6d&rel=0",
         photos: [],
         answers: [
             { id: "palpationTestAnswer1", text: "Discomfort/pain starts with minimal (1-2 out of 10) pressure", scores: { A: 0, B: 2, C: 3, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -19,7 +19,7 @@ export const PULLEY_THICKENING_SEVERITY_DATA = {
     tissueLoading: {
         id: "tissueLoading",
         text: "What are your tissue loading test results?",
-        video: "",
+        video: "https://www.youtube.com/embed/k2bWLsZJ8ig?si=Hx3WXKiIl6oFgHn9&rel=0",
         photos: [],
         answers: [
             { id: "tissueLoadingAnswer1", text: "Discomfort/pain starts with minimal (1-2 out of 10) pressure", scores: { A: 0, B: 2, C: 3, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },

@@ -22,10 +22,11 @@ function Dashboard({ onSelectQuestionnaire }) {
             <iframe
               className="w-full rounded-lg"
               style={{ aspectRatio: '16/9' }}
-              src={`https://www.youtube.com/embed/placeholderID`}
+              src={`https://www.youtube.com/embed/Vjy-7c8TD9s?si=uKfCfkjxAjkIcXuc&rel=0`}
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
+              referrerpolicy="no-referrer"
             />
           </div>
 

@@ -2,7 +2,7 @@ export const DIFFERENTIAL_1_DATA = {
   increasedFingerLoad: {
     id: "increasedFingerLoad",
     text: "Did you significantly increase your finger training load (or make a major change to your finger training method) in the four weeks leading up to the onset of your symptoms?",
-    video: "",
+    video: "https://www.youtube.com/embed/Z9nEBr26o2Q?si=--DnIvqluqip3M_M&rel=0",
     photos: [],
     answers: [
       { id: "increasedFingerLoadAnswer1", text: "Yes", scores: { A: 1, B: 0, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 1, K: 0, L: 1, M: 0, N: 0 } },
@@ -28,7 +28,7 @@ export const DIFFERENTIAL_1_DATA = {
   passiveExtension: {
     id: "passiveExtension",
     text: "Do you have discomfort/pain with passive finger extension?",
-    video: "",
+    video: "https://www.youtube.com/embed/raENFzOKZcA?si=VpfVMZzkvPFipILk&rel=0",
     photos: [],
     answers: [
       { id: "passiveExtensionAnswer1", text: "Yes", scores: { A: -1, B: 0, C: 2.5, D: 0, E: 0, F: 0, G: 0, H: 0, I: -1, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -41,7 +41,7 @@ export const DIFFERENTIAL_1_DATA = {
   elbowOrShoulderPain: {
     id: "elbowOrShoulderPain",
     text: "Have you had unidentified or sudden discomfort/pain in your shoulder or elbow (on the same arm as your injury) that developed within a month of your injury?",
-    video: "",
+    video: "https://www.youtube.com/embed/BNpesFLtJiw?si=_m9F9_RY603C4voM&rel=0",
     photos: [],
     answers: [
       { id: "elbowOrShoulderPainAnswer1", text: "Yes", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 1, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -67,7 +67,7 @@ export const DIFFERENTIAL_1_DATA = {
   symptomConsistency: {
     id: "symptomConsistency",
     text: "Has the discomfort/pain related to your injury been relatively consistent/predictable or does it seem to occur somewhat randomly/confusingly?",
-    video: "",
+    video: "https://www.youtube.com/embed/zq-Rg6EBDpI?si=udEEHWIJ0otcFhCt&rel=0",
     photos: [],
     answers: [
       { id: "symptomConsistencyAnswer1", text: "Relatively consistent/predictable", scores: { A: 1, B: 0, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 1, K: 0, L: 1, M: 0, N: 0 } },
@@ -80,7 +80,7 @@ export const DIFFERENTIAL_1_DATA = {
   tissueLoadingVsPalpation: {
     id: "tissueLoadingVsPalpation",
     text: "Is your injury more sensitive to tissue loading or to palpation?",
-    video: "",
+    video: "https://www.youtube.com/embed/BK3oYuqdNfg?si=V8wWWikUJgsfISSI&rel=0",
     photos: [],
     answers: [
       { id: "tissueLoadingVsPalpationAnswer1", text: "Tissue loading", scores: { A: 1, B: 0, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 1, M: 0, N: 0 } },
@@ -127,7 +127,7 @@ export const DIFFERENTIAL_1_DATA = {
   nerveTensionPart1: {
     id: "nerveTensionPart1",
     text: "Do any of the nerve tension tests create symptoms at or very near to your injury site?",
-    video: "",
+    video: "https://www.youtube.com/embed/owSp-gv4RxE?si=G4dmQeSYeUtYgOX0&rel=0",
     photos: [],
     answers: [
       { id: "nerveTensionPart1Answer1", text: "Yes", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 2, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -162,7 +162,7 @@ export const DIFFERENTIAL_1_DATA = {
   massAtFocalPoint: {
     id: "massAtFocalPoint",
     text: "Do you feel a mass/lump or thickening over the focal point of discomfort/pain?",
-    video: "",
+    video: "https://www.youtube.com/embed/XBdUx_NRy4g?si=7Sj0TNokInijcAVu&rel=0",
     photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/84930909-0843-4db5-829b-a2d82a766c07/Differential+3+-+Question+1+-+Hand+front.jpg?content-type=image%2Fjpeg"],
     answers: [
       { id: "massAtFocalPointAnswer1", text: "Yes, in the A2 region", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 2, J: 2, K: 0, L: 0, M: 0, N: 0 } },
