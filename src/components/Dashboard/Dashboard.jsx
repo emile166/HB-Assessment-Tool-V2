@@ -7,6 +7,14 @@ import Layout from '../Layout/Layout';
 function Dashboard({ onSelectQuestionnaire }) {
   const headerRef = useRef(null);
 
+  // Get the current origin, defaulting to hoopersbeta.com in production
+  const origin = typeof window !== 'undefined' 
+    ? window.location.origin 
+    : 'https://www.hoopersbeta.com';
+
+  // Create privacy-enhanced video URL
+  const videoUrl = `https://www.youtube-nocookie.com/embed/Vjy-7c8TD9s?si=uKfCfkjxAjkIcXuc&rel=0&origin=${encodeURIComponent(origin)}&enablejsapi=0&modestbranding=1&controls=1&disablekb=1`;
+
   useEffect(() => {
     headerRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, []);
@@ -22,11 +30,11 @@ function Dashboard({ onSelectQuestionnaire }) {
             <iframe
               className="w-full rounded-lg"
               style={{ aspectRatio: '16/9' }}
-              src={`https://www.youtube.com/embed/Vjy-7c8TD9s?si=uKfCfkjxAjkIcXuc&rel=0`}
+              src={videoUrl}
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
-              referrerPolicy="no-referrer"
+              referrerPolicy="strict-origin-when-cross-origin"
             />
           </div>
 

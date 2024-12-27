@@ -15,6 +15,14 @@ export default defineConfig({
   },
   build: {
     cssCodeSplit: false,
-    assetsInlineLimit: 100000000
+    assetsInlineLimit: 100000000,
+    sourcemap: false,
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true
+      }
+    }
   }
 })
