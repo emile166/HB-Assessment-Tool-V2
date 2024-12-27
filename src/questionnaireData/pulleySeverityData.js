@@ -208,9 +208,8 @@ export const PULLEY_SEVERITY_DATA = {
         video: "",
         photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/ea2f9146-c934-430e-9368-3556dabd71bc/Pulley+Severity+-+Question+7+-+Hand+front.jpg?content-type=image%2Fjpeg"],
         answers: [
-            { id: "tissueLoadingFullCrimpAnswer1", text: "Discomfort/pain in the distal A2 region", scores: { A: 1, B: 1, C: 0, D: 0, E: 0, F: 1, G: 0, H: -1, I: 0, J: -1, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "tissueLoadingFullCrimpAnswer2", text: "Discomfort/pain in the proximal A4 region", scores: { A: 1, B: 1, C: 0, D: 0, E: 0, F: -1, G: 0, H: 1, I: -1, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "tissueLoadingFullCrimpAnswer3", text: "Discomfort/pain in the distal A4 region", scores: { A: 1, B: 1, C: 0, D: 0, E: 0, F: -1, G: 0, H: 1, I: -1, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "tissueLoadingFullCrimpAnswer1", text: "Discomfort/pain in the A2 region", scores: { A: 1, B: 1, C: 0, D: 0, E: 0, F: 1, G: 0, H: -1, I: 0, J: -1, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "tissueLoadingFullCrimpAnswer2", text: "Discomfort/pain in the A4 region", scores: { A: 1, B: 1, C: 0, D: 0, E: 0, F: -1, G: 0, H: 1, I: -1, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "tissueLoadingFullCrimpAnswer4", text: "No discomfort/pain associated with my injury", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
         ],
         multiple: false,
