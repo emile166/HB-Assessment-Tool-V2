@@ -178,16 +178,16 @@ export const PULLEY_SEVERITY_DATA = {
         conditions: []
     },
 
-    tissueLoadingFullCrimp: {
-        id: "tissueLoadingFullCrimp",
-        text: "What are your tissue loading test results while in a full crimp position?",
+    halfCrimpPain: {
+        id: "halfCrimpPain",
+        text: "How much force was required to elicit pain during the half crimp test?",
         video: "",
-        photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/ea2f9146-c934-430e-9368-3556dabd71bc/Pulley+Severity+-+Question+7+-+Hand+front.jpg?content-type=image%2Fjpeg"],
+        photos: [],
         answers: [
-            { id: "tissueLoadingFullCrimpAnswer1", text: "Discomfort/pain in the distal A2 region", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: -1, I: 0, J: -1, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "tissueLoadingFullCrimpAnswer2", text: "Discomfort/pain in the proximal A4 region", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: -1, G: 0, H: 1, I: -1, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "tissueLoadingFullCrimpAnswer3", text: "Discomfort/pain in the distal A4 region", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: -1, G: 0, H: 1, I: -1, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "tissueLoadingFullCrimpAnswer4", text: "No discomfort/pain associated with my injury", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
+            { id: "halfCrimpPainAnswer1", text: "Discomfort/pain starts with minimal (1-2 out of 10) force", scores: { A: -1, B: 0, C: 1, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "halfCrimpPainAnswer2", text: "Discomfort/pain starts with mild (3-4 out of 10) force", scores: { A: 0, B: 0, C: 1, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "halfCrimpPainAnswer3", text: "Discomfort/pain starts with moderate (5-7 out of 10) force", scores: { A: 1, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "halfCrimpPainAnswer4", text: "Discomfort/pain starts with heavy (8-10 out of 10) force", scores: { A: 2, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
         ],
         multiple: false,
         conditions: [
@@ -195,7 +195,63 @@ export const PULLEY_SEVERITY_DATA = {
                 if: {
                     questionId: "tissueLoadingHalfCrimp",
                     selectedAnswers: ["tissueLoadingHalfCrimpAnswer9"],
-                    match: "none"
+                    match: "any"
+                },
+                action: "skip"
+            }
+        ]
+    },
+
+    tissueLoadingFullCrimp: {
+        id: "tissueLoadingFullCrimp",
+        text: "What are your tissue loading test results while in a full crimp position?",
+        video: "",
+        photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/ea2f9146-c934-430e-9368-3556dabd71bc/Pulley+Severity+-+Question+7+-+Hand+front.jpg?content-type=image%2Fjpeg"],
+        answers: [
+            { id: "tissueLoadingFullCrimpAnswer1", text: "Discomfort/pain in the distal A2 region", scores: { A: 1, B: 1, C: 0, D: 0, E: 0, F: 1, G: 0, H: -1, I: 0, J: -1, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "tissueLoadingFullCrimpAnswer2", text: "Discomfort/pain in the proximal A4 region", scores: { A: 1, B: 1, C: 0, D: 0, E: 0, F: -1, G: 0, H: 1, I: -1, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "tissueLoadingFullCrimpAnswer3", text: "Discomfort/pain in the distal A4 region", scores: { A: 1, B: 1, C: 0, D: 0, E: 0, F: -1, G: 0, H: 1, I: -1, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "tissueLoadingFullCrimpAnswer4", text: "No discomfort/pain associated with my injury", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
+        ],
+        multiple: false,
+        conditions: [
+            {
+                if: {
+                    questionId: "halfCrimpPain",
+                    selectedAnswers: ["halfCrimpPainAnswer1", "halfCrimpPainAnswer2", "halfCrimpPainAnswer3"],
+                    match: "any"
+                },
+                action: "skip"
+            }
+        ]
+    },
+
+    fullCrimpPain: {
+        id: "fullCrimpPain",
+        text: "How much force was required to elicit pain during the full crimp test?",
+        video: "",
+        photos: [],
+        answers: [
+            { id: "fullCrimpPainAnswer1", text: "Discomfort/pain starts with minimal (1-2 out of 10) force", scores: { A: 0, B: 2, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "fullCrimpPainAnswer2", text: "Discomfort/pain starts with mild (3-4 out of 10) force", scores: { A: 1, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "fullCrimpPainAnswer3", text: "Discomfort/pain starts with moderate (5-7 out of 10) force", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "fullCrimpPainAnswer4", text: "Discomfort/pain starts with heavy (8-10 out of 10) force", scores: { A: 2, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
+        ],
+        multiple: false,
+        conditions: [
+            {
+                if: {
+                    questionId: "halfCrimpPain",
+                    selectedAnswers: ["halfCrimpPainAnswer1", "halfCrimpPainAnswer2", "halfCrimpPainAnswer3"],
+                    match: "any"
+                },
+                action: "skip"
+            },
+            {
+                if: {
+                    questionId: "tissueLoadingFullCrimp",
+                    selectedAnswers: ["tissueLoadingFullCrimpAnswer4"],
+                    match: "any"
                 },
                 action: "skip"
             }
