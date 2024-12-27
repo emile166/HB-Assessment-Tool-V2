@@ -23,12 +23,12 @@ export function QuestionnaireLayout({
                 <CardContent className="mt-2 p-4 md:p-8">
 
                     {/* Questionnaire Title */}
-                    <CardTitle className="text-xl mb-4">{title}</CardTitle>
+                    <CardTitle className="text-xl mt-4 mb-2 md:mb-4 md:mt-0">{title}</CardTitle>
 
                     {/* Progress bar */}
-                    <div className="space-y-6 md:space-y-8">
+                    <div className="space-y-10">
                         <div className="space-y-2">
-                            <p className="flex justify-between text-sm text-gray-500">Question {currentQuestion}/{totalQuestions} (some questions are skipped automatically)</p>
+                            <p className="flex justify-between text-xs text-gray-500">Question {currentQuestion}/{totalQuestions} (some questions are skipped automatically)</p>
                             <Progress value={progress} className="w-full" />
                         </div>
 

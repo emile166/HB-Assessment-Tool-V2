@@ -22,7 +22,7 @@ export function QuestionCard({
       </div>
 
       {/* Question and Question Type Display */}
-      <div className="mt-5">
+      <div className="mt-6">
         <h3 className="font-medium text-lg">{question.question}</h3>
         {question.type === 'select one answer' && (
           <span className="text-sm text-gray-500">{question.type}</span>
