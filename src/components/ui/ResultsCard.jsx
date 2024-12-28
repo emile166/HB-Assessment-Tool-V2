@@ -99,7 +99,7 @@ export function ResultsCard({
                     </div>
                 )}
 
-                <Card className="p-8 m-20 mt-8 mb-8 bg-secondary">
+                <Card className="p-8 m-8 md:mx-20 md:mt-8 md:mb-8 bg-secondary">
                     <h3 className="text-lg text-center text-secondary-foreground font-semibold mb-2">Ready to start recovering?</h3>
                     <p className="text-center mb-4">
                         Hooper’s Beta offers affordable, comprehensive programs to assist with recovery from specific rock-climbing related injuries through a convenient mobile app. For more information, please visit: <a href="https://hoopersbeta.com/recoveryblueprint" target="_blank" rel="noopener noreferrer" className="underline font-bold text-secondary-foreground">hoopersbeta.com/recoveryblueprint</a>.

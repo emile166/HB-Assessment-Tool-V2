@@ -42,11 +42,12 @@ function Dashboard({ onSelectQuestionnaire }) {
             <h2 className="text-xl font-bold text-red-500 mb-2 text-center underline">Rules:</h2>
             <ol className="list-decimal list-inside text-md">
               <li>Assess one injury at a time.</li>
-              <li>Only select answers that are *relevant to the injury you’re assessing.* (If a test causes completely unrelated symptoms, don't put that in your answers.)</li>
+              <li>Read ALL answers before selecting one (some questions allow multiple answers).</li>
+              <li>Only select answers that are relevant to the injury you’re assessing. (If a test causes completely unrelated symptoms, don't put that in your answers.)</li>
               <li>Start with the primary assessment unless otherwise instructed.</li>
               <li>Complete all applicable assessments in the one sitting (typically 20-40 minutes in total).</li>
               <li>Do not close the tab or refresh the page between assessments.</li>
-              <li>Follow instructions carefully. Improper testing will lead to inaccurate results.</li>
+              <li>Follow test instructions carefully. Improper testing = inaccurate results.</li>
             </ol>
           </Card>
 
