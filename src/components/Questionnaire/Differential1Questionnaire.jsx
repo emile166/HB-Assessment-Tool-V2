@@ -28,6 +28,8 @@ function Differential1Questionnaire({ questionnaire, onBack, primaryResults }) {
   const [cystIndication, setCystIndication] = useState('');
   const [additionalDetails, setAdditionalDetails] = useState('');
   const [injuryDescription, setInjuryDescription] = useState('');
+  const [nerveWarning, setNerveWarning] = useState('');
+  const [cystWarning, setCystWarning] = useState('');
   const [isCalculating, setIsCalculating] = useState(false);
   const questionnaireContainerRef = useRef(null);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -318,24 +320,26 @@ function Differential1Questionnaire({ questionnaire, onBack, primaryResults }) {
       additionalDetails = "This is strange. Something has gone wrong with your answers or you've encountered a bug. Please close this page and try again. If you continue to receive this result, please email screenshots of your results (including answer log and scores) to info@hoopersbeta.com and we will be happy to assist you. Enter the code 'hb-debug' in the Debug Code text box below to see your scores. We apologize for the inconvenience.";
     }
 
-    // Add nerve issue warning if applicable
+    // Calculate nerve warning
+    let nerveWarning = '';
     if (nerveIssuePossibility === "⚠️ High" && !/🤔/.test(resultsSummary)) {
-      additionalDetails += " Nerve Warning: During testing, you indicated a positive nerve tension test. Based on your results, it is possible your symptoms are associated with a nerve issue as well as a separate injury. The nerve issue could be affecting your symptoms and therefore this assessment. Nerve issues can mask or mimic symptoms from other injuries, which can make them tricky to deal with. Be aware that a nerve issue is a possible confounding factor that may need professional evaluation.";
+      nerveWarning = "Nerve Warning: During testing, you indicated a positive nerve tension test. Based on your results, it is possible your symptoms are associated with a nerve issue as well as a separate injury. The nerve issue could be affecting your symptoms and therefore this assessment. Nerve issues can mask or mimic symptoms from other injuries, which can make them tricky to deal with. Be aware that a nerve issue is a possible confounding factor that may need professional evaluation.";
     } else if (nerveIssuePossibility === "⚠️ High" && /🤔/.test(resultsSummary)) {
-      additionalDetails += " Nerve Warning: Your answers are associated with a high possibility of a nerve issue, which could be affecting your symptoms and therefore this assessment. Nerve issues can mask or mimic symptoms from other injuries, which can make them tricky to deal with. Be aware that a nerve issue is a possible confounding factor that may need professional evaluation.";
+      nerveWarning = "Nerve Warning: Your answers are associated with a high possibility of a nerve issue, which could be affecting your symptoms and therefore this assessment. Nerve issues can mask or mimic symptoms from other injuries, which can make them tricky to deal with. Be aware that a nerve issue is a possible confounding factor that may need professional evaluation.";
     } else if (nerveIssuePossibility === "⚠️ Medium" && !/🤔/.test(resultsSummary)) {
-      additionalDetails += " Nerve Warning: During testing, you indicated a positive nerve tension test. Based on your results, it is possible your symptoms are associated with a nerve issue as well as a separate injury. The nerve issue could be affecting your symptoms and therefore this assessment. Nerve issues can mask or mimic symptoms from other injuries, which can make them tricky to deal with. Be aware that a nerve issue is a possible confounding factor that may need professional evaluation.";
+      nerveWarning = "Nerve Warning: During testing, you indicated a positive nerve tension test. Based on your results, it is possible your symptoms are associated with a nerve issue as well as a separate injury. The nerve issue could be affecting your symptoms and therefore this assessment. Nerve issues can mask or mimic symptoms from other injuries, which can make them tricky to deal with. Be aware that a nerve issue is a possible confounding factor that may need professional evaluation.";
     } else if (nerveIssuePossibility === "⚠️ Medium" && /🤔/.test(resultsSummary)) {
-      additionalDetails += " Nerve Warning: Your answers are associated with some possibility of a nerve issue, which could be affecting your symptoms and therefore this assessment. Nerve issues can mask or mimic symptoms from other injuries, which can make them tricky to deal with. Be aware that a nerve issue is a possible confounding factor that may need professional evaluation.";
+      nerveWarning = "Nerve Warning: Your answers are associated with some possibility of a nerve issue, which could be affecting your symptoms and therefore this assessment. Nerve issues can mask or mimic symptoms from other injuries, which can make them tricky to deal with. Be aware that a nerve issue is a possible confounding factor that may need professional evaluation.";
     } else if (nerveIssuePossibility === "⚠️ Data Unclear") {
-      additionalDetails += " Nerve Warning: Your answers are associated with a high possibility of a nerve issue, yet you did not receive a positive result on either of the nerve tests. We recommend retaking differential assessment 1 and paying special attention to ensure you perform the nerve tests correctly as they are easy to get wrong. If your results do not change and you have approval from a qualified medical professional, consider adding some nerve recovery exercises to your routine if treating your non-nerve issue does not improve your symptoms. You may also want to consider consulting with a medical professional if you continue to run into issues, as assessing and treating nerve issues can be complicated.";
+      nerveWarning = "Nerve Warning: Your answers are associated with a high possibility of a nerve issue, yet you did not receive a positive result on either of the nerve tests. We recommend retaking differential assessment 1 and paying special attention to ensure you perform the nerve tests correctly as they are easy to get wrong. If your results do not change and you have approval from a qualified medical professional, consider adding some nerve recovery exercises to your routine if treating your non-nerve issue does not improve your symptoms. You may also want to consider consulting with a medical professional if you continue to run into issues, as assessing and treating nerve issues can be complicated.";
     }
 
-    // Add cyst warning if applicable
+    // Calculate cyst warning
+    let cystWarning = '';
     if (cystIndication === "⚠️ Yes") {
-      additionalDetails += " Cyst Warning: Your answers are associated with the possibility of a cyst in your finger. Cysts can cause various symptoms that mimic other injuries, which makes injury assessment more challenging. Be aware that a cyst is a possible confounding factor that may need professional evaluation with ultrasound.";
+      cystWarning = "Cyst Warning: Your answers are associated with the possibility of a cyst in your finger. Cysts can cause various symptoms that mimic other injuries, which makes injury assessment more challenging. Be aware that a cyst is a possible confounding factor that may need professional evaluation with ultrasound.";
     } else if (cystIndication === "Mild") {
-      additionalDetails += " Cyst Warning: Your answer of 'yes' to 'Do you feel an abnormal mass/lump/thickening in your finger?' is associated with the possibility of a cyst. Cysts can cause various symptoms that mimic other injuries, which makes injury assessment more challenging. Be aware that a cyst is a possible confounding factor that may need professional evaluation with ultrasound.";
+      cystWarning = "Cyst Warning: Your answer of 'yes' to 'Do you feel an abnormal mass/lump/thickening in your finger?' is associated with the possibility of a cyst. Cysts can cause various symptoms that mimic other injuries, which makes injury assessment more challenging. Be aware that a cyst is a possible confounding factor that may need professional evaluation with ultrasound.";
     }
 
     // Get injury descriptions
@@ -373,7 +377,9 @@ function Differential1Questionnaire({ questionnaire, onBack, primaryResults }) {
         setNerveIssuePossibility(nerveIssuePossibility),
         setCystIndication(cystIndication),
         setAdditionalDetails(additionalDetails),
-        setInjuryDescription(getInjuryDescription(displayedResult))
+        setInjuryDescription(getInjuryDescription(displayedResult)),
+        setNerveWarning(nerveWarning),
+        setCystWarning(cystWarning)
       ]).then(() => {
         setIsCalculating(false);
         console.log("All states updated");
@@ -412,6 +418,8 @@ function Differential1Questionnaire({ questionnaire, onBack, primaryResults }) {
             cystIndication={cystIndication}
             additionalDetails={additionalDetails}
             injuryDescription={injuryDescription}
+            nerveWarning={nerveWarning}
+            cystWarning={cystWarning}
             questions={questionnaire.questions}
             responses={responses}
             skippedQuestions={skippedQuestions}

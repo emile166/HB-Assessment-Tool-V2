@@ -14,6 +14,8 @@ export function ResultsCard({
     nerveIssuePossibility,
     cystIndication,
     additionalDetails,
+    nerveWarning,
+    cystWarning,
     injuryDescription,
     questions,
     responses,
@@ -87,12 +89,22 @@ export function ResultsCard({
                     )}
 
                 {/* Injury Details */}
-                {(additionalDetails || injuryDescription) && (
+                {(additionalDetails || injuryDescription || nerveWarning || cystWarning) && (
                     <div className="rounded-lg px-8 mb-4 mt-8">
                         {additionalDetails && (
                             <div className="mb-4">
                                 <h2 className="text-md font-semibold mb-2">Additional Details</h2>
                                 <p className="text-md">{additionalDetails}</p>
+                            </div>
+                        )}
+                        {nerveWarning && (
+                            <div className="mb-4 bg-yellow-50 p-4 rounded-lg">
+                                <p className="text-md">{nerveWarning}</p>
+                            </div>
+                        )}
+                        {cystWarning && (
+                            <div className="mb-4 bg-yellow-50 p-4 rounded-lg">
+                                <p className="text-md">{cystWarning}</p>
                             </div>
                         )}
                         {injuryDescription && <p className="text-md">{injuryDescription}</p>}
