@@ -34,10 +34,10 @@ function Differential1Questionnaire({ questionnaire, onBack, primaryResults }) {
 
   useEffect(() => {
     if (showResults || currentQuestionIndex >= 0 || currentQuestionId) {
-        questionnaireContainerRef.current?.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
+      questionnaireContainerRef.current?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
     }
   }, [showResults, currentQuestionIndex, currentQuestionId]);
 
@@ -253,23 +253,32 @@ function Differential1Questionnaire({ questionnaire, onBack, primaryResults }) {
     let cystIndication;
     if (/cyst/.test(displayedResult.toLowerCase())) {
       cystIndication = "⚠️ Yes";
+    } else if (/injury-induced pulley thickening/.test(displayedResult.toLowerCase())) {
+      cystIndication = "N/A";
     } else {
       const cystScore = scores['I'] || 0;
       const primaryCystScore = primaryResults?.results?.['I'] || 0;
       const combinedCystScore = cystScore + primaryCystScore;
-      const injuryTypeTraumatic = responses[PRIMARY_DATA.injuryType.id]?.id === "injuryTypeAnswer1";
-      const yesAbnormalMass = responses[PRIMARY_DATA.abnormalMass.id]?.id === "abnormalMassAnswer1";
+      const injuryTypeTraumaticPrimary = responses[PRIMARY_DATA.injuryType.id]?.id === "injuryTypeAnswer1";
+      const yesAbnormalMassPrimary = responses[PRIMARY_DATA.abnormalMass.id]?.id === "abnormalMassAnswer1";
       const yesPriorInjury = responses[DIFFERENTIAL_1_DATA.priorInjury.id]?.id === "priorInjuryAnswer1";
+      const massLocationDistalA2 = responses[DIFFERENTIAL_1_DATA.massLocationA2.id]?.id === "massLocationA2Answer1";
+      const massLocationProximalA2 = responses[DIFFERENTIAL_1_DATA.massLocationA2.id]?.id === "massLocationA2Answer2";
+      const massLocationOverA4 = responses[DIFFERENTIAL_1_DATA.massLocationA4.id]?.id === "massLocationA4Answer1";
+      const massLocationSideOfA4 = responses[DIFFERENTIAL_1_DATA.massLocationA4.id]?.id === "massLocationA4Answer2";
+      const noMassAtFocalPoint = responses[DIFFERENTIAL_1_DATA.massAtFocalPoint.id]?.id === "massAtFocalPointAnswer3";
+      const massAtFocalPointA2 = responses[DIFFERENTIAL_1_DATA.massAtFocalPoint.id]?.id === "massAtFocalPointAnswer1";
+      const massAtFocalPointA4 = responses[DIFFERENTIAL_1_DATA.massAtFocalPoint.id]?.id === "massAtFocalPointAnswer2";
 
       if (combinedCystScore >= D3 - 1) {
         cystIndication = "⚠️ Yes";
-      } else if (combinedCystScore < D3 - 1 && combinedCystScore >= D3 - 2 && injuryTypeTraumatic) {
+      } else if (combinedCystScore < D3 - 1 && combinedCystScore >= D3 - 2 && injuryTypeTraumaticPrimary) {
         cystIndication = "None";
-      } else if (combinedCystScore < D3 - 1 && combinedCystScore >= D3 - 2 && !yesAbnormalMass && !yesPriorInjury) {
+      } else if (combinedCystScore < D3 - 1 && combinedCystScore >= D3 - 2 && !yesPriorInjury && (noMassAtFocalPoint || massLocationDistalA2 || massLocationOverA4)) {
         cystIndication = "None";
-      } else if (combinedCystScore < D3 - 1 && combinedCystScore >= D3 - 2 && yesAbnormalMass) {
+      } else if (combinedCystScore < D3 - 1 && combinedCystScore >= D3 - 2 && (yesAbnormalMassPrimary || massAtFocalPointA2 || massAtFocalPointA4)) {
         cystIndication = "⚠️ Yes";
-      } else if (combinedCystScore <= D3 - 3 && !yesAbnormalMass) {
+      } else if (combinedCystScore <= D3 - 3 && !yesAbnormalMassPrimary && noMassAtFocalPoint) {
         cystIndication = "None";
       } else if (combinedCystScore < D3 - 5) {
         cystIndication = "None";
