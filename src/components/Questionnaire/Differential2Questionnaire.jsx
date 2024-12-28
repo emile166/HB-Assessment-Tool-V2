@@ -40,7 +40,7 @@ function Differential2Questionnaire({ questionnaire, onBack, primaryResults }) {
                 block: 'start'
             });
         }
-      }, [showResults, currentQuestionIndex, currentQuestionId]);
+    }, [showResults, currentQuestionIndex, currentQuestionId]);
 
     const handleAnswer = (questionId, answer) => {
         const newResponses = {
@@ -334,9 +334,15 @@ function Differential2Questionnaire({ questionnaire, onBack, primaryResults }) {
 
         // Get injury descriptions
         const getInjuryDescription = (result) => {
+            // Regular injury description logic
             if (!result) return "";
             const injuries = result.toLowerCase().split(" and ");
-            return injuries.map(injury => INJURY_DESCRIPTIONS[injury]).filter(Boolean).join("\n\n");
+            return injuries.map(injury => INJURY_DESCRIPTIONS[injury]).filter(Boolean).map((description, index) => (
+                <span key={index}>
+                    {description}
+                    <br /> <br />
+                </span>
+            ));
         };
 
         // Wait for loading animation

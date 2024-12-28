@@ -34,10 +34,10 @@ function Differential3Questionnaire({ questionnaire, onBack, primaryResults }) {
 
   useEffect(() => {
     if (showResults || currentQuestionIndex >= 0 || currentQuestionId) {
-        questionnaireContainerRef.current?.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
+      questionnaireContainerRef.current?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
     }
   }, [showResults, currentQuestionIndex, currentQuestionId]);
 
@@ -323,9 +323,15 @@ function Differential3Questionnaire({ questionnaire, onBack, primaryResults }) {
 
     // Get injury descriptions
     const getInjuryDescription = (result) => {
+      // Regular injury description logic
       if (!result) return "";
       const injuries = result.toLowerCase().split(" and ");
-      return injuries.map(injury => INJURY_DESCRIPTIONS[injury]).filter(Boolean).join("\n\n");
+      return injuries.map(injury => INJURY_DESCRIPTIONS[injury]).filter(Boolean).map((description, index) => (
+        <span key={index}>
+          {description}
+          <br /> <br />
+        </span>
+      ));
     };
 
     // Wait for loading animation
