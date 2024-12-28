@@ -208,6 +208,8 @@ function Differential1Questionnaire({ questionnaire, onBack, primaryResults }) {
     } else if ((D3 >= D4 && D4 >= D5 + 2 && /[DE]/.test(B3) && /[DE]/.test(sortedResults[1]?.[0])) ||
       (D3 >= D4 && D4 === D5 + 1 && /[DE]/.test(B3) && /[DE]/.test(sortedResults[1]?.[0]))) {
       resultsSummary = "🎊 Success! Go back to the dashboard and complete the applicable severity assessment.";
+    } else if (D3 >= D4 && D4 > D5 && /[CL]/.test(B3) && /[CL]/.test(sortedResults[1]?.[0])) {
+      resultsSummary = "🧐 This one is tricky. Looks like you might require professional evaluation to differentiate between these two injuries.";
     } else if (D3 <= D4 + 1) {
       resultsSummary = "🤔 Something's wrong here...";
     } else {
@@ -222,8 +224,12 @@ function Differential1Questionnaire({ questionnaire, onBack, primaryResults }) {
       displayedResult = firstInjuryName;
     } else if (/🎊/.test(resultsSummary)) {
       displayedResult = `${firstInjuryName} and ${secondInjuryName}`;
+    } else if (/🧐/.test(resultsSummary)) {
+      displayedResult = "Cannot differentiate between FDS Insertional Tendinopathy and Flexor Tenosynovitis";
     } else if (/🤔/.test(resultsSummary)) {
       displayedResult = "Data Unclear";
+    } else if (/🙃/.test(resultsSummary)) {
+      displayedResult = "Error";
     }
 
     // Calculate nerve issue possibility
@@ -297,13 +303,15 @@ function Differential1Questionnaire({ questionnaire, onBack, primaryResults }) {
     } else if (/🎉/.test(resultsSummary)) {
       additionalDetails = "Great job completing the differential assessment! Based on your results, you should now move on to severity assessment.";
     } else if (/💪/.test(resultsSummary)) {
-      additionalDetails = "Great job completing the differential assessment! Your answers are associated with a multi-faceted condition involving a possible nerve issue. Your next step will be to complete the severity assessment for your *non-nerve-related* issue. However, please continue reading below to find out more about your the nerve issue may affect things.";
+      additionalDetails = "Great job completing the differential assessment! Your answers are associated with a multi-faceted condition involving a possible nerve issue. Your next step will be to complete the severity assessment for your *non-nerve-related* issue. However, please continue reading to find out more about your the nerve issue may affect things.";
     } else if (/⚡/.test(resultsSummary)) {
-      additionalDetails = "Great job completing the differential assessment! Your answers are associated with a multi-faceted condition involving a possible nerve issue. You do not need to complete a severity assessment at this time. However, please continue reading below to find out more about how the nerve issue may affect things.";
+      additionalDetails = "Great job completing the differential assessment! Your answers are associated with a multi-faceted condition involving a possible nerve issue. You do not need to complete a severity assessment at this time. However, please continue reading to find out more about how the nerve issue may affect things.";
     } else if (/🥳/.test(resultsSummary)) {
       additionalDetails = "Great job! You have completed the assessment. (You do not need to complete a severity assessment.) Heck yes!";
     } else if (/🎊/.test(resultsSummary)) {
       additionalDetails = "Great job completing the differential assessment! Your answers are associated with both an FDP injury and a lumbrical injury. These two injuries frequently occur together. For this reason, you should complete the appropriate severity assessments for *both* injuries. If your severity assessment results indicate different grades for each injury (e.g. FDP is grade I and lumbrical is grade II), it is generally advised to choose a recovery program based on the *higher* grade (unless otherwise instructed by a qualified professional).";
+    } else if (/🧐/.test(resultsSummary)) {
+      additionalDetails = "It looks like your results are unclear because your answers are equally associated with two different injuries (FDS insertional tendinopathy and flexor tenosynovitis) which cannot be differentiated without an assessment from a trained professional (ultrasound is often recommended). We're sorry this tool could not help you at this time. If you’d like to schedule an online or in-person appointment with Dr. Jason Hooper, PT, DPT, OCS, SCS, go to this link: https://www.hoopersbeta.com/private-sessions";
     } else if (/🤔/.test(resultsSummary)) {
       additionalDetails = "Your answers indicate too many possibilities for a valid assessment. This can be due to multiple confounding factors, such as the possibility of two or more concurrent injuries. If you believe you performed all the tests properly and chose accurate answers, this may be the case for you. If so, you can email screenshots of your results (including answer log and scores) to info@hoopersbeta.com. Enter the code 'hb-debug' in the Debug Code text box below to see your scores. We will be happy to assist you if we can, but there is a chance you may simply require a consultation with a qualified medical professional. If you’d like to schedule an online or in-person appointment with Dr. Jason Hooper, PT, DPT, OCS, SCS, go to this link: https://www.hoopersbeta.com/private-sessions";
     } else if (/🙃/.test(resultsSummary)) {
@@ -312,26 +320,39 @@ function Differential1Questionnaire({ questionnaire, onBack, primaryResults }) {
 
     // Add nerve issue warning if applicable
     if (nerveIssuePossibility === "⚠️ High" && !/🤔/.test(resultsSummary)) {
-      additionalDetails += " ➡️ Please note: During testing, you indicated a positive nerve tension test. Based on your results, it is possible your symptoms are associated with a nerve issue as well as a separate injury. The nerve issuecould be affecting your symptoms and therefore this assessment. Nerve issues can mask or mimic symptoms from other injuries, which can make them tricky to deal with. Be aware that a nerve issue is a possible confounding factor that may need professional evaluation.";
+      additionalDetails += " Nerve Warning: During testing, you indicated a positive nerve tension test. Based on your results, it is possible your symptoms are associated with a nerve issue as well as a separate injury. The nerve issue could be affecting your symptoms and therefore this assessment. Nerve issues can mask or mimic symptoms from other injuries, which can make them tricky to deal with. Be aware that a nerve issue is a possible confounding factor that may need professional evaluation.";
     } else if (nerveIssuePossibility === "⚠️ High" && /🤔/.test(resultsSummary)) {
-      additionalDetails += " ➡️ Please note: Your answers are associated with a high possibility of a nerve issue, which could be affecting your symptoms and therefore this assessment. Nerve issues can mask or mimic symptoms from other injuries, which can make them tricky to deal with. Be aware that a nerve issue is a possible confounding factor that may need professional evaluation.";
+      additionalDetails += " Nerve Warning: Your answers are associated with a high possibility of a nerve issue, which could be affecting your symptoms and therefore this assessment. Nerve issues can mask or mimic symptoms from other injuries, which can make them tricky to deal with. Be aware that a nerve issue is a possible confounding factor that may need professional evaluation.";
     } else if (nerveIssuePossibility === "⚠️ Medium" && !/🤔/.test(resultsSummary)) {
-      additionalDetails += " ➡️ Please note: During testing, you indicated a positive nerve tension test. Based on your results, it is possible your symptoms are associated with a nerve issue as well as a separate injury. The nerve issuecould be affecting your symptoms and therefore this assessment. Nerve issues can mask or mimic symptoms from other injuries, which can make them tricky to deal with. Be aware that a nerve issue is a possible confounding factor that may need professional evaluation.";
+      additionalDetails += " Nerve Warning: During testing, you indicated a positive nerve tension test. Based on your results, it is possible your symptoms are associated with a nerve issue as well as a separate injury. The nerve issue could be affecting your symptoms and therefore this assessment. Nerve issues can mask or mimic symptoms from other injuries, which can make them tricky to deal with. Be aware that a nerve issue is a possible confounding factor that may need professional evaluation.";
     } else if (nerveIssuePossibility === "⚠️ Medium" && /🤔/.test(resultsSummary)) {
-      additionalDetails += " ➡️ Please note: Your answers are associated with some possibility of a nerve issue, which could be affecting your symptoms and therefore this assessment. Nerve issues can mask or mimic symptoms from other injuries, which can make them tricky to deal with. Be aware that a nerve issue is a possible confounding factor that may need professional evaluation.";
+      additionalDetails += " Nerve Warning: Your answers are associated with some possibility of a nerve issue, which could be affecting your symptoms and therefore this assessment. Nerve issues can mask or mimic symptoms from other injuries, which can make them tricky to deal with. Be aware that a nerve issue is a possible confounding factor that may need professional evaluation.";
     } else if (nerveIssuePossibility === "⚠️ Data Unclear") {
-      additionalDetails += " ➡️ Please note: Your answers are associated with a high possibility of a nerve issue, yet you did not receive a positive result on either of the nerve tests. We recommend retaking differential assessment 1 and paying special attention to ensure you perform the nerve tests correctly as they are easy to get wrong. If your results do not change and you have approval from a qualified medical professional, consider adding some nerve recovery exercises to your routine if treating your non-nerve issue does not improve your symptoms. You may also want to consider consulting with a medical professional if you continue to run into issues, as assessing and treating nerve issues can be complicated.";
+      additionalDetails += " Nerve Warning: Your answers are associated with a high possibility of a nerve issue, yet you did not receive a positive result on either of the nerve tests. We recommend retaking differential assessment 1 and paying special attention to ensure you perform the nerve tests correctly as they are easy to get wrong. If your results do not change and you have approval from a qualified medical professional, consider adding some nerve recovery exercises to your routine if treating your non-nerve issue does not improve your symptoms. You may also want to consider consulting with a medical professional if you continue to run into issues, as assessing and treating nerve issues can be complicated.";
     }
 
     // Add cyst warning if applicable
     if (cystIndication === "⚠️ Yes") {
-      additionalDetails += " ➡️ Please note: Your answers are associated with the possibility of a cyst in your finger. Cysts can cause various symptoms that mimic other injuries, which makes injury assessment more challenging. Be aware that a cyst is a possible confounding factor that may need professional evaluation with ultrasound.";
+      additionalDetails += " Cyst Warning: Your answers are associated with the possibility of a cyst in your finger. Cysts can cause various symptoms that mimic other injuries, which makes injury assessment more challenging. Be aware that a cyst is a possible confounding factor that may need professional evaluation with ultrasound.";
     } else if (cystIndication === "Mild") {
-      additionalDetails += " ➡️ Please note: Your answer of 'yes' to 'Do you feel an abnormal mass/lump/thickening in your finger?' is associated with the possibility of a cyst. Cysts can cause various symptoms that mimic other injuries, which makes injury assessment more challenging. Be aware that a cyst is a possible confounding factor that may need professional evaluation with ultrasound.";
+      additionalDetails += " Cyst Warning: Your answer of 'yes' to 'Do you feel an abnormal mass/lump/thickening in your finger?' is associated with the possibility of a cyst. Cysts can cause various symptoms that mimic other injuries, which makes injury assessment more challenging. Be aware that a cyst is a possible confounding factor that may need professional evaluation with ultrasound.";
     }
 
     // Get injury descriptions
     const getInjuryDescription = (result) => {
+
+      // Check if resultsSummary includes 🧐
+      if (resultsSummary.includes("🧐")) {
+        return (
+          <>
+            {INJURY_DESCRIPTIONS["fds insertional tendinopathy"]}
+            <br /> <br />
+            {INJURY_DESCRIPTIONS["flexor tenosynovitis"]}
+          </>
+        );
+      }
+
+      // Regular injury description logic
       if (!result) return "";
       const injuries = result.toLowerCase().split(" and ");
       return injuries.map(injury => INJURY_DESCRIPTIONS[injury]).filter(Boolean).join("\n\n");
