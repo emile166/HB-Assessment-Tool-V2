@@ -30,7 +30,7 @@ export const PRIMARY_DATA = {
     id: "mechanismTraumatic",
     text: "Which grip position were you in when the injury occurred?",
     video: "",
-    photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/4504b48a-39e8-4a6e-b08e-9ff1f846b388/Q2+-+ALL+Grip+Types.png?content-type=image%2Fpng"],
+    photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/fc1fc205-0903-4f84-94f8-970dc0bf0355/Grip+Position+Collage.jpg?content-type=image%2Fjpeg"],
     answers: [
       { id: "mechanismTraumaticAnswer1", text: "High-angle crimp", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
       { id: "mechanismTraumaticAnswer2", text: "Half crimp", scores: { A: 1, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -68,7 +68,7 @@ export const PRIMARY_DATA = {
     id: "mechanismTraumaticPinky",
     text: "Which grip position was your pinky in when the injury occurred? (Think carefully before answering; due to the shortness of the pinky finger in most people, it is often in a lower-angle grip position than the other fingers.)",
     video: "",
-    photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/4504b48a-39e8-4a6e-b08e-9ff1f846b388/Q2+-+ALL+Grip+Types.png?content-type=image%2Fpng"],
+    photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/fc1fc205-0903-4f84-94f8-970dc0bf0355/Grip+Position+Collage.jpg?content-type=image%2Fjpeg"],
     answers: [
       { id: "mechanismTraumaticPinkyAnswer1", text: "High-angle crimp", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
       { id: "mechanismTraumaticPinkyAnswer2", text: "Half crimp", scores: { A: 1, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -105,7 +105,7 @@ export const PRIMARY_DATA = {
     id: "mechanismAcuteNonTraumatic",
     text: "Which do you think contributed to your injury?",
     video: "",
-    photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/4504b48a-39e8-4a6e-b08e-9ff1f846b388/Q2+-+ALL+Grip+Types.png?content-type=image%2Fpng"],
+    photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/fc1fc205-0903-4f84-94f8-970dc0bf0355/Grip+Position+Collage.jpg?content-type=image%2Fjpeg"],
     answers: [
       { id: "mechanismAcuteNonTraumaticAnswer1", text: "High-angle crimp", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 1, I: 1, J: 1, K: 1, L: 1, M: 0, N: 0 } },
       { id: "mechanismAcuteNonTraumaticAnswer2", text: "Half crimp", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 1, I: 1, J: 1, K: 0, L: 1, M: 0, N: 0 } },
@@ -158,7 +158,7 @@ export const PRIMARY_DATA = {
     id: "mechanismAcuteNonTraumaticPinky",
     text: "Which pinky finger position do you think contributed to your injury? (Think carefully before answering; due to the shortness of the pinky finger in most people, it is often in a lower-angle grip position than the other fingers.)",
     video: "",
-    photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/4504b48a-39e8-4a6e-b08e-9ff1f846b388/Q2+-+ALL+Grip+Types.png?content-type=image%2Fpng"],
+    photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/fc1fc205-0903-4f84-94f8-970dc0bf0355/Grip+Position+Collage.jpg?content-type=image%2Fjpeg"],
     answers: [
       { id: "mechanismAcuteNonTraumaticPinkyAnswer1", text: "High-angle crimp", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 1, I: 1, J: 1, K: 1, L: 1, M: 0, N: 0 } },
       { id: "mechanismAcuteNonTraumaticPinkyAnswer2", text: "Half crimp", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 1, I: 1, J: 1, K: 0, L: 1, M: 0, N: 0 } },
@@ -211,7 +211,7 @@ export const PRIMARY_DATA = {
     id: "mechanismChronic",
     text: "Which do you think contributed most to your injury?",
     video: "",
-    photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/4504b48a-39e8-4a6e-b08e-9ff1f846b388/Q2+-+ALL+Grip+Types.png?content-type=image%2Fpng"],
+    photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/fc1fc205-0903-4f84-94f8-970dc0bf0355/Grip+Position+Collage.jpg?content-type=image%2Fjpeg"],
     answers: [
       { id: "mechanismChronicAnswer1", text: "Crimping", scores: { A: 0, B: 0, C: 1, D: 0, E: 0, F: 1, G: 0, H: 1, I: 1, J: 1, K: 0, L: 1, M: 1, N: 0 } },
       { id: "mechanismChronicAnswer2", text: "Three-finger drag", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 1, N: 0 } },
@@ -257,7 +257,7 @@ export const PRIMARY_DATA = {
     id: "mechanismChronicPinky",
     text: "Regarding the grip position of your *pinky* finger, which do you think contributed most to your injury/condition? (Think carefully before answering; due to the shortness of the pinky finger in most people, it is often in a lower-angle grip position than the other fingers.)",
     video: "",
-    photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/4504b48a-39e8-4a6e-b08e-9ff1f846b388/Q2+-+ALL+Grip+Types.png?content-type=image%2Fpng"],
+    photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/fc1fc205-0903-4f84-94f8-970dc0bf0355/Grip+Position+Collage.jpg?content-type=image%2Fjpeg"],
     answers: [
       { id: "mechanismChronicPinkyAnswer1", text: "Half crimp or high angle grips", scores: { A: 0, B: 0, C: 1, D: 0, E: 0, F: 1, G: 0, H: 1, I: 1, J: 1, K: 0, L: 1, M: 1, N: 0 } },
       { id: "mechanismChronicPinkyAnswer2", text: "Drag or open hand grips", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 1, N: 0 } },
@@ -611,7 +611,10 @@ export const PRIMARY_DATA = {
     id: "tissueLoading",
     text: "What are your tissue loading test results?",
     video: "https://www.youtube.com/embed/rp4dtyvE66s?si=36FLvMGt7nwDMv2J&rel=0",
-    photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/574f61b7-d74e-4802-9149-3607c6146b99/Primary+-+Question+12+-+.jpg?content-type=image%2Fjpeg"],
+    photos: [
+      "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/574f61b7-d74e-4802-9149-3607c6146b99/Primary+-+Question+12+-+.jpg?content-type=image%2Fjpeg",
+      "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/fc1fc205-0903-4f84-94f8-970dc0bf0355/Grip+Position+Collage.jpg?content-type=image%2Fjpeg"
+    ],
     answers: [
       { id: "tissueLoadingAnswer1", text: "Discomfort/pain with the crimp and drag tests, but crimp is worse", scores: { A: 0, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 1, I: 0, J: 1, K: 0, L: 0, M: 0, N: 0 } },
       { id: "tissueLoadingAnswer2", text: "Discomfort/pain with the crimp and drag tests, but drag is worse", scores: { A: 0, B: 0, C: 0, D: 1, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 1, N: 0 } },

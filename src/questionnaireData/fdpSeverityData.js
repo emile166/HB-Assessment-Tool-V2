@@ -100,7 +100,9 @@ export const FDP_SEVERITY_DATA = {
         id: "tissueLoadingDrag",
         text: "What are your tissue loading test results for the drag position?",
         video: "https://www.youtube.com/embed/5ZZ6c4tValQ?si=fhO4sK0_uBc763Fd&rel=0",
-        photos: [],
+        photos: [
+            "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/fc1fc205-0903-4f84-94f8-970dc0bf0355/Grip+Position+Collage.jpg?content-type=image%2Fjpeg"
+        ],
         answers: [
             { id: "tissueLoadingDragAnswer1", text: "Discomfort/pain starts with minimal (1-2 out of 10) force", scores: { A: 0, B: 0, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "tissueLoadingDragAnswer2", text: "Discomfort/pain starts with mild (3-4 out of 10) force", scores: { A: 0, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },

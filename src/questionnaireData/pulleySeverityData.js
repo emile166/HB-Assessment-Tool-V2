@@ -144,7 +144,10 @@ export const PULLEY_SEVERITY_DATA = {
         id: "tissueLoadingDrag",
         text: "What are your tissue loading test results while in a drag position?",
         video: "https://www.youtube.com/embed/5ZZ6c4tValQ?si=YrWInZhC6zj27CVy&rel=0",
-        photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/84930909-0843-4db5-829b-a2d82a766c07/Differential+3+-+Question+1+-+Hand+front.jpg?content-type=image%2Fjpeg"],
+        photos: [
+            "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/84930909-0843-4db5-829b-a2d82a766c07/Differential+3+-+Question+1+-+Hand+front.jpg?content-type=image%2Fjpeg",
+            "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/fc1fc205-0903-4f84-94f8-970dc0bf0355/Grip+Position+Collage.jpg?content-type=image%2Fjpeg"
+        ],
         answers: [
             { id: "tissueLoadingDragAnswer1", text: "Discomfort/pain in the entire A2 to A4 region", scores: { A: -1, B: -1, C: 0, D: 0, E: 1, F: 1, G: 1, H: 1, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
             { id: "tissueLoadingDragAnswer2", text: "Discomfort/pain in the entire A2 to A3 region", scores: { A: -1, B: 0, C: 0, D: 1, E: 0, F: 1, G: 1, H: 0, I: 1, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -162,7 +165,10 @@ export const PULLEY_SEVERITY_DATA = {
         id: "tissueLoadingHalfCrimp",
         text: "What are your tissue loading test results while in a half crimp position?",
         video: "",
-        photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/ea2f9146-c934-430e-9368-3556dabd71bc/Pulley+Severity+-+Question+7+-+Hand+front.jpg?content-type=image%2Fjpeg"],
+        photos: [
+            "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/ea2f9146-c934-430e-9368-3556dabd71bc/Pulley+Severity+-+Question+7+-+Hand+front.jpg?content-type=image%2Fjpeg",
+            "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/fc1fc205-0903-4f84-94f8-970dc0bf0355/Grip+Position+Collage.jpg?content-type=image%2Fjpeg"
+        ],
         answers: [
             { id: "tissueLoadingHalfCrimpAnswer1", text: "Discomfort/pain in the entire A2 to A4 region", scores: { A: 0, B: 0, C: 0, D: 0, E: 1, F: 1, G: 1, H: 1, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
             { id: "tissueLoadingHalfCrimpAnswer2", text: "Discomfort/pain in the entire A2 to A3 region", scores: { A: 0, B: 0, C: 1, D: 1, E: 0, F: 1, G: 1, H: 0, I: 1, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -206,7 +212,10 @@ export const PULLEY_SEVERITY_DATA = {
         id: "tissueLoadingFullCrimp",
         text: "What are your tissue loading test results while in a full crimp position?",
         video: "",
-        photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/ea2f9146-c934-430e-9368-3556dabd71bc/Pulley+Severity+-+Question+7+-+Hand+front.jpg?content-type=image%2Fjpeg"],
+        photos: [
+            "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/ea2f9146-c934-430e-9368-3556dabd71bc/Pulley+Severity+-+Question+7+-+Hand+front.jpg?content-type=image%2Fjpeg",
+            "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/fc1fc205-0903-4f84-94f8-970dc0bf0355/Grip+Position+Collage.jpg?content-type=image%2Fjpeg"
+        ],
         answers: [
             { id: "tissueLoadingFullCrimpAnswer1", text: "Discomfort/pain in the A2 region", scores: { A: 1, B: 1, C: 0, D: 0, E: 0, F: 1, G: 0, H: -1, I: 0, J: -1, K: 0, L: 0, M: 0, N: 0 } },
             { id: "tissueLoadingFullCrimpAnswer2", text: "Discomfort/pain in the A4 region", scores: { A: 1, B: 1, C: 0, D: 0, E: 0, F: -1, G: 0, H: 1, I: -1, J: 0, K: 0, L: 0, M: 0, N: 0 } },

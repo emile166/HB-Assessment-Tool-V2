@@ -5,7 +5,7 @@ export const DIFFERENTIAL_3_DATA = {
         video: "",
         photos: [
             "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/84930909-0843-4db5-829b-a2d82a766c07/Differential+3+-+Question+1+-+Hand+front.jpg?content-type=image%2Fjpeg",
-            "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/4504b48a-39e8-4a6e-b08e-9ff1f846b388/Q2+-+ALL+Grip+Types.png?content-type=image%2Fpng"
+            "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/fc1fc205-0903-4f84-94f8-970dc0bf0355/Grip+Position+Collage.jpg?content-type=image%2Fjpeg"
         ],
         answers: [
             { id: "gripPositionAnswer1", text: "My injury occurred in a crimp position and I feel discomfort/pain *only* in the A2, A3, or A4 region", scores: { A: 0, B: 1, C: 0, D: -1, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },

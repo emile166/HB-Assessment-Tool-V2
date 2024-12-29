@@ -8,7 +8,7 @@ const AppHeader = forwardRef((props, ref) => {
       <a href="https://www.hoopersbeta.com/finger-tool" className="text-2xl text-black font-bold mb-2">
         Hooper's Beta Finger Injury Assessment Tool
       </a>
-      <p className="text-gray-500 uppercase">For rock-climbing related finger injuries</p>
+      <p className="text-gray-500 uppercase">For rock climbing related finger injuries</p>
 
       <p className="text-gray-500 text-xs">By using this tool, you agree to our <a
         href="https://hoopersbeta.com/termsandconditions"
