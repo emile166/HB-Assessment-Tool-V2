@@ -21,10 +21,10 @@ export const DIFFERENTIAL_2_DATA = {
         video: "",
         photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/d3894a14-38ad-46e9-a939-92ab9c5b7264/PIP+and+DIP+Joints.jpg?content-type=image%2Fjpeg"],
         answers: [
-            { id: "painLocationAnswer1", text: "Back side of the DIP or PIP joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: -1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: -1 } },
+            { id: "painLocationAnswer1", text: "Back side of the DIP or PIP joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 2, G: -1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: -1 } },
             { id: "painLocationAnswer2", text: "Both sides of the DIP or PIP joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "painLocationAnswer3", text: "Left or right side (but not both sides) of the PIP joint only", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
-            { id: "painLocationAnswer4", text: "Left or right side (but not both sides) of the DIP joint only", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "painLocationAnswer4", text: "Left or right side (but not both sides) of the DIP joint only", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: -100 } },
             { id: "painLocationAnswer5", text: "None of these options apply to me", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
         ],
         multiple: false,
@@ -67,12 +67,13 @@ export const DIFFERENTIAL_2_DATA = {
         video: "https://www.youtube.com/embed/GZ9sik4b8OM?si=lfj7_6IV6L1qi5Dt&rel=0",
         photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/d3894a14-38ad-46e9-a939-92ab9c5b7264/PIP+and+DIP+Joints.jpg?content-type=image%2Fjpeg"],
         answers: [
-            { id: "passiveJointExtensionAnswer1", text: "The test caused discomfort/pain on the back side of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "passiveJointExtensionAnswer1", text: "The test caused discomfort/pain on the back side of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 2, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "passiveJointExtensionAnswer2", text: "The test did *not* cause discomfort/pain on the back side of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
         ],
         multiple: false,
         conditions: []
     },
+
     activeRangeOfMotion: {
         id: "activeRangeOfMotion",
         text: "What are your active range of motion test results?",
@@ -89,6 +90,7 @@ export const DIFFERENTIAL_2_DATA = {
         multiple: false,
         conditions: []
     },
+
     jointEnlargement: {
         id: "jointEnlargement",
         text: "Has there been any swelling or enlargement of the affected joint?",
@@ -96,11 +98,12 @@ export const DIFFERENTIAL_2_DATA = {
         photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/d3894a14-38ad-46e9-a939-92ab9c5b7264/PIP+and+DIP+Joints.jpg?content-type=image%2Fjpeg"],
         answers: [
             { id: "jointEnlargementAnswer1", text: "Yes, constant joint swelling or enlargement of the entire joint (DIP or PIP) for more than a week", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "jointEnlargementAnswer2", text: "Yes, joint swelling only on one side of the PIP joint due to a specific moment of injury / trauma", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: -1, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "jointEnlargementAnswer2", text: "Yes, joint swelling only on one side of the PIP joint due to a specific moment of injury / trauma", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: -1, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
             { id: "jointEnlargementAnswer3", text: "Yes, joint swelling only on one side of the DIP joint due to a specific moment of injury / trauma", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: -1, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "jointEnlargementAnswer4", text: "None of these options apply to me", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
         ],
         multiple: true,
         conditions: []
     }
+    
 };
