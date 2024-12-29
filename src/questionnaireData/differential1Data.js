@@ -126,7 +126,7 @@ export const DIFFERENTIAL_1_DATA = {
 
   nerveTensionPart1: {
     id: "nerveTensionPart1",
-    text: "Do any of the nerve tension tests create symptoms at or very near to your injury site?",
+    text: "Do any of the nerve tension tests create symptoms at or very near to your injury site? (For this question, it’s okay to select answers that may not seem directly related to your injury.)",
     video: "https://www.youtube.com/embed/owSp-gv4RxE?si=G4dmQeSYeUtYgOX0&rel=0",
     photos: [],
     answers: [
@@ -139,7 +139,7 @@ export const DIFFERENTIAL_1_DATA = {
 
   nerveTensionPart2: {
     id: "nerveTensionPart2",
-    text: "Do any of the nerve tension tests create more intense symptoms anywhere in your injured arm compared to your uninjured arm (not including the neck and upper traps)?",
+    text: "Do any of the nerve tension tests create more intense symptoms anywhere in your injured arm compared to your uninjured arm (not including the neck and upper traps)? (For this question, it’s okay to select answers that may not seem directly related to your injury.)",
     video: "",
     photos: [],
     answers: [
