@@ -16,7 +16,7 @@ const TermsText = () => {
             </p>
 
             <p>
-                NOT FOR ALL INJURIES: This tool is not designed to handle the following non-exhaustive list of injuries: Mallet finger (avulsion of extensor tendon), boutonniere deformity (disruption of central slip), sagittal band injury (MCP “boxer’s knuckle”), trigger finger (stenosing tenosynovitis), Dupuytren's contraction, jersey finger (FDP avulsion rupture), extensor tendinopathies (e.g. EDC tendinopathy), thumb injuries (e.g. thumb UCL injury / gamekeeper’s thumb / skier’s thumb), early osteoarthritis.
+                NOT FOR ALL FINGER INJURIES: This tool is not designed to handle the following non-exhaustive list of injuries: Mallet finger (avulsion of extensor tendon), boutonniere deformity (disruption of central slip), sagittal band injury (MCP “boxer’s knuckle”), trigger finger (stenosing tenosynovitis), Dupuytren's contraction, jersey finger (FDP avulsion rupture), extensor tendinopathies (e.g. EDC tendinopathy), thumb injuries (e.g. thumb UCL injury / gamekeeper’s thumb / skier’s thumb), early osteoarthritis.
             </p>
 
             <p>

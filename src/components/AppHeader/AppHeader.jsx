@@ -14,7 +14,7 @@ const AppHeader = forwardRef((props, ref) => {
       }}
     >
 
-      <div className="absolute top-0 left-0 p-4">
+      <div className="flex justify-center items-center">
         <a href="https://www.hoopersbeta.com/">
           <img src="https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/65b6f7e8-c3f1-437f-81c5-bd243e7a0a8b/Logo+with+HB+centered.png?content-type=image%2Fpng" alt="Hooper's Beta Logo" className="size-12" />
         </a>
@@ -22,11 +22,11 @@ const AppHeader = forwardRef((props, ref) => {
 
       <div className="relative z-10">
         <a href="https://www.hoopersbeta.com/finger-tool" className="text-2xl text-black font-bold mb-2">
-          Free Finger Injury Assessment Tool
+          Injury Assessment Tool
         </a>
         <p className="text-gray-500 uppercase">For rock climbing related finger injuries</p>
 
-        <Button className="bg-secondary-foreground hover:bg-secondary-foreground/80 w-fit mx-auto min-h-[3rem] md:min-h-[2.5rem] px-4 py-2 mt-8">
+        <Button className="bg-secondary-foreground hover:bg-secondary-foreground/80 w-fit mx-auto min-h-[2.5rem] md:min-h-[2.5rem] px-4 py-2 mt-8">
           <a
             href="https://hoopersbeta.com/recoveryblueprint"
             target="_blank"
