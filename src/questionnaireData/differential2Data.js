@@ -33,7 +33,7 @@ export const DIFFERENTIAL_2_DATA = {
 
     lateralStressTest: {
         id: "lateralStressTest",
-        text: "Does the lateral stress test cause discomfort/pain and/or reveal joint laxity?",
+        text: "Does the lateral stress test cause discomfort/pain and/or reveal joint laxity associated with your injury?",
         video: "https://www.youtube.com/embed/Ft-9Fwtn9HM?si=JHrgL4j-MIGArrSK&rel=0",
         photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/d3894a14-38ad-46e9-a939-92ab9c5b7264/PIP+and+DIP+Joints.jpg?content-type=image%2Fjpeg"],
         answers: [
@@ -104,6 +104,19 @@ export const DIFFERENTIAL_2_DATA = {
         ],
         multiple: true,
         conditions: []
-    }
-    
+    },
+
+    resistedFingerExtension: {
+        id: "resistedFingerExtension",
+        text: "Does the resisted finger extension test cause discomfort/pain associated with your injury?",
+        video: "https://www.youtube.com/embed/GKdMHktjdz4?si=RrZe_seS2KDvpndf&rel=0",
+        photos: [],
+        answers: [
+          { id: "resistedFingerExtensionAnswer1", text: "Yes", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 2 } },
+          { id: "resistedFingerExtensionAnswer2", text: "No", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
+        ],
+        multiple: false,
+        conditions: []
+      }
+
 };

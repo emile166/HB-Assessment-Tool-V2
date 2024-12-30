@@ -72,6 +72,22 @@ export const LATERAL_BAND_SEVERITY_DATA = {
         ],
         multiple: false,
         conditions: []
-    }
+    },
+
+    resistedFingerExtension: {
+        id: "resistedFingerExtension",
+        text: "How does the resisted finger extension test affect your injury?",
+        video: "https://www.youtube.com/embed/GKdMHktjdz4?si=RrZe_seS2KDvpndf&rel=0",
+        photos: [],
+        answers: [
+          { id: "resistedFingerExtensionAnswer1", text: "Discomfort/pain starts with minimal (1-2 out of 10) force", scores: { A: 0, B: 0, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+          { id: "resistedFingerExtensionAnswer2", text: "Discomfort/pain starts with mild (3-4 out of 10) force", scores: { A: 0, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+          { id: "resistedFingerExtensionAnswer3", text: "Discomfort/pain starts with moderate (5-7 out of 10) force", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+          { id: "resistedFingerExtensionAnswer4", text: "Discomfort/pain starts with heavy (8-10 out of 10) force", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+          { id: "resistedFingerExtensionAnswer5", text: "No discomfort/pain even with heavy (8-10 out of 10) force", scores: { A: 2, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
+        ],
+        multiple: false,
+        conditions: []
+      }
 
 }

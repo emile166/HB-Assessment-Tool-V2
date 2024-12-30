@@ -48,7 +48,7 @@ export const COLLATERAL_LIGAMENT_SEVERITY_DATA = {
 
     aromPositionThree: {
         id: "aromPositionThree",
-        text: "What are your active range of motion test results in position three?",
+        text: "What are your active range of motion test results in position THREE?",
         video: "https://www.youtube.com/embed/MhX8rMs08wo?si=2yJQQgcViIBKUOxl&rel=0",
         photos: [],
         answers: [

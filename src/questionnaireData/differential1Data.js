@@ -27,7 +27,7 @@ export const DIFFERENTIAL_1_DATA = {
 
   passiveExtension: {
     id: "passiveExtension",
-    text: "Do you have discomfort/pain with passive finger extension?",
+    text: "Do you have discomfort/pain associated with your injury with passive finger extension?",
     video: "https://www.youtube.com/embed/raENFzOKZcA?si=VpfVMZzkvPFipILk&rel=0",
     photos: [],
     answers: [
