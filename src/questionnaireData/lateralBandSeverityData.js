@@ -29,7 +29,7 @@ export const LATERAL_BAND_SEVERITY_DATA = {
 
     aromFist: {
         id: "aromFist",
-        text: "What are your active range of motion test results?",
+        text: "How does the active range of motion fist test affect your injury?",
         video: "https://www.youtube.com/embed/Z9BT8RdYkZE?si=xL8ZdepxVNG-vcjl&rel=0",
         photos: [],
         answers: [

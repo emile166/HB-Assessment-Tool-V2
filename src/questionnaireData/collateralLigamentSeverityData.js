@@ -48,7 +48,7 @@ export const COLLATERAL_LIGAMENT_SEVERITY_DATA = {
 
     aromPositionThree: {
         id: "aromPositionThree",
-        text: "What are your active range of motion test results in position THREE?",
+        text: "How does the active range of motion test in position THREE affect your injury?",
         video: "https://www.youtube.com/embed/MhX8rMs08wo?si=2yJQQgcViIBKUOxl&rel=0",
         photos: [],
         answers: [
@@ -75,7 +75,7 @@ export const COLLATERAL_LIGAMENT_SEVERITY_DATA = {
 
     lateralStressTestLaxity: {
         id: "lateralStressTestLaxity",
-        text: "Does the lateral stress test show joint laxity?",
+        text: "Does the lateral stress test show joint laxity associated with your injury?",
         video: "https://www.youtube.com/embed/15pPAVs07z4?si=3X3MEDNac_aGnQQT&rel=0",
         photos: [],
         answers: [

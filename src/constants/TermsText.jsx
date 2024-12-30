@@ -16,6 +16,14 @@ const TermsText = () => {
             </p>
 
             <p>
+                NOT FOR ALL INJURIES: This tool is not designed to handle the following non-exhaustive list of injuries: Mallet finger (avulsion of extensor tendon), boutonniere deformity (disruption of central slip), sagittal band injury (MCP “boxer’s knuckle”), trigger finger (stenosing tenosynovitis), Dupuytren's contraction, jersey finger (FDP avulsion rupture), extensor tendinopathies (e.g. EDC tendinopathy), thumb injuries (e.g. thumb UCL injury / gamekeeper’s thumb / skier’s thumb), early osteoarthritis.
+            </p>
+
+            <p>
+                INJURIES THAT ARE INCLUDED IN THIS TOOL: Pulley injuries, flexor tenosynovitis, flexor digitorum profundus (FDP) injuries, lumbrical injuries, joint capsulitis, collateral ligament injuries, some nerve-related issues, some cyst-related issues, injury-induced pulley thickening, volar plate injuries, flexor digitorum superficialis (FDS) insertional tendinopathy, FDP insertional tendinopathy, lateral band syndrome.
+            </p>
+
+            <p>
                 ACKNOWLEDGEMENT: By proceeding, you confirm that you have read, understood, and agree to the terms above. If you do not agree or cannot comply, you must not continue.
             </p>
 

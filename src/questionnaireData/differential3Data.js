@@ -32,7 +32,7 @@ export const DIFFERENTIAL_3_DATA = {
     },
     rangeOfMotion: {
         id: "rangeOfMotion",
-        text: "What are your active range of motion results?",
+        text: "How does the three-position active range of motion test affect your injury?",
         video: "https://www.youtube.com/embed/Yt2Se3OJYaw?si=BhWcYjR5G3V-jVZz&rel=0",
         photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/84930909-0843-4db5-829b-a2d82a766c07/Differential+3+-+Question+1+-+Hand+front.jpg?content-type=image%2Fjpeg"],
         answers: [

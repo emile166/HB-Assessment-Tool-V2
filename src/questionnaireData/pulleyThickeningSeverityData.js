@@ -18,7 +18,7 @@ export const PULLEY_THICKENING_SEVERITY_DATA = {
 
     tissueLoading: {
         id: "tissueLoading",
-        text: "What are your tissue loading test results?",
+        text: "How does the tissue loading test affect your injury?",
         video: "https://www.youtube.com/embed/k2bWLsZJ8ig?si=Hx3WXKiIl6oFgHn9&rel=0",
         photos: [
             "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/fc1fc205-0903-4f84-94f8-970dc0bf0355/Grip+Position+Collage.jpg?content-type=image%2Fjpeg"

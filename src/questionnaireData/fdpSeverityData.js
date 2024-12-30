@@ -30,7 +30,7 @@ export const FDP_SEVERITY_DATA = {
 
     aromFist: {
         id: "aromFist",
-        text: "What are your active range of motion test results?",
+        text: "How does the active range of motion fist test affect your injury?",
         video: "https://www.youtube.com/embed/zGtvBrrVJ5Y?si=ONO0PvkCC3o6iG_u&rel=0",
         photos: [],
         answers: [
@@ -45,7 +45,7 @@ export const FDP_SEVERITY_DATA = {
 
     passiveRangeOfMotion: {
         id: "passiveRangeOfMotion",
-        text: "What are your passive range of motion test results?",
+        text: "How does the passive range of motion test affect your injury?",
         video: "https://www.youtube.com/embed/1xSnQe2VqyY?si=aGogvO9cahw1oloE&rel=0",
         photos: [],
         answers: [
@@ -98,7 +98,7 @@ export const FDP_SEVERITY_DATA = {
 
     tissueLoadingDrag: {
         id: "tissueLoadingDrag",
-        text: "What are your tissue loading test results for the drag position?",
+        text: "How does the drag tissue loading test affect your injury?",
         video: "https://www.youtube.com/embed/5ZZ6c4tValQ?si=fhO4sK0_uBc763Fd&rel=0",
         photos: [
             "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/fc1fc205-0903-4f84-94f8-970dc0bf0355/Grip+Position+Collage.jpg?content-type=image%2Fjpeg"
@@ -115,7 +115,7 @@ export const FDP_SEVERITY_DATA = {
 
     tissueLoadingIsolatedDrag: {
         id: "tissueLoadingIsolatedDrag",
-        text: "What are your tissue loading test results for the isolated drag position?",
+        text: "How does the isolated drag tissue loading test affect your injury?",
         video: "https://www.youtube.com/embed/zLrHn0JNw4g?si=L8bLxBRW9YGKpqwz&rel=0",
         photos: [],
         answers: [

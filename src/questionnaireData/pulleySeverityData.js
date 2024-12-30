@@ -127,7 +127,7 @@ export const PULLEY_SEVERITY_DATA = {
 
     aromFist: {
         id: "aromFist",
-        text: "What are your active range of motion test results while making a fist?",
+        text: "How does the active range of motion fist test affect your injury?",
         video: "https://www.youtube.com/embed/zGtvBrrVJ5Y?si=lXZI6ljJlG7UydJ4&rel=0",
         photos: [],
         answers: [
@@ -142,7 +142,7 @@ export const PULLEY_SEVERITY_DATA = {
 
     tissueLoadingDrag: {
         id: "tissueLoadingDrag",
-        text: "What are your tissue loading test results while in a drag position?",
+        text: "How does the drag tissue loading test affect your injury?",
         video: "https://www.youtube.com/embed/5ZZ6c4tValQ?si=YrWInZhC6zj27CVy&rel=0",
         photos: [
             "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/84930909-0843-4db5-829b-a2d82a766c07/Differential+3+-+Question+1+-+Hand+front.jpg?content-type=image%2Fjpeg",
@@ -163,7 +163,7 @@ export const PULLEY_SEVERITY_DATA = {
 
     tissueLoadingHalfCrimp: {
         id: "tissueLoadingHalfCrimp",
-        text: "What are your tissue loading test results while in a half crimp position?",
+        text: "How does the half crimp tissue loading test affect your injury?",
         video: "",
         photos: [
             "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/ea2f9146-c934-430e-9368-3556dabd71bc/Pulley+Severity+-+Question+7+-+Hand+front.jpg?content-type=image%2Fjpeg",
@@ -210,7 +210,7 @@ export const PULLEY_SEVERITY_DATA = {
 
     tissueLoadingFullCrimp: {
         id: "tissueLoadingFullCrimp",
-        text: "What are your tissue loading test results while in a full crimp position?",
+        text: "How does the full crimp tissue loading test affect your injury?",
         video: "",
         photos: [
             "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/ea2f9146-c934-430e-9368-3556dabd71bc/Pulley+Severity+-+Question+7+-+Hand+front.jpg?content-type=image%2Fjpeg",

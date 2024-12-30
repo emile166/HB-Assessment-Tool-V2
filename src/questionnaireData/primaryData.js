@@ -521,7 +521,7 @@ export const PRIMARY_DATA = {
 
   aromPositionOne: {
     id: "aromPositionOne",
-    text: "What are your active range of motion test results in position ONE?",
+    text: "How does the active range of motion test in position ONE affect your injury?",
     video: "https://www.youtube.com/embed/eA_kX6UgSGM?si=YjE9D3WaXRpfBzPq&rel=0",
     photos: [
       "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/574f61b7-d74e-4802-9149-3607c6146b99/Primary+-+Question+12+-+.jpg?content-type=image%2Fjpeg",
@@ -542,7 +542,7 @@ export const PRIMARY_DATA = {
 
   aromPositionTwo: {
     id: "aromPositionTwo",
-    text: "What are your active range of motion test results in position TWO?",
+    text: "How does the active range of motion test in position TWO affect your injury?",
     video: "",
     photos: [
       "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/574f61b7-d74e-4802-9149-3607c6146b99/Primary+-+Question+12+-+.jpg?content-type=image%2Fjpeg",
@@ -573,7 +573,7 @@ export const PRIMARY_DATA = {
 
   aromPositionThree: {
     id: "aromPositionThree",
-    text: "What are your active range of motion test results in position THREE?",
+    text: "How does the active range of motion test in position THREE affect your injury?",
     video: "",
     photos: [
       "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/574f61b7-d74e-4802-9149-3607c6146b99/Primary+-+Question+12+-+.jpg?content-type=image%2Fjpeg",
@@ -609,7 +609,7 @@ export const PRIMARY_DATA = {
 
   tissueLoading: {
     id: "tissueLoading",
-    text: "What are your tissue loading test results?",
+    text: "How do the tissue loading tests affect your injury?",
     video: "https://www.youtube.com/embed/rp4dtyvE66s?si=36FLvMGt7nwDMv2J&rel=0",
     photos: [
       "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/574f61b7-d74e-4802-9149-3607c6146b99/Primary+-+Question+12+-+.jpg?content-type=image%2Fjpeg",
@@ -633,7 +633,7 @@ export const PRIMARY_DATA = {
 
   passiveExtension: {
     id: "passiveExtension",
-    text: "What are your passive joint extension test results?",
+    text: "How does the passive joint extension test affect your injury?",
     video: "https://www.youtube.com/embed/3Rl9B-5DlQ8?si=iNlhu5Hpg4oDyOdN&rel=0",
     photos: [
       "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/d3894a14-38ad-46e9-a939-92ab9c5b7264/PIP+and+DIP+Joints.jpg?content-type=image%2Fjpeg",

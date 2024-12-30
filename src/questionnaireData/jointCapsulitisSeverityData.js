@@ -1,7 +1,7 @@
 export const JOINT_CAPSULITIS_SEVERITY_DATA = {
     aromFist: {
         id: "aromFist",
-        text: "What are your active range of motion test results when making a tight fist?",
+        text: "How does the active range of motion fist test affect your injury?",
         video: "https://www.youtube.com/embed/Z9BT8RdYkZE?si=tYbSG3Swaa8o09DA&rel=0",
         photos: [],
         answers: [
@@ -15,7 +15,7 @@ export const JOINT_CAPSULITIS_SEVERITY_DATA = {
 
     aromFullFlexion: {
         id: "aromFullFlexion",
-        text: "What are your active range of motion test results when performing full flexion?",
+        text: "How does the full flexion active range of motion test affect your injury?",
         video: "https://www.youtube.com/embed/202D9iemtPc?si=7MPCUsLnRrtGPHQB&rel=0",
         photos: [],
         answers: [

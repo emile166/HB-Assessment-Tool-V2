@@ -42,7 +42,7 @@ export const DIFFERENTIAL_2_DATA = {
             { id: "lateralStressTestAnswer3", text: "Yes, discomfort/pain in only the *DIP* joint on the *opposite* side I was pressing on", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "lateralStressTestAnswer4", text: "Yes, some there is some joint laxity", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 2, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "lateralStressTestAnswer5", text: "No discomfort/pain", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "lateralStressTestAnswer6", text: "No joint laxity", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
+            { id: "lateralStressTestAnswer6", text: "No joint laxity", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: -1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
         ],
         multiple: true,
         conditions: [
@@ -63,7 +63,7 @@ export const DIFFERENTIAL_2_DATA = {
 
     passiveJointExtension: {
         id: "passiveJointExtension",
-        text: "What are your passive joint extension test results?",
+        text: "How does the passive joint extension test affect your injury?",
         video: "https://www.youtube.com/embed/GZ9sik4b8OM?si=lfj7_6IV6L1qi5Dt&rel=0",
         photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/d3894a14-38ad-46e9-a939-92ab9c5b7264/PIP+and+DIP+Joints.jpg?content-type=image%2Fjpeg"],
         answers: [
@@ -76,7 +76,7 @@ export const DIFFERENTIAL_2_DATA = {
 
     activeRangeOfMotion: {
         id: "activeRangeOfMotion",
-        text: "What are your active range of motion test results?",
+        text: "How does the active range of motion test affect your injury?",
         video: "https://www.youtube.com/embed/CnnJEIPOS_Y?si=Yk5WXTgLhCmKjA0F&rel=0",
         photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/d3894a14-38ad-46e9-a939-92ab9c5b7264/PIP+and+DIP+Joints.jpg?content-type=image%2Fjpeg"],
         answers: [
@@ -84,7 +84,7 @@ export const DIFFERENTIAL_2_DATA = {
             { id: "activeRangeOfMotionAnswer2", text: "One or more of the positions felt stiff or limited in ROM, but none of them had discomfort/pain or a click/catch", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "activeRangeOfMotionAnswer3", text: "One or more of the positions had discomfort/pain or stiffness on the back side of the DIP or PIP joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "activeRangeOfMotionAnswer4", text: "Within the first week of injury: *only* position 3 has limited ROM and discomfort/pain on *only* one side of the PIP or DIP joint (with no clicking or catching sensation)", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "activeRangeOfMotionAnswer5", text: "No pain, clicking, catching, or limitations in my range of motion associated with my injury", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: -1, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "activeRangeOfMotionAnswer5", text: "No pain, clicking, catching, or limitations in my range of motion associated with my injury", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: -1, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
             { id: "activeRangeOfMotionAnswer6", text: "None of these options apply to me", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
         ],
         multiple: false,

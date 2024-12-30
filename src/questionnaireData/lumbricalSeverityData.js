@@ -31,7 +31,7 @@ export const LUMBRICAL_SEVERITY_DATA = {
 
     aromPositionOne: {
         id: "aromPositionOne",
-        text: "What are your active range of motion test results in position one?",
+        text: "How does the active range of motion test in position ONE affect your injury?",
         video: "https://www.youtube.com/embed/HEZNgSTYbbM?si=VtdtWMnjR_XB123m&rel=0",
         photos: [],
         answers: [
@@ -48,7 +48,7 @@ export const LUMBRICAL_SEVERITY_DATA = {
 
     promFourFingers: {
         id: "promFourFingers",
-        text: "What are your passive range of motion test results with four fingers?",
+        text: "How does the four-finger passive range of motion test affect your injury?",
         video: "https://www.youtube.com/embed/Vuy8zEPKPcE?si=Dz59tm6bW0uG0TN4&rel=0",
         photos: [],
         answers: [
@@ -62,7 +62,7 @@ export const LUMBRICAL_SEVERITY_DATA = {
 
     promIsolatedFingers: {
         id: "promIsolatedFingers",
-        text: "What are your passive range of motion test results with isolated fingers?",
+        text: "How does the isolated-finger passive range of motion test affect your injury?",
         video: "https://www.youtube.com/embed/tpZVaTbIps0?si=elk05l7dih-AelKT&rel=0",
         photos: [],
         answers: [
@@ -89,7 +89,7 @@ export const LUMBRICAL_SEVERITY_DATA = {
 
     tissueLoadingIsolatedDrag: {
         id: "tissueLoadingIsolatedDrag",
-        text: "What are your tissue loading test results while the affected finger(s) are in a drag position and the adjacent fingers are curled?",
+        text: "How does the drag tissue loading test (with adjacent fingers curled) affect your injury?",
         video: "https://www.youtube.com/embed/zLrHn0JNw4g?si=Sqhtk0YFZB8QknQh&rel=0",
         photos: [],
         answers: [

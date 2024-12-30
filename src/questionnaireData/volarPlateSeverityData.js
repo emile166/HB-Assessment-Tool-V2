@@ -44,7 +44,7 @@ export const VOLAR_PLATE_SEVERITY_DATA = {
 
     jointHyperextension: {
         id: "jointHyperextension",
-        text: "What are your joint hyperextension test results?",
+        text: "How does the joint hyperextension test affect your injury?",
         video: "",
         photos: [],
         answers: [
@@ -59,7 +59,7 @@ export const VOLAR_PLATE_SEVERITY_DATA = {
 
     tissueLoadingHalfCrimp: {
         id: "tissueLoadingHalfCrimp",
-        text: "What are your tissue loading test results while in a half crimp position?",
+        text: "How does the half crimp tissue loading test affect your injury?",
         video: "",
         photos: [],
         answers: [
@@ -73,7 +73,7 @@ export const VOLAR_PLATE_SEVERITY_DATA = {
 
     tissueLoadingFullCrimp: {
         id: "tissueLoadingFullCrimp",
-        text: "What are your tissue loading test results while in a full crimp position?",
+        text: "How does the full crimp tissue loading test affect your injury??",
         video: "",
         photos: [],
         answers: [
