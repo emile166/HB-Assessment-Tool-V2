@@ -300,7 +300,7 @@ export const PRIMARY_DATA = {
 
   painLocation: {
     id: "painLocation",
-    text: "Where is the discomfort/pain? (Use reference image below.)",
+    text: "Where is the discomfort/pain? (Use reference image below and do your best to be as specific as possible.)",
     video: "https://www.youtube.com/embed/MCm8URGtAvQ?si=Epro0Sv3N9AB9p1m&rel=0",
     photos: [
       "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/3c82cebc-74c6-448d-8cbf-1dc7fa4f923e/Primary+-+Question+5+-+Finger+front.jpg?content-type=image%2Fjpeg",
@@ -310,14 +310,14 @@ export const PRIMARY_DATA = {
       "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/ea4c76b1-14f4-4681-be30-9c52f069279e/Primary+-+Question+5+-+Finger+left.jpg?content-type=image%2Fjpeg"
     ],
     answers: [
-      { id: "painLocationAnswer1", text: "1. A2: distal region", scores: { A: 1, B: 1, C: 0, D: 0, E: -1, F: 0, G: -1, H: 0, I: 0, J: 1, K: 0, L: -2, M: -5, N: -5 } },
-      { id: "painLocationAnswer2", text: "2. A4: distal region", scores: { A: 1, B: 1, C: 0, D: 0, E: -1, F: 0, G: -1, H: 0, I: 0, J: 0, K: 0, L: -1, M: -2, N: -5 } },
-      { id: "painLocationAnswer3", text: "3. A4: proximal region", scores: { A: 1, B: 1, C: 0, D: 0, E: -1, F: 0, G: -1, H: 1, I: 1, J: 1, K: 0, L: 1, M: -1, N: -1 } },
+      { id: "painLocationAnswer1", text: "1. A2 pulley: distal region", scores: { A: 1, B: 1, C: 0, D: 0, E: -1, F: 0, G: -1, H: 0, I: 0, J: 1, K: 0, L: -2, M: -5, N: -5 } },
+      { id: "painLocationAnswer2", text: "2. A4 pulley: distal region", scores: { A: 1, B: 1, C: 0, D: 0, E: -1, F: 0, G: -1, H: 0, I: 0, J: 0, K: 0, L: -1, M: -2, N: -5 } },
+      { id: "painLocationAnswer3", text: "3. A4 pulley: proximal region", scores: { A: 1, B: 1, C: 0, D: 0, E: -1, F: 0, G: -1, H: 1, I: 1, J: 1, K: 0, L: 1, M: -1, N: -1 } },
       { id: "painLocationAnswer4", text: "4. DIP volar plate region", scores: { A: -2, B: -2, C: 0, D: 0, E: -1, F: 0, G: -1, H: 0, I: 0, J: -2, K: 1, L: -3, M: 0, N: -1 } },
-      { id: "painLocationAnswer5", text: "5. A2 or A4: directly over the pulley", scores: { A: 0, B: 1, C: 1, D: 0, E: -1, F: -1, G: -1, H: 1, I: 1, J: 1, K: -1, L: 0, M: -1, N: -1 } },
-      { id: "painLocationAnswer6", text: "6. A3: directly over the pulley", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 1, G: -1, H: 0, I: 0, J: 0, K: 0, L: 0, M: -2, N: -2 } },
-      { id: "painLocationAnswer7", text: "7. A2 or A4: left and/or right side of the pulley", scores: { A: -1, B: 1, C: 1, D: -1, E: 0, F: -1, G: 0, H: 1, I: 1, J: 1, K: -2, L: 0, M: -2, N: 0 } },
-      { id: "painLocationAnswer8", text: "8. A5 region: base of the distal phalanx", scores: { A: -2, B: -2, C: 0, D: 1, E: 0, F: 0, G: -1, H: 0, I: 0, J: -2, K: 0, L: -2, M: 1, N: -2 } },
+      { id: "painLocationAnswer5", text: "5. A2 or A4 pulley: directly over the pulley", scores: { A: 0, B: 1, C: 1, D: 0, E: -1, F: -1, G: -1, H: 1, I: 1, J: 1, K: -1, L: 0, M: -1, N: -1 } },
+      { id: "painLocationAnswer6", text: "6. A3 pulley: directly over the pulley", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 1, G: -1, H: 0, I: 0, J: 0, K: 0, L: 0, M: -2, N: -2 } },
+      { id: "painLocationAnswer7", text: "7. A2 or A4 pulley: left and/or right side of the pulley", scores: { A: -1, B: 1, C: 1, D: -1, E: 0, F: -1, G: 0, H: 1, I: 1, J: 1, K: -2, L: 0, M: -2, N: 0 } },
+      { id: "painLocationAnswer8", text: "8. A5 pulley region: base of the distal phalanx", scores: { A: -2, B: -2, C: 0, D: 1, E: 0, F: 0, G: -1, H: 0, I: 0, J: -2, K: 0, L: -2, M: 1, N: -2 } },
       { id: "painLocationAnswer9", text: "9. Finger flexor muscle body or musculotendinous junction", scores: { A: 0, B: 0, C: 0, D: 2, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
       { id: "painLocationAnswer10", text: "10. Palm (possibly traveling to finger and/or wrist)", scores: { A: 0, B: 0, C: 0, D: 0, E: 2, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
       { id: "painLocationAnswer11", text: "11. PIP or DIP joint: back side of the joint", scores: { A: -2, B: -2, C: -2, D: -2, E: 0, F: 1, G: 0, H: 0, I: -2, J: -2, K: 0, L: -2, M: -2, N: 0 } },

@@ -16,7 +16,7 @@ export const FDP_SEVERITY_DATA = {
 
     injuryDiscoloration: {
         id: "injuryDiscoloration",
-        text: "Has there been any discoloration in your finger or forearm associated with the injury",
+        text: "Has there been any discoloration in your finger or forearm associated with the injury?",
         video: "https://www.youtube.com/embed/ZeESVjF9MDk?si=KpZNAiAc5VKC861-&rel=0",
         photos: [],
         answers: [
