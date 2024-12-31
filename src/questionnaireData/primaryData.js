@@ -322,8 +322,8 @@ export const PRIMARY_DATA = {
       { id: "painLocationAnswer10", text: "10. Palm (possibly traveling to finger and/or wrist)", scores: { A: 0, B: 0, C: 0, D: 0, E: 2, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
       { id: "painLocationAnswer11", text: "11. PIP or DIP joint: back side of the joint", scores: { A: -2, B: -2, C: -2, D: -2, E: 0, F: 1, G: 0, H: 0, I: -2, J: -2, K: 0, L: -2, M: -2, N: 0 } },
       { id: "painLocationAnswer12", text: "12. PIP or DIP joint: both sides (left and right) of the joint", scores: { A: 0, B: 0, C: -2, D: -2, E: 0, F: 1, G: 0, H: 0, I: -2, J: -2, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "painLocationAnswer13", text: "13. DIP joint: left or right side (not both) of the joint and nowhere else", scores: { A: -1, B: -1, C: -1, D: 0, E: -1, F: 1, G: 1, H: 0, I: -1, J: -1, K: 0, L: 0, M: -1, N: 0 } },
-      { id: "painLocationAnswer14", text: "14. PIP joint: left or right side (not both) of the joint and nowhere else", scores: { A: 0, B: 0, C: 0, D: -1, E: 0, F: 1, G: 1, H: 0, I: -1, J: -1, K: 0, L: 0, M: -1, N: 1 } },
+      { id: "painLocationAnswer13", text: "13. DIP joint: left or right side (not both) of the joint", scores: { A: -1, B: -1, C: -1, D: 0, E: -1, F: 1, G: 1, H: 0, I: -1, J: -1, K: 0, L: 0, M: -1, N: 0 } },
+      { id: "painLocationAnswer14", text: "14. PIP joint: left or right side (not both) of the joint", scores: { A: 0, B: 0, C: 0, D: -1, E: 0, F: 1, G: 1, H: 0, I: -1, J: -1, K: 0, L: 0, M: -1, N: 1 } },
       { id: "painLocationAnswer15", text: "15. *Both* the PIP and DIP joint: left or right side (not both) of the two joints", scores: { A: -2, B: -2, C: -1, D: -1, E: 0, F: 1, G: 0, H: 0, I: -2, J: -2, K: 0, L: -2, M: -2, N: 0 } },
       { id: "painLocationAnswer16", text: "16. Hard to pinpoint, but only in my finger", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 1, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
     ],
@@ -444,7 +444,7 @@ export const PRIMARY_DATA = {
       { id: "injurySwellingAnswer3", text: "PIP or DIP joint: swelling or enlargement around the entire joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
       { id: "injurySwellingAnswer4", text: "Finger: swelling that is not isolated to the PIP or DIP joints", scores: { A: 0, B: 1, C: 0, D: 1, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
       { id: "injurySwellingAnswer5", text: "Palm: some swelling", scores: { A: 0, B: 0, C: 0, D: 0, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "injurySwellingAnswer6", text: "DIP joint: swelling isolated to the palm side of the joint and nowhere else", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
+      { id: "injurySwellingAnswer6", text: "DIP joint: swelling in the palm side of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
       { id: "injurySwellingAnswer7", text: "No", scores: { A: 1, B: 1, C: 1, D: 1, E: 1, F: 0, G: 1, H: 1, I: 1, J: 1, K: 1, L: 1, M: 1, N: 1 } },
       { id: "injurySwellingAnswer8", text: "None of these options apply to me, or I’m unsure", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
     ],
@@ -480,10 +480,10 @@ export const PRIMARY_DATA = {
       "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/cf08cf06-d9ca-4008-9ec0-aa988cb3a762/Primary+-+Question+5+-+Finger+right.jpg?content-type=image%2Fjpeg"
     ],
     answers: [
-      { id: "injuryDiscolorationAnswer1", text: "PIP or DIP joint: discoloration in the left or right side (not both)", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "injuryDiscolorationAnswer2", text: "PIP joint: discoloration in the left or right side (not both) and nowhere else", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
+      { id: "injuryDiscolorationAnswer1", text: "DIP joint: discoloration in the left or right side (not both) of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "injuryDiscolorationAnswer2", text: "PIP joint: discoloration in the left or right side (not both) of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
       { id: "injuryDiscolorationAnswer3", text: "PIP or DIP joint: redness in the back side of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "injuryDiscolorationAnswer4", text: "DIP joint: bruise-like discoloration on the palm side of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
+      { id: "injuryDiscolorationAnswer4", text: "DIP joint: bruise-like discoloration in the palm side of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
       { id: "injuryDiscolorationAnswer5", text: "Palm: some bruise-like discoloration", scores: { A: 0, B: 0, C: 0, D: 0, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
       { id: "injuryDiscolorationAnswer6", text: "Forearm or distal phalanx: some bruise-like discoloration", scores: { A: 0, B: 0, C: 0, D: 1, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
       { id: "injuryDiscolorationAnswer7", text: "A2-A4 region: some bruise-like discoloration", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -533,7 +533,7 @@ export const PRIMARY_DATA = {
       { id: "aromPositionOneAnswer3", text: "Forearm: some discomfort/pain", scores: { A: 0, B: 0, C: 0, D: 1, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
       { id: "aromPositionOneAnswer4", text: "Palm: some discomfort/pain", scores: { A: 0, B: 0, C: 0, D: 0, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
       { id: "aromPositionOneAnswer5", text: "A1-A4 region: some discomfort/pain", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "aromPositionOneAnswer6", text: "DIP joint: discomfort/pain in the palm side of the joint and nowhere else", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
+      { id: "aromPositionOneAnswer6", text: "DIP joint: discomfort/pain isolated to the palm side of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
       { id: "aromPositionOneAnswer2", text: "Normal range of motion, no discomfort/pain, and no stiffness associated with my injury", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
     ],
     multiple: true,
@@ -589,7 +589,7 @@ export const PRIMARY_DATA = {
       { id: "aromPositionThreeAnswer5", text: "A1-A4 region: some discomfort/pain", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
       { id: "aromPositionThreeAnswer6", text: "PIP joint: discomfort/pain in the left or right side (not both) of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
       { id: "aromPositionThreeAnswer7", text: "DIP joint: discomfort/pain in the left or right side (not both) of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "aromPositionThreeAnswer8", text: "DIP joint: discomfort/pain in the palm side of the joint and nowhere else", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
+      { id: "aromPositionThreeAnswer8", text: "DIP joint: discomfort/pain in the palm side of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
       { id: "aromPositionThreeAnswer9", text: "PIP or DIP joint: some stiffness or discomfort/pain in (or diffusing from) the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
       { id: "aromPositionThreeAnswer10", text: "Limited range of motion but no discomfort/pain", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
       { id: "aromPositionThreeAnswer2", text: "Normal range of motion, no discomfort/pain, and no stiffness associated with my injury", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
