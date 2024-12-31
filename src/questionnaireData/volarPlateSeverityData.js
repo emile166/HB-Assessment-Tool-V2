@@ -108,14 +108,6 @@ export const VOLAR_PLATE_SEVERITY_DATA = {
         conditions: [
             {
                 if: {
-                    questionId: "tissueLoadingHalfCrimp",
-                    selectedAnswers: ["tissueLoadingHalfCrimpAnswer1"],
-                    match: "any"
-                },
-                action: "skip"
-            },
-            {
-                if: {
                     questionId: "tissueLoadingFullCrimp",
                     selectedAnswers: ["tissueLoadingFullCrimpAnswer1"],
                     match: "any"
