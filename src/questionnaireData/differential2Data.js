@@ -78,7 +78,10 @@ export const DIFFERENTIAL_2_DATA = {
         id: "activeRangeOfMotion",
         text: "How does the active range of motion test affect your injury?",
         video: "https://www.youtube.com/embed/CnnJEIPOS_Y?si=Yk5WXTgLhCmKjA0F&rel=0",
-        photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/d3894a14-38ad-46e9-a939-92ab9c5b7264/PIP+and+DIP+Joints.jpg?content-type=image%2Fjpeg"],
+        photos: [
+            "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/d3894a14-38ad-46e9-a939-92ab9c5b7264/PIP+and+DIP+Joints.jpg?content-type=image%2Fjpeg",
+            "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/abcae28f-fda8-49c0-bccc-281887fc2684/AROM+All+Positions+In+Grid.jpg?content-type=image%2Fjpeg"
+        ],
         answers: [
             { id: "activeRangeOfMotionAnswer1", text: "PIP joint: clicking/catching sensation on one side of (or diffusing from) the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
             { id: "activeRangeOfMotionAnswer2", text: "One or more of the positions felt stiff or limited in ROM, but none of them had discomfort/pain or a click/catch", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },

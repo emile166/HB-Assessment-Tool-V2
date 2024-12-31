@@ -164,7 +164,7 @@ export const PULLEY_SEVERITY_DATA = {
     tissueLoadingHalfCrimp: {
         id: "tissueLoadingHalfCrimp",
         text: "How does the half crimp tissue loading test affect your injury?",
-        video: "",
+        video: "https://www.youtube.com/embed/ASRXkYIxZtg?si=r7Bsf3USCTZcxECm&rel=0",
         photos: [
             "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/53278a96-42f2-4f38-b71a-d705a83ef15f/Pulley+Severity+-+Question+7+-+Hand+front.jpg?content-type=image%2Fjpeg",
             "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/fc1fc205-0903-4f84-94f8-970dc0bf0355/Grip+Position+Collage.jpg?content-type=image%2Fjpeg"
@@ -211,7 +211,7 @@ export const PULLEY_SEVERITY_DATA = {
     tissueLoadingFullCrimp: {
         id: "tissueLoadingFullCrimp",
         text: "How does the full crimp tissue loading test affect your injury?",
-        video: "",
+        video: "https://www.youtube.com/embed/VgzFxUQxSPM?si=3W3BIyoMsxrMz9YB&rel=0",
         photos: [
             "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/53278a96-42f2-4f38-b71a-d705a83ef15f/Pulley+Severity+-+Question+7+-+Hand+front.jpg?content-type=image%2Fjpeg",
             "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/fc1fc205-0903-4f84-94f8-970dc0bf0355/Grip+Position+Collage.jpg?content-type=image%2Fjpeg"

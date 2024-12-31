@@ -33,7 +33,9 @@ export const LUMBRICAL_SEVERITY_DATA = {
         id: "aromPositionOne",
         text: "How does the active range of motion test in position ONE affect your injury?",
         video: "https://www.youtube.com/embed/HEZNgSTYbbM?si=VtdtWMnjR_XB123m&rel=0",
-        photos: [],
+        photos: [
+            "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/abcae28f-fda8-49c0-bccc-281887fc2684/AROM+All+Positions+In+Grid.jpg?content-type=image%2Fjpeg"
+        ],
         answers: [
             { id: "aromPositionOneAnswer1", text: "Discomfort/pain in my palm when getting into the test position", scores: { A: -1, B: 1, C: 2, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "aromPositionOneAnswer2", text: "Discomfort/pain in my palm starts with minimal (1-2 out of 10) force", scores: { A: -1, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },

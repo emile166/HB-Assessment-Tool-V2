@@ -34,7 +34,10 @@ export const DIFFERENTIAL_3_DATA = {
         id: "rangeOfMotion",
         text: "How does the three-position active range of motion test affect your injury?",
         video: "https://www.youtube.com/embed/Yt2Se3OJYaw?si=BhWcYjR5G3V-jVZz&rel=0",
-        photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/84930909-0843-4db5-829b-a2d82a766c07/Differential+3+-+Question+1+-+Hand+front.jpg?content-type=image%2Fjpeg"],
+        photos: [
+            "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/84930909-0843-4db5-829b-a2d82a766c07/Differential+3+-+Question+1+-+Hand+front.jpg?content-type=image%2Fjpeg",
+            "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/abcae28f-fda8-49c0-bccc-281887fc2684/AROM+All+Positions+In+Grid.jpg?content-type=image%2Fjpeg"
+        ],
         answers: [
             { id: "rangeOfMotionAnswer1", text: "Discomfort/pain in the A2, A3, or A4 region", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "rangeOfMotionAnswer2", text: "Discomfort/pain in my forearm", scores: { A: 0, B: 0, C: 0, D: 1, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },

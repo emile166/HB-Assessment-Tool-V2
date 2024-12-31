@@ -17,7 +17,7 @@ export const VOLAR_PLATE_SEVERITY_DATA = {
     obviousSound: {
         id: "obviousSound",
         text: "Was there an obvious sound associated with the onset of the injury?",
-        video: "",
+        video: "https://www.youtube.com/embed/Dtlqa1LMW7w?si=gh-S3Q68KNLT33vt&rel=0",
         photos: [],
         answers: [
             { id: "obviousSoundAnswer1", text: "Yes, there was a loud audible pop (loud enough for bystanders to hear)", scores: { A: -1, B: 0, C: 2, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -32,7 +32,7 @@ export const VOLAR_PLATE_SEVERITY_DATA = {
     injuryDiscoloration: {
         id: "injuryDiscoloration",
         text: "Has there been any discoloration associated with the injury?",
-        video: "",
+        video: "https://www.youtube.com/embed/ZeESVjF9MDk?si=-2G55ZmUuzK6qn_7&rel=0",
         photos: [],
         answers: [
             { id: "injuryDiscolorationAnswer1", text: "Yes, on the palm side of the joint", scores: { A: -1, B: 1, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -45,7 +45,7 @@ export const VOLAR_PLATE_SEVERITY_DATA = {
     jointHyperextension: {
         id: "jointHyperextension",
         text: "How does the joint hyperextension test affect your injury?",
-        video: "",
+        video: "https://www.youtube.com/embed/wkYO2K7qjHM?si=Tzo5S1Jt0P6FvU3r&rel=0",
         photos: [],
         answers: [
             { id: "jointHyperextensionAnswer1", text: "Discomfort/pain on the palm side of my joint but no increase in mobility", scores: { A: 1, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -60,7 +60,7 @@ export const VOLAR_PLATE_SEVERITY_DATA = {
     tissueLoadingHalfCrimp: {
         id: "tissueLoadingHalfCrimp",
         text: "How does the half crimp tissue loading test affect your injury?",
-        video: "",
+        video: "https://www.youtube.com/embed/c3kQq6uD-sA?si=fDWyj46MzdboqXYq&rel=0",
         photos: [],
         answers: [
             { id: "tissueLoadingHalfCrimpAnswer1", text: "No discomfort/pain associated with my injury", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -74,7 +74,7 @@ export const VOLAR_PLATE_SEVERITY_DATA = {
     tissueLoadingFullCrimp: {
         id: "tissueLoadingFullCrimp",
         text: "How does the full crimp tissue loading test affect your injury??",
-        video: "",
+        video: "https://www.youtube.com/embed/VgzFxUQxSPM?si=Wt0_UFu2hEBZ_Nt7&rel=0",
         photos: [],
         answers: [
             { id: "tissueLoadingFullCrimpAnswer1", text: "No discomfort/pain associated with my injury", scores: { A: 1, B: -1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },

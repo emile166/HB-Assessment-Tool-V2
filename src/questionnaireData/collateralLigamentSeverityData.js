@@ -50,7 +50,9 @@ export const COLLATERAL_LIGAMENT_SEVERITY_DATA = {
         id: "aromPositionThree",
         text: "How does the active range of motion test in position THREE affect your injury?",
         video: "https://www.youtube.com/embed/MhX8rMs08wo?si=2yJQQgcViIBKUOxl&rel=0",
-        photos: [],
+        photos: [
+            "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/abcae28f-fda8-49c0-bccc-281887fc2684/AROM+All+Positions+In+Grid.jpg?content-type=image%2Fjpeg"
+        ],
         answers: [
             { id: "aromPositionThreeAnswer1", text: "Normal range of motion and no discomfort/pain associated with my injury", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "aromPositionThreeAnswer2", text: "Normal range of motion but some discomfort/pain associated with my injury", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
