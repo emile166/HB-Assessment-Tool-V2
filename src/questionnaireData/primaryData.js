@@ -645,7 +645,7 @@ export const PRIMARY_DATA = {
     answers: [
       { id: "passiveExtensionAnswer1", text: "PIP or DIP joint: discomfort/pain on the palm side of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 2, L: 0, M: 0, N: 0 } },
       { id: "passiveExtensionAnswer2", text: "PIP or DIP joint: more mobility than usual", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 2, L: 0, M: 0, N: 0 } },
-      { id: "passiveExtensionAnswer3", text: "PIP joint: discomfort/pain on the back side of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: -1, L: 0, M: 0, N: 0 } },
+      { id: "passiveExtensionAnswer3", text: "PIP or DIP joint: discomfort/pain on the back side of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: -1, L: 0, M: 0, N: 0 } },
       { id: "passiveExtensionAnswer4", text: "None of these options apply to me", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: -1, L: 0, M: 0, N: 0 } }
     ],
     multiple: true,
