@@ -45,7 +45,7 @@ function Dashboard({ onSelectQuestionnaire }) {
               <li>Read ALL answers before selecting one (some questions allow multiple answers).</li>
               <li>Only select answers that are relevant to the injury you’re assessing. (If a test causes completely unrelated symptoms, don't put that in your answers.)</li>
               <li>Start with the primary assessment unless otherwise instructed.</li>
-              <li>Complete all applicable assessments in the one sitting (typically 20-40 minutes in total).</li>
+              <li>Complete all applicable assessments in the one sitting (typically 2-3 assessments requiring 20-40 minutes in total).</li>
               <li>Do not close the tab or refresh the page between assessments.</li>
               <li>Follow test instructions carefully. Improper testing = inaccurate results.</li>
             </ol>

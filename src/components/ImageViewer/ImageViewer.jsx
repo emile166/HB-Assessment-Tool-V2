@@ -54,7 +54,7 @@ function ImageViewer({ imageUrls }) {
 
   return (
     <div className="mb-6 space-y-2">
-      <div className="border rounded-lg overflow-hidden bg-white">
+      <div className="border rounded-lg overflow-hidden bg-gray-100">
         <div className="relative w-full h-[400px]">
           <TransformWrapper
             initialScale={1}
