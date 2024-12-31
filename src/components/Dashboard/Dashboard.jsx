@@ -116,7 +116,7 @@ function Dashboard({ onSelectQuestionnaire }) {
           <Card className="p-4">
             <h2 className="text-lg mb-4">3. Severity Assessment</h2>
             <p className="text-sm text-gray-500 mb-4">
-              Typically the final assessment you'll need to take if instructed by a prior assessment or qualified professional. This will helps assess the severity of a specific injury, which is often essential for determining a recovery strategy.
+              Typically the final assessment you'll need to take if instructed by a prior assessment or qualified professional. This helps assess the severity of a specific injury, which is often essential for determining a recovery strategy.
             </p>
             <div className="space-y-4">
 
