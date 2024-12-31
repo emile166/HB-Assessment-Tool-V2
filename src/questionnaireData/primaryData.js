@@ -310,21 +310,21 @@ export const PRIMARY_DATA = {
       "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/ea4c76b1-14f4-4681-be30-9c52f069279e/Primary+-+Question+5+-+Finger+left.jpg?content-type=image%2Fjpeg"
     ],
     answers: [
-      { id: "painLocationAnswer1", text: "1. Distal region of A2 pulley", scores: { A: 1, B: 1, C: 0, D: 0, E: -1, F: 0, G: -1, H: 0, I: 0, J: 1, K: 0, L: -2, M: -5, N: -5 } },
-      { id: "painLocationAnswer2", text: "2. Distal region of A4 pulley", scores: { A: 1, B: 1, C: 0, D: 0, E: -1, F: 0, G: -1, H: 0, I: 0, J: 0, K: 0, L: -1, M: -2, N: -5 } },
-      { id: "painLocationAnswer3", text: "3. Proximal region of A4 pulley", scores: { A: 1, B: 1, C: 0, D: 0, E: -1, F: 0, G: -1, H: 1, I: 1, J: 1, K: 0, L: 1, M: -1, N: -1 } },
-      { id: "painLocationAnswer4", text: "4. In the DIP volar plate region", scores: { A: -2, B: -2, C: 0, D: 0, E: -1, F: 0, G: -1, H: 0, I: 0, J: -2, K: 1, L: -3, M: 0, N: -1 } },
-      { id: "painLocationAnswer5", text: "5. Directly over the A2 or A4 pulley", scores: { A: 0, B: 1, C: 1, D: 0, E: -1, F: -1, G: -1, H: 1, I: 1, J: 1, K: -1, L: 0, M: -1, N: -1 } },
-      { id: "painLocationAnswer6", text: "6. Directly over the A3 pulley", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 1, G: -1, H: 0, I: 0, J: 0, K: 0, L: 0, M: -2, N: -2 } },
-      { id: "painLocationAnswer7", text: "7. Sides of the A2 or A4 pulley region", scores: { A: -1, B: 1, C: 1, D: -1, E: 0, F: -1, G: 0, H: 1, I: 1, J: 1, K: -2, L: 0, M: -2, N: 0 } },
-      { id: "painLocationAnswer8", text: "8. Base of distal phalanx in the A5 region (palm side)", scores: { A: -2, B: -2, C: 0, D: 1, E: 0, F: 0, G: -1, H: 0, I: 0, J: -2, K: 0, L: -2, M: 1, N: -2 } },
+      { id: "painLocationAnswer1", text: "1. A2: distal region", scores: { A: 1, B: 1, C: 0, D: 0, E: -1, F: 0, G: -1, H: 0, I: 0, J: 1, K: 0, L: -2, M: -5, N: -5 } },
+      { id: "painLocationAnswer2", text: "2. A4: distal region", scores: { A: 1, B: 1, C: 0, D: 0, E: -1, F: 0, G: -1, H: 0, I: 0, J: 0, K: 0, L: -1, M: -2, N: -5 } },
+      { id: "painLocationAnswer3", text: "3. A4: proximal region", scores: { A: 1, B: 1, C: 0, D: 0, E: -1, F: 0, G: -1, H: 1, I: 1, J: 1, K: 0, L: 1, M: -1, N: -1 } },
+      { id: "painLocationAnswer4", text: "4. DIP volar plate region", scores: { A: -2, B: -2, C: 0, D: 0, E: -1, F: 0, G: -1, H: 0, I: 0, J: -2, K: 1, L: -3, M: 0, N: -1 } },
+      { id: "painLocationAnswer5", text: "5. A2 or A4: directly over the pulley", scores: { A: 0, B: 1, C: 1, D: 0, E: -1, F: -1, G: -1, H: 1, I: 1, J: 1, K: -1, L: 0, M: -1, N: -1 } },
+      { id: "painLocationAnswer6", text: "6. A3: directly over the pulley", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 1, G: -1, H: 0, I: 0, J: 0, K: 0, L: 0, M: -2, N: -2 } },
+      { id: "painLocationAnswer7", text: "7. A2 or A4: left and/or right side of the pulley", scores: { A: -1, B: 1, C: 1, D: -1, E: 0, F: -1, G: 0, H: 1, I: 1, J: 1, K: -2, L: 0, M: -2, N: 0 } },
+      { id: "painLocationAnswer8", text: "8. A5 region: base of the distal phalanx", scores: { A: -2, B: -2, C: 0, D: 1, E: 0, F: 0, G: -1, H: 0, I: 0, J: -2, K: 0, L: -2, M: 1, N: -2 } },
       { id: "painLocationAnswer9", text: "9. Finger flexor muscle body or musculotendinous junction", scores: { A: 0, B: 0, C: 0, D: 2, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "painLocationAnswer10", text: "10. Palm of the hand (possibly traveling to finger and/or wrist)", scores: { A: 0, B: 0, C: 0, D: 0, E: 2, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "painLocationAnswer11", text: "11. Back side of the DIP or PIP joint", scores: { A: -2, B: -2, C: -2, D: -2, E: 0, F: 1, G: 0, H: 0, I: -2, J: -2, K: 0, L: -2, M: -2, N: 0 } },
-      { id: "painLocationAnswer12", text: "12. Both sides (left and right) of the DIP or PIP joint", scores: { A: 0, B: 0, C: -2, D: -2, E: 0, F: 1, G: 0, H: 0, I: -2, J: -2, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "painLocationAnswer13", text: "13. Left or right side (but not both sides) of *only* the DIP joint", scores: { A: -1, B: -1, C: -1, D: 0, E: -1, F: 1, G: 1, H: 0, I: -1, J: -1, K: 0, L: 0, M: -1, N: 0 } },
-      { id: "painLocationAnswer14", text: "14. Left or right side (but not both sides) of *only* the PIP joint", scores: { A: 0, B: 0, C: 0, D: -1, E: 0, F: 1, G: 1, H: 0, I: -1, J: -1, K: 0, L: 0, M: -1, N: 1 } },
-      { id: "painLocationAnswer15", text: "15. Left or right side (but not both sides) of the PIP *and* DIP joints", scores: { A: -2, B: -2, C: -1, D: -1, E: 0, F: 1, G: 0, H: 0, I: -2, J: -2, K: 0, L: -2, M: -2, N: 0 } },
+      { id: "painLocationAnswer10", text: "10. Palm (possibly traveling to finger and/or wrist)", scores: { A: 0, B: 0, C: 0, D: 0, E: 2, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "painLocationAnswer11", text: "11. PIP or DIP joint: back side of the joint", scores: { A: -2, B: -2, C: -2, D: -2, E: 0, F: 1, G: 0, H: 0, I: -2, J: -2, K: 0, L: -2, M: -2, N: 0 } },
+      { id: "painLocationAnswer12", text: "12. PIP or DIP joint: both sides (left and right) of the joint", scores: { A: 0, B: 0, C: -2, D: -2, E: 0, F: 1, G: 0, H: 0, I: -2, J: -2, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "painLocationAnswer13", text: "13. DIP joint: left or right side (not both) of the joint and nowhere else", scores: { A: -1, B: -1, C: -1, D: 0, E: -1, F: 1, G: 1, H: 0, I: -1, J: -1, K: 0, L: 0, M: -1, N: 0 } },
+      { id: "painLocationAnswer14", text: "14. PIP joint: left or right side (not both) of the joint and nowhere else", scores: { A: 0, B: 0, C: 0, D: -1, E: 0, F: 1, G: 1, H: 0, I: -1, J: -1, K: 0, L: 0, M: -1, N: 1 } },
+      { id: "painLocationAnswer15", text: "15. *Both* the PIP and DIP joint: left or right side (not both) of the two joints", scores: { A: -2, B: -2, C: -1, D: -1, E: 0, F: 1, G: 0, H: 0, I: -2, J: -2, K: 0, L: -2, M: -2, N: 0 } },
       { id: "painLocationAnswer16", text: "16. Hard to pinpoint, but only in my finger", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 1, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
     ],
     multiple: true,
@@ -439,12 +439,12 @@ export const PRIMARY_DATA = {
       "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/cf08cf06-d9ca-4008-9ec0-aa988cb3a762/Primary+-+Question+5+-+Finger+right.jpg?content-type=image%2Fjpeg"
     ],
     answers: [
-      { id: "injurySwellingAnswer1", text: "Yes, mainly in the left or right side (but not both sides) of the DIP joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "injurySwellingAnswer2", text: "Yes, mainly in the left or right side (but not both sides) of the PIP joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
-      { id: "injurySwellingAnswer3", text: "Yes, swelling or enlargement around the entire PIP or DIP joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "injurySwellingAnswer4", text: "Yes, in my finger and not isolated to just the PIP or DIP joints", scores: { A: 0, B: 1, C: 0, D: 1, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "injurySwellingAnswer5", text: "Yes, in the palm of my hand", scores: { A: 0, B: 0, C: 0, D: 0, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "injurySwellingAnswer6", text: "Yes, isolated to my DIP joint and only in the palm side", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
+      { id: "injurySwellingAnswer1", text: "DIP joint: swelling in the left or right side (not both)", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: .5, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "injurySwellingAnswer2", text: "PIP joint: swelling in the left or right side (not both)", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: .5, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
+      { id: "injurySwellingAnswer3", text: "PIP or DIP joint: swelling or enlargement around the entire joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "injurySwellingAnswer4", text: "Finger: swelling that is not isolated to the PIP or DIP joints", scores: { A: 0, B: 1, C: 0, D: 1, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "injurySwellingAnswer5", text: "Palm: some swelling", scores: { A: 0, B: 0, C: 0, D: 0, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "injurySwellingAnswer6", text: "DIP joint: swelling isolated to the palm side of the joint and nowhere else", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
       { id: "injurySwellingAnswer7", text: "No", scores: { A: 1, B: 1, C: 1, D: 1, E: 1, F: 0, G: 1, H: 1, I: 1, J: 1, K: 1, L: 1, M: 1, N: 1 } },
       { id: "injurySwellingAnswer8", text: "None of these options apply to me, or I’m unsure", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
     ],
@@ -480,13 +480,13 @@ export const PRIMARY_DATA = {
       "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/cf08cf06-d9ca-4008-9ec0-aa988cb3a762/Primary+-+Question+5+-+Finger+right.jpg?content-type=image%2Fjpeg"
     ],
     answers: [
-      { id: "injuryDiscolorationAnswer1", text: "Yes, bruise-like discoloration in either the left or right side (not both sides) of the PIP or DIP joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "injuryDiscolorationAnswer2", text: "Yes, bruise-like discoloration in either the left or right side (not both sides) of the PIP joint only (not DIP joint)", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
-      { id: "injuryDiscolorationAnswer3", text: "Yes, redness in the back side of the PIP or DIP joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "injuryDiscolorationAnswer4", text: "Yes, bruise-like discoloration on the palm side of the DIP joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
-      { id: "injuryDiscolorationAnswer5", text: "Yes, bruise-like discoloration in the palm of the hand", scores: { A: 0, B: 0, C: 0, D: 0, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "injuryDiscolorationAnswer6", text: "Yes, bruise-like discoloration in the forearm or distal phalanx", scores: { A: 0, B: 0, C: 0, D: 1, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "injuryDiscolorationAnswer7", text: "Yes, bruise-like discoloration in the A2-A4 region, primarily on the palm side", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "injuryDiscolorationAnswer1", text: "PIP or DIP joint: discoloration in the left or right side (not both)", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "injuryDiscolorationAnswer2", text: "PIP joint: discoloration in the left or right side (not both) and nowhere else", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
+      { id: "injuryDiscolorationAnswer3", text: "PIP or DIP joint: redness in the back side of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "injuryDiscolorationAnswer4", text: "DIP joint: bruise-like discoloration on the palm side of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
+      { id: "injuryDiscolorationAnswer5", text: "Palm: some bruise-like discoloration", scores: { A: 0, B: 0, C: 0, D: 0, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "injuryDiscolorationAnswer6", text: "Forearm or distal phalanx: some bruise-like discoloration", scores: { A: 0, B: 0, C: 0, D: 1, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "injuryDiscolorationAnswer7", text: "A2-A4 region: some bruise-like discoloration", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
       { id: "injuryDiscolorationAnswer8", text: "None of these options apply to me, or I’m unsure", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
     ],
     multiple: true,
@@ -528,13 +528,13 @@ export const PRIMARY_DATA = {
       "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/84930909-0843-4db5-829b-a2d82a766c07/Differential+3+-+Question+1+-+Hand+front.jpg?content-type=image%2Fjpeg"
     ],
     answers: [
-      { id: "aromPositionOneAnswer1", text: "My injury affects my PIP joint and I feel a click/catch sensation on one side of it", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
-      { id: "aromPositionOneAnswer3", text: "Some discomfort/pain in my forearm", scores: { A: 0, B: 0, C: 0, D: 1, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "aromPositionOneAnswer4", text: "Some discomfort/pain in the palm of my hand", scores: { A: 0, B: 0, C: 0, D: 0, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "aromPositionOneAnswer5", text: "Some discomfort/pain in the A1 to A4 pulley region (palm side)", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "aromPositionOneAnswer6", text: "Some discomfort/pain in the palm side of the DIP joint *only*", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
-      { id: "aromPositionOneAnswer7", text: "My injury affects my A2 or A4 region and I feel an obvious click/catch sensation", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 1, J: 1, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "aromPositionOneAnswer2", text: "Normal ROM, no discomfort/pain, and no stiffness associated with my injury", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
+      { id: "aromPositionOneAnswer1", text: "PIP joint: clicking/catching sensation on one side of (or diffusing from) the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
+      { id: "aromPositionOneAnswer7", text: "A2 or A4 region: clicking/catching sensation", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 1, J: 1, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "aromPositionOneAnswer3", text: "Forearm: some discomfort/pain", scores: { A: 0, B: 0, C: 0, D: 1, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "aromPositionOneAnswer4", text: "Palm: some discomfort/pain", scores: { A: 0, B: 0, C: 0, D: 0, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "aromPositionOneAnswer5", text: "A1-A4 region: some discomfort/pain", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "aromPositionOneAnswer6", text: "DIP joint: discomfort/pain in the palm side of the joint and nowhere else", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
+      { id: "aromPositionOneAnswer2", text: "Normal range of motion, no discomfort/pain, and no stiffness associated with my injury", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
     ],
     multiple: true,
     conditions: []
@@ -549,14 +549,14 @@ export const PRIMARY_DATA = {
       "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/84930909-0843-4db5-829b-a2d82a766c07/Differential+3+-+Question+1+-+Hand+front.jpg?content-type=image%2Fjpeg"
     ],
     answers: [
-      { id: "aromPositionTwoAnswer1", text: "My injury affects my PIP joint and I feel a click/catch sensation on one side of it", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
-      { id: "aromPositionTwoAnswer8", text: "My injury affects my A2 or A4 region and I feel an obvious click/catch sensation", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 1, J: 1, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "aromPositionTwoAnswer3", text: "Some discomfort/pain in my forearm", scores: { A: 0, B: 0, C: 0, D: 1, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "aromPositionTwoAnswer4", text: "Some discomfort/pain in the palm of my hand", scores: { A: 0, B: 0, C: 0, D: 0, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "aromPositionTwoAnswer5", text: "Some discomfort/pain in the A1 to A4 pulley region (palm side)", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "aromPositionTwoAnswer6", text: "Some stiffness or discomfort/pain in (or diffusing from) the PIP or DIP joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "aromPositionTwoAnswer7", text: "Limited ROM but no discomfort/pain", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "aromPositionTwoAnswer2", text: "Normal ROM, no discomfort/pain, and no stiffness associated with my injury", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
+      { id: "aromPositionTwoAnswer1", text: "PIP joint: clicking/catching sensation on one side of (or diffusing from) the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
+      { id: "aromPositionTwoAnswer8", text: "A2 or A4 region: clicking/catching sensation", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 1, J: 1, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "aromPositionTwoAnswer3", text: "Forearm: some discomfort/pain", scores: { A: 0, B: 0, C: 0, D: 1, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "aromPositionTwoAnswer4", text: "Palm: some discomfort/pain", scores: { A: 0, B: 0, C: 0, D: 0, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "aromPositionTwoAnswer5", text: "A1-A4 region: some discomfort/pain", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "aromPositionTwoAnswer6", text: "PIP or DIP joint: stiffness or discomfort/pain in (or diffusing from) the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "aromPositionTwoAnswer7", text: "Limited range of motion but no discomfort/pain", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "aromPositionTwoAnswer2", text: "Normal range of motion, no discomfort/pain, and no stiffness associated with my injury", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
     ],
     multiple: true,
     conditions: [
@@ -582,17 +582,17 @@ export const PRIMARY_DATA = {
       "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/cf08cf06-d9ca-4008-9ec0-aa988cb3a762/Primary+-+Question+5+-+Finger+right.jpg?content-type=image%2Fjpeg"
     ],
     answers: [
-      { id: "aromPositionThreeAnswer1", text: "My injury affects my PIP joint and I feel a click/catch sensation on one side of it", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
-      { id: "aromPositionThreeAnswer11", text: "My injury affects my A2 or A4 region and I feel a click/catch sensation", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 1, J: 1, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "aromPositionThreeAnswer3", text: "Some discomfort/pain in my forearm", scores: { A: 0, B: 0, C: 0, D: 1, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "aromPositionThreeAnswer4", text: "Some discomfort/pain in the palm of my hand", scores: { A: 0, B: 0, C: 0, D: 0, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "aromPositionThreeAnswer5", text: "Some discomfort/pain in the A1 to A4 pulley region (palm side)", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "aromPositionThreeAnswer6", text: "Some discomfort/pain in either the left or right side (but not both sides) of the PIP joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
-      { id: "aromPositionThreeAnswer7", text: "Some discomfort/pain in either the left or right side (but not both sides) of the DIP joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "aromPositionThreeAnswer8", text: "Some discomfort/pain in the palm side of the DIP joint *only*", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
-      { id: "aromPositionThreeAnswer9", text: "Some stiffness or discomfort/pain in (or diffusing from) the PIP or DIP joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "aromPositionThreeAnswer10", text: "Limited ROM but no discomfort/pain", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "aromPositionThreeAnswer2", text: "Normal ROM, no discomfort/pain, and no stiffness associated with my injury", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
+      { id: "aromPositionThreeAnswer1", text: "PIP joint: clicking/catching sensation on one side of (or diffusing from) the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
+      { id: "aromPositionThreeAnswer11", text: "A2 or A4 region: clicking/catching sensation", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 1, J: 1, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "aromPositionThreeAnswer3", text: "Forearm: some discomfort/pain", scores: { A: 0, B: 0, C: 0, D: 1, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "aromPositionThreeAnswer4", text: "Palm: some discomfort/pain", scores: { A: 0, B: 0, C: 0, D: 0, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "aromPositionThreeAnswer5", text: "A1-A4 region: some discomfort/pain", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "aromPositionThreeAnswer6", text: "PIP joint: discomfort/pain in the left or right side (not both) of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
+      { id: "aromPositionThreeAnswer7", text: "DIP joint: discomfort/pain in the left or right side (not both) of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "aromPositionThreeAnswer8", text: "DIP joint: discomfort/pain in the palm side of the joint and nowhere else", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
+      { id: "aromPositionThreeAnswer9", text: "PIP or DIP joint: some stiffness or discomfort/pain in (or diffusing from) the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "aromPositionThreeAnswer10", text: "Limited range of motion but no discomfort/pain", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "aromPositionThreeAnswer2", text: "Normal range of motion, no discomfort/pain, and no stiffness associated with my injury", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
     ],
     multiple: true,
     conditions: [
@@ -640,9 +640,9 @@ export const PRIMARY_DATA = {
       "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/c3bb623f-a8f1-4a1e-9cc0-f0c7f9278a72/Primary+-+Question+5+-+Hand+back.jpg?content-type=image%2Fjpeg"
     ],
     answers: [
-      { id: "passiveExtensionAnswer1", text: "Discomfort/pain on the palm side of my DIP or PIP joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 2, L: 0, M: 0, N: 0 } },
-      { id: "passiveExtensionAnswer2", text: "More mobility than usual", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 2, L: 0, M: 0, N: 0 } },
-      { id: "passiveExtensionAnswer3", text: "Discomfort/pain on the back side of my PIP joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: -1, L: 0, M: 0, N: 0 } },
+      { id: "passiveExtensionAnswer1", text: "PIP or DIP joint: discomfort/pain on the palm side of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 2, L: 0, M: 0, N: 0 } },
+      { id: "passiveExtensionAnswer2", text: "PIP or DIP joint: more mobility than usual", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 2, L: 0, M: 0, N: 0 } },
+      { id: "passiveExtensionAnswer3", text: "PIP joint: discomfort/pain on the back side of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: -1, L: 0, M: 0, N: 0 } },
       { id: "passiveExtensionAnswer4", text: "None of these options apply to me", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: -1, L: 0, M: 0, N: 0 } }
     ],
     multiple: true,

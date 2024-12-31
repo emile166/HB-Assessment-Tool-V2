@@ -109,7 +109,7 @@ export const PULLEY_SEVERITY_DATA = {
         id: "painLocation",
         text: "Where is the discomfort/pain?",
         video: "https://www.youtube.com/embed/wteY_PONC4o?si=sDstoDI3FqFoxOB2&rel=0",
-        photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/ea2f9146-c934-430e-9368-3556dabd71bc/Pulley+Severity+-+Question+7+-+Hand+front.jpg?content-type=image%2Fjpeg"],
+        photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/53278a96-42f2-4f38-b71a-d705a83ef15f/Pulley+Severity+-+Question+7+-+Hand+front.jpg?content-type=image%2Fjpeg"],
         answers: [
             { id: "painLocationAnswer1", text: "Entire A2 to A4 region", scores: { A: -2, B: -1, C: 0, D: 0, E: 1, F: 1, G: 1, H: 1, I: 0, J: 0, K: 2, L: 0, M: 0, N: 0 } },
             { id: "painLocationAnswer2", text: "Entire A2 to A3 region", scores: { A: -1, B: 0, C: 0, D: 1, E: 0, F: 1, G: 1, H: 0, I: 1, J: 0, K: 0, L: 0, M: 0, N: 0 } },
@@ -166,7 +166,7 @@ export const PULLEY_SEVERITY_DATA = {
         text: "How does the half crimp tissue loading test affect your injury?",
         video: "",
         photos: [
-            "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/ea2f9146-c934-430e-9368-3556dabd71bc/Pulley+Severity+-+Question+7+-+Hand+front.jpg?content-type=image%2Fjpeg",
+            "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/53278a96-42f2-4f38-b71a-d705a83ef15f/Pulley+Severity+-+Question+7+-+Hand+front.jpg?content-type=image%2Fjpeg",
             "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/fc1fc205-0903-4f84-94f8-970dc0bf0355/Grip+Position+Collage.jpg?content-type=image%2Fjpeg"
         ],
         answers: [
@@ -213,7 +213,7 @@ export const PULLEY_SEVERITY_DATA = {
         text: "How does the full crimp tissue loading test affect your injury?",
         video: "",
         photos: [
-            "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/ea2f9146-c934-430e-9368-3556dabd71bc/Pulley+Severity+-+Question+7+-+Hand+front.jpg?content-type=image%2Fjpeg",
+            "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/53278a96-42f2-4f38-b71a-d705a83ef15f/Pulley+Severity+-+Question+7+-+Hand+front.jpg?content-type=image%2Fjpeg",
             "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/fc1fc205-0903-4f84-94f8-970dc0bf0355/Grip+Position+Collage.jpg?content-type=image%2Fjpeg"
         ],
         answers: [

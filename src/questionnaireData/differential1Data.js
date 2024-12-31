@@ -111,13 +111,13 @@ export const DIFFERENTIAL_1_DATA = {
     id: "painFocalPoint",
     text: "Where is the focal point of your discomfort/pain?",
     video: "",
-    photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/cf97b932-d4c9-4f59-a40c-733c254fc82f/Differental+1+-+Question+8+-+Hand+front.jpg?content-type=image%2Fjpeg"],
+    photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/a4af57cd-0a8e-4730-877b-cb4b9a3b3265/A2%2BA4+with+Proximal+and+Distal+Indicators.jpg?content-type=image%2Fjpeg"],
     answers: [
-      { id: "painFocalPointAnswer1", text: "Distal region of A2 pulley", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 1, K: 0, L: -200, M: 0, N: 0 } },
-      { id: "painFocalPointAnswer2", text: "Just one side (left or right) of the proximal region of the A4 pulley", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 3, M: 0, N: 0 } },
-      { id: "painFocalPointAnswer3", text: "Entire proximal region of the A4 pulley", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 1, K: 0, L: 1, M: 0, N: 0 } },
-      { id: "painFocalPointAnswer4", text: "Directly over the A2 pulley or A4 pulley", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 1, I: 1, J: 1, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "painFocalPointAnswer5", text: "Left and/or right side of the A2 or A4 pulley region", scores: { A: 0, B: 0, C: 1, D: 0, E: 0, F: 0, G: 0, H: 1, I: 1, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "painFocalPointAnswer1", text: "A2: distal region of the pulley", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 1, K: 0, L: -200, M: 0, N: 0 } },
+      { id: "painFocalPointAnswer2", text: "A4: left or right side (not both) of the PROXIMAL region of the pulley", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 3, M: 0, N: 0 } },
+      { id: "painFocalPointAnswer3", text: "A4: entire PROXIMAL region of the pulley", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 1, K: 0, L: 1, M: 0, N: 0 } },
+      { id: "painFocalPointAnswer4", text: "A2 or A4: directly over the pulley", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 1, I: 1, J: 1, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "painFocalPointAnswer5", text: "A2 or A4: left and/or right side of the pulley", scores: { A: 0, B: 0, C: 1, D: 0, E: 0, F: 0, G: 0, H: 1, I: 1, J: 0, K: 0, L: 0, M: 0, N: 0 } },
       { id: "painFocalPointAnswer6", text: "None of these apply to me", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
     ],
     multiple: false,
@@ -177,7 +177,7 @@ export const DIFFERENTIAL_1_DATA = {
     id: "massLocationA2",
     text: "Where in the A2 region do you feel the mass/lump or thickening?",
     video: "",
-    photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/cf35206c-f5fc-4d72-8897-89eaa8f4b839/Differential+1+-+massLocationA2+and+massLocationA4.jpg?content-type=image%2Fjpeg"],
+    photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/ff90ef18-a09e-43c8-b52b-20b00cc96bc8/Differential+1+-+massLocationA2.jpg?content-type=image%2Fjpeg"],
     answers: [
       { id: "massLocationA2Answer1", text: "Over the middle or distal end of the A2 pulley", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 1, K: 0, L: 0, M: 0, N: 0 } },
       { id: "massLocationA2Answer2", text: "Closer to the proximal region (near the base) of the A2 pulley", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 1, J: 0, K: 0, L: 0, M: 0, N: 0 } }
@@ -201,8 +201,8 @@ export const DIFFERENTIAL_1_DATA = {
     video: "",
     photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/893baf4b-8488-4b64-8b91-4f9bf5afa335/Differential+1+-+massLocationA4.jpg?content-type=image%2Fjpeg"],
     answers: [
-      { id: "massLocationA4Answer1", text: "Directly over the middle phalanx", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 1, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "massLocationA4Answer2", text: "On one side of the middle phalanx", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 1, J: 0, K: 0, L: 0, M: 0, N: 0 } }
+      { id: "massLocationA4Answer1", text: "1. Directly over the middle phalanx", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 1, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "massLocationA4Answer2", text: "2. On one side of the middle phalanx", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 1, J: 0, K: 0, L: 0, M: 0, N: 0 } }
     ],
     multiple: false,
     conditions: [
