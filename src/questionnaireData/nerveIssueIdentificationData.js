@@ -17,7 +17,7 @@ export const NERVE_ISSUE_IDENTIFICATION_DATA = {
 
     nerveTensionTestTwo: {
         id: "nerveTensionTestTwo",
-        text: "Do any of the nerve tension tests create more intense symptoms anywhere in your injured arm compared to your uninjured arm (not including the neck and upper traps)?",
+        text: "Do any of the previous nerve tension tests create more intense symptoms anywhere in your injured arm compared to your uninjured arm (not including the neck and upper traps)?",
         video: "",
         photos: [],
         answers: [
