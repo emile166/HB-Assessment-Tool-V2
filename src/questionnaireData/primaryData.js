@@ -281,7 +281,7 @@ export const PRIMARY_DATA = {
 
   mechanismOtherPinky: {
     id: "mechanismOtherPinky",
-    text: "Which do you think contributed most to your injury, if any?",
+    text: "Regarding the grip position of your *pinky* finger, which do you think contributed most to your injury/condition, if any? (Think carefully before answering; due to the shortness of the pinky finger in most people, it is often in a lower-angle grip position than the other fingers.)",
     video: "",
     photos: [
       "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/fc1fc205-0903-4f84-94f8-970dc0bf0355/Grip+Position+Collage.jpg?content-type=image%2Fjpeg"
