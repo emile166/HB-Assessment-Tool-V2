@@ -41,7 +41,7 @@ export const DIFFERENTIAL_3_DATA = {
         answers: [
             { id: "rangeOfMotionAnswer1", text: "Discomfort/pain in the A2, A3, or A4 region", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "rangeOfMotionAnswer2", text: "Discomfort/pain in my forearm", scores: { A: 0, B: 0, C: 0, D: 1, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "rangeOfMotionAnswer3", text: "Discomfort/pain in the tip of my finger", scores: { A: 0, B: 0, C: 0, D: 1, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "rangeOfMotionAnswer3", text: "Discomfort/pain in my distal phalanx (last segment of the finger)", scores: { A: 0, B: 0, C: 0, D: 1, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "rangeOfMotionAnswer4", text: "None of these options apply to me", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
         ],
         multiple: false,

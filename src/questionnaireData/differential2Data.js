@@ -6,9 +6,9 @@ export const DIFFERENTIAL_2_DATA = {
         photos: [],
         answers: [
             { id: "injuryDescriptionAnswer1", text: "Caused by lateral or torsional forces (e.g. finger lock, ring lock, side pull, gaston, etc.)", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
-            { id: "injuryDescriptionAnswer2", text: "Slow build-up of symptoms associated with high-intensity high-angle crimping", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: -1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: -1 } },
+            { id: "injuryDescriptionAnswer2", text: "Slow build-up of symptoms associated with high-intensity crimping", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: -1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: -1 } },
             { id: "injuryDescriptionAnswer3", text: "Sudden onset of symptoms associated with frequent high-intensity crimping, but no identifiable moment of injury or trauma", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "injuryDescriptionAnswer4", text: "No pain during climbing, but symptoms appear later that day or the next day (possibly with a feeling of stiffness or loss of range of motion)", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "injuryDescriptionAnswer4", text: "Symptoms appear later that day or the next day (possibly with a feeling of stiffness or loss of range of motion)", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "injuryDescriptionAnswer5", text: "None of these options apply to me", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
         ],
         multiple: false,
@@ -21,9 +21,11 @@ export const DIFFERENTIAL_2_DATA = {
         video: "",
         photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/d3894a14-38ad-46e9-a939-92ab9c5b7264/PIP+and+DIP+Joints.jpg?content-type=image%2Fjpeg"],
         answers: [
-            { id: "painLocationAnswer1", text: "PIP or DIP joint: back side of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 2, G: -1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: -1 } },
-            { id: "painLocationAnswer2", text: "PIP or DIP joint: both sides (left and right) of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "painLocationAnswer1", text: "PIP joint: back side of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 2, G: -1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: -1 } },
             { id: "painLocationAnswer3", text: "PIP joint: left or right side (not both) of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
+            { id: "painLocationAnswer2", text: "PIP joint: both sides (left and right) of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "painLocationAnswer6", text: "DIP joint: back side of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 2, G: -1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
+            { id: "painLocationAnswer7", text: "DIP joint: both sides (left and right) of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "painLocationAnswer4", text: "DIP joint: left or right side (not both) of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: -100 } },
             { id: "painLocationAnswer5", text: "None of these options apply to me", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
         ],
@@ -84,9 +86,11 @@ export const DIFFERENTIAL_2_DATA = {
         ],
         answers: [
             { id: "activeRangeOfMotionAnswer1", text: "PIP joint: clicking/catching sensation on one side of (or diffusing from) the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
+            { id: "activeRangeOfMotionAnswer3", text: "PIP joint: one or more of the positions had discomfort/pain or stiffness on the BACK SIDE of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 2, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "activeRangeOfMotionAnswer4", text: "PIP joint: in the first week or injury I had limited range of motion and discomfort/pain on the left or right side (not both) of the joint, but not clicking/catching sensation", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
+            { id: "activeRangeOfMotionAnswer7", text: "DIP joint: one or more of the positions had discomfort/pain or stiffness on the BACK SIDE of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 2, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
+            { id: "activeRangeOfMotionAnswer8", text: "DIP joint: in the first week or injury I had limited range of motion and discomfort/pain on the left or right side (not both) of the joint, but not clicking/catching sensation", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "activeRangeOfMotionAnswer2", text: "One or more of the positions felt stiff or limited in ROM, but none of them had discomfort/pain or a click/catch", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "activeRangeOfMotionAnswer3", text: "PIP or DIP joint: one or more of the positions had discomfort/pain or stiffness on the BACK SIDE of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 2, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "activeRangeOfMotionAnswer4", text: "PIP or DIP joint: in the first week or injury I had limited range of motion and discomfort/pain on the left or right side (not both) of the joint, but not clicking/catching sensation", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "activeRangeOfMotionAnswer5", text: "No discomfort/pain, clicking, catching, or limitations in range of motion associated with my injury", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: -1, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
             { id: "activeRangeOfMotionAnswer6", text: "None of these options apply to me", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
         ],
@@ -100,7 +104,8 @@ export const DIFFERENTIAL_2_DATA = {
         video: "",
         photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/d3894a14-38ad-46e9-a939-92ab9c5b7264/PIP+and+DIP+Joints.jpg?content-type=image%2Fjpeg"],
         answers: [
-            { id: "jointEnlargementAnswer1", text: "PIP or DIP joint: constant swelling or enlargement of the entire joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "jointEnlargementAnswer1", text: "PIP joint: constant swelling or enlargement of the entire joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "jointEnlargementAnswer5", text: "DIP joint: constant swelling or enlargement of the entire joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "jointEnlargementAnswer2", text: "PIP joint: swelling on the left or right side (not both) due to a specific moment of injury/trauma", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: -1, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
             { id: "jointEnlargementAnswer3", text: "DIP joint: swelling on the left or right side (not both) due to a specific moment of injury/trauma", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: -1, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "jointEnlargementAnswer4", text: "None of these options apply to me", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
