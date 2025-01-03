@@ -316,7 +316,7 @@ export const PRIMARY_DATA = {
 
   painLocation: {
     id: "painLocation",
-    text: "Where is the discomfort/pain? (Use reference image below and do your best to be as specific as possible.)",
+    text: "Where is the discomfort/pain? (This question is very important to get right. Use the reference image below and do your best to be as specific as possible.)",
     video: "https://www.youtube.com/embed/MCm8URGtAvQ?si=Epro0Sv3N9AB9p1m&rel=0",
     photos: [
       "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/3c82cebc-74c6-448d-8cbf-1dc7fa4f923e/Primary+-+Question+5+-+Finger+front.jpg?content-type=image%2Fjpeg",
