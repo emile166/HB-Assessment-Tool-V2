@@ -5,9 +5,10 @@ export const PRIMARY_DATA = {
     video: "",
     photos: [],
     answers: [
-      { id: "injuryTypeAnswer1", text: "Traumatic (occurred as a result of sudden trauma – typically characterized by an unexpected overload of the tissue in a single obvious event/moment)", scores: { A: 1, B: 1, C: -2, D: 1, E: 1, F: -100, G: 1, H: -2, I: -100, J: 0, K: 1, L: -100, M: -100, N: 1 } },
-      { id: "injuryTypeAnswer2", text: "Non-traumatic acute (occurred in a single session or single climb but not as a result of any obvious traumatic event or overload)", scores: { A: 1, B: 0, C: 1, D: 1, E: 1, F: 0, G: 1, H: 1, I: 1, J: 1, K: 1, L: 1, M: 0, N: 1 } },
-      { id: "injuryTypeAnswer3", text: "Chronic (slow build-up of symptoms over a week or more)", scores: { A: 0, B: -100, C: 1, D: -5, E: -5, F: 1, G: -3, H: 1, I: 1, J: 1, K: -5, L: 1, M: 1, N: 1 } }
+      { id: "injuryTypeAnswer1", text: "Traumatic (occurred as a result of obvious sudden trauma – typically an unexpected overload of the tissue in a single obvious event/moment)", scores: { A: 1, B: 1, C: -2, D: 1, E: 1, F: -100, G: 1, H: -2, I: -100, J: 0, K: 1, L: -100, M: -100, N: 1 } },
+      { id: "injuryTypeAnswer2", text: "Non-traumatic acute (no obvious traumatic event but clearly a result of OVERDOING IT on a SINGLE climb or session)", scores: { A: 1, B: 0, C: 1, D: 1, E: 1, F: 0, G: 1, H: 0, I: 0, J: 1, K: 1, L: 1, M: 0, N: 1 } },
+      { id: "injuryTypeAnswer3", text: "Chronic (a slow build-up of symptoms over a week or more that seems related to OVERTRAINING or OVERUSE)", scores: { A: 0, B: -100, C: 1, D: -100, E: -1, F: 1, G: 1, H: 1, I: 1, J: 1, K: -5, L: 1, M: 1, N: 1 } },
+      { id: "injuryTypeAnswer4", text: "Other (came on with no obvious cause and no obvious overuse and has bugged me ever since)", scores: { A: 0, B: -100, C: 1, D: -100, E: 0, F: 1, G: 1, H: 1, I: 1, J: 1, K: 0, L: 1, M: 1, N: 1 } }
     ],
     multiple: false,
     conditions: []
@@ -32,23 +33,23 @@ export const PRIMARY_DATA = {
     video: "",
     photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/fc1fc205-0903-4f84-94f8-970dc0bf0355/Grip+Position+Collage.jpg?content-type=image%2Fjpeg"],
     answers: [
-      { id: "mechanismTraumaticAnswer1", text: "High-angle crimp", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
+      { id: "mechanismTraumaticAnswer1", text: "High-angle crimp", scores: { A: 1, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
       { id: "mechanismTraumaticAnswer2", text: "Half crimp", scores: { A: 1, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
       { id: "mechanismTraumaticAnswer4", text: "Hand involuntarily opening while crimping", scores: { A: 1, B: 1, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
-      { id: "mechanismTraumaticAnswer5", text: "Three-finger drag", scores: { A: 0, B: 0, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "mechanismTraumaticAnswer5", text: "Three-finger drag", scores: { A: 0, B: -1, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
       { id: "mechanismTraumaticAnswer6", text: "Open hand", scores: { A: 0, B: 0, C: 0, D: 1, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
       { id: "mechanismTraumaticAnswer7", text: "Twisting or side-loading grip (e.g. finger lock, ring lock, side pull, gaston, etc.)", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
       { id: "mechanismTraumaticAnswer8", text: "Two-finger pocket (crimp)", scores: { A: 1, B: 1, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
-      { id: "mechanismTraumaticAnswer9", text: "Two-finger pocket (drag or open hand)", scores: { A: 0, B: 0, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "mechanismTraumaticAnswer9", text: "Two-finger pocket (drag or open hand)", scores: { A: -1, B: -1, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: -1, L: 0, M: 0, N: 0 } },
       { id: "mechanismTraumaticAnswer10", text: "Mono (crimp)", scores: { A: 1, B: 1, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "mechanismTraumaticAnswer11", text: "Mono (drag or open hand)", scores: { A: 0, B: 0, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
+      { id: "mechanismTraumaticAnswer11", text: "Mono (drag or open hand)", scores: { A: -1, B: -1, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: -1, L: 0, M: 0, N: 0 } }
     ],
     multiple: false,
     conditions: [
       {
         if: {
           questionId: "injuryType",
-          selectedAnswers: ["injuryTypeAnswer2", "injuryTypeAnswer3"],
+          selectedAnswers: ["injuryTypeAnswer2", "injuryTypeAnswer3", "injuryTypeAnswer4"],
           match: "any"
         },
         action: "skip"
@@ -70,22 +71,22 @@ export const PRIMARY_DATA = {
     video: "",
     photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/fc1fc205-0903-4f84-94f8-970dc0bf0355/Grip+Position+Collage.jpg?content-type=image%2Fjpeg"],
     answers: [
-      { id: "mechanismTraumaticPinkyAnswer1", text: "High-angle crimp", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
+      { id: "mechanismTraumaticPinkyAnswer1", text: "High-angle crimp", scores: { A: 1, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
       { id: "mechanismTraumaticPinkyAnswer2", text: "Half crimp", scores: { A: 1, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
       { id: "mechanismTraumaticPinkyAnswer4", text: "Finger involuntarily opening while crimping", scores: { A: 1, B: 1, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
-      { id: "mechanismTraumaticPinkyAnswer5", text: "Drag or open position", scores: { A: 0, B: 0, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "mechanismTraumaticPinkyAnswer5", text: "Drag or open position", scores: { A: 0, B: -1, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
       { id: "mechanismTraumaticPinkyAnswer7", text: "Twisting or side-loading grip (e.g. finger lock, ring lock, side pull, gaston, etc.)", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
       { id: "mechanismTraumaticPinkyAnswer8", text: "Two-finger pocket (crimp)", scores: { A: 1, B: 1, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
-      { id: "mechanismTraumaticPinkyAnswer9", text: "Two-finger pocket (drag or open hand)", scores: { A: 0, B: 0, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "mechanismTraumaticPinkyAnswer9", text: "Two-finger pocket (drag or open hand)", scores: { A: -1, B: -1, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: -1, L: 0, M: 0, N: 0 } },
       { id: "mechanismTraumaticPinkyAnswer10", text: "Mono (crimp)", scores: { A: 1, B: 1, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "mechanismTraumaticPinkyAnswer11", text: "Mono (drag or open hand)", scores: { A: 0, B: 0, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
+      { id: "mechanismTraumaticPinkyAnswer11", text: "Mono (drag or open hand)", scores: { A: -1, B: -1, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: -1, L: 0, M: 0, N: 0 } }
     ],
     multiple: false,
     conditions: [
       {
         if: {
           questionId: "injuryType",
-          selectedAnswers: ["injuryTypeAnswer2", "injuryTypeAnswer3"],
+          selectedAnswers: ["injuryTypeAnswer2", "injuryTypeAnswer3", "injuryTypeAnswer4"],
           match: "any"
         },
         action: "skip"
@@ -107,15 +108,15 @@ export const PRIMARY_DATA = {
     video: "",
     photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/fc1fc205-0903-4f84-94f8-970dc0bf0355/Grip+Position+Collage.jpg?content-type=image%2Fjpeg"],
     answers: [
-      { id: "mechanismAcuteNonTraumaticAnswer1", text: "High-angle crimp", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 1, I: 1, J: 1, K: 1, L: 1, M: 0, N: 0 } },
-      { id: "mechanismAcuteNonTraumaticAnswer2", text: "Half crimp", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 1, I: 1, J: 1, K: 0, L: 1, M: 0, N: 0 } },
+      { id: "mechanismAcuteNonTraumaticAnswer1", text: "High-angle crimp", scores: { A: 1, B: 0, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 1, K: 1, L: 1, M: 0, N: 0 } },
+      { id: "mechanismAcuteNonTraumaticAnswer2", text: "Half crimp", scores: { A: 1, B: 0, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 1, K: 0, L: 1, M: 0, N: 0 } },
       { id: "mechanismAcuteNonTraumaticAnswer4", text: "Three-finger drag", scores: { A: 0, B: 0, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
       { id: "mechanismAcuteNonTraumaticAnswer5", text: "Open hand", scores: { A: 0, B: 0, C: 0, D: 1, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
       { id: "mechanismAcuteNonTraumaticAnswer6", text: "Twisting or side-loading grip (e.g. finger lock, ring lock, side pull, gaston, etc.)", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
-      { id: "mechanismAcuteNonTraumaticAnswer7", text: "Two-finger pocket (crimp)", scores: { A: 1, B: 0, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
-      { id: "mechanismAcuteNonTraumaticAnswer8", text: "Two-finger pocket (drag or open hand)", scores: { A: 0, B: 0, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "mechanismAcuteNonTraumaticAnswer9", text: "Mono (crimp)", scores: { A: 1, B: 0, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 1, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "mechanismAcuteNonTraumaticAnswer10", text: "Mono (drag or open hand)", scores: { A: 0, B: 0, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "mechanismAcuteNonTraumaticAnswer7", text: "Two-finger pocket (crimp)", scores: { A: 1, B: 0, C: 1, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 1, K: 1, L: 1, M: 0, N: 0 } },
+      { id: "mechanismAcuteNonTraumaticAnswer8", text: "Two-finger pocket (drag or open hand)", scores: { A: -1, B: 0, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: -1, L: 0, M: 0, N: 0 } },
+      { id: "mechanismAcuteNonTraumaticAnswer9", text: "Mono (crimp)", scores: { A: 1, B: 0, C: 1, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 1, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "mechanismAcuteNonTraumaticAnswer10", text: "Mono (drag or open hand)", scores: { A: -1, B: 0, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: -1, L: 0, M: 0, N: 0 } },
       { id: "mechanismAcuteNonTraumaticAnswer11", text: "None of these apply to me, or unsure", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
     ],
     multiple: false,
@@ -123,7 +124,7 @@ export const PRIMARY_DATA = {
       {
         if: {
           questionId: "injuryType",
-          selectedAnswers: ["injuryTypeAnswer1", "injuryTypeAnswer3"],
+          selectedAnswers: ["injuryTypeAnswer1", "injuryTypeAnswer3", "injuryTypeAnswer4"],
           match: "any"
         },
         action: "skip"
@@ -135,21 +136,6 @@ export const PRIMARY_DATA = {
           match: "any"
         },
         action: "skip"
-      },
-      {
-        if: {
-          questionId: "mechanismAcuteNonTraumatic",
-          selectedAnswers: [
-            "mechanismAcuteNonTraumaticAnswer1",
-            "mechanismAcuteNonTraumaticAnswer2",
-            "mechanismAcuteNonTraumaticAnswer7",
-            "mechanismAcuteNonTraumaticAnswer9",
-            "mechanismAcuteNonTraumaticAnswer11"
-          ],
-          match: "none"
-        },
-        action: "modifyscore",
-        parameters: { scores: "I", points: -1 }
       }
     ]
   },
@@ -160,14 +146,14 @@ export const PRIMARY_DATA = {
     video: "",
     photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/fc1fc205-0903-4f84-94f8-970dc0bf0355/Grip+Position+Collage.jpg?content-type=image%2Fjpeg"],
     answers: [
-      { id: "mechanismAcuteNonTraumaticPinkyAnswer1", text: "High-angle crimp", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 1, I: 1, J: 1, K: 1, L: 1, M: 0, N: 0 } },
-      { id: "mechanismAcuteNonTraumaticPinkyAnswer2", text: "Half crimp", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 1, I: 1, J: 1, K: 0, L: 1, M: 0, N: 0 } },
+      { id: "mechanismAcuteNonTraumaticPinkyAnswer1", text: "High-angle crimp", scores: { A: 1, B: 0, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 1, K: 1, L: 1, M: 0, N: 0 } },
+      { id: "mechanismAcuteNonTraumaticPinkyAnswer2", text: "Half crimp", scores: { A: 1, B: 0, C: 1, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 1, K: 0, L: 1, M: 0, N: 0 } },
       { id: "mechanismAcuteNonTraumaticPinkyAnswer4", text: "Drag or open position", scores: { A: 0, B: 0, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
       { id: "mechanismAcuteNonTraumaticPinkyAnswer6", text: "Twisting or side-loading grip (e.g. finger lock, ring lock, side pull, gaston, etc.)", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
-      { id: "mechanismAcuteNonTraumaticPinkyAnswer7", text: "Two-finger pocket (crimp)", scores: { A: 1, B: 0, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 1, L: 0, M: 0, N: 0 } },
-      { id: "mechanismAcuteNonTraumaticPinkyAnswer8", text: "Two-finger pocket (drag or open hand)", scores: { A: 0, B: 0, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "mechanismAcuteNonTraumaticPinkyAnswer9", text: "Mono (crimp)", scores: { A: 1, B: 0, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 1, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "mechanismAcuteNonTraumaticPinkyAnswer10", text: "Mono (drag or open hand)", scores: { A: 0, B: 0, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "mechanismAcuteNonTraumaticPinkyAnswer7", text: "Two-finger pocket (crimp)", scores: { A: 1, B: 0, C: 1, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 1, K: 1, L: 1, M: 0, N: 0 } },
+      { id: "mechanismAcuteNonTraumaticPinkyAnswer8", text: "Two-finger pocket (drag or open hand)", scores: { A: -1, B: 0, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: -1, L: 0, M: 0, N: 0 } },
+      { id: "mechanismAcuteNonTraumaticPinkyAnswer9", text: "Mono (crimp)", scores: { A: 1, B: 0, C: 1, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 1, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "mechanismAcuteNonTraumaticPinkyAnswer10", text: "Mono (drag or open hand)", scores: { A: -1, B: 0, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: -1, L: 0, M: 0, N: 0 } },
       { id: "mechanismAcuteNonTraumaticPinkyAnswer11", text: "None of these apply to me, or unsure", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
     ],
     multiple: false,
@@ -175,7 +161,7 @@ export const PRIMARY_DATA = {
       {
         if: {
           questionId: "injuryType",
-          selectedAnswers: ["injuryTypeAnswer1", "injuryTypeAnswer3"],
+          selectedAnswers: ["injuryTypeAnswer1", "injuryTypeAnswer3", "injuryTypeAnswer4"],
           match: "any"
         },
         action: "skip"
@@ -187,25 +173,9 @@ export const PRIMARY_DATA = {
           match: "any"
         },
         action: "skip"
-      },
-      {
-        if: {
-          questionId: "mechanismAcuteNonTraumaticPinky",
-          selectedAnswers: [
-            "mechanismAcuteNonTraumaticPinkyAnswer1",
-            "mechanismAcuteNonTraumaticPinkyAnswer2",
-            "mechanismAcuteNonTraumaticPinkyAnswer7",
-            "mechanismAcuteNonTraumaticPinkyAnswer9",
-            "mechanismAcuteNonTraumaticPinkyAnswer11"
-          ],
-          match: "none"
-        },
-        action: "modifyscore",
-        parameters: { scores: "I", points: -1 }
       }
     ]
   },
-
 
   mechanismChronic: {
     id: "mechanismChronic",
@@ -214,10 +184,10 @@ export const PRIMARY_DATA = {
     photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/fc1fc205-0903-4f84-94f8-970dc0bf0355/Grip+Position+Collage.jpg?content-type=image%2Fjpeg"],
     answers: [
       { id: "mechanismChronicAnswer1", text: "Crimping", scores: { A: 0, B: 0, C: 1, D: 0, E: 0, F: 1, G: 0, H: 1, I: 1, J: 1, K: 0, L: 1, M: 1, N: 0 } },
-      { id: "mechanismChronicAnswer2", text: "Three-finger drag", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 1, N: 0 } },
-      { id: "mechanismChronicAnswer3", text: "Open hand", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 1, N: 0 } },
+      { id: "mechanismChronicAnswer2", text: "Three-finger drag", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: -1, J: -1, K: 0, L: -1, M: 1, N: 0 } },
+      { id: "mechanismChronicAnswer3", text: "Open hand", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: -1, J: 0, K: 0, L: 0, M: 1, N: 0 } },
       { id: "mechanismChronicAnswer4", text: "Pockets", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 1, M: 1, N: 0 } },
-      { id: "mechanismChronicAnswer5", text: "Twisting or side-loading grip (e.g. finger lock, ring lock, side pull, gaston, etc.)", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
+      { id: "mechanismChronicAnswer5", text: "Twisting or side-loading grip (e.g. finger lock, ring lock, side pull, gaston, etc.)", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: -1, J: 0, K: 0, L: 0, M: 0, N: 1 } },
       { id: "mechanismChronicAnswer6", text: "None of these apply to me, or unsure", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
     ],
     multiple: false,
@@ -225,7 +195,7 @@ export const PRIMARY_DATA = {
       {
         if: {
           questionId: "injuryType",
-          selectedAnswers: ["injuryTypeAnswer1", "injuryTypeAnswer2"],
+          selectedAnswers: ["injuryTypeAnswer1", "injuryTypeAnswer2", "injuryTypeAnswer4"],
           match: "any"
         },
         action: "skip"
@@ -237,18 +207,6 @@ export const PRIMARY_DATA = {
           match: "any"
         },
         action: "skip"
-      },
-      {
-        if: {
-          questionId: "mechanismChronic",
-          selectedAnswers: [
-            "mechanismChronicAnswer1",
-            "mechanismChronicAnswer6"
-          ],
-          match: "none"
-        },
-        action: "modifyscore",
-        parameters: { scores: "I", points: -1 }
       }
     ]
   },
@@ -260,9 +218,9 @@ export const PRIMARY_DATA = {
     photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/fc1fc205-0903-4f84-94f8-970dc0bf0355/Grip+Position+Collage.jpg?content-type=image%2Fjpeg"],
     answers: [
       { id: "mechanismChronicPinkyAnswer1", text: "Half crimp or high angle grips", scores: { A: 0, B: 0, C: 1, D: 0, E: 0, F: 1, G: 0, H: 1, I: 1, J: 1, K: 0, L: 1, M: 1, N: 0 } },
-      { id: "mechanismChronicPinkyAnswer2", text: "Drag or open hand grips", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 1, N: 0 } },
-      { id: "mechanismChronicPinkyAnswer4", text: "Pockets", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 1, M: 1, N: 0 } },
-      { id: "mechanismChronicPinkyAnswer5", text: "Twisting or side-loading grip (e.g. finger lock, ring lock, side pull, gaston, etc.)", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
+      { id: "mechanismChronicPinkyAnswer2", text: "Drag or open hand grips", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: -1, J: -1, K: 0, L: -1, M: 1, N: 0 } },
+      { id: "mechanismChronicPinkyAnswer4", text: "Pockets", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: -1, J: 0, K: 0, L: 1, M: 1, N: 0 } },
+      { id: "mechanismChronicPinkyAnswer5", text: "Twisting or side-loading grip (e.g. finger lock, ring lock, side pull, gaston, etc.)", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: -1, J: 0, K: 0, L: 0, M: 0, N: 1 } },
       { id: "mechanismChronicPinkyAnswer6", text: "None of these apply to me, or unsure", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
     ],
     multiple: false,
@@ -270,7 +228,7 @@ export const PRIMARY_DATA = {
       {
         if: {
           questionId: "injuryType",
-          selectedAnswers: ["injuryTypeAnswer1", "injuryTypeAnswer2"],
+          selectedAnswers: ["injuryTypeAnswer1", "injuryTypeAnswer2", "injuryTypeAnswer4"],
           match: "any"
         },
         action: "skip"
@@ -282,18 +240,76 @@ export const PRIMARY_DATA = {
           match: "any"
         },
         action: "skip"
+      }
+    ]
+  },
+
+  mechanismOther: {
+    id: "mechanismOther",
+    text: "Which do you think contributed most to your injury, if any?",
+    video: "",
+    photos: [
+      "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/fc1fc205-0903-4f84-94f8-970dc0bf0355/Grip+Position+Collage.jpg?content-type=image%2Fjpeg"
+    ],
+    answers: [
+      { id: "mechanismOtherAnswer1", text: "Crimping", scores: { A: 0, B: 0, C: 1, D: 0, E: 0, F: 1, G: 0, H: 1, I: 1, J: 1, K: 0, L: 1, M: 1, N: 0 } },
+      { id: "mechanismOtherAnswer2", text: "Drag or open hand grips", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: -1, J: -1, K: 0, L: -1, M: 1, N: 0 } },
+      { id: "mechanismOtherAnswer3", text: "Pockets", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: -1, J: 0, K: 0, L: 1, M: 1, N: 0 } },
+      { id: "mechanismOtherAnswer4", text: "Twisting or side-loading grip (e.g. finger lock, ring lock, side pull, gaston, etc.)", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: -1, J: 0, K: 0, L: 0, M: 0, N: 1 } },
+      { id: "mechanismOtherAnswer5", text: "None of these apply to me, or unsure", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
+    ],
+    multiple: false,
+    conditions: [
+      {
+        if: {
+          questionId: "injuryType",
+          selectedAnswers: ["injuryTypeAnswer1", "injuryTypeAnswer2", "injuryTypeAnswer3"],
+          match: "any"
+        },
+        action: "skip"
       },
       {
         if: {
-          questionId: "mechanismChronicPinky",
-          selectedAnswers: [
-            "mechanismChronicPinkyAnswer1",
-            "mechanismChronicPinkyAnswer6"
-          ],
-          match: "none"
+          questionId: "pinkyFinger",
+          selectedAnswers: ["pinkyFingerAnswer1"],
+          match: "any"
         },
-        action: "modifyscore",
-        parameters: { scores: "I", points: -1 }
+        action: "skip"
+      }
+    ]
+  },
+
+  mechanismOtherPinky: {
+    id: "mechanismOtherPinky",
+    text: "Which do you think contributed most to your injury, if any?",
+    video: "",
+    photos: [
+      "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/fc1fc205-0903-4f84-94f8-970dc0bf0355/Grip+Position+Collage.jpg?content-type=image%2Fjpeg"
+    ],
+    answers: [
+      { id: "mechanismOtherPinkyAnswer1", text: "Crimping", scores: { A: 0, B: 0, C: 1, D: 0, E: 0, F: 1, G: 0, H: 1, I: 1, J: 1, K: 0, L: 1, M: 1, N: 0 } },
+      { id: "mechanismOtherPinkyAnswer2", text: "Drag or open hand grips", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: -1, J: -1, K: 0, L: -1, M: 1, N: 0 } },
+      { id: "mechanismOtherPinkyAnswer3", text: "Pockets", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: -1, J: 0, K: 0, L: 1, M: 1, N: 0 } },
+      { id: "mechanismOtherPinkyAnswer4", text: "Twisting or side-loading grip (e.g. finger lock, ring lock, side pull, gaston, etc.)", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: -1, J: 0, K: 0, L: 0, M: 0, N: 1 } },
+      { id: "mechanismOtherPinkyAnswer5", text: "None of these apply to me, or unsure", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
+    ],
+    multiple: false,
+    conditions: [
+      {
+        if: {
+          questionId: "injuryType",
+          selectedAnswers: ["injuryTypeAnswer1", "injuryTypeAnswer2", "injuryTypeAnswer3"],
+          match: "any"
+        },
+        action: "skip"
+      },
+      {
+        if: {
+          questionId: "pinkyFinger",
+          selectedAnswers: ["pinkyFingerAnswer2"],
+          match: "any"
+        },
+        action: "skip"
       }
     ]
   },
@@ -345,7 +361,7 @@ export const PRIMARY_DATA = {
       {
         if: {
           questionId: "injuryType",
-          selectedAnswers: ["injuryTypeAnswer2", "injuryTypeAnswer3"],
+          selectedAnswers: ["injuryTypeAnswer2", "injuryTypeAnswer3", "injuryTypeAnswer4"],
           match: "any"
         },
         action: "skip"
@@ -384,7 +400,7 @@ export const PRIMARY_DATA = {
       {
         if: {
           questionId: "injuryType",
-          selectedAnswers: ["injuryTypeAnswer2", "injuryTypeAnswer3"],
+          selectedAnswers: ["injuryTypeAnswer3", "injuryTypeAnswer4"],
           match: "any"
         },
         action: "skip"
@@ -494,7 +510,7 @@ export const PRIMARY_DATA = {
       {
         if: {
           questionId: "injuryType",
-          selectedAnswers: ["injuryTypeAnswer3"],
+          selectedAnswers: ["injuryTypeAnswer3", "injuryTypeAnswer4"],
           match: "any"
         },
         action: "skip"
