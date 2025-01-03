@@ -208,7 +208,7 @@ function PulleyThickeningSeverityQuestionnaire({ questionnaire, onBack, onComple
                 <>
                     Great job completing the injury-induced pulley thickening severity questionnaire! Your answers are associated with a clear grade of injury. Huzzah! Keep in mind that when selecting a Recovery Blueprint you’ll need to choose the one that applies to your specific injury location (either A2 or A4 pulley). If you don’t know which pulley you injured, you can identify it based on the location of your symptoms. If needed, use {' '}
                     <a 
-                        href="https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/84930909-0843-4db5-829b-a2d82a766c07/Differential+3+-+Question+1+-+Hand+front.jpg?content-type=image%2Fjpeg" 
+                        href="https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/0ba202c2-83e6-43ef-af15-76bbf065d7bb/A2-A5+Pulley+Locations+Reference+%28Higher+Res%29.jpg?content-type=image%2Fjpeg" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="text-blue-500 underline"
