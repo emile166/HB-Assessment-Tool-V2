@@ -7,7 +7,7 @@ export const DIFFERENTIAL_2_DATA = {
         answers: [
             { id: "injuryDescriptionAnswer1", text: "Caused by lateral or torsional forces (e.g. finger lock, ring lock, side pull, gaston, etc.)", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
             { id: "injuryDescriptionAnswer2", text: "Slow build-up of symptoms associated with high-intensity crimping", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: -1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: -1 } },
-            { id: "injuryDescriptionAnswer3", text: "Sudden onset of symptoms associated with frequent high-intensity crimping, but no identifiable moment of injury or trauma", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "injuryDescriptionAnswer3", text: "Sudden onset of symptoms over a week or more associated with frequent high-intensity crimping, but no identifiable moment of injury or trauma", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "injuryDescriptionAnswer4", text: "Symptoms appear later that day or the next day (possibly with a feeling of stiffness or loss of range of motion)", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "injuryDescriptionAnswer5", text: "None of these options apply to me", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
         ],
@@ -39,10 +39,12 @@ export const DIFFERENTIAL_2_DATA = {
         video: "https://www.youtube.com/embed/Ft-9Fwtn9HM?si=JHrgL4j-MIGArrSK&rel=0",
         photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/d3894a14-38ad-46e9-a939-92ab9c5b7264/PIP+and+DIP+Joints.jpg?content-type=image%2Fjpeg"],
         answers: [
-            { id: "lateralStressTestAnswer1", text: "PIP or DIP joint: discomfort/pain on left AND right side of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "lateralStressTestAnswer2", text: "PIP joint: discomfort/pain on the opposite side I was pressing on", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
-            { id: "lateralStressTestAnswer3", text: "DIP joint: discomfort/pain on the opposite side I was pressing on", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-            { id: "lateralStressTestAnswer4", text: "PIP or DIP joint: yes, some joint laxity", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 2, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "lateralStressTestAnswer1", text: "PIP joint: discomfort/pain on left AND right side of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "lateralStressTestAnswer2", text: "PIP joint: discomfort/pain on the opposite side of the side I was pressing on", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
+            { id: "lateralStressTestAnswer4", text: "PIP joint: some joint laxity", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 2, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "lateralStressTestAnswer7", text: "DIP joint: discomfort/pain on left AND right side of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "lateralStressTestAnswer3", text: "DIP joint: discomfort/pain on the opposite side of the side I was pressing on", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
+            { id: "lateralStressTestAnswer8", text: "DIP joint: some joint laxity", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 2, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "lateralStressTestAnswer5", text: "No discomfort/pain", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
             { id: "lateralStressTestAnswer6", text: "No joint laxity", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: -1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
         ],

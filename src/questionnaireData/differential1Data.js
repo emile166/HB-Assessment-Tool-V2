@@ -113,13 +113,13 @@ export const DIFFERENTIAL_1_DATA = {
     video: "",
     photos: ["https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/a4af57cd-0a8e-4730-877b-cb4b9a3b3265/A2%2BA4+with+Proximal+and+Distal+Indicators.jpg?content-type=image%2Fjpeg"],
     answers: [
-      { id: "painFocalPointAnswer1", text: "A2: distal region of the pulley", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 1, K: 0, L: -200, M: 0, N: 0 } },
-      { id: "painFocalPointAnswer4", text: "A2: directly over the middle of the pulley", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 1, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "painFocalPointAnswer1", text: "A2: DISTAL region of the pulley", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 1, K: 0, L: -200, M: 0, N: 0 } },
+      { id: "painFocalPointAnswer4", text: "A2: directly over the MIDDLE of the pulley", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 1, K: 0, L: 0, M: 0, N: 0 } },
       { id: "painFocalPointAnswer9", text: "A2: left or right side (not both) of the pulley", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 1, I: 1, J: 0, K: 0, L: 0, M: 0, N: 0 } },
       { id: "painFocalPointAnswer5", text: "A2: both the left AND right sides of the pulley", scores: { A: 0, B: 0, C: 2, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 1, K: 0, L: 0, M: 0, N: 0 } },
       { id: "painFocalPointAnswer2", text: "A4: left or right side (not both) of the PROXIMAL region of the pulley", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 3, M: 0, N: 0 } },
       { id: "painFocalPointAnswer3", text: "A4: entire PROXIMAL region of the pulley", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 1, K: 0, L: 1, M: 0, N: 0 } },
-      { id: "painFocalPointAnswer7", text: "A4: directly over the middle of the pulley", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 1, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "painFocalPointAnswer7", text: "A4: directly over the MIDDLE of the pulley", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 1, K: 0, L: 0, M: 0, N: 0 } },
       { id: "painFocalPointAnswer10", text: "A4: left or right side (not both) of the pulley", scores: { A: 1, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 1, I: 1, J: 0, K: 0, L: 1, M: 0, N: 0 } },
       { id: "painFocalPointAnswer8", text: "A4: both the left AND right sides of the pulley", scores: { A: 0, B: 0, C: 2, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 1, K: 0, L: 1, M: 0, N: 0 } },
       { id: "painFocalPointAnswer6", text: "None of these apply to me", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }

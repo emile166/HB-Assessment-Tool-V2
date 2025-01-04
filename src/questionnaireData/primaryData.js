@@ -487,7 +487,7 @@ export const PRIMARY_DATA = {
       { id: "injuryDiscolorationAnswer4", text: "DIP joint: bruise-like discoloration in the palm side of the joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: -1, I: -1, J: -1, K: 1, L: 0, M: 0, N: 0 } },
       { id: "injuryDiscolorationAnswer5", text: "Palm: some bruise-like discoloration", scores: { A: 0, B: 0, C: 0, D: 0, E: 1, F: 0, G: 0, H: -1, I: -1, J: -1, K: 0, L: 0, M: 0, N: 0 } },
       { id: "injuryDiscolorationAnswer6", text: "Forearm or distal phalanx: some bruise-like discoloration", scores: { A: 0, B: 0, C: 0, D: 1, E: 0, F: 0, G: 0, H: -1, I: -1, J: -1, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "injuryDiscolorationAnswer7", text: "A2-A4 region: some bruise-like discoloration", scores: { A: 0, B: 1, C: 0, D: 0, E: 0, F: 0, G: 0, H: -1, I: -1, J: -1, K: 0, L: 0, M: 0, N: 0 } },
+      { id: "injuryDiscolorationAnswer7", text: "A2-A4 region: some bruise-like discoloration in this area", scores: { A: 0, B: 1, C: 0, D: 1, E: 0, F: 0, G: 0, H: -1, I: -1, J: -1, K: 0, L: 0, M: 0, N: 0 } },
       { id: "injuryDiscolorationAnswer8", text: "None of these options apply to me, or I’m unsure", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
     ],
     multiple: true,
@@ -550,16 +550,7 @@ export const PRIMARY_DATA = {
       { id: "aromPositionTwoAnswer11", text: "None of these apply to me", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
     ],
     multiple: true,
-    conditions: [
-      {
-        if: {
-          questionId: "aromPositionOne",
-          selectedAnswers: ["aromPositionOneAnswer1"],
-          match: "any"
-        },
-        action: "skip"
-      }
-    ]
+    conditions: []
   },
 
   aromPositionThree: {
@@ -590,16 +581,7 @@ export const PRIMARY_DATA = {
       { id: "aromPositionThreeAnswer14", text: "None of these apply to me", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
     ],
     multiple: true,
-    conditions: [
-      {
-        if: {
-          questionId: "aromPositionOne",
-          selectedAnswers: ["aromPositionOneAnswer1", "aromPositionTwoAnswer1"],
-          match: "any"
-        },
-        action: "skip"
-      }
-    ]
+    conditions: []
   },
 
   tissueLoading: {
@@ -618,7 +600,7 @@ export const PRIMARY_DATA = {
       { id: "tissueLoadingAnswer5", text: "Discomfort/pain with the drag test, but not the crimp test", scores: { A: 0, B: 0, C: 0, D: 1, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 1, N: 0 } },
       { id: "tissueLoadingAnswer6", text: "Discomfort/pain with the isolated finger test while my adjacent fingers are curled, and less discomfort (or none) during the test while they are relaxed", scores: { A: 0, B: 0, C: 0, D: 1, E: 1, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
       { id: "tissueLoadingAnswer7", text: "Discomfort/pain in the PIP or DIP joint with the lateral stress test", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 1, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } },
-      { id: "tissueLoadingAnswer8", text: "No immediate discomfort/pain with the tissue loading tests, but I have noticed a pattern of delayed onset discomfort/pain after crimping", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 1, M: 0, N: 0 } },
+      { id: "tissueLoadingAnswer8", text: "Delayed discomfort/pain from my injury that comes on hours (or even a full day) after a climbing session", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 0, I: 0, J: 0, K: 0, L: 1, M: 0, N: 0 } },
       { id: "tissueLoadingAnswer9", text: "No injury-related symptoms with any of the tissue loading tests", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 1, G: 0, H: 1, I: 0, J: 0, K: 0, L: 0, M: 0, N: 1 } },
       { id: "tissueLoadingAnswer10", text: "None of these options apply to me", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
     ],
@@ -652,6 +634,40 @@ export const PRIMARY_DATA = {
             "painLocationAnswer9",
             "painLocationAnswer10"
           ],
+          match: "only"
+        },
+        action: "skip"
+      }
+    ]
+  },
+
+  hyperextensionInjury: {
+    id: "hyperextensionInjury",
+    text: "Was your injury caused by hyperextension of the PIP or DIP joint?",
+    video: "",
+    photos: [
+      "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/d3894a14-38ad-46e9-a939-92ab9c5b7264/PIP+and+DIP+Joints.jpg?content-type=image%2Fjpeg",
+      "https://images.squarespace-cdn.com/content/5e3ca2f99bfdc338a02cefb9/c3bb623f-a8f1-4a1e-9cc0-f0c7f9278a72/Primary+-+Question+5+-+Hand+back.jpg?content-type=image%2Fjpeg"
+    ],
+    answers: [
+      { id: "hyperextensionInjuryAnswer1", text: "Yes, PIP joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 2, L: 0, M: 0, N: 0 } },
+      { id: "hyperextensionInjuryAnswer2", text: "Yes, DIP joint", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 2, L: 0, M: 0, N: 0 } },
+      { id: "hyperextensionInjuryAnswer3", text: "No or I’m unsure", scores: { A: 0, B: 0, C: 0, D: 0, E: 0, F: 0, G: 0, H: 0, I: 0, J: 0, K: 0, L: 0, M: 0, N: 0 } }
+    ],
+    multiple: false,
+    conditions: [
+      {
+        if: {
+          questionId: "injuryType",
+          selectedAnswers: ["injuryTypeAnswer3", "injuryTypeAnswer4"],
+          match: "any"
+        },
+        action: "skip"
+      },
+      {
+        if: {
+          questionId: "passiveExtension",
+          selectedAnswers: ["passiveExtensionAnswer3", "passiveExtensionAnswer7", "passiveExtensionAnswer4"],
           match: "only"
         },
         action: "skip"
