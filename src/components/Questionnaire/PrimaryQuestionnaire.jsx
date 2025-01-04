@@ -322,7 +322,7 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
     if (displayedResult === "Grade IVb") {  // Add this condition
       nerveIssuePossibility = "None";
     } else if (firstInjuryName.toLowerCase() === "nerve issue") {
-      nerveIssuePossibility = "⚠️ High";
+      nerveIssuePossibility = "⚠️ Yes";
     } else if (/1/.test(resultsSummary)) {
       nerveIssuePossibility = "To be determined...";
     } else if (
@@ -331,14 +331,14 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
       sortedResults[1] && /[^ABCILJ]/.test(sortedResults[1][0]) &&
       D3 >= D5 + 2
     ) {
-      nerveIssuePossibility = "⚠️ Test Needed";
+      nerveIssuePossibility = "⚠️ Yes";
     } else if (
       nerveScore >= D3 - 2 &&
       D3 > D4 &&
       /[^ABCILJ]/.test(B3) &&
       D3 >= D5 + 2
     ) {
-      nerveIssuePossibility = "⚠️ Medium";
+      nerveIssuePossibility = "⚠️ Yes";
     } else if (
       nerveScore >= D3 - 2 &&
       /unclear|information/i.test(displayedResult)
@@ -400,7 +400,7 @@ function PrimaryQuestionnaire({ questionnaire, onBack, onComplete }) {
     } else if (nerveIssuePossibility === "⚠️ Test Needed") {
       nerveWarning = "Please note: Your answers are associated with some possibility of a nerve issue, which could be affecting your symptoms and therefore this assessment. Differential assessment 1 contains multiple tests for nerve issues, so you should complete that assessment to obtain more accurate results.";
     } else if (nerveIssuePossibility === "⚠️ Yes") {
-      nerveWarning = "Please note: Your answers are associated with some possibility of a nerve issue, which could be affecting your symptoms and therefore this assessment. Nerve issues can mask or mimic symptoms from other injuries, which can make them tricky to deal with. Be aware that a nerve issue is a possible confounding factor that may need professional evaluation.";
+      nerveWarning = "Please note: Your answers are associated with some possibility of a nerve issue, which could be affecting your symptoms and therefore this assessment. Nerve issues can mask or mimic symptoms from other injuries, which can make them tricky to deal with. Be aware that a nerve issue is a possible confounding factor that may need professional evaluation. You may also want to take the nerve issue identification quetionnaire (under the 'Severity Assessment' category) to see if those nerve tests reproduce your symptoms.";
     }
 
     // Calculate cyst warning
