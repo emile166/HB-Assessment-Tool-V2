@@ -410,7 +410,7 @@ export const PRIMARY_DATA = {
 
   abnormalMass: {
     id: "abnormalMass",
-    text: "Can you feel an obvious abnormal mass/lump or thickening at (or very near to) the area of discomfort/pain?",
+    text: "Can you feel an obvious abnormal mass/lump or thickening at (or very near to) the area of discomfort/pain? (Make sure you compare MULTIPLE fingers to your injured finger to get a proper reference point, as there is often thickening in the same finger on both hands.)",
     video: "https://www.youtube.com/embed/u1Xsvw9RLxQ?si=o5Gf0SyMU9idb6hg&rel=0",
     photos: [],
     answers: [
